@@ -1,0 +1,26 @@
+{
+  "name": "coderdojo-lessons-specdojo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "orch:opus": "specdojo orchestrator launch --provider claude -- --agent specdojo-orchestrator --model opus",
+    "orch:sonnet": "specdojo orchestrator launch --provider claude -- --agent specdojo-orchestrator --model sonnet",
+    "orch:codex": "specdojo orchestrator launch --provider codex -- \"$(cat .specdojo/codex/orchestrator.md)\"",
+    "orch:opencode": "specdojo orchestrator launch --provider opencode -- --agent specdojo-orchestrator",
+    "orch:agy": "specdojo orchestrator launch --provider antigravity -- --add-dir \"$(pwd)\" -i \"$(cat .specdojo/antigravity/orchestrator.md)\"",
+    "orch:copilot": "specdojo orchestrator launch --provider copilot -- --agent specdojo-orchestrator"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "specdojo": "^0.4.0"
+  },
+  "dependencies": {
+    "@specdojo/docs-lint": "^0.2.1",
+    "@specdojo/docs-site": "^0.2.1"
+  }
+}

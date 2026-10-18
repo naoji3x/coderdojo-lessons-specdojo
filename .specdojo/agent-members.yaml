@@ -1,0 +1,239 @@
+version: 1
+members:
+  - nickname: sonnet-executor
+    display_name: Claude Sonnet Executor
+    email: null
+    roles: []
+    type: agent
+    provider: claude
+    model: sonnet
+    mode: edit
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: normal
+    priority: 2
+    persona: task-executor
+    scheduler_strategy: critical-first
+  - nickname: sonnet-review-executor
+    display_name: Claude Sonnet Review Executor
+    email: null
+    roles: []
+    type: agent
+    provider: claude
+    model: sonnet
+    mode: review
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: normal
+    priority: 2
+    persona: multi-viewpoint-reviewer
+    scheduler_strategy: fifo
+  - nickname: sonnet-reporter
+    display_name: Claude Sonnet Reporter
+    email: null
+    roles: []
+    type: agent
+    provider: claude
+    model: sonnet
+    mode: report
+    stage_role: reporter
+    capabilities: []
+    proficiency: normal
+    priority: 2
+    persona: execution-reporter
+    scheduler_strategy: fifo
+  - nickname: terra-executor
+    display_name: Codex Terra Executor
+    email: null
+    roles: []
+    type: agent
+    provider: codex
+    model: gpt-5.6-terra
+    mode: edit
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: normal
+    priority: 1
+    persona: task-executor
+    scheduler_strategy: critical-first
+  - nickname: terra-review-executor
+    display_name: Codex Terra Review Executor
+    email: null
+    roles: []
+    type: agent
+    provider: codex
+    model: gpt-5.6-terra
+    mode: review
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: normal
+    priority: 1
+    persona: multi-viewpoint-reviewer
+    scheduler_strategy: fifo
+  - nickname: terra-reporter
+    display_name: Codex Terra Reporter
+    email: null
+    roles: []
+    type: agent
+    provider: codex
+    model: gpt-5.6-terra
+    stage_role: reporter
+    capabilities: []
+    proficiency: normal
+    priority: 1
+    persona: execution-reporter
+    scheduler_strategy: fifo
+  - nickname: gemma-executor
+    display_name: OpenCode Gemma Executor
+    email: null
+    roles: []
+    type: agent
+    provider: opencode
+    model: ollama-local/gemma4:31b-mlx-work-64k
+    mode: edit
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: normal
+    priority: 3
+    persona: task-executor
+    scheduler_strategy: critical-first
+  - nickname: gemma-review-executor
+    display_name: OpenCode Gemma Review Executor
+    email: null
+    roles: []
+    type: agent
+    provider: opencode
+    model: ollama-local/gemma4:31b-mlx-work-64k
+    mode: review
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: normal
+    priority: 3
+    persona: multi-viewpoint-reviewer
+    scheduler_strategy: fifo
+  - nickname: gemma-reporter
+    display_name: OpenCode Gemma Reporter
+    email: null
+    roles: []
+    type: agent
+    provider: opencode
+    model: ollama-local/gemma4:31b-mlx-work-64k
+    mode: report
+    stage_role: reporter
+    capabilities: []
+    proficiency: normal
+    priority: 3
+    persona: execution-reporter
+    scheduler_strategy: fifo
+  - nickname: flash-executor
+    display_name: Antigravity Flash Executor
+    email: null
+    roles: []
+    type: agent
+    provider: antigravity
+    model: gemini-3.8-flash-medium
+    mode: edit
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: normal
+    priority: 4
+    persona: task-executor
+    scheduler_strategy: critical-first
+  - nickname: flash-review-executor
+    display_name: Antigravity Flash Review Executor
+    email: null
+    roles: []
+    type: agent
+    provider: antigravity
+    model: gemini-3.8-flash-medium
+    mode: review
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: normal
+    priority: 4
+    persona: multi-viewpoint-reviewer
+    scheduler_strategy: fifo
+  - nickname: flash-reporter
+    display_name: Antigravity Flash Reporter
+    email: null
+    roles: []
+    type: agent
+    provider: antigravity
+    model: gemini-3.8-flash-medium
+    stage_role: reporter
+    capabilities: []
+    proficiency: normal
+    priority: 4
+    persona: execution-reporter
+    scheduler_strategy: fifo
+  - nickname: copilot-executor
+    display_name: Copilot Executor
+    email: null
+    roles: []
+    type: agent
+    provider: copilot
+    mode: edit
+    stage_role: executor
+    capabilities: []
+    proficiency: normal
+    priority: 5
+    persona: task-executor
+    scheduler_strategy: critical-first
+  - nickname: copilot-review-executor
+    display_name: Copilot Review Executor
+    email: null
+    roles: []
+    type: agent
+    provider: copilot
+    mode: review
+    stage_role: executor
+    capabilities: []
+    proficiency: normal
+    priority: 5
+    persona: multi-viewpoint-reviewer
+    scheduler_strategy: fifo
+  - nickname: copilot-reporter
+    display_name: Copilot Reporter
+    email: null
+    roles: []
+    type: agent
+    provider: copilot
+    stage_role: reporter
+    capabilities: []
+    proficiency: normal
+    priority: 5
+    persona: execution-reporter
+    scheduler_strategy: fifo
+aliases:
+  - nickname: claude-executor
+    alias_of: sonnet-executor
+  - nickname: claude-review-executor
+    alias_of: sonnet-review-executor
+  - nickname: claude-reporter
+    alias_of: sonnet-reporter
+  - nickname: codex-executor
+    alias_of: terra-executor
+  - nickname: codex-review-executor
+    alias_of: terra-review-executor
+  - nickname: codex-reporter
+    alias_of: terra-reporter
+  - nickname: opencode-executor
+    alias_of: gemma-executor
+  - nickname: opencode-review-executor
+    alias_of: gemma-review-executor
+  - nickname: opencode-reporter
+    alias_of: gemma-reporter
+  - nickname: agy-executor
+    alias_of: flash-executor
+  - nickname: agy-review-executor
+    alias_of: flash-review-executor
+  - nickname: agy-reporter
+    alias_of: flash-reporter
