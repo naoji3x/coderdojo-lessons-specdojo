@@ -22,7 +22,7 @@ specdojo:
 
 PJR-M5SCの判断材料として3案と成果物配置を比較し、推奨構成・移行方針をまとめる。最終決定とファイル移動は行わない。
 
-入力は [[prj-0001:pjr-m5sc-lesson-content-structure]] と、宣言済み `coderdojo-lessons` リポジトリの現状。成果物はこの個票の対応結果にまとめ、比較表・構成例・成果物の配置表を記入する。大きい場合は同じ登録簿ディレクトリに `pjr-pfhd-lesson-structure-comparison-analysis.md` を作成し、この個票から参照する。
+入力は [[prj-0001:pjr-m5sc-lesson-content-structure]] と、宣言済み `coderdojo-lessons` リポジトリの現状。成果物はこの個票の対応結果にまとめ、比較表・構成例・成果物の配置表を記入する。大きい場合は同じ登録簿ディレクトリに `analysis-pfhd-lesson-structure-comparison.md` を作成し、この個票から参照する。補足資料は個票と誤認されないファイル名にする。
 
 対象リポジトリの参照元ファイル、ブランチ、commit を記録し、観測した事実と新しい提案を区別する。移動・実装・設定変更は行わない。PJR-M5SC の決定内容・承認欄を確定せず、状態は open のまま保持する。未承認の推奨案を合意済みと扱わない。
 
