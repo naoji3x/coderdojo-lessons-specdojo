@@ -35,3 +35,16 @@
     - field: derived_from
       from: ""
       to: "[\"PJR-M5SC\"]"
+- v: 1
+  id: reg_5ec8460df788403795adf67db9c73e66
+  ts: "2026-10-19T11:46:47Z"
+  action: start
+  actor: codex-expert-executor
+  from_status: open
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: open
+      to: in-progress
+  previous_event_id: reg_14fda7ed88d54d55b736bc0d78aac24c
