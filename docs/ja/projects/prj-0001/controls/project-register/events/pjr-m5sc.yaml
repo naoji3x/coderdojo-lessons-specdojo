@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_a94f607b96ec4a7aa767663ff120ee41
+  ts: "2026-10-19T11:37:02Z"
+  action: add
+  actor: manual
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 授業コンテンツの成果物とディレクトリ体系を決定する
+    - field: description
+      from: ""
+      to: coderdojo-lessonsのdocsの役割、教材成果物、配置先を複数案で比較し、採用するディレクトリ体系を決定する。
+    - field: type
+      from: ""
+      to: decision
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-19"
+    - field: due
+      from: ""
+      to: "2026-10-31"
