@@ -59,6 +59,21 @@ members:
     priority: 1
     persona: task-executor
     scheduler_strategy: critical-first
+  - nickname: codex-expert-executor
+    display_name: Codex Expert Executor
+    email: null
+    roles: []
+    type: agent
+    provider: codex
+    model: gpt-5.6-terra
+    mode: edit
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: expert
+    priority: 1
+    persona: task-executor
+    scheduler_strategy: critical-first
   - nickname: terra-review-executor
     display_name: Codex Terra Review Executor
     email: null

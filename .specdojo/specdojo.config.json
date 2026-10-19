@@ -4,6 +4,13 @@
   "agent_members_path": ".specdojo/agent-members.yaml",
   "projects": {
     "prj-0001": {
+      "repos": [
+        {
+          "name": "coderdojo-lessons",
+          "path": "../coderdojo-lessons",
+          "integration_branch": "develop"
+        }
+      ],
       "base_path": "docs/ja/projects/prj-0001",
       "members_path": "030-project-management/pm-members.yaml",
       "project_register_path": "controls/project-register",
