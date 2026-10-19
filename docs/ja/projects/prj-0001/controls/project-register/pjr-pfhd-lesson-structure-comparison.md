@@ -7,12 +7,11 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: waiting
+  item_status: in-progress
   priority: medium
   owner: BA
   registered_at: "2026-10-19T11:45:34Z"
   due_on: "2026-10-31"
-  block_reason: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-pfhd-20261019T114646Z-0772-result.md:20:81 error MD013/line-length Lin…"
   derived_from:
     - PJR-M5SC
 ---

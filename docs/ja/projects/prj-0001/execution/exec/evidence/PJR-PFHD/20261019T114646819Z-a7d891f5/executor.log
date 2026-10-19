@@ -1,0 +1,5 @@
+比較資料と個票の対応結果を更新しました。B案を未承認の推奨とし、移行・最終決定は行っていません。
+
+<specdojo_executor_evidence>
+{"final_message":"3案の比較、B案の未承認推奨、成果物配置、移行方針、確認事項を文書化し、個票から参照可能にした。","validations":[{"command":"git diff --check && git diff --check --no-index /dev/null docs/ja/projects/prj-0001/controls/project-register/pjr-pfhd-lesson-structure-comparison-analysis.md >/dev/null; check_status=$?; test \"$check_status\" -eq 1","status":"passed","summary":"追跡済み・新規 Markdown の空白エラーなし。"},{"command":"node - <<'NODE' ... NODE","status":"passed","summary":"変更した Markdown の front matter、H1、未解決タスク用プレースホルダなしを確認。"},{"command":"npx prettier --write <changed Markdown files>","status":"not_applicable","summary":"未実行。","reason":"プロジェクトの package.json に Prettier が宣言されていない。"},{"command":"npx markdownlint <changed Markdown files>","status":"not_applicable","summary":"未実行。","reason":"プロジェクトの package.json に markdownlint 系パッケージが宣言されていない。"},{"command":"npm test","status":"not_applicable","summary":"未実行。","reason":"test script は npm init の仮置きスクリプトである。"},{"command":"npx specdojo catalog validate","status":"not_applicable","summary":"未実行。","reason":"対象プロジェクト設定に `catalog_path` がない。"}]}
+</specdojo_executor_evidence>
