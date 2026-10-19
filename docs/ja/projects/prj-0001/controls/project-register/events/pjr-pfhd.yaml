@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_14fda7ed88d54d55b736bc0d78aac24c
+  ts: "2026-10-19T11:45:34Z"
+  action: add
+  actor: manual
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 授業コンテンツのディレクトリ体系を比較し推奨案を作成する
+    - field: description
+      from: ""
+      to: PJR-M5SCの判断材料として3案と成果物配置を比較し、推奨構成・移行方針をまとめる。最終決定とファイル移動は行わない。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-19"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-M5SC\"]"
