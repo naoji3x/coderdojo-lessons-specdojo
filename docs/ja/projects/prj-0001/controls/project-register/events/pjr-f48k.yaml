@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_6928273e8bc84755aa65e71902d9423a
+  ts: "2026-10-19T11:28:14Z"
+  action: add
+  actor: manual
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 両リポジトリにLefthookと検証hookを整備する
+    - field: description
+      from: ""
+      to: 両リポジトリへLefthookを導入し、依存導入時のhook登録と各リポジトリに適した検証を整備する。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: DEV
+    - field: registered
+      from: ""
+      to: "2026-10-19"
+    - field: due
+      from: ""
+      to: "2026-10-31"
