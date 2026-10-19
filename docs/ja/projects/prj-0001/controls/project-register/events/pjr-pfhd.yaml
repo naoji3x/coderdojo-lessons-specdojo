@@ -80,3 +80,16 @@
       from: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-pfhd-20261019T114646Z-0772-result.md:20:81 error MD013/line-length Lin…"
       to: "-"
   previous_event_id: reg_35f511d250564c319bbcb985c8e9b15e
+- v: 1
+  id: reg_9698c0cea0594f97bc0834e0f9c718d3
+  ts: "2026-10-19T11:50:20Z"
+  action: review
+  actor: codex-reporter
+  from_status: in-progress
+  to_status: review
+  reason: ready for review
+  changes:
+    - field: status
+      from: in-progress
+      to: review
+  previous_event_id: reg_ce97a137962a4bf2a58d62120111fda8
