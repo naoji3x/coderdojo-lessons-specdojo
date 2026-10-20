@@ -2,7 +2,7 @@
   "schema_version": 1,
   "task_id": "PJR-95RS",
   "run_id": "20261020T230634478Z-894d00b0",
-  "updated_at": "2026-10-20T23:13:30.202Z",
+  "updated_at": "2026-10-20T23:13:32.010Z",
   "stages": {
     "executor": {
       "status": "succeeded",
@@ -21,23 +21,22 @@
       "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/results/pjr-95rs-20261020T230634Z-d008-result.md"
     },
     "integrate": {
-      "status": "running",
+      "status": "succeeded",
       "actor": "terra-reporter",
       "attempts": 3,
       "started_at": "2026-10-20T23:13:30.202Z",
-      "completed_at": null,
+      "completed_at": "2026-10-20T23:13:32.010Z",
       "artifact_ref": null,
       "repos": {
         "project": {
-          "status": "pending",
+          "status": "merged",
           "commit": null,
-          "merged_at": null
+          "merged_at": "2026-10-20T23:13:31.586Z"
         },
         "coderdojo-lessons": {
-          "status": "failed",
-          "commit": null,
-          "merged_at": null,
-          "error": "uncommitted changes outside the commit scope: coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md, coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md"
+          "status": "merged",
+          "commit": "f45ef82d22c06c29edd64bd8425f273729c36469",
+          "merged_at": "2026-10-20T23:13:31.583Z"
         }
       }
     }

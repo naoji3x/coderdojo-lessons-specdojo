@@ -137,3 +137,16 @@
       from: "integrate failed: coderdojo-lessons: pre-integration check failed (no repository was integrated in this attempt): coderdojo-lessons: uncommitted changes outside the commit scope: coderdojo-lessons:cou…"
       to: "-"
   previous_event_id: reg_47980b54f5b14fa491c04ea9a8b84f5a
+- v: 1
+  id: reg_0a21ebb452b94aa7b853853279e5c396
+  ts: "2026-10-20T23:13:31Z"
+  action: review
+  actor: terra-reporter
+  from_status: in-progress
+  to_status: review
+  reason: ready for review
+  changes:
+    - field: status
+      from: in-progress
+      to: review
+  previous_event_id: reg_44ae1d982e4242a4be87f2d8d99aea16
