@@ -45,3 +45,22 @@
       from: _TODO_
       to: BA
   previous_event_id: reg_b6631d991b01492dbe19f251a9e80fdc
+- v: 1
+  id: reg_f9e751ceb73f4e109b77aa70c70cfe0e
+  ts: "2026-10-20T13:00:05Z"
+  action: close
+  actor: orchestrator
+  from_status: open
+  to_status: done
+  reason: 利用者の指示によりorchestratorが直接対応した
+  changes:
+    - field: status
+      from: open
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-20"
+    - field: conclusion
+      from: "-"
+      to: course-plan.mdを全5回の改訂案に沿って改訂した（各回ファイルはPJR-95RSで対応）
+  previous_event_id: reg_5f131ad4d1c744a095b658dae1e59ff5

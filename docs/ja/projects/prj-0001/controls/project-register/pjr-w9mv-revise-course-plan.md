@@ -2,15 +2,17 @@
 specdojo:
   id: prj-0001:pjr-w9mv-revise-course-plan
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: open
+  item_status: done
   priority: medium
   owner: BA
   registered_at: "2026-10-20T12:51:35Z"
+  completed_at: "2026-10-20T13:00:05Z"
+  conclusion: course-plan.mdを全5回の改訂案に沿って改訂した（各回ファイルはPJR-95RSで対応）
 ---
 
 # PJR-W9MV 全5回のコースプランを改訂案に沿って見直す
