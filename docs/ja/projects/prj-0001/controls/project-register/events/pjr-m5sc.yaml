@@ -32,3 +32,22 @@
     - field: due
       from: ""
       to: "2026-10-31"
+- v: 1
+  id: reg_56d1f234a5b341c1892cf75626cff7b6
+  ts: "2026-10-20T22:59:42Z"
+  action: close
+  actor: indie
+  from_status: open
+  to_status: decided
+  reason: 利用者（indie）が決定し、orchestratorが記帳した
+  changes:
+    - field: status
+      from: open
+      to: decided
+    - field: completed
+      from: "-"
+      to: "2026-10-20"
+    - field: conclusion
+      from: "-"
+      to: B案（活動単位の集約）を採用。courses/sessions/eventsの3分類、活動ディレクトリの固定構成、Slidevによるスライド生成を決定。残りはPJR-3E2Kで扱う
+  previous_event_id: reg_a94f607b96ec4a7aa767663ff120ee41

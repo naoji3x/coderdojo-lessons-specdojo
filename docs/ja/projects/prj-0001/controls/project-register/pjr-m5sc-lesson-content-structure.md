@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-m5sc-lesson-content-structure
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: decision
-  item_status: open
+  item_status: decided
   priority: medium
   owner: BA
   registered_at: "2026-10-19T11:37:02Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-20T22:59:42Z"
+  conclusion: B案（活動単位の集約）を採用。courses/sessions/eventsの3分類、活動ディレクトリの固定構成、Slidevによるスライド生成を決定。残りはPJR-3E2Kで扱う
 ---
 
 # PJR-M5SC 授業コンテンツの成果物とディレクトリ体系を決定する
