@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-95RS",
+  "run_id": "20261020T230634478Z-894d00b0",
+  "stage": {
+    "role": "executor",
+    "actor": "terra-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-20T23:07:15.449Z",
+    "completed_at": "2026-10-20T23:10:51.312Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-95rs-revise-lesson-designs.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.0530fdbc73.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.06424da9b0.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.10785149a7.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.1e4d671a01.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.2177f7c2b2.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.2477bcc5c5.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.3bc039b2e8.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.460e0556d4.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.4d0bd696f6.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.6191ae02ac.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.674e8a00bd.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.713b1a2fd9.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.825c9193af.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.87e18a5ed6.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.8bc579b5cb.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.9879b86ceb.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.9e7671f0dd.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.bc63dd128a.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.c489aee6b1.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.c65ea88f0a.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "??"
+    }
+  ],
+  "attempt_changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-95rs-revise-lesson-designs.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.0530fdbc73.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.06424da9b0.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.10785149a7.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.1e4d671a01.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.2177f7c2b2.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.2477bcc5c5.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.3bc039b2e8.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.460e0556d4.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.4d0bd696f6.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.6191ae02ac.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.674e8a00bd.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.713b1a2fd9.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.825c9193af.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.87e18a5ed6.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.8bc579b5cb.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.9879b86ceb.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.9e7671f0dd.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.bc63dd128a.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.c489aee6b1.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/node_modules/.slidev/virtual/import-glob.c65ea88f0a.ts",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "??"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 23,
+    "summary": ".../controls/project-register/pjr-95rs-revise-lesson-designs.md   | 8 +++++++-\n 1 file changed, 7 insertions(+), 1 deletion(-)"
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npx slidev build slides.md --out dist",
+      "status": "passed",
+      "summary": "Slidev 53.0.0でビルド成功。生成したdistは削除済み。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --check docs/ja/projects/prj-0001/controls/project-register/pjr-95rs-revise-lesson-designs.md",
+      "status": "passed",
+      "summary": "個票のMarkdown書式を確認。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint --disable MD013 -- docs/ja/projects/prj-0001/controls/project-register/pjr-95rs-revise-lesson-designs.md",
+      "status": "passed",
+      "summary": "個票のMarkdown lintを確認。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --check courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "passed",
+      "summary": "追加した教材Markdownの書式を確認。"
+    },
+    {
+      "source": "executor",
+      "command": "git diff --check",
+      "status": "passed",
+      "summary": "projectおよびcoderdojo-lessonsの差分に空白エラーなし。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "not_applicable",
+      "summary": "未実行。",
+      "reason": "coderdojo-lessonsのpackage.jsonにmarkdownlint-cliまたはmarkdownlintの依存がない。"
+    },
+    {
+      "source": "executor",
+      "command": "specdojo catalog validate",
+      "status": "not_applicable",
+      "summary": "未実行。",
+      "reason": "対象projectの.specdojo/specdojo.config.jsonにcatalog_pathが設定されていない。"
+    }
+  ],
+  "final_message": "第2回の風船割りゲーム用指導案・Slidevスライドを新ディレクトリ体系へ追加し、個票の対応結果を更新した。",
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-95RS/20261020T230634478Z-894d00b0/executor.log",
+      "bytes": 2428,
+      "truncated": false
+    }
+  ]
+}

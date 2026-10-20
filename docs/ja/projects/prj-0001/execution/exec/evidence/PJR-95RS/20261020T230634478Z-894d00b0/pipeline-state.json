@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-95RS",
+  "run_id": "20261020T230634478Z-894d00b0",
+  "updated_at": "2026-10-20T23:13:32.010Z",
+  "stages": {
+    "executor": {
+      "status": "succeeded",
+      "actor": "terra-executor",
+      "attempts": 1,
+      "started_at": "2026-10-20T23:07:15.449Z",
+      "completed_at": "2026-10-20T23:10:51.423Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-95RS/20261020T230634478Z-894d00b0/evidence.json"
+    },
+    "reporter": {
+      "status": "succeeded",
+      "actor": "terra-reporter",
+      "attempts": 1,
+      "started_at": "2026-10-20T23:10:51.428Z",
+      "completed_at": "2026-10-20T23:11:23.796Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/results/pjr-95rs-20261020T230634Z-d008-result.md"
+    },
+    "integrate": {
+      "status": "succeeded",
+      "actor": "terra-reporter",
+      "attempts": 3,
+      "started_at": "2026-10-20T23:13:30.202Z",
+      "completed_at": "2026-10-20T23:13:32.010Z",
+      "artifact_ref": null,
+      "repos": {
+        "project": {
+          "status": "merged",
+          "commit": null,
+          "merged_at": "2026-10-20T23:13:31.586Z"
+        },
+        "coderdojo-lessons": {
+          "status": "merged",
+          "commit": "f45ef82d22c06c29edd64bd8425f273729c36469",
+          "merged_at": "2026-10-20T23:13:31.583Z"
+        }
+      }
+    }
+  },
+  "artifacts": {
+    "plan_ref": "docs/ja/projects/prj-0001/execution/exec/plans/pjr-95rs-20261020T230634Z-d008-plan.md",
+    "result_ref": "docs/ja/projects/prj-0001/execution/exec/results/pjr-95rs-20261020T230634Z-d008-result.md"
+  }
+}
