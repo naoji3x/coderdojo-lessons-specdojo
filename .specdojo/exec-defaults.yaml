@@ -4,7 +4,7 @@ rate_limit_detection:
   exit_codes: []
   stderr_patterns:
     - rate limit
-    - '429'
+    - "429"
 rate_limit_policy:
   cooldown_seconds:
     rate_limit: 900
@@ -35,7 +35,7 @@ providers:
     rate_limit_detection:
       stderr_patterns:
         - rate limit
-        - '429'
+        - "429"
         - overloaded
         - session limit
   codex:
@@ -51,7 +51,7 @@ providers:
     rate_limit_detection:
       stderr_patterns:
         - rate limit
-        - '429'
+        - "429"
         - session limit
         - weekly limit
         - usage limit
@@ -78,7 +78,7 @@ providers:
     rate_limit_detection:
       stderr_patterns:
         - rate limit
-        - '429'
+        - "429"
         - quota
         - RESOURCE_EXHAUSTED
   copilot:
@@ -91,6 +91,6 @@ providers:
     rate_limit_detection:
       stderr_patterns:
         - rate limit
-        - '429'
+        - "429"
         - quota
         - premium request
