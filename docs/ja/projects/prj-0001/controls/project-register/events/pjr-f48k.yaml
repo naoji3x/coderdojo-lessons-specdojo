@@ -32,3 +32,32 @@
     - field: due
       from: ""
       to: "2026-10-31"
+- v: 1
+  id: reg_01abfe542ddd4bdb8e77f90d242fe911
+  ts: "2026-10-20T13:09:00Z"
+  action: start
+  actor: terra-executor
+  from_status: open
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: open
+      to: in-progress
+  previous_event_id: reg_6928273e8bc84755aa65e71902d9423a
+- v: 1
+  id: reg_5b0752a87efe4b579c8b2dd66fb29bf9
+  ts: "2026-10-20T13:17:44Z"
+  action: wait
+  actor: terra-executor
+  from_status: in-progress
+  to_status: waiting
+  reason: "agent exited with non-zero code: executor validation failed or not run: npm install --save-dev lefthook --cache /tmp/pjr-f48k-npm-cache --loglevel=error"
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: "agent exited with non-zero code: executor validation failed or not run: npm install --save-dev lefthook --cache /tmp/pjr-f48k-npm-cache --loglevel=error"
+  previous_event_id: reg_01abfe542ddd4bdb8e77f90d242fe911
