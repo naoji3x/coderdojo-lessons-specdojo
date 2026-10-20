@@ -9,6 +9,7 @@ specdojo:
   item_type: todo
   item_status: open
   priority: medium
+  owner: BA
   registered_at: "2026-10-20T12:51:35Z"
 ---
 
