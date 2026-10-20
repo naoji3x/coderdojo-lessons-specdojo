@@ -10,13 +10,17 @@
     "orch:codex": "specdojo orchestrator launch --provider codex -- \"$(cat .specdojo/codex/orchestrator.md)\"",
     "orch:opencode": "specdojo orchestrator launch --provider opencode -- --agent specdojo-orchestrator",
     "orch:agy": "specdojo orchestrator launch --provider antigravity -- --add-dir \"$(pwd)\" -i \"$(cat .specdojo/antigravity/orchestrator.md)\"",
-    "orch:copilot": "specdojo orchestrator launch --provider copilot -- --agent specdojo-orchestrator"
+    "orch:copilot": "specdojo orchestrator launch --provider copilot -- --agent specdojo-orchestrator",
+    "prepare": "lefthook install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "lefthook": "^2.2.2",
+    "markdownlint-cli": "^0.49.1",
+    "prettier": "^3.9.10",
     "specdojo": "^0.4.0"
   },
   "dependencies": {

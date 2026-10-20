@@ -1,0 +1,9 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: format documentation and configuration
+      glob: "*.{md,json,yml,yaml}"
+      run: npx prettier --check {staged_files}
+    - name: lint Markdown documentation
+      glob: "*.md"
+      run: npx markdownlint --disable MD013 -- {staged_files}
