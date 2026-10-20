@@ -74,7 +74,7 @@ specdojo:
 
 - `prepare-commit-msg` hook は、lefthook が見つからないときに `pnpm lefthook` を呼び出し、`pnpm install` によって `pnpm-lock.yaml` を作っていた。close 後に、`pnpm-lock.yaml` と hook を削除し、`node_modules` を `npm ci` で作り直した。
 - 両リポジトリの develop の push は利用者が行う。
-- `.specdojo/exec-defaults.yaml` と `.specdojo/specdojo.config.json` は prettier の書式になっておらず、編集して commit すると pre-commit hook で止まる。整形するか対象外にするかは未決定。
+- `.specdojo/exec-defaults.yaml` と `.specdojo/specdojo.config.json` が prettier の書式になっておらず、編集して commit すると pre-commit hook で止まる状態だった。prettier で整形した（commit `bed3a5b`、merge `82a2525`）。変更は引用符と配列の書式だけで、設定値が変わっていないことをパース結果の比較で確認した。
 
 ### 4.5. close 後の追加修正
 
