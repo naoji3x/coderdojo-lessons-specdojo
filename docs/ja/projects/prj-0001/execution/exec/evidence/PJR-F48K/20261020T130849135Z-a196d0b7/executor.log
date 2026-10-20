@@ -1,0 +1,2 @@
+<specdojo_executor_evidence>
+{"final_message":"blocked: Lefthookのnpm取得がDNSエラー（EAI_AGAIN）で失敗し、両リポジトリの再現可能な依存・lockfileを更新できないため、成果物は変更していません。","validations":[{"command":"npm install --save-dev lefthook --cache /tmp/pjr-f48k-npm-cache --loglevel=error","status":"failed","summary":"npm registryへの取得がEAI_AGAINで失敗。","reason":"ネットワーク/DNSが利用できず、Lefthookパッケージを導入できない。"}]}</specdojo_executor_evidence>

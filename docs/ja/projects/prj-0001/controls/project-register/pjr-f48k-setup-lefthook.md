@@ -35,16 +35,44 @@ specdojo:
 
 ## 3. 作業内容
 
-| No  | 作業   | 担当   | 状態 | メモ |
-| --- | ------ | ------ | ---- | ---- |
-| 1   | 両リポジトリの依存・既存 hook・検証コマンドを調査する | DEV | open | 未コミットの既存変更を保護する |
-| 2   | Lefthook を開発依存に追加し、依存導入時の hook 登録を整備する | DEV | open | package.json と lockfile を更新する |
-| 3   | 各リポジトリに適した検証 hook を設定する | DEV | open | 調査結果をもとに検証内容と実行条件を決める |
-| 4   | hook の成功・失敗と再導入時の動作を確認し、結果を記録する | DEV | open | 既存の開発フローへの影響も確認する |
+| No  | 作業                                                          | 担当 | 状態 | メモ                                                          |
+| --- | ------------------------------------------------------------- | ---- | ---- | ------------------------------------------------------------- |
+| 1   | 両リポジトリの依存・既存 hook・検証コマンドを調査する         | DEV  | done | terra-executor が調査し、検証内容を提案した                   |
+| 2   | Lefthook を開発依存に追加し、依存導入時の hook 登録を整備する | DEV  | done | orchestrator が反映した                                       |
+| 3   | 各リポジトリに適した検証 hook を設定する                      | DEV  | done | agent の提案をもとに、orchestrator がグロブを修正して反映した |
+| 4   | hook の成功・失敗と再導入時の動作を確認し、結果を記録する     | DEV  | done | orchestrator が本体で確認した                                 |
 
 ## 4. 対応結果
 
--
+### 4.1. 実施経路
+
+- `exec run --register PJR-F48K --worktree` で terra-executor が実行した。初回は agent の sandbox がネットワークを遮断しており、`npm install --save-dev lefthook` が `EAI_AGAIN` で失敗して waiting になった。
+- orchestrator が worktree に lefthook を導入し、`--resume --resume-from executor` で再開した。agent は設定を作成したが、`package.json` と `lefthook.yml` は保護対象のため、runner の `agent-config-write` が止めて waiting になった。
+- 保護対象の変更は、agent の提案を orchestrator がレビューして修正した版を、各リポジトリの `feature/prj-0001/setup-lefthook` で commit し、develop へ merge した。agent の exec ブランチは merge していない。agent の記録は `execution/exec/evidence/PJR-F48K/` に残した。
+
+### 4.2. 成果物
+
+| リポジトリ                   | commit    | merge     | pre-commit の検証                                                                                                               |
+| ---------------------------- | --------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `coderdojo-lessons-specdojo` | `c32879b` | `bedc1ad` | ステージ済みの `md/json/yml/yaml` を prettier で検査し、`md` を markdownlint（MD013 は除外）で検査する                          |
+| `coderdojo-lessons`          | `443457a` | `5f53102` | `scripts/` 配下の `.ts` が変更されたときに `tsc --noEmit` を実行し、ステージ済みの `md/ts/json/yml/yaml` を prettier で検査する |
+
+- 両リポジトリで `lefthook` を開発依存に加え、`prepare` script で `lefthook install` を実行する。
+- 検査ツール（specdojo: `prettier`・`markdownlint-cli`、coderdojo-lessons: `prettier`・`typescript`）は推移的依存に頼らず、直接の開発依存として宣言した。
+- agent の提案からの修正点は次の2つ。
+  - coderdojo-lessons の prettier のグロブを `**/*.{...}` から `*.{...}` に変えた。`**/` はルート直下のファイルに一致しないため。
+  - 型検査のグロブを `scripts/*.ts` と `scripts/**/*.ts` の2つにした。`scripts/` 直下のファイルに一致させるため。
+
+### 4.3. 検証
+
+- 両リポジトリの本体で `npm install` を実行し、`prepare` で `pre-commit` hook が登録されることを確認した。
+- 正常な入力（`package.json`、`lefthook.yml`、`scripts/convert_pngs_with_vtracer.ts` など）で hook が成功し、書式違反を含む一時的な Markdown をステージしたときに `pre-commit` が終了コード 1 で失敗することを確認した。一時ファイルは削除済み。
+- coderdojo-lessons の既存の `prepare-commit-msg` hook は以前の lefthook が生成したもので、lefthook の導入後は警告を出さずに終了コード 0 で終わる。
+
+### 4.4. 残課題
+
+- `prepare-commit-msg` hook は新しい設定にないが、`.git/hooks` に残っている。動作に影響はない。
+- 両リポジトリの develop の push は利用者が行う。
 
 ## 5. 関連ドキュメント
 

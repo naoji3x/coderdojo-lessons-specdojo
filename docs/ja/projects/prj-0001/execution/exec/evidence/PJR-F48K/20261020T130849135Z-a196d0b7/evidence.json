@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-F48K",
+  "run_id": "20261020T130849135Z-a196d0b7",
+  "stage": {
+    "role": "executor",
+    "actor": "terra-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-20T13:11:21.282Z",
+    "completed_at": "2026-10-20T13:17:34.159Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [],
+  "attempt_changes": [],
+  "diff_summary": {
+    "files_changed": 0,
+    "summary": ""
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npm install --save-dev lefthook --cache /tmp/pjr-f48k-npm-cache --loglevel=error",
+      "status": "failed",
+      "summary": "npm registryへの取得がEAI_AGAINで失敗。"
+    }
+  ],
+  "final_message": "blocked: Lefthookのnpm取得がDNSエラー（EAI_AGAIN）で失敗し、両リポジトリの再現可能な依存・lockfileを更新できないため、成果物は変更していません。",
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-F48K/20261020T130849135Z-a196d0b7/executor.log",
+      "bytes": 566,
+      "truncated": false
+    }
+  ]
+}

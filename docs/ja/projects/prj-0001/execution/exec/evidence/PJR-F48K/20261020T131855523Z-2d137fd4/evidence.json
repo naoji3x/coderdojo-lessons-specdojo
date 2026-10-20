@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-F48K",
+  "run_id": "20261020T131855523Z-2d137fd4",
+  "stage": {
+    "role": "executor",
+    "actor": "terra-executor",
+    "status": "failed",
+    "started_at": "2026-10-20T13:18:55.523Z",
+    "completed_at": "2026-10-20T13:26:23.862Z",
+    "exit_code": 1,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/events/pjr-f48k.yaml",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-f48k-setup-lefthook.md",
+      "status": "M"
+    },
+    {
+      "path": "package-lock.json",
+      "status": "M"
+    },
+    {
+      "path": "package.json",
+      "status": "M"
+    },
+    {
+      "path": "lefthook.yml",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:lefthook.yml",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:package-lock.json",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:package.json",
+      "status": "M"
+    }
+  ],
+  "attempt_changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-f48k-setup-lefthook.md",
+      "status": "M"
+    },
+    {
+      "path": "package.json",
+      "status": "M"
+    },
+    {
+      "path": "lefthook.yml",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:lefthook.yml",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:package.json",
+      "status": "M"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 8,
+    "summary": ".../controls/project-register/events/pjr-f48k.yaml |  16 ++\n .../project-register/pjr-f48k-setup-lefthook.md    |  31 ++--\n .../pjr-f48k-20261020T130849Z-a9be-result.md       | 124 ++++++++++++++\n package-lock.json                                  | 179 +++++++++++++++++++++\n package.json                                       |   2 +\n 5 files changed, 343 insertions(+), 9 deletions(-)\n[coderdojo-lessons]\nlefthook.yml      |  51 +++-------------\n package-lock.json | 179 ++++++++++++++++++++++++++++++++++++++++++++++++++++++\n package.json      |   2 +\n 3 files changed, 190 insertions(+), 42 deletions(-)"
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npm ci --ignore-scripts --dry-run --offline",
+      "status": "passed",
+      "summary": "Lockfile dry-run succeeded in both repositories."
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --write package.json package-lock.json lefthook.yml docs/ja/projects/prj-0001/controls/project-register/pjr-f48k-setup-lefthook.md docs/ja/projects/prj-0001/controls/project-register/events/pjr-f48k.yaml",
+      "status": "passed",
+      "summary": "Project changed JSON, YAML, and Markdown files are formatted."
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint --disable MD013 -- docs/ja/projects/prj-0001/controls/project-register/pjr-f48k-setup-lefthook.md",
+      "status": "passed",
+      "summary": "Updated project-register document passes Markdown lint; MD013 is excluded for existing long table and identifier lines."
+    },
+    {
+      "source": "executor",
+      "command": "lefthook validate && lefthook run pre-commit --force",
+      "status": "passed",
+      "summary": "Both configurations validate and their normal pre-commit jobs succeed."
+    },
+    {
+      "source": "executor",
+      "command": "lefthook run pre-commit --force --job 'format documentation and configuration' --file tmp/pjr-f48k-invalid.yml",
+      "status": "passed",
+      "summary": "Project hook correctly failed for a temporary improperly formatted YAML input; the file was removed."
+    },
+    {
+      "source": "executor",
+      "command": "lefthook run pre-commit --force --job 'typecheck TypeScript scripts' --file scripts/pjr-f48k-invalid.ts",
+      "status": "passed",
+      "summary": "Product hook correctly failed for a temporary TypeScript type error; the file was removed."
+    },
+    {
+      "source": "executor",
+      "command": "npm run prepare",
+      "status": "requires_human",
+      "summary": "Both repositories define and invoke lefthook install, but the sandbox cannot write either worktree's .git/hooks directory; confirm hook registration with host-side npm install."
+    },
+    {
+      "source": "executor",
+      "command": "npm test",
+      "status": "not_applicable",
+      "summary": "Project test command was not run.",
+      "reason": "The project test script is the npm init placeholder and is treated as absent."
+    },
+    {
+      "source": "executor",
+      "command": "npm --prefix \"$SPECDOJO_REPO_CODERDOJO_LESSONS\" test",
+      "status": "not_applicable",
+      "summary": "Product test command was not run.",
+      "reason": "The product package.json has no test script."
+    },
+    {
+      "source": "executor",
+      "command": "specdojo catalog validate",
+      "status": "not_applicable",
+      "summary": "Catalog validation was not run.",
+      "reason": "The target project has no catalog_path in .specdojo/specdojo.config.json."
+    }
+  ],
+  "final_message": "Lefthook dependencies, prepare scripts, and pre-commit configurations were added to both repositories; project documentation was updated. Configurations, normal hook runs, rejection of temporary invalid inputs, formatting, linting, and lockfile dry-runs were verified. Actual Git-hook installation remains unverified because sandbox permissions make both .git/hooks directories read-only; run npm install on the host to confirm registration.",
+  "block_reason": "agent exited with non-zero code: agent-config-write: protected configuration changes detected; paths=lefthook.yml, package.json, coderdojo-lessons:lefthook.yml, coderdojo-lessons:package.json; agent must record the required change in the result handoff for human or orchestrator application",
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-F48K/20261020T131855523Z-2d137fd4/executor.log",
+      "bytes": 3018,
+      "truncated": false
+    }
+  ]
+}
