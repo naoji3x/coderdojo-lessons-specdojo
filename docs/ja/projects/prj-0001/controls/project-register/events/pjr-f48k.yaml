@@ -93,3 +93,35 @@
       from: "-"
       to: "agent exited with non-zero code: executor validation failed or not run: npm install --save-dev lefthook --cache /tmp/pjr-f48k-npm-cache --loglevel=error"
   previous_event_id: reg_bf3daef2353142b29ac287d487e7dcef
+- v: 1
+  id: reg_04533a844f194a19be24b09972d4bec1
+  ts: "2026-10-20T13:18:54Z"
+  action: start
+  actor: terra-executor
+  from_status: waiting
+  to_status: in-progress
+  reason: executor resumed
+  changes:
+    - field: status
+      from: waiting
+      to: in-progress
+    - field: block_reason
+      from: "agent exited with non-zero code: executor validation failed or not run: npm install --save-dev lefthook --cache /tmp/pjr-f48k-npm-cache --loglevel=error"
+      to: "-"
+  previous_event_id: reg_ac7b8c84cf6b4c9387a65b789183446b
+- v: 1
+  id: reg_0d1347f43fc44f309d9fc2bb874489bf
+  ts: "2026-10-20T13:26:25Z"
+  action: wait
+  actor: terra-executor
+  from_status: in-progress
+  to_status: waiting
+  reason: "agent exited with non-zero code: agent exited with non-zero code: agent-config-write: protected configuration changes detected; paths=lefthook.yml, package.json, coderdojo-lessons:lefthook.yml, coderd…"
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: "agent exited with non-zero code: agent exited with non-zero code: agent-config-write: protected configuration changes detected; paths=lefthook.yml, package.json, coderdojo-lessons:lefthook.yml, coderd…"
+  previous_event_id: reg_04533a844f194a19be24b09972d4bec1

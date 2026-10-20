@@ -12,7 +12,7 @@ specdojo:
   owner: DEV
   registered_at: "2026-10-19T11:28:14Z"
   due_on: "2026-10-31"
-  block_reason: "agent exited with non-zero code: executor validation failed or not run: npm install --save-dev lefthook --cache /tmp/pjr-f48k-npm-cache --loglevel=error"
+  block_reason: "agent exited with non-zero code: agent exited with non-zero code: agent-config-write: protected configuration changes detected; paths=lefthook.yml, package.json, coderdojo-lessons:lefthook.yml, coderd…"
 ---
 
 # PJR-F48K 両リポジトリにLefthookと検証hookを整備する
