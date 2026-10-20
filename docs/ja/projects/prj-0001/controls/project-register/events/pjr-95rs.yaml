@@ -60,3 +60,32 @@
       from: "[\"PJR-W9MV\"]"
       to: "[\"PJR-W9MV\",\"PJR-M5SC\"]"
   previous_event_id: reg_94136f86c5784b26a4d44a237ca8336d
+- v: 1
+  id: reg_12ca1e8630ad484b92d5d05209104d1d
+  ts: "2026-10-20T23:06:35Z"
+  action: start
+  actor: terra-executor
+  from_status: open
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: open
+      to: in-progress
+  previous_event_id: reg_0b74b27dc45849afbef692acd7072644
+- v: 1
+  id: reg_292e8f5749d346b08351cc1fa199cb4c
+  ts: "2026-10-20T23:11:24Z"
+  action: wait
+  actor: terra-executor
+  from_status: in-progress
+  to_status: waiting
+  reason: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-95rs-20261020T230634Z-d008-result.md:25:81 error MD013/line-length Lin…"
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-95rs-20261020T230634Z-d008-result.md:25:81 error MD013/line-length Lin…"
+  previous_event_id: reg_12ca1e8630ad484b92d5d05209104d1d
