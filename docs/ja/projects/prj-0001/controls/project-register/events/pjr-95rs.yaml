@@ -35,3 +35,28 @@
     - field: derived_from
       from: ""
       to: "[\"PJR-W9MV\"]"
+- v: 1
+  id: reg_0b74b27dc45849afbef692acd7072644
+  ts: "2026-10-20T23:05:16Z"
+  action: update
+  actor: orchestrator
+  from_status: open
+  to_status: open
+  reason: PJR-M5SCの決定に合わせ、1つの活動を試作する項目に範囲を変更
+  changes:
+    - field: title
+      from: 各回の授業設計ファイルを全5回の新構成に合わせて改訂する
+      to: 第2回の授業を新しいディレクトリ体系で試作する
+    - field: description
+      from: 改訂したcourse-plan.mdに合わせ、coderdojo-lessonsのdocs/course-design/010〜050の各回授業設計を新しい内容へ改訂する。ファイル名・配置はPJR-M5SCの決定に従う。
+      to: PJR-M5SCで決めた活動ディレクトリの構成とSlidevで、第2回（風船割りゲーム）の指導案とスライドを試作し、残りの回の書き方と移行の判断材料にする。
+    - field: owner
+      from: _TODO_
+      to: BA
+    - field: due
+      from: _TODO_
+      to: "2026-10-31"
+    - field: derived_from
+      from: "[\"PJR-W9MV\"]"
+      to: "[\"PJR-W9MV\",\"PJR-M5SC\"]"
+  previous_event_id: reg_94136f86c5784b26a4d44a237ca8336d

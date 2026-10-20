@@ -9,16 +9,19 @@ specdojo:
   item_type: todo
   item_status: open
   priority: medium
+  owner: BA
   registered_at: "2026-10-20T12:59:14Z"
+  due_on: "2026-10-31"
   derived_from:
     - PJR-W9MV
+    - PJR-M5SC
 ---
 
-# PJR-95RS 各回の授業設計ファイルを全5回の新構成に合わせて改訂する
+# PJR-95RS 第2回の授業を新しいディレクトリ体系で試作する
 
 ## 1. 概要
 
-改訂したcourse-plan.mdに合わせ、coderdojo-lessonsのdocs/course-design/010〜050の各回授業設計を新しい内容へ改訂する。ファイル名・配置はPJR-M5SCの決定に従う。
+PJR-M5SCで決めた活動ディレクトリの構成とSlidevで、第2回（風船割りゲーム）の指導案とスライドを試作し、残りの回の書き方と移行の判断材料にする。
 
 ## 2. 完了条件
 
