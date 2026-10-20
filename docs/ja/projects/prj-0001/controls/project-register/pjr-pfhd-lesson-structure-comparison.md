@@ -22,7 +22,7 @@ specdojo:
 
 PJR-M5SCの判断材料として3案と成果物配置を比較し、推奨構成・移行方針をまとめる。最終決定とファイル移動は行わない。
 
-入力は [[prj-0001:pjr-m5sc-lesson-content-structure]] と、宣言済み `coderdojo-lessons` リポジトリの現状。成果物はこの個票の対応結果にまとめ、比較表・構成例・成果物の配置表を記入する。大きい場合は同じ登録簿ディレクトリに `analysis-pfhd-lesson-structure-comparison.md` を作成し、この個票から参照する。補足資料は個票と誤認されないファイル名にする。
+入力は [[prj-0001:pjr-m5sc-lesson-content-structure]] と、宣言済み `coderdojo-lessons` リポジトリの現状。比較表・構成例・成果物配置表・推奨案は意思決定の判断材料として PJR-M5SC の個票に集約し、この個票の対応結果から参照する。
 
 対象リポジトリの参照元ファイル、ブランチ、commit を記録し、観測した事実と新しい提案を区別する。移動・実装・設定変更は行わない。PJR-M5SC の決定内容・承認欄を確定せず、状態は open のまま保持する。未承認の推奨案を合意済みと扱わない。
 
@@ -45,7 +45,7 @@ PJR-M5SCの判断材料として3案と成果物配置を比較し、推奨構�
 
 ## 4. 対応結果
 
-比較・推奨案を [[prj-0001:pjr-pfhd-lesson-structure-comparison-analysis|PJR-PFHD 授業コンテンツのディレクトリ体系比較・推奨案]] に記録した。
+比較・推奨案を [[prj-0001:pjr-m5sc-lesson-content-structure|PJR-M5SC 授業コンテンツの成果物とディレクトリ体系を決定する]] の背景・選択肢・フォローアップに集約した。独立した補足ファイルは削除し、判断材料と決定記録を同じ個票で確認できるようにした。
 
 - `coderdojo-lessons` の `exec/prj-0001-PJR-PFHD`、`6f58ebaaa601ee2b5c55930af9241f39f7dae6ea` を参照し、現状と提案を分離した。
 - A・B・C を同一の評価軸と、複数回コース・単発授業・講演・Scratch 以外の構成例で比較した。
