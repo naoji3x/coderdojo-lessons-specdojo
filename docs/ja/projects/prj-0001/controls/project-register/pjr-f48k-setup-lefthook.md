@@ -72,8 +72,14 @@ specdojo:
 
 ### 4.4. 残課題
 
-- `prepare-commit-msg` hook は新しい設定にないが、`.git/hooks` に残っている。動作に影響はない。
+- `prepare-commit-msg` hook は、lefthook が見つからないときに `pnpm lefthook` を呼び出し、`pnpm install` によって `pnpm-lock.yaml` を作っていた。close 後に、`pnpm-lock.yaml` と hook を削除し、`node_modules` を `npm ci` で作り直した。
 - 両リポジトリの develop の push は利用者が行う。
+- `.specdojo/exec-defaults.yaml` と `.specdojo/specdojo.config.json` は prettier の書式になっておらず、編集して commit すると pre-commit hook で止まる。整形するか対象外にするかは未決定。
+
+### 4.5. close 後の追加修正
+
+- specdojo CLI が追記する登録簿のイベントログ（`events/*.yaml`）を、prettier の検査が整形対象として扱い、PJR-PFHD の `register close --commit` が止まった。派生元（`derived_from`）を持つ項目のイベントで発生する。導入時の検証で見落としていた。
+- イベントログは CLI の書式を正とする追記専用の記録のため、`.prettierignore` で検査対象から外した（commit `e2ef2bc`、merge `bc48560`）。
 
 ## 5. 関連ドキュメント
 
