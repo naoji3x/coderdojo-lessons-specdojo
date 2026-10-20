@@ -2,7 +2,7 @@
   "schema_version": 1,
   "task_id": "PJR-95RS",
   "run_id": "20261020T230634478Z-894d00b0",
-  "updated_at": "2026-10-20T23:12:27.555Z",
+  "updated_at": "2026-10-20T23:13:30.202Z",
   "stages": {
     "executor": {
       "status": "succeeded",
@@ -23,16 +23,21 @@
     "integrate": {
       "status": "running",
       "actor": "terra-reporter",
-      "attempts": 2,
-      "started_at": "2026-10-20T23:12:27.555Z",
+      "attempts": 3,
+      "started_at": "2026-10-20T23:13:30.202Z",
       "completed_at": null,
       "artifact_ref": null,
       "repos": {
         "project": {
+          "status": "pending",
+          "commit": null,
+          "merged_at": null
+        },
+        "coderdojo-lessons": {
           "status": "failed",
           "commit": null,
           "merged_at": null,
-          "error": "Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-95rs-20261020T230634Z-d008-result.md:25:81 error MD013/line-length Line length [Expected: 80; Actual: 105] docs/ja/projects/prj-0001/execution/exec/results/pjr-95rs-20261020T230634Z-d008-result.md:26:81 error MD013/line-length Line length [Expected: 80; Actual: 156] docs/ja/projects/prj-0001/execution/exec/results/pjr-95rs-20261020T230634Z-d008-result.md:27:81 error MD013/line-length Line length [Expected: 80; Actual: 156] docs/ja/projects/prj-0001/execution/exec/results/pjr-95rs-20261020T230634Z-d008-result.md:28:81 error MD013/line-length Line length [Expected: 80; Actual: 156] docs/ja/projects/prj-0001/execution/exec/results/pjr-95rs-20261020T230634Z-d008-result.md:29:81 error MD013/line-length Line length [Expected: 80; Actual: 156] docs/ja/projects/prj-0001/execution/exec/results/pjr-95rs-20261020T230634Z-d008-result.md:30:81 error MD013/line-length Line length [Expected: 80; Actual: 156] docs/ja/projects/prj-0001/execution/exec"
+          "error": "uncommitted changes outside the commit scope: coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md, coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md"
         }
       }
     }
