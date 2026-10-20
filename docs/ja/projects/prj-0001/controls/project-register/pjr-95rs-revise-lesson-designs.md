@@ -7,11 +7,12 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: in-progress
+  item_status: waiting
   priority: medium
   owner: BA
   registered_at: "2026-10-20T12:59:14Z"
   due_on: "2026-10-31"
+  block_reason: "integrate failed: coderdojo-lessons: pre-integration check failed (no repository was integrated in this attempt): coderdojo-lessons: uncommitted changes outside the commit scope: coderdojo-lessons:cou…"
   derived_from:
     - PJR-W9MV
     - PJR-M5SC
