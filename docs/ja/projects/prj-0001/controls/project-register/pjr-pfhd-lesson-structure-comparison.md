@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-pfhd-lesson-structure-comparison
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   owner: BA
   registered_at: "2026-10-19T11:45:34Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-20T13:42:58Z"
+  conclusion: 3案の比較とB案推奨（未承認）をPJR-M5SCに集約した。配置表と命名規約の不整合はPJR-M5SCの確認事項へ申し送り
   derived_from:
     - PJR-M5SC
 ---

@@ -93,3 +93,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_ce97a137962a4bf2a58d62120111fda8
+- v: 1
+  id: reg_ffa49d63aac94669abe4697e1bddca8b
+  ts: "2026-10-20T13:42:58Z"
+  action: close
+  actor: orchestrator
+  from_status: review
+  to_status: done
+  reason: 完了条件を満たすことをレビューで確認した
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-20"
+    - field: conclusion
+      from: "-"
+      to: 3案の比較とB案推奨（未承認）をPJR-M5SCに集約した。配置表と命名規約の不整合はPJR-M5SCの確認事項へ申し送り
+  previous_event_id: reg_9698c0cea0594f97bc0834e0f9c718d3
