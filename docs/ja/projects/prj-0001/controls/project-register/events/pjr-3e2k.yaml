@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_af11d384c00f4b51855ca7b044d3c8c0
+  ts: "2026-10-20T22:58:54Z"
+  action: add
+  actor: orchestrator
+  from_status: null
+  to_status: open
+  reason: PJR-M5SCの決定に伴う移行作業として起票
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 授業コンテンツをB案のディレクトリ体系へ移行する
+    - field: description
+      from: ""
+      to: PJR-M5SCで決定したB案（courses/sessions/events、活動ディレクトリ内の固定構成、Slidev）へcoderdojo-lessonsの既存コンテンツを段階的に移行し、残りの確認事項を決める。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: _TODO_
+    - field: registered
+      from: ""
+      to: "2026-10-20"
+    - field: due
+      from: ""
+      to: _TODO_
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-M5SC\"]"
