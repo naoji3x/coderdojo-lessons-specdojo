@@ -2,17 +2,18 @@
 specdojo:
   id: prj-0001:pjr-f48k-setup-lefthook
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: waiting
+  item_status: done
   priority: medium
   owner: DEV
   registered_at: "2026-10-19T11:28:14Z"
   due_on: "2026-10-31"
-  block_reason: "agent exited with non-zero code: agent exited with non-zero code: agent-config-write: protected configuration changes detected; paths=lefthook.yml, package.json, coderdojo-lessons:lefthook.yml, coderd…"
+  completed_at: "2026-10-20T13:31:29Z"
+  conclusion: 両リポジトリにLefthookとpre-commitの検証hook（prettier・markdownlint・tsc）を導入し、npm installで登録されることを確認した
 ---
 
 # PJR-F48K 両リポジトリにLefthookと検証hookを整備する
