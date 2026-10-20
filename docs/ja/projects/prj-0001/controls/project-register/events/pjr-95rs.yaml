@@ -60,3 +60,16 @@
       from: "[\"PJR-W9MV\"]"
       to: "[\"PJR-W9MV\",\"PJR-M5SC\"]"
   previous_event_id: reg_94136f86c5784b26a4d44a237ca8336d
+- v: 1
+  id: reg_12ca1e8630ad484b92d5d05209104d1d
+  ts: "2026-10-20T23:06:35Z"
+  action: start
+  actor: terra-executor
+  from_status: open
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: open
+      to: in-progress
+  previous_event_id: reg_0b74b27dc45849afbef692acd7072644
