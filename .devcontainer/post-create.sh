@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Docker が volume の mount 先の親を root で作るため、親の持ち主も戻す（PJR-GHBP）。
+for parent in "${HOME}/.local" "${HOME}/.local/share"; do
+  if [ -d "$parent" ]; then
+    sudo chown "$(id -u):$(id -g)" "$parent"
+  fi
+done
+
 # Some installers place binaries under ~/.local/bin.
-if [ -d "${HOME}/.local/bin" ]; then
-  export PATH="${HOME}/.local/bin:${PATH}"
-fi
+mkdir -p "${HOME}/.local/bin"
+export PATH="${HOME}/.local/bin:${PATH}"
 
 # Docker creates named volume mount points as root when the image lacks them. Hand them back to
 # the container user before git config and agent installers write into them.
