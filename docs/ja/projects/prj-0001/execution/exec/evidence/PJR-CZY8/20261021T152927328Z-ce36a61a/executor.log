@@ -1,0 +1,1104 @@
+Reading prompt from stdin...
+OpenAI Codex v0.163.0
+--------
+workdir: /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-CZY8/project
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-CZY8/coderdojo-lessons]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a15f15-8435-7000-8d25-e24b9f2ac9ec
+--------
+user
+---
+specdojo:
+  id: prj-0001:xep-pjr-czy8-20261021t152927z-c4d1
+  type: exec-plan
+  rulebook: none
+  task_id: PJR-CZY8
+  name: "第2回のスライドに案内役と考え方ごとのキャラクターを入れる"
+  mode: edit
+  status: ready
+  project_id: prj-0001
+  origin: register
+  owner: BA
+---
+
+# Edit Plan: PJR-CZY8 第2回のスライドに案内役と考え方ごとのキャラクターを入れる
+
+## 1. このタスクで行うこと
+
+プロジェクト登録簿の項目 PJR-CZY8「第2回のスライドに案内役と考え方ごとのキャラクターを入れる」に対応する。
+
+[[prj-0001:pjr-6g9t-balloon-slides-design\|PJR-6G9T]] で整えた第2回（風船割りゲーム）の `slides.md` の各ページに、学校の授業らしいキャラクターを入れる。キャラクターは、ページごとに意味があり、全体で一貫した決まりに従って置く。
+
+## 2. 対象項目
+
+- `id`: PJR-CZY8
+- `type`: todo
+- `priority`: medium
+- `owner`: BA
+- `due`: 2026-10-31
+- `個票`: `docs/ja/projects/prj-0001/controls/project-register/pjr-czy8-balloon-slides-characters.md`
+- `result`: `docs/ja/projects/prj-0001/execution/exec/results/pjr-czy8-20261021T152927Z-c4d1-result.md`
+
+## 3. 進め方
+
+1. 個票（存在する場合）を読み、目的・完了条件・制約を把握する。登録簿の一覧は大きいため読まない。
+2. 個票に完了条件がある場合はそれを作業の基準にする。無い場合はタイトルと説明から完了条件の仮説を立て、その仮説を result に明記する。
+3. 関連する成果物・設計書・実装を確認し、対象ファイルを特定して変更する。
+4. 個票が存在する場合は、個票の作業内容・対応結果セクションを実施内容で更新する。
+5. 判断に迷う箇所は _TODO_ / _ASSUMPTION_ で残し、根拠と次のアクションを result に書く。
+
+### grade result から展開された finding
+
+- なし
+
+plan に展開された finding は、message と同じ viewpoint ID の判定根拠に照らして解消する。未解消、根拠不足、または判断不能の場合は、理由と次のアクションを result に記録する。grade result サイドカーは再評価時に更新されるため、本タスクでは直接編集しない。
+
+## 4. 完了手順
+
+1. 「進め方」に従って対応を完了する。
+2. 共通規約に従って、必要な整形・静的検査を実行する。
+3. result に実施内容・変更ファイル・申し送りを記入する。これはタスク完了に必須であり、_TODO_ を残したまま終了しない（詳細は共通規約を参照）。
+4. 登録簿（`pjr-index.md`）の行と個票のステータス項目は変更しない。状態遷移（review / close など）は runner と人間が行う。
+
+## 5. 異常終了の条件
+
+- 前提不足・対象ファイル不明・静的検査未解消の場合は異常終了する（終了コード 1）。
+- 標準エラー出力に理由を出力する（例: `blocked: <reason>; need=<next action>; ref=<path>`）。
+- agent 自身は登録簿の状態を変更せず、終了コードと標準エラー出力で runner に結果を返す。
+
+## 共通: 記法・成果物規約
+
+作業を始める前に、共通の規約の詳細 `node_modules/specdojo/docs/ja/specdojo/exec-templates/xep-common-conventions-template.md` を読み、その内容に従う。次の箇条書きは、そのうち守らないと失敗に直結する要点である。
+
+- result（review plan の場合は review result）への記入は、タスク完了に必須の作業である。成果物の編集とは別に、最後に必ず実施する。
+- 終了コード 0 で完了する前に、result の必須セクションをすべて実際の内容で埋め、プレースホルダ（_TODO_ など）や未記入のセクションを残さない。
+- 文書へのリンクは、対象文書が既に存在する場合は `[[id|title]]` 形式で記載する（`id` は project 修飾 doc id）。
+- リンクを表（テーブル）のセル内に置く場合は、区切りの `|` を `[[id\|title]]` のようにエスケープする。エスケープしないと列がずれて表が壊れ、prettier 整形でセルが分割されて固定化される。
+- まだ存在しない文書を参照する場合は、`[[...]]` ではなく `` `id` `` または `` `filename` `` のようにバッククォートで仮置きする。
+- Markdown の自由記述では、`_` を含む識別子・フィールド名（例: `depends_on`）を必ずインラインコードで囲む。result に描画される executor evidence や reporter の自由記述も同じ記法にする。
+- 成果物 frontmatter の `status` を `ready` に変更しない。`ready` への昇格は人間のみが行うため、`draft` のまま据え置く（exec のコミット時ガードでも昇格はブロックされる）。
+- ファイルの読み取り・書き込み・編集は、作業ディレクトリ（カレントディレクトリ）からの相対パスで指定する。絶対パスを自分で組み立てたり、作業ディレクトリ名を推測して指定したりしない（作業ディレクトリ名の取り違えは外部パス扱いになり拒否される）。
+- 検査を実行する前に、リポジトリの `package.json`、`.specdojo/specdojo.config.json`、hook 設定（`lefthook.yml` など）を読み、本共通規約の詳細にある検査表の適用条件で、実行する検査を決める。
+- 適用条件を満たさない検査は実行せず、executor evidence の validations に `not_applicable` と非適用の理由を `reason` へ記録する。適用される検査が 1 つもない場合も同じく、該当する検査ごとに `not_applicable` と理由を記録する。
+- `not_run` は、適用される検査を実行できたのに実行しなかった場合だけに使う。runner は `not_run` を検証失敗として扱い、タスクを先へ進めない。
+
+---
+
+# Pipeline executor stage instructions
+
+This invocation is the executor stage of an executor/reporter pipeline. Edit and validate the
+artifacts required by the plan, but do not create or update the result file. Any plan instruction
+that assigns result writing or lifecycle transitions to the agent belongs to the later reporter or
+runner stage and does not apply here.
+
+The parent runner owns Git commits and repository configuration. Do not run git commit or change
+local, global, or system Git configuration, including user.name and user.email. A Git state change
+will stop the pipeline before validation, reporting, commit, or merge.
+
+Do not create disposable or scratch files at the repository root; place them in `tmp/` within
+the worktree or outside the repository. Files under `tmp/` are excluded from commits.
+
+When writing Markdown in the final evidence, wrap identifiers or field names containing an
+underscore in inline code (for example, `depends_on`).
+
+
+
+
+Use validation status `requires_human` only for a check that cannot run from the agent sandbox,
+such as launching a real agent CLI, consuming a usage quota or incurring a charge, or requiring
+credentials or a host-side operation. Do not use it for a check that could run but was skipped;
+report that as `not_run`. A `requires_human` check is carried into the result as a human handoff
+and does not block pipeline completion.
+
+Use validation status `not_applicable` when the repository does not meet a check's applicability
+conditions, and include a non-empty `reason`. The runner carries it into the result without
+blocking completion, but rejects the claim when it can confirm the check applies:
+- `npm run <script>` / `npm test`: the script exists in package.json. The placeholder `test`
+  script that `npm init` writes (`echo "Error: no test specified" && exit 1`) counts as absent.
+- `npx <package>`: the package is in package.json dependencies or devDependencies.
+- A command that targets a declared product repository (a `<repo>:<path>` argument or
+  `--prefix <repo>`) is judged by that repository's package.json, not the project repository's.
+- `specdojo catalog validate`: the run's target project (or `--project <id>`) sets `catalog_path`
+  and your changes reach `docs/ja/projects/`. A project without `catalog_path`, or changes
+  outside `docs/ja/projects/`, is a valid reason; state it in `reason`.
+
+Do not run or report `specdojo index build`. It writes `.specdojo/doc-index.json`, which the
+agent may not write, and the runner regenerates the index while preparing the worktree and before
+integration.
+
+End the final response with exactly one machine-readable report using this envelope. Do not place
+Markdown fences around the JSON.
+
+<specdojo_executor_evidence>
+{"final_message":"concise outcome","validations":[{"command":"exact command","status":"passed|failed|not_run|not_applicable|requires_human","summary":"concise result or required human check","reason":"required when status is not_applicable"}]}
+</specdojo_executor_evidence>
+
+# Task repositories
+
+This task spans several repositories. The working directory is the project repository worktree. The product repositories are checked out as separate worktrees of the same task:
+
+- `coderdojo-lessons`: /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-CZY8/coderdojo-lessons (environment variable `SPECDOJO_REPO_CODERDOJO_LESSONS`)
+
+Edit product files under those absolute paths (or via the environment variables); paths relative to the working directory refer to the project repository only. When reporting a product file (for example in target_coverage), write it as `<repo>:<path>` relative to that repository root, e.g. `coderdojo-lessons:src/index.ts`. Do not commit or change Git configuration in any repository.
+
+warning: Codex could not find bubblewrap on PATH. Install bubblewrap with your OS package manager. See the sandbox prerequisites: https://developers.openai.com/codex/concepts/sandboxing#prerequisites. Codex will use the bundled bubblewrap in the meantime.
+codex
+対象の個票・共通規約・第2回スライドを確認し、キャラクターの役割を一貫させたうえで編集と必要な検査を行います。
+exec
+/bin/bash -lc "sed -n '1,260p' node_modules/specdojo/docs/ja/specdojo/exec-templates/xep-common-conventions-template.md && rg --files -g 'AGENTS.md' -g 'package.json' -g '.specdojo/specdojo.config.json' -g 'lefthook.yml' -g 'pjr-czy8-balloon-slides-characters.md' -g 'slides.md'" in /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-CZY8/project
+ succeeded in 0ms:
+## 共通: 記法・成果物規約
+
+この規約は、生成される全 exec plan に共通で適用される。result の完了条件、他文書を参照する際のリンク記法、成果物の状態（status）の扱いを統一する。
+
+要点（次の `plan-essentials` マーカーの間の箇条書き）は、plan の本文にもそのまま転記される。plan に転記するとき、`_SCHEMA_REF_` はタスクごとに解決した schema のパスに置き換わり、schema の無いタスクではその行が除かれる。
+
+<!-- plan-essentials:start -->
+
+- result（review plan の場合は review result）への記入は、タスク完了に必須の作業である。成果物の編集とは別に、最後に必ず実施する。
+- 終了コード 0 で完了する前に、result の必須セクションをすべて実際の内容で埋め、プレースホルダ（_TODO_ など）や未記入のセクションを残さない。
+- 文書へのリンクは、対象文書が既に存在する場合は `[[id|title]]` 形式で記載する（`id` は project 修飾 doc id）。
+- リンクを表（テーブル）のセル内に置く場合は、区切りの `|` を `[[id\|title]]` のようにエスケープする。エスケープしないと列がずれて表が壊れ、prettier 整形でセルが分割されて固定化される。
+- まだ存在しない文書を参照する場合は、`[[...]]` ではなく `` `id` `` または `` `filename` `` のようにバッククォートで仮置きする。
+- Markdown の自由記述では、`_` を含む識別子・フィールド名（例: `depends_on`）を必ずインラインコードで囲む。result に描画される executor evidence や reporter の自由記述も同じ記法にする。
+- 成果物 frontmatter の `status` を `ready` に変更しない。`ready` への昇格は人間のみが行うため、`draft` のまま据え置く（exec のコミット時ガードでも昇格はブロックされる）。
+- ファイルの読み取り・書き込み・編集は、作業ディレクトリ（カレントディレクトリ）からの相対パスで指定する。絶対パスを自分で組み立てたり、作業ディレクトリ名を推測して指定したりしない（作業ディレクトリ名の取り違えは外部パス扱いになり拒否される）。
+- 検査を実行する前に、リポジトリの `package.json`、`.specdojo/specdojo.config.json`、hook 設定（`lefthook.yml` など）を読み、本共通規約の詳細にある検査表の適用条件で、実行する検査を決める。
+- 適用条件を満たさない検査は実行せず、executor evidence の validations に `not_applicable` と非適用の理由を `reason` へ記録する。適用される検査が 1 つもない場合も同じく、該当する検査ごとに `not_applicable` と理由を記録する。
+- `not_run` は、適用される検査を実行できたのに実行しなかった場合だけに使う。runner は `not_run` を検証失敗として扱い、タスクを先へ進めない。
+- YAML 成果物を編集した場合、対応 schema `_SCHEMA_REF_` に従って記述する。`package.json` に `validate:schema:file` script がある場合だけ、`npm run validate:schema:file -- --schema _SCHEMA_REF_ --data <対象ファイル>` で schema 検査を実施する。適用した検査でエラーが出た場合は修正してから完了とする。
+
+<!-- plan-essentials:end -->
+
+- 成果物に変更が不要と判断した場合でも、result の記入は省略しない。変更不要と判断した理由と根拠を result に記入してから完了する。
+- result の変更ファイル欄には、変更したファイル（成果物・ソース・テストなど）ごとの実施内容を具体的に記入する。
+- result が未記入・プレースホルダのまま終了コード 0 で終了すると、runner は成果物未完了（block）として扱い、タスクはやり直しになる。完了前に result の記入漏れがないことを必ず確認する。
+- result の frontmatter は scaffold 済みの構造を正本とする。`id` / `task_id` / `mode` / `project_id` / `plan_ref` / `agent` / `execution` / `approach` / `targets` はキーの追加・削除・改名をせず、scaffold された値のまま維持する。見出し構成（`# Edit Result` などの H1、`## 1.` 以降の章立て）も独自の構成に置き換えない。埋めるのは本文セクションの `_TODO_` プレースホルダの中身だけである。`status` と `completed_at` は完了処理（runner 側）が更新するため、自分で書き換えない。
+- plan に「プロジェクトコンテキスト」章がある場合、そこに挙がる文書はプロジェクト共通の前提を読むための参照であり、成果物 frontmatter の `based_on` へ転記しない。参照して得た前提は本文の記述内容へ反映する。
+- 成果物 frontmatter の `based_on` に書けるのは、その成果物の `depends_on` の推移閉包に含まれる先行成果物だけである。閉包外の ID を書くと `catalog validate` が「`based_on` が `depends_on` の推移閉包に含まれていません」としてエラーになり、コミットがブロックされる。`based_on` を増やす必要が生じた場合は、自分で転記せず、根拠不足として result に記録する。
+- 編集・書き込みが作業ディレクトリ外（`external_directory`）として拒否された場合、原因はパス指定の誤り（誤った絶対パス・ディレクトリ名の取り違え）である。bash の heredoc などへ回避的に切り替えず、相対パスに直したうえで同じ編集ツールで再実行する。
+- 作業用のファイル（編集用スクリプト、検証用の一時データなど）はリポジトリの外（一時ディレクトリ）または worktree の `tmp/` 配下に置き、終了前に削除する。使い捨てのファイルを最上位に作らない。`tmp/` 配下のファイルは commit の対象から除外される。
+- 整形・静的検査は、この plan の完了手順または本共通規約で明示されたコマンドを実行する。変更対象に必要な test、build、schema 検証は、plan に個別記載がなくても実行してよい。同じ test script では対象限定と全件を同一 executor run 内で連続実行せず、どちらか一方に絞る。下表、plan、またはプロジェクト標準が全件 test を求める場合は、全件を1回だけ実行して対象限定の実行を省く。この制約は executor が sandbox 内で実行する test script の回数に対するものであり、親検証に設定された ID のコマンドは対象外である（親 runner が別途実行する）。実行したコマンド・対象・結果は result に記録する。
+- executor / reporter pipeline で親 runner の検証が設定されている場合、executor は設定済み ID に対応するコマンドを sandbox 内で実行せず、executor 終了後に親 runner が固定許可リストから実行して evidence へ追記する。`validate-schema` は `npm run validate:schema`、`test-unit` は `npm run test:unit`、`test-integration` は `npm run test:integration` に対応する。executor は親検証と同じコマンドの対象限定版も追加せず、二重実行しない。
+- 適用条件の判定と `not_applicable` / `not_run` の使い分けは、要点に記した規則に従う。誤って `not_run` と記録しても、npm script・依存 package の不在、または SpecDojo サブコマンドの設定上の非適用を runner が機械的に確定できる場合は適用外として扱われるが、この救済を前提に記録を省略しない。
+- 依存パッケージの有無は、対象リポジトリの `package.json` の `dependencies` / `devDependencies` と、リポジトリに固定された package manager の設定を基準に判断する。`npx` が未導入パッケージをネットワークから一時取得できることは、導入済みとはみなさない。設定ファイルがない、壊れているなどの理由で適用条件を確定できない検査は実行せず、validations に `not_applicable` として理由と次の確認事項を記録する。
+- `npm init` が `package.json` に入れる仮の `test` script（`echo "Error: no test specified" && exit 1` と、引用符の有無・種類や空白だけが違う変種）は、常に失敗する仮置きであり、`test` script がないものとみなす。`npm test` は実行せず、validations に `not_applicable` と、仮の script である旨を `reason` に記録する。runner も同じ判断で `not_applicable` を受け付ける。本物の test script がある場合は適用される。
+- Markdown 成果物を編集した場合、Prettier が導入されているときだけ `npx prettier --write <対象ファイル>` で整形する。`markdownlint-cli` または `markdownlint` が導入されているときだけ `npx markdownlint <対象ファイル>` を実行し、`markdownlint-cli2` を採用するリポジトリでは、そのリポジトリで定めた CLI2 のコマンドを実行する。適用した検査でエラーが出た場合は修正してから完了とする。
+- 終了する前に、コミット時に実行される検査（pre-commit 相当）のうち、現在のリポジトリに設定され、上記の適用条件を満たすものを先回りで実行する。適用した検査の失敗はすべて修正してから完了する。
+- 実行対象は、変更したファイルの種別で判断する。下表のうち、変更したファイルが該当し、かつ適用条件を満たす行の検査を実行する。該当行がない場合や適用条件を満たさない場合は追加の検査は不要である。ただし親検証に設定された ID のコマンドは下表よりも優先し、executor は実行しない。下表に同じコマンドが挙がっていても、親 runner の実行に委ねる。
+- 検査コマンドの正本はリポジトリの hook 設定（`lefthook.yml` など）である。下表と設定が食い違う場合は、適用条件を満たす設定側のコマンドに合わせ、実行したコマンドと結果を result に記録する。`specdojo` コマンドは、リポジトリで定められた起動方法（`npx specdojo <subcommand>`、`npx tsx src/specdojo.ts <subcommand>` など）で実行する。ただし、sandbox 環境で `tsx` の IPC エラー（`EPERM`）が発生する場合は、代わりに `node --import tsx src/specdojo.ts <subcommand>` を使用して実行する。
+
+| 変更したファイル                                                                                       | 適用条件                                                                                                                                    | 実行する検査                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `*.md`                                                                                                 | 対応するローカル依存が `package.json` にある                                                                                                | `npx prettier --write <対象ファイル>`、導入済み実装に対応する markdownlint コマンド                                                   |
+| `*.ts` / `*.js` / `*.json` / `*.yaml` / `*.yml`                                                        | Prettier が `package.json` にある                                                                                                           | `npx prettier --write <対象ファイル>`                                                                                                 |
+| `src/`、`tests/`、`scripts/`、`tools/`、`tsconfig*.json`                                               | `package.json` に `typecheck` script がある                                                                                                 | `npm run typecheck`                                                                                                                   |
+| `src/`、`tests/`、`docs/ja/specdojo/templates/`、`docs/ja/specdojo/exec-templates/`、`vitest.config.*` | pipeline executor は `test:unit`、それ以外は `test` script が `package.json` にある（`npm init` の仮の `test` script は、ないものとみなす） | pipeline executor は `npm run test:unit`、それ以外は `npm test`（`test-unit` が親検証に設定されている場合は executor では実行しない） |
+| `docs/ja/projects/` 配下                                                                               | 対象 project に `catalog_path` が設定されている                                                                                             | `specdojo catalog validate`                                                                                                           |
+| `dct-*.yaml`                                                                                           | 対象 project に `catalog_path` が設定されている                                                                                             | `specdojo catalog build`                                                                                                              |
+| `pjr-index.md`                                                                                         | 対象 project に `project_register_path` が設定されている                                                                                    | `specdojo register build`                                                                                                             |
+| `sch-*.yaml`                                                                                           | 対象 project に `schedule_path` が設定されている                                                                                            | `specdojo exec refresh`                                                                                                               |
+| `docs/` 配下                                                                                           | リポジトリで定められた起動方法により SpecDojo CLI を実行できる                                                                              | `specdojo index build`                                                                                                                |
+
+<!-- review-only:start -->
+
+### review の判断手順
+
+review plan に共通で適用する。review はタスクの成果を判定し、成果物の品質は判定しない。成果物の品質は grade が一度だけ評価する。review はその評価結果（grade・finding）を事実として受け取り、このタスクを完了してよいかを判断する（[[bps-task-completion]]）。
+
+- 成果物を再評価しない。観点ごとの pass / fail を付け直したり、評価結果の判定を自分の判断で置き換えたりしない。評価結果の内容に疑義がある場合は、疑義の内容と再評価が必要な理由を改善指示に記録する。
+- 評価結果の鮮度を最初に確認する（`E-01`）。plan の「評価結果」章に示す評価対象と `--target` を使い、`specdojo grade list --target <対象種別> --path <評価対象> --changed-only` を実行する。`--target deliverable` の場合は `--dependency-changed` でも同様に実行する。いずれかが評価対象のパスを出力した場合、または評価結果サイドカーが存在しない場合は、評価結果が最新でない。成果物を自分で評価して補わず、verdict を `grade-stale` とする。
+- 評価結果を確定できない場合（`E-02`）は、verdict を `grade-unavailable` とする。サイドカーを読み取れない場合と、`specdojo grade list --target <対象種別> --path <評価対象> --incomplete` が評価対象のパスを出力する場合（評価パイプラインが未完了）が該当する。
+- 評価結果が最新であれば、サイドカーの `verdict` / `score` / `finding_counts` / `findings`、および `done_criteria`（存在する場合）を読み取る。
+- 変更内容・この plan・実行記録・完了条件・最新の finding を照合し、このタスクの範囲と完了条件を満たすかを判断する（`S-02`）。完了条件の充足は、評価結果に判定がある場合はそれを事実として用いる。評価結果が扱わない事項を review で確かめる。対象は、フェーズ説明が求めた変更が行われたか、対象外の変更が混入していないか、実行記録の検証結果が成功しているかである。実行記録（先行する edit タスクの result）を特定できない場合は、確認できなかったことを判断根拠に記録する。
+- finding が残っていても、このタスクの範囲と完了条件を満たしていれば完了できる。その場合は finding を消去・再評価せず、完了を妨げない理由と必要な改善指示を記録する。
+- 判断の根拠は、評価結果・成果物・plan・実行記録を実際に読んで得た具体的な事実に限る。executor の最終メッセージや result の自己申告を、そのまま、または言い換えて根拠にしない。
+- verdict を記録する直前に鮮度の確認を再実行する。最初の確認の後に成果物が変更されて評価結果が最新でなくなった場合は、verdict を `changed-during-review` とする（review 中の成果物変更）。
+
+verdict は次の 6 値から 1 つを選ぶ。各値は [[bps-task-completion]] の検証・受入観点と一対一に対応する。
+
+| verdict                  | 受入観点                | 選ぶ条件                                                                          | 記録すること                                               |
+| ------------------------ | ----------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| `complete`               | 完了可能                | 評価結果が最新で、plan と完了条件を満たし、完了を妨げる未充足事項がない           | 照合した根拠                                               |
+| `complete-with-findings` | 品質 finding を伴う完了 | 評価結果に finding があるが、このタスクの範囲と完了条件は満たしている             | finding が完了を妨げない理由と改善指示                     |
+| `incomplete`             | 品質良好だが未完了      | plan または完了条件に未充足事項がある（grade の良否は問わない）                   | 未充足事項と、再計画に使う改善指示                         |
+| `grade-stale`            | 評価結果が最新でない    | 評価結果がない、`content_hash` が一致しない、または評価コンテキストの変化が未反映 | 鮮度確認のコマンドと出力。完了可否は判断しない             |
+| `grade-unavailable`      | 評価不能                | 評価結果を読み取れない、または評価パイプラインが未完了で grade・finding が未確定  | 評価不能の理由と不足情報。完了は保留する                   |
+| `changed-during-review`  | review 中の成果物変更   | 最初の鮮度確認の後に成果物が変更され、評価結果が最新でなくなった                  | 変更を検知した確認の出力。verdict を確定せず再評価を求める |
+
+- verdict が `complete` 以外でも、review result を記録できた場合は正常終了する（終了コード 0）。runner は verdict に応じて再評価または再計画へ進む。
+- review result の章立ては `評価結果の確認`、`判断根拠`、`未充足事項・改善指示`、`approach に応じた確認`、`decision` である。`decision` の `verdict` は必ず上表の値で埋める。
+
+<!-- review-only:end -->
+lefthook.yml
+package.json
+docs/ja/projects/prj-0001/controls/project-register/pjr-czy8-balloon-slides-characters.md
+
+exec
+/bin/bash -lc "sed -n '1,260p' docs/ja/projects/prj-0001/controls/project-register/pjr-czy8-balloon-slides-characters.md && printf '\\n--- project package ---\\n' && sed -n '1,220p' package.json && printf '\\n--- project config ---\\n' && sed -n '1,220p' .specdojo/specdojo.config.json && printf '\\n--- project hooks ---\\n' && sed -n '1,220p' lefthook.yml && printf '\\n--- product files ---\\n' && printf '%s\\n' \""'$SPECDOJO_REPO_CODERDOJO_LESSONS" && rg --files "$SPECDOJO_REPO_CODERDOJO_LESSONS" -g '"'AGENTS.md' -g 'slides.md' -g 'package.json' -g 'lefthook.yml' -g '.prettierrc*' -g 'markdownlint*'" in /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-CZY8/project
+ succeeded in 0ms:
+---
+specdojo:
+  id: prj-0001:pjr-czy8-balloon-slides-characters
+  type: project
+  status: draft
+  rulebook: specdojo:pjr-rulebook
+  part_of:
+    - prj-0001:pjr-index
+  item_type: todo
+  item_status: in-progress
+  priority: medium
+  owner: BA
+  registered_at: "2026-10-21T15:28:48Z"
+  due_on: "2026-10-31"
+  derived_from:
+    - PJR-6G9T
+---
+
+# PJR-CZY8 第2回のスライドに案内役と考え方ごとのキャラクターを入れる
+
+## 1. 概要
+
+[[prj-0001:pjr-6g9t-balloon-slides-design|PJR-6G9T]] で整えた第2回（風船割りゲーム）の `slides.md` の各ページに、学校の授業らしいキャラクターを入れる。キャラクターは、ページごとに意味があり、全体で一貫した決まりに従って置く。
+
+対象は宣言済みの `coderdojo-lessons` リポジトリの `courses/scratch-basic/lessons/020-balloon-game/slides.md`（必要なら同じディレクトリの `style.css`）。キャラクターは、テーマ `neversink` に含まれる部品を使う（`node_modules/slidev-theme-neversink/docs/components/kawaii.md`）。ライセンスは MIT の react-kawaii を移植したもので、外部の画像や新しいパッケージは使わない。
+
+### 1.1. 配役（利用者と合意済み）
+
+「案内役は1人、考え方ごとに担当が1人」とする。
+
+| 役                   | 部品              | 色   | 意味づけ                                       | 出てくるページ                              |
+| -------------------- | ----------------- | ---- | ---------------------------------------------- | ------------------------------------------- |
+| 案内役「ねこ先生」   | `Cat`             | 灰色 | 授業を進める先生役。場面に合わせて表情が変わる | 全ページ（右下に小さく）                    |
+| 変数「記録係」       | `Backpack`        | 橙   | 得点をしまっておく入れ物                       | 「今日使う4つの考え方」、1. 得点の2枚       |
+| 乱数「びっくり係」   | `Planet`          | 緑   | どこに出るか分からない、宇宙のように広い場所   | 「今日使う4つの考え方」、2. 乱数の2枚       |
+| クローン「コピー係」 | `IceCream`（3つ） | 黄橙 | 同じものが増える                               | 「今日使う4つの考え方」、3. クローンの2枚   |
+| メッセージ「合図係」 | `SpeechBubbleGuy` | 黄   | 合図を伝える                                   | 「今日使う4つの考え方」、4. メッセージの2枚 |
+
+ねこ先生の表情（`mood`）は、場面で使い分ける。
+
+| 場面                                     | 表情         |
+| ---------------------------------------- | ------------ |
+| 表紙・今日のめあて                       | `excited`    |
+| 完成見本・見つけるヒント                 | `happy`      |
+| 作り方の説明（区切りと説明のページ）     | `blissful`   |
+| ここまでできたら標準完成・発展ミッション | `lovestruck` |
+| うまくいかないときは                     | `shocked`    |
+| ふりかえり                               | `blissful`   |
+
+### 1.2. 配置の決まり
+
+- ねこ先生は、すべてのページで右下の同じ位置に、同じ大きさで置く。本文・ブロックの図・吹き出し・ページ番号に重ならない。
+- 考え方の担当は、そのページの見出しの横か区切りの見出しの近くに置き、色は PJR-6G9T で決めた考え方の色（変数は橙、乱数は緑、クローンは黄橙、メッセージは黄）に合わせる。
+- 「今日使う4つの考え方」では、4枚のカードそれぞれに担当を1人ずつ置く。
+- Scratch のネコ（Scratch Cat）は Scratch の商標のため、似せない。ねこ先生は橙ではなく灰色にする。
+- 色の付いた背景・ダークモードには戻さない（`colorSchema: light` と `color: white` を保つ）。
+
+## 2. 完了条件
+
+- 1.1 の配役と表情、1.2 の配置の決まりに従って、全17枚にキャラクターが置かれている。
+- キャラクターが本文・ブロックの図・吹き出し・ページ番号に重ならず、文字が読みにくくなっていない。
+- 14枚目「ここまでできたら標準完成！」で、吹き出しが上のカードに近すぎる問題が直っている（PJR-6G9T の残課題）。
+- ブロックの図、スライドの構成、本文、「実機で確かめる」の印は変えない。区切りの直後に空行を入れない、ブロックの図の元は `text` のコードブロックで書く、という書き方を守る。
+- 外部の画像や新しいパッケージを追加していない。
+- `npx prettier --check`（`.prettierrc` の設定のまま）と `npx slidev build` が成功し、Slidev の解析器で全17枚の `layout` が効いている。`dist/` と `node_modules/` は commit しない。
+- 見た目は、統合のあとに orchestrator が PNG（ライトモードとダークモード）で確かめ、最後に利用者が開発サーバーで確かめる。
+- 対応結果に、配置のしかたと、ほかの回へ広げるときの注意を書く。結果の要約・申し送りは1項目を短い文にし、長いパスやコマンドは文と分けて書く。
+
+## 3. 作業内容
+
+| No  | 作業                                         | 担当 | 状態 | メモ                                 |
+| --- | -------------------------------------------- | ---- | ---- | ------------------------------------ |
+| 1   | テーマのキャラクターの部品の使い方を確認する | BA   | open | `docs/components/kawaii.md`          |
+| 2   | 1.1・1.2 に従い、全17枚にキャラクターを置く  | BA   | open | ねこ先生は全ページの右下に同じ大きさ |
+| 3   | 14枚目の吹き出しの余白を直す                 | BA   | open | PJR-6G9T の残課題                    |
+| 4   | prettier・build・解析器で確かめる            | BA   | open | PNG は orchestrator が統合後に確認   |
+| 5   | 利用者が開発サーバーで見た目を確かめる       | BA   | open | close の前に行う                     |
+
+## 4. 対応結果
+
+-
+
+## 5. 関連ドキュメント
+
+- [[prj-0001:pjr-6g9t-balloon-slides-design]]：第2回のスライドの装飾とブロックの図（派生元）
+- [[prj-0001:pjr-m5sc-lesson-content-structure]]：活動ディレクトリの構成と Slidev の規約
+
+--- project package ---
+{
+  "name": "coderdojo-lessons-specdojo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "orch:opus": "specdojo orchestrator launch --provider claude -- --agent specdojo-orchestrator --model opus",
+    "orch:sonnet": "specdojo orchestrator launch --provider claude -- --agent specdojo-orchestrator --model sonnet",
+    "orch:codex": "specdojo orchestrator launch --provider codex -- \"$(cat .specdojo/codex/orchestrator.md)\"",
+    "orch:opencode": "specdojo orchestrator launch --provider opencode -- --agent specdojo-orchestrator",
+    "orch:agy": "specdojo orchestrator launch --provider antigravity -- --add-dir \"$(pwd)\" -i \"$(cat .specdojo/antigravity/orchestrator.md)\"",
+    "orch:copilot": "specdojo orchestrator launch --provider copilot -- --agent specdojo-orchestrator",
+    "prepare": "lefthook install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "lefthook": "^2.2.2",
+    "markdownlint-cli": "^0.49.1",
+    "prettier": "^3.9.10",
+    "specdojo": "^0.4.0"
+  },
+  "dependencies": {
+    "@specdojo/docs-lint": "^0.2.1",
+    "@specdojo/docs-site": "^0.2.1"
+  }
+}
+
+--- project config ---
+{
+  "version": 1,
+  "current_project": "prj-0001",
+  "agent_members_path": ".specdojo/agent-members.yaml",
+  "projects": {
+    "prj-0001": {
+      "repos": [
+        {
+          "name": "coderdojo-lessons",
+          "path": "../coderdojo-lessons",
+          "integration_branch": "develop"
+        }
+      ],
+      "base_path": "docs/ja/projects/prj-0001",
+      "members_path": "030-project-management/pm-members.yaml",
+      "project_register_path": "controls/project-register",
+      "project_context": ["prj-overview"],
+      "run": {
+        "exec_defaults": ".specdojo/exec-defaults.yaml",
+        "worktree_base": "../coderdojo-lessons-specdojo-worktrees"
+      }
+    }
+  }
+}
+
+--- project hooks ---
+pre-commit:
+  parallel: true
+  jobs:
+    - name: format documentation and configuration
+      glob: "*.{md,json,yml,yaml}"
+      run: npx prettier --check {staged_files}
+    - name: lint Markdown documentation
+      glob: "*.md"
+      run: npx markdownlint --disable MD013 -- {staged_files}
+
+--- product files ---
+/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-CZY8/coderdojo-lessons
+/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-CZY8/coderdojo-lessons/.prettierrc
+/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-CZY8/coderdojo-lessons/lefthook.yml
+/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-CZY8/coderdojo-lessons/package.json
+/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-CZY8/coderdojo-lessons/courses/scratch-basic/lessons/020-balloon-game/slides.md
+
+exec
+/bin/bash -lc "sed -n '1,240p' package.json && printf '\\n--- hooks ---\\n' && sed -n '1,220p' lefthook.yml && printf '\\n--- prettier ---\\n' && sed -n '1,160p' .prettierrc && printf '\\n--- lesson files ---\\n' && rg --files courses/scratch-basic/lessons/020-balloon-game && printf '\\n--- slides ---\\n' && sed -n '1,420p' courses/scratch-basic/lessons/020-balloon-game/slides.md && printf '\\n--- kawaii components ---\\n' && sed -n '1,260p' node_modules/slidev-theme-neversink/docs/components/kawaii.md" in /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-CZY8/coderdojo-lessons
+ succeeded in 0ms:
+{
+  "name": "scratch-lessons",
+  "private": true,
+  "scripts": {
+    "vtracer:batch": "tsx scripts/convert_pngs_with_vtracer.ts",
+    "slides:serve": "marp --theme-set ./themes --server .",
+    "slides:watch": "marp --theme-set ./themes --watch lessons/01-sample/slides.md",
+    "slides:html": "marp --theme-set ./themes lessons/01-sample/slides.md -o dist/01-sample.html",
+    "slides:pdf": "marp --theme-set ./themes lessons/01-sample/slides.md -o dist/01-sample.pdf",
+    "slides:pptx": "marp --theme-set ./themes lessons/01-sample/slides.md -o dist/01-sample.pptx",
+    "prepare": "lefthook install"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.5.1",
+    "@slidev/cli": "^53.0.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@types/node": "^26.6.2",
+    "lefthook": "^2.2.2",
+    "playwright-chromium": "^1.64.1",
+    "prettier": "^3.9.10",
+    "prettier-plugin-slidev": "^1.0.5",
+    "scratchblocks": "^3.7.1",
+    "slidev-theme-neversink": "^0.4.1",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  }
+}
+
+--- hooks ---
+pre-commit:
+  parallel: true
+  jobs:
+    - name: typecheck TypeScript scripts
+      glob:
+        - "scripts/*.ts"
+        - "scripts/**/*.ts"
+      run: npx tsc --noEmit
+    - name: format source and documentation
+      glob: "*.{md,ts,json,yml,yaml}"
+      run: npx prettier --check {staged_files}
+
+--- prettier ---
+{
+  "overrides": [
+    {
+      "files": ["slides.md"],
+      "options": {
+        "parser": "slidev",
+        "plugins": ["prettier-plugin-slidev"]
+      }
+    }
+  ]
+}
+
+--- lesson files ---
+courses/scratch-basic/lessons/020-balloon-game/style.css
+courses/scratch-basic/lessons/020-balloon-game/slides.md
+courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md
+courses/scratch-basic/lessons/020-balloon-game/components/ScratchBlocks.vue
+
+--- slides ---
+---
+theme: neversink
+colorSchema: light
+title: 風船割りゲームを作ろう！
+layout: cover
+color: white
+slide_info: false
+info: |
+  Scratchで風船割りゲームを作り、変数・乱数・クローン・メッセージを体験する授業の投影スライド。
+---
+
+<style src="./style.css"></style>
+
+# 風船割りゲームを作ろう！
+
+**第2回｜45分**
+
+変数・乱数・クローン・メッセージを組み合わせて、
+自分だけの「遊べる仕組み」を作ろう。
+
+:: note ::
+
+小さく作る → 動かす → 直す。プログラマーの考え方で進もう！
+
+---
+layout: top-title-two-cols
+color: white
+---
+
+:: title ::
+
+# 今日のめあて
+
+:: left ::
+
+<SpeechBubble position="r" color="violet" shape="round" maxWidth="390px">
+
+風船をクリックして、**得点を集めるゲーム**を作ろう。
+
+</SpeechBubble>
+
+:: right ::
+
+<ul class="check-list">
+  <li>風船を割ると得点が増える</li>
+  <li>風船がちがう場所に現れる</li>
+  <li>10点でクリア画面になる</li>
+</ul>
+
+---
+layout: section
+color: white
+class: section-slide section-observe
+---
+
+# 完成見本を遊んで、
+
+# ゲームのしかけを見つけよう
+
+<div class="text-xl mt-6">「何が変わった？」を言葉にできたら、作るヒントになる。</div>
+
+---
+layout: two-cols-title
+columns: is-6
+color: white
+align: l-lt-lt
+---
+
+:: title ::
+
+# 見つけるヒント
+
+:: left ::
+
+## 風船を割ると？
+
+<StickyNote color="orange-light" width="100%" title="観察 1">
+
+どこの数字が変わる？
+
+</StickyNote>
+
+:: right ::
+
+## 10点になると？
+
+<StickyNote color="yellow-light" width="100%" title="観察 2">
+
+画面はどう変わる？
+
+</StickyNote>
+
+---
+layout: top-title
+color: white
+---
+
+:: title ::
+
+# 今日使う4つの考え方
+
+:: content ::
+
+<div class="idea-grid">
+  <div class="idea-card idea-variable"><h3>1. 変数</h3><p>得点を数える、ゲームの記録係。</p></div>
+  <div class="idea-card idea-random"><h3>2. 乱数</h3><p>風船の場所を毎回変える、びっくり係。</p></div>
+  <div class="idea-card idea-clone"><h3>3. クローン</h3><p>同じ風船を増やす、コピー係。</p></div>
+  <div class="idea-card idea-message"><h3>4. メッセージ</h3><p>クリアを伝える、合図係。</p></div>
+</div>
+
+---
+layout: section
+color: white
+class: section-slide section-variable
+---
+
+# 1. 得点を作ろう
+
+風船を割った数を、見えるルールにしよう。
+
+---
+layout: two-cols-title
+columns: is-5
+color: white
+align: l-lt-lt
+margin: tight
+---
+
+:: title ::
+
+# 得点は「変数」で数える
+
+:: left ::
+
+1. 旗を押したら、得点を0にする
+2. 風船をクリックしたら、1増やす
+3. すぐ旗から動かして確かめる
+
+<p class="device-check">⚑ <strong>Scratch 3で実機で確かめる：</strong>ブロック名と「得点」変数の選び方は、授業用端末で確認しよう。</p>
+
+:: right ::
+
+<ScratchBlocks label="得点を始める・増やすブロック" :scale="0.82">
+
+```text
+緑の旗が押されたとき
+[得点 v] を (0) にする
+
+このスプライトが押されたとき
+[得点 v] を (1) ずつ変える
+```
+
+</ScratchBlocks>
+
+---
+layout: section
+color: white
+class: section-slide section-random
+---
+
+# 2. 風船の出る場所を変えよう
+
+同じ場所ばかりではないから、ゲームがもっと楽しくなる。
+
+---
+layout: two-cols-title
+columns: is-5
+color: white
+align: l-lt-lt
+margin: tight
+---
+
+:: title ::
+
+# 乱数で場所を決める
+
+:: left ::
+
+- 乱数は、決めた範囲から数字をえらぶ仕組み
+- x座標とy座標の両方を変える
+- 数字を変えたら、もう一度遊んで比べよう
+
+<p class="device-check">⚑ <strong>Scratch 3で実機で確かめる：</strong>座標の範囲とブロックの入れ方は、完成見本で安全な範囲を確認しよう。</p>
+
+:: right ::
+
+<ScratchBlocks label="ランダムな場所へ行くブロック" :scale="0.7">
+
+```text
+緑の旗が押されたとき
+x座標を ((-200) から (200) までの乱数) 、y座標を ((-140) から (140) までの乱数) にする
+```
+
+</ScratchBlocks>
+
+---
+layout: section
+color: white
+class: section-slide section-clone
+---
+
+# 3. 風船を次々に出そう
+
+クローンは「同じ風船のチームメイト」。役目を分けよう。
+
+---
+layout: two-cols-title
+columns: is-5
+color: white
+align: l-lt-lt
+margin: tight
+---
+
+:: title ::
+
+# クローンで風船を増やす
+
+:: left ::
+
+- 元の風船：新しい風船を出す係
+- クローン：画面に現れてクリックされる係
+- 割れた風船：仕事が終わったら消える係
+
+<p class="device-check">⚑ <strong>Scratch 3で実機で確かめる：</strong>クローンの作成間隔と、消すタイミングは完成見本で確認しよう。</p>
+
+:: right ::
+
+<ScratchBlocks label="クローンを作る・動き始めるブロック" :scale="0.7">
+
+```text
+緑の旗が押されたとき
+ずっと
+  [自分自身 v] のクローンを作る
+  (1) 秒待つ
+end
+
+クローンされたとき
+表示する
+```
+
+</ScratchBlocks>
+
+---
+layout: section
+color: white
+class: section-slide section-message
+---
+
+# 4. 10点でクリアにしよう
+
+合図を送って、背景を切り替えよう。
+
+---
+layout: two-cols-title
+columns: is-6
+color: white
+align: l-lt-lt
+margin: tight
+---
+
+:: title ::
+
+# メッセージは「別の場所へ送る合図」
+
+:: left ::
+
+<ScratchBlocks label="10点で「クリア」を送るブロック" :scale="0.64">
+
+```text
+もし &lt;(得点) = (10)&gt; なら
+  [クリア v] を送る
+end
+```
+
+</ScratchBlocks>
+
+:: right ::
+
+<ScratchBlocks label="メッセージを受けて背景を変えるブロック" :scale="0.64">
+
+```text
+[クリア v] を受け取ったとき
+背景を [クリア v] にする
+```
+
+</ScratchBlocks>
+
+<p class="device-check">⚑ <strong>Scratch 3で実機で確かめる：</strong>「クリア」メッセージと背景名を、実際に作成・選択してから動かそう。</p>
+
+---
+layout: top-title
+color: white
+---
+
+:: title ::
+
+# ここまでできたら標準完成！
+
+:: content ::
+
+<div class="grid grid-cols-2 gap-5 text-2xl mt-5">
+  <div class="p-4 rounded bg-orange-100">✓ 得点が増える</div>
+  <div class="p-4 rounded bg-green-100">✓ 違う場所に現れる</div>
+  <div class="p-4 rounded bg-amber-100">✓ 風船が次々に出る</div>
+  <div class="p-4 rounded bg-yellow-100">✓ 10点でクリアになる</div>
+</div>
+
+<SpeechBubble position="t" color="teal" shape="round" maxWidth="560px">
+
+できたら、となりの人にも一度遊んでもらおう！
+
+</SpeechBubble>
+
+---
+layout: two-cols-title
+columns: is-6
+color: white
+align: l-lt-lt
+---
+
+:: title ::
+
+# 発展ミッション
+
+:: left ::
+
+<ul class="mission-list">
+  <li>クリアに必要な得点を変える</li>
+  <li>風船が出る間隔を変える</li>
+</ul>
+
+:: right ::
+
+<ul class="mission-list">
+  <li>クリア画面を工夫する</li>
+  <li>自分のゲームのルールを説明する</li>
+</ul>
+
+---
+layout: top-title
+color: white
+---
+
+:: title ::
+
+# うまくいかないときは
+
+:: content ::
+
+<Admonition title="デバッグの合言葉" color="rose-light" custom="text-xl">
+
+**1つ変えたら、すぐ動かす。**
+
+旗から始めた？　得点は0から？　まず1個の風船で動きを確かめた？
+
+</Admonition>
+
+困ったら、「何をしたかったか」を先生や友だちに伝えよう。
+
+---
+layout: section
+color: white
+class: section-slide section-reflection
+---
+
+# ふりかえり
+
+得点・乱数・クローン・メッセージは、ゲームをどう変えた？
+
+次回は、図形と音を組み合わせたプログラミングアートを作ります。
+
+--- kawaii components ---
+# Kawaii
+
+<img src="/screenshots/37.png" alt="kawaii slide example" width="600" class="screenshot mb-10 mt-10"/>
+
+## Description
+
+Kawaii are little characters you can include in slides to add a bit of fun/whimsy. Code and illustrations based on [Vue Kawaii](https://github.com/youngtailors/vue-kawaii).
+
+## Kawaii components
+
+The `Qr` component is used to create QR code in SVG format. The QRCode component has the following props:
+
+- `mood` (required). Sets the style of face. Options are `sad`, `shocked`, `happy`, `blissful`, `lovestruck`, `excited`, `ko`. Default is `blissful`.
+- `:size` (required) the width of the character (height adjusts automatically).
+- `:color` (optional) Sets the primary color. Defaults are unique for each character Set using a hex code.
+
+The character options are `IceCream`, `Backpack`, `Cat`, `Browser`, `Mug`, `Planet`, `SpeechBubbleGuy`, and `CreditCard`.
+
+Example:
+
+```vue
+<IceCream :size="140" mood="sad" color="#FDA7DC" />
+```
+
+Renders as:
+<IceCream :size="140" mood="blissful" color="#FDA7DC" />
+
+exec
+/bin/bash -lc "sed -n '1,360p' courses/scratch-basic/lessons/020-balloon-game/style.css && printf '\\n--- slide count / source notes ---\\n' && rg -n '"'^---$|''^layout:|''^# '"' courses/scratch-basic/lessons/020-balloon-game/slides.md && printf '\\n--- component implementation clues ---\\n' && rg -n \"<Cat|Backpack|SpeechBubbleGuy|kawaii|class=.*character|character\" courses node_modules/slidev-theme-neversink -g '*.md' -g '*.vue' | head -180" in /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-CZY8/coderdojo-lessons
+ succeeded in 0ms:
+:root {
+  --balloon-ink: #14213d;
+}
+
+.slidev-layout {
+  background: #fff;
+  color: var(--balloon-ink);
+  font-size: 1.2rem;
+}
+
+.section-slide {
+  --section-accent: #2680c2;
+}
+
+.section-variable {
+  --section-accent: #ff8c1a;
+}
+
+.section-random {
+  --section-accent: #43a047;
+}
+
+.section-clone {
+  --section-accent: #e89b00;
+}
+
+.section-message {
+  --section-accent: #c99700;
+}
+
+.section-reflection {
+  --section-accent: #7357c7;
+}
+
+.section-slide .slidev-layout.section,
+.slidev-layout.section.section-slide {
+  border-left: 1.1rem solid var(--section-accent);
+  padding-left: 2.3rem;
+}
+
+.section-slide .slidev-layout.section h1,
+.slidev-layout.section.section-slide h1 {
+  border-bottom: 0.22rem solid var(--section-accent);
+  padding-bottom: 0.55rem;
+}
+
+.idea-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.idea-card {
+  border-radius: 1rem;
+  min-height: 8.4rem;
+  padding: 1rem 1.25rem;
+}
+
+.idea-card h3 {
+  font-size: 1.55rem;
+  margin: 0 0 0.35rem;
+}
+
+.idea-card p {
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.idea-variable {
+  background: #fff0d8;
+  border: 3px solid #ff8c1a;
+}
+
+.idea-random {
+  background: #e9f9ec;
+  border: 3px solid #43a047;
+}
+
+.idea-clone {
+  background: #fff8da;
+  border: 3px solid #ffb300;
+}
+
+.idea-message {
+  background: #fff4ce;
+  border: 3px solid #ffc107;
+}
+
+.device-check {
+  background: #fff8dc;
+  border-left: 0.35rem solid #e0a000;
+  border-radius: 0.35rem;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  margin: 0.65rem 0 0;
+  padding: 0.45rem 0.65rem;
+}
+
+.mission-list li,
+.check-list li {
+  font-size: 1.28rem;
+  line-height: 1.65;
+}
+
+--- slide count / source notes ---
+1:---
+5:layout: cover
+10:---
+14:# 風船割りゲームを作ろう！
+25:---
+26:layout: top-title-two-cols
+28:---
+32:# 今日のめあて
+50:---
+51:layout: section
+54:---
+56:# 完成見本を遊んで、
+58:# ゲームのしかけを見つけよう
+62:---
+63:layout: two-cols-title
+67:---
+71:# 見つけるヒント
+93:---
+94:layout: top-title
+96:---
+100:# 今日使う4つの考え方
+111:---
+112:layout: section
+115:---
+117:# 1. 得点を作ろう
+121:---
+122:layout: two-cols-title
+127:---
+131:# 得点は「変数」で数える
+155:---
+156:layout: section
+159:---
+161:# 2. 風船の出る場所を変えよう
+165:---
+166:layout: two-cols-title
+171:---
+175:# 乱数で場所を決める
+196:---
+197:layout: section
+200:---
+202:# 3. 風船を次々に出そう
+206:---
+207:layout: two-cols-title
+212:---
+216:# クローンで風船を増やす
+243:---
+244:layout: section
+247:---
+249:# 4. 10点でクリアにしよう
+253:---
+254:layout: two-cols-title
+259:---
+263:# メッセージは「別の場所へ送る合図」
+290:---
+291:layout: top-title
+293:---
+297:# ここまでできたら標準完成！
+314:---
+315:layout: two-cols-title
+319:---
+323:# 発展ミッション
+339:---
+340:layout: top-title
+342:---
+346:# うまくいかないときは
+360:---
+361:layout: section
+364:---
+366:# ふりかえり
+
+--- component implementation clues ---
+node_modules/slidev-theme-neversink/screenshot.md:595:Hello, I'm **kawaii**.
+node_modules/slidev-theme-neversink/screenshot.md:842:<Cat :size="80" mood="sad" color="#FFD882" />
+node_modules/slidev-theme-neversink/screenshot.md:843:<Cat :size="80" mood="shocked" color="#FFD882" />
+node_modules/slidev-theme-neversink/screenshot.md:844:<Cat :size="80" mood="happy" color="#FFD882"/>
+node_modules/slidev-theme-neversink/screenshot.md:845:<Cat :size="80" mood="blissful" color="#FFD882" />
+node_modules/slidev-theme-neversink/screenshot.md:846:<Cat :size="80" mood="lovestruck" color="#FFD882" />
+node_modules/slidev-theme-neversink/screenshot.md:847:<Cat :size="80" mood="excited" color="#FFD882" />
+node_modules/slidev-theme-neversink/screenshot.md:848:<Cat :size="80" mood="ko" color="#FFD882" /><br/>
+node_modules/slidev-theme-neversink/screenshot.md:853:<SpeechBubbleGuy :size="50" mood="lovestruck" color="#d3d3d3" />
+node_modules/slidev-theme-neversink/example.md:603:Hello, I'm **kawaii**.
+node_modules/slidev-theme-neversink/example.md:1290:<Cat :size="80" mood="sad" color="#FFD882" />
+node_modules/slidev-theme-neversink/example.md:1291:<Cat :size="80" mood="shocked" color="#FFD882" />
+node_modules/slidev-theme-neversink/example.md:1292:<Cat :size="80" mood="happy" color="#FFD882"/>
+node_modules/slidev-theme-neversink/example.md:1293:<Cat :size="80" mood="blissful" color="#FFD882" />
+node_modules/slidev-theme-neversink/example.md:1294:<Cat :size="80" mood="lovestruck" color="#FFD882" />
+node_modules/slidev-theme-neversink/example.md:1295:<Cat :size="80" mood="excited" color="#FFD882" />
+node_modules/slidev-theme-neversink/example.md:1296:<Cat :size="80" mood="ko" color="#FFD882" /><br/>
+node_modules/slidev-theme-neversink/example.md:1301:<SpeechBubbleGuy :size="50" mood="lovestruck" color="#d3d3d3" />
+node_modules/slidev-theme-neversink/docs/components.md:17:- [Kawaii](/components/kawaii) - Modification of select [Vue Kawaii](https://github.com/youngtailors/vue-kawaii) figures that add cute characters to slides.
+node_modules/slidev-theme-neversink/docs/components/kawaii.md:3:<img src="/screenshots/37.png" alt="kawaii slide example" width="600" class="screenshot mb-10 mt-10"/>
+node_modules/slidev-theme-neversink/docs/components/kawaii.md:7:Kawaii are little characters you can include in slides to add a bit of fun/whimsy. Code and illustrations based on [Vue Kawaii](https://github.com/youngtailors/vue-kawaii).
+node_modules/slidev-theme-neversink/docs/components/kawaii.md:14:- `:size` (required) the width of the character (height adjusts automatically).
+node_modules/slidev-theme-neversink/docs/components/kawaii.md:15:- `:color` (optional) Sets the primary color. Defaults are unique for each character Set using a hex code.
+node_modules/slidev-theme-neversink/docs/components/kawaii.md:17:The character options are `IceCream`, `Backpack`, `Cat`, `Browser`, `Mug`, `Planet`, `SpeechBubbleGuy`, and `CreditCard`.
+node_modules/slidev-theme-neversink/docs/layouts/full.md:92:Hello, I'm **kawaii**.
+node_modules/slidev-theme-neversink/components/vue3-kawaii/README.md:1:# vue3-kawaii
+node_modules/slidev-theme-neversink/components/vue3-kawaii/README.md:3:Vue-kawaii is a collection of vue components that render cute characters. It is a vue port for react-kawaii.
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/ghost/Ghost.vue:39:      <g id="kawaii-ghost">
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/ghost/Ghost.vue:40:        <g id="kawaii-ghost__body">
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/ghost/Ghost.vue:41:          <path :d="paths.shape" id="kawaii-ghost__shape" :fill="color" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/ghost/Ghost.vue:42:          <path :d="paths.shadow" id="kawaii-ghost__shadow" fill-opacity=".1" fill="#000000" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/creditCard/CreditCard.vue:37:      <g id="kawaii-creditCard">
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/creditCard/CreditCard.vue:38:        <g id="kawaii-creditCard__body" fillRule="nonzero">
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/creditCard/CreditCard.vue:39:          <path :d="paths.shape" id="kawaii-creditCard__shape" :fill="color" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/creditCard/CreditCard.vue:40:          <path :d="paths.shadow" id="kawaii-creditCard__shadow" fill="#000" opacity=".1" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/creditCard/CreditCard.vue:41:          <path id="kawaii-creditCard__stripe" fill="#000" d="M0 17h198v27H0z" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/iceCream/IceCream.vue:39:      <g id="kawaii-iceCream">
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/iceCream/IceCream.vue:41:          <path :d="paths.stick" id="kawaii-iceCream__stick" fill="#FCCB7E" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/iceCream/IceCream.vue:42:          <path :d="paths.shape" id="kawaii-iceCream__shape" :fill="color" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/iceCream/IceCream.vue:43:          <path :d="paths.shadow" id="kawaii-iceCream__shadow" fill="#000000" opacity=".1" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/speechBubble/SpeechBubbleGuy.vue:40:        <path :d="paths.shape" id="kawaii-speechBubble__shape--path" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/speechBubble/SpeechBubbleGuy.vue:41:        <path :d="paths.shadow" id="kawaii-speechBubble__shadow--path" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/speechBubble/SpeechBubbleGuy.vue:46:            <use xlink:href="#kawaii-speechBubble__shape--path" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/speechBubble/SpeechBubbleGuy.vue:48:          <use id="Kawaii-speechBubble__shape" :fill="color" xlink:href="#kawaii-speechBubble__shape--path" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/speechBubble/SpeechBubbleGuy.vue:50:            <use xlink:href="#kawaii-speechBubble__shadow--path" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/speechBubble/SpeechBubbleGuy.vue:56:            xlink:href="#kawaii-speechBubble__shadow--path"
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/mug/Mug.vue:39:      <g id="kawaii-mug">
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/mug/Mug.vue:40:        <g id="kawaii-mug__body" fill-rule="nonzero">
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/mug/Mug.vue:41:          <path :d="paths.shape" id="kawaii-mug__shape" :fill="color" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/mug/Mug.vue:42:          <path :d="paths.shadow" id="kawaii-mug__shadow" fill="#000" opacity=".1" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/cat/Cat.vue:34:        <g id="kawaii-cat">
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/cat/Cat.vue:35:          <g id="kawaii-cat_tail" transform="translate(29.23 153.846)" fill-rule="nonzero">
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/cat/Cat.vue:48:          <g id="kawaii-cat_legs" transform="translate(81 190)" :fill="color" fill-rule="nonzero">
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/cat/Cat.vue:49:            <path :d="paths.legs" id="kawaii-cat_legs_inner" />
+node_modules/slidev-theme-neversink/components/vue3-kawaii/components/cat/Cat.vue:51:          <g id="kawaii-cat_arms" transform="translate(58 132)" :fill=

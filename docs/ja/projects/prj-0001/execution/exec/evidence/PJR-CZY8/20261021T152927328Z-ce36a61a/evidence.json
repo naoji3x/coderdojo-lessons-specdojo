@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-CZY8",
+  "run_id": "20261021T152927328Z-ce36a61a",
+  "stage": {
+    "role": "executor",
+    "actor": "codex-expert-executor",
+    "status": "rate_limited",
+    "started_at": "2026-10-21T15:30:07.531Z",
+    "completed_at": "2026-10-21T15:37:48.133Z",
+    "exit_code": 1,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-czy8-balloon-slides-characters.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/style.css",
+      "status": "M"
+    }
+  ],
+  "attempt_changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-czy8-balloon-slides-characters.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/style.css",
+      "status": "M"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 3,
+    "summary": ".../controls/project-register/pjr-czy8-balloon-slides-characters.md  | 5 ++++-\n 1 file changed, 4 insertions(+), 1 deletion(-)\n[coderdojo-lessons]\n.../lessons/020-balloon-game/slides.md             | 111 ++++++++++++++++++---\n .../lessons/020-balloon-game/style.css             |  30 ++++++\n 2 files changed, 127 insertions(+), 14 deletions(-)"
+  },
+  "validations": [],
+  "final_message": "",
+  "block_reason": "executor rate limit reached",
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-CZY8/20261021T152927328Z-ce36a61a/executor.log",
+      "bytes": 65536,
+      "truncated": true
+    }
+  ]
+}
