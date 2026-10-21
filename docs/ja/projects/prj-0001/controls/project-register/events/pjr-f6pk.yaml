@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_3735859fb32a4d2ebf3aaf0a6ae8de0b
+  ts: "2026-10-21T22:55:04Z"
+  action: add
+  actor: orchestrator
+  from_status: null
+  to_status: open
+  reason: PJR-6G9T と PJR-CZY8 の統合で、結果ファイルの行の長さによる停止が計5回起きたため、利用者の依頼で起票する。
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 統合のたびに結果ファイルが MD013 で止まる問題を直す
+    - field: description
+      from: ""
+      to: exec run の統合直前の markdownlint が既定の MD013（80文字）で結果ファイルを検査し、MD013 を外して検査する commit hook と決まりが食い違っているため、毎回統合が止まる。プロジェクトの markdownlint 設定で MD013 を false にしてそろえる。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: high
+    - field: owner
+      from: ""
+      to: DEV
+    - field: registered
+      from: ""
+      to: "2026-10-21"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-6G9T\",\"PJR-CZY8\"]"
