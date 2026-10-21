@@ -12,7 +12,7 @@ specdojo:
   owner: BA
   registered_at: "2026-10-21T15:28:48Z"
   due_on: "2026-10-31"
-  block_reason: rate limit reached
+  block_reason: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-czy8-20261021T152927Z-c4d1-result.md:24:81 error MD013/line-length Lin…"
   derived_from:
     - PJR-6G9T
 ---
@@ -79,7 +79,30 @@ specdojo:
 
 ## 4. 対応結果
 
--
+- 全17枚の右下に、同じ大きさ・位置の灰色の案内役「ねこ先生」を置き、場面に合わせて表情を切り替えた。
+- 4つの考え方の一覧と各説明の2枚に、色と役割をそろえた担当キャラクターを見出し側へ置いた。
+- 14枚目は右下に案内役の余白を確保し、吹き出しをカードから離した。
+- ほかの回へ広げるときも、案内役の座標・大きさと考え方の色を共通の決まりとして使う。
+
+### 4.1. 中断後に orchestrator が直したこと
+
+1回目の実行は、実装役が確かめている途中で Codex の利用上限に達して止まった。
+orchestrator が PNG で確かめ、次の3点を worktree の中で直した。
+
+- ねこ先生が全ページで表示されなかった。
+  原因は `v-drag` の横位置 1160 が、スライドの横幅 980 の外だったこと。
+  `v-drag` をやめ、`style.css` の `.teacher-cat` で右下に固定した。
+- 表紙では、ねこ先生が `:: note ::` の枠の中にあり、文字に重なっていた。
+  ねこ先生を本文側へ移した。
+- 変数のリュックが表示されなかった。
+  テーマの部品名は `BackPack` のため、`<Backpack>` を `<BackPack>` に直した。
+
+再開後の実装役への申し送り:
+
+- 上の修正は利用者の承認を得たものである。キャラクターの配置・大きさ・部品名は変えない。
+- 完了条件の確かめ（prettier・build・解析器）と、対応結果の更新だけを行う。
+- PNG での見た目は orchestrator がライト・ダークの両方で確かめ済みである。
+- 結果ファイルは markdownlint の MD013（1行80文字）に合わせ、長い行は折り返す。
 
 ## 5. 関連ドキュメント
 
