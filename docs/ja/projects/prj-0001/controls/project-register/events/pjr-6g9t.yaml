@@ -80,3 +80,16 @@
       from: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T135643Z-8868-result.md:25:81 error MD013/line-length Lin…"
       to: "-"
   previous_event_id: reg_42ae67f3ab3e4778b11182bf0b866933
+- v: 1
+  id: reg_582a25fb65f3460183a6cfb50b89c23a
+  ts: "2026-10-21T14:07:13Z"
+  action: review
+  actor: terra-reporter
+  from_status: in-progress
+  to_status: review
+  reason: ready for review
+  changes:
+    - field: status
+      from: in-progress
+      to: review
+  previous_event_id: reg_48f1a5537efc45b0a4813baa1781cd62
