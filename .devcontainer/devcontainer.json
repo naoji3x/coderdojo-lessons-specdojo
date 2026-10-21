@@ -3,6 +3,19 @@
   "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
   "remoteUser": "node",
   "init": true,
+
+  "appPort": [3030, 3031],
+  "portsAttributes": {
+    "3030": {
+      "label": "Slidev",
+      "onAutoForward": "notify"
+    },
+    "3031": {
+      "label": "Slidev (port 3031)",
+      "onAutoForward": "notify"
+    }
+  },
+
   "workspaceMount": "source=${localWorkspaceFolder}/..,target=/workspaces/coderdojo-lessons-workspace,type=bind,consistency=cached",
   "workspaceFolder": "/workspaces/coderdojo-lessons-workspace/${localWorkspaceFolderBasename}",
   "features": {
@@ -59,9 +72,7 @@
       }
     }
   },
-  "runArgs": [
-    "--security-opt=seccomp=unconfined"
-  ],
+  "runArgs": ["--security-opt=seccomp=unconfined"],
   "remoteEnv": {
     "PATH": "/home/node/.local/bin:${containerEnv:PATH}"
   }
