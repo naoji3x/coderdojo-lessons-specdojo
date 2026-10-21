@@ -7,11 +7,12 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: in-progress
+  item_status: waiting
   priority: medium
   owner: BA
   registered_at: "2026-10-21T15:28:48Z"
   due_on: "2026-10-31"
+  block_reason: rate limit reached
   derived_from:
     - PJR-6G9T
 ---
@@ -78,7 +79,10 @@ specdojo:
 
 ## 4. 対応結果
 
--
+- 全17枚の右下に、同じ大きさ・位置の灰色の案内役「ねこ先生」を置き、場面に合わせて表情を切り替えた。
+- 4つの考え方の一覧と各説明の2枚に、色と役割をそろえた担当キャラクターを見出し側へ置いた。
+- 14枚目は右下に案内役の余白を確保し、吹き出しをカードから離した。
+- ほかの回へ広げるときも、案内役の座標・大きさと考え方の色を共通の決まりとして使う。
 
 ## 5. 関連ドキュメント
 
