@@ -93,3 +93,32 @@
       from: in-progress
       to: review
   previous_event_id: reg_48f1a5537efc45b0a4813baa1781cd62
+- v: 1
+  id: reg_daf8d69238f44adbb9d5bdb45c64815e
+  ts: "2026-10-21T14:25:06Z"
+  action: start
+  actor: codex-expert-executor
+  from_status: review
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: review
+      to: in-progress
+  previous_event_id: reg_582a25fb65f3460183a6cfb50b89c23a
+- v: 1
+  id: reg_300731ccbb32438197fa441deb582a16
+  ts: "2026-10-21T14:35:31Z"
+  action: wait
+  actor: codex-expert-executor
+  from_status: in-progress
+  to_status: waiting
+  reason: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T142505Z-886c-result.md:24:81 error MD013/line-length Lin…"
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T142505Z-886c-result.md:24:81 error MD013/line-length Lin…"
+  previous_event_id: reg_daf8d69238f44adbb9d5bdb45c64815e
