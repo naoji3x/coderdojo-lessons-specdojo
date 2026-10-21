@@ -7,5 +7,10 @@
 			"path": "../coderdojo-lessons"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"cSpell.words": [
+			"seccomp",
+			"Slidev"
+		]
+	}
 }
