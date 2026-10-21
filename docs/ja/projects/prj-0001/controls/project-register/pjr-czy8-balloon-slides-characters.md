@@ -7,12 +7,11 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: waiting
+  item_status: review
   priority: medium
   owner: BA
   registered_at: "2026-10-21T15:28:48Z"
   due_on: "2026-10-31"
-  block_reason: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-czy8-20261021T152927Z-c4d1-result.md:24:81 error MD013/line-length Lin…"
   derived_from:
     - PJR-6G9T
 ---
@@ -32,7 +31,7 @@ specdojo:
 | 役                   | 部品              | 色   | 意味づけ                                       | 出てくるページ                              |
 | -------------------- | ----------------- | ---- | ---------------------------------------------- | ------------------------------------------- |
 | 案内役「ねこ先生」   | `Cat`             | 灰色 | 授業を進める先生役。場面に合わせて表情が変わる | 全ページ（右下に小さく）                    |
-| 変数「記録係」       | `Backpack`        | 橙   | 得点をしまっておく入れ物                       | 「今日使う4つの考え方」、1. 得点の2枚       |
+| 変数「記録係」       | `BackPack`        | 橙   | 得点をしまっておく入れ物                       | 「今日使う4つの考え方」、1. 得点の2枚       |
 | 乱数「びっくり係」   | `Planet`          | 緑   | どこに出るか分からない、宇宙のように広い場所   | 「今日使う4つの考え方」、2. 乱数の2枚       |
 | クローン「コピー係」 | `IceCream`（3つ） | 黄橙 | 同じものが増える                               | 「今日使う4つの考え方」、3. クローンの2枚   |
 | メッセージ「合図係」 | `SpeechBubbleGuy` | 黄   | 合図を伝える                                   | 「今日使う4つの考え方」、4. メッセージの2枚 |
