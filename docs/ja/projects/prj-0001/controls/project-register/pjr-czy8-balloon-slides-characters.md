@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-czy8-balloon-slides-characters
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   owner: BA
   registered_at: "2026-10-21T15:28:48Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-21T22:50:05Z"
+  conclusion: 全17枚に案内役のねこ先生と考え方ごとのキャラクターを置き、文字と案内役を大きくした。利用者が開発サーバーで見た目を確かめた。
   derived_from:
     - PJR-6G9T
 ---
