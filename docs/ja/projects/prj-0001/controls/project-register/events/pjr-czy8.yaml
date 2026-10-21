@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_80f511b4cae7459183d20b73393c11b6
+  ts: "2026-10-21T15:28:48Z"
+  action: add
+  actor: orchestrator
+  from_status: null
+  to_status: open
+  reason: 利用者の依頼により、授業らしいキャラクターを各ページに入れる
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 第2回のスライドに案内役と考え方ごとのキャラクターを入れる
+    - field: description
+      from: ""
+      to: 第2回のslides.mdの各ページに、テーマのキャラクターで案内役のねこ先生と、変数・乱数・クローン・メッセージの担当キャラクターを一貫した決まりで配置する
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-21"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-6G9T\"]"
