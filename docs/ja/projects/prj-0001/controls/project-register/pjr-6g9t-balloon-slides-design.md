@@ -7,12 +7,11 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: waiting
+  item_status: review
   priority: medium
   owner: BA
   registered_at: "2026-10-21T13:40:02Z"
   due_on: "2026-10-31"
-  block_reason: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T135643Z-8868-result.md:25:81 error MD013/line-length Lin…"
   derived_from:
     - PJR-95RS
 ---
@@ -52,15 +51,19 @@ agent の実行環境はネットワークに出られず、`package.json` は a
 
 | No  | 作業                                                                        | 担当 | 状態 | メモ                                         |
 | --- | --------------------------------------------------------------------------- | ---- | ---- | -------------------------------------------- |
-| 1   | テーマ `neversink` と scratchblocks の使い方を確認する                      | BA   | open | 依存は orchestrator が追加済み               |
-| 2   | scratchblocks でブロックの図を描く部品を `components/` に作る               | BA   | open | 日本語の訳を使う                             |
-| 3   | `slides.md` を装飾し、各説明にブロックの図を入れる                          | BA   | open | 推測したブロック名には「実機で確かめる」の印 |
-| 4   | `npx slidev build` で確かめ、`slidev-guide.md` にブロックの図の書き方を書く | BA   | open | `dist/` は commit しない                     |
+| 1   | テーマ `neversink` と scratchblocks の使い方を確認する                      | BA   | done | 依存は orchestrator が追加済み               |
+| 2   | scratchblocks でブロックの図を描く部品を `components/` に作る               | BA   | done | 日本語の訳を使う                             |
+| 3   | `slides.md` を装飾し、各説明にブロックの図を入れる                          | BA   | done | 推測したブロック名には「実機で確かめる」の印 |
+| 4   | `npx slidev build` で確かめ、`slidev-guide.md` にブロックの図の書き方を書く | BA   | done | `dist/` は Git 管理しない                    |
 | 5   | 利用者が開発サーバーで見た目を確かめる                                      | BA   | open | close の前に行う                             |
 
 ## 4. 対応結果
 
--
+- `slidev-theme-neversink` の表紙・区切り・2列レイアウトと、変数（橙）・乱数（緑）・クローン（黄橙）・メッセージ（黄）の配色で、考え方の切替が分かるスライドにした。本文の文字を大きくし、各工程を「作る → 動かす → 確かめる」の順で示した。
+- `components/ScratchBlocks.vue` は、スライドに書いた scratchblocks の文字列を、日本語の Scratch 3 ブロックにブラウザ上で描画する。得点、乱数、クローン、メッセージ送信、背景切替の図を追加し、元の記法は `slides.md` に残した。
+- Scratch 3 のブロック名、変数・メッセージ・背景の選択肢、座標範囲とクローンの間隔は、授業用端末の実機で確認してから確定する。各図の近くに確認印を付けた。`lesson-plan.md` は変更していない。
+- 他の回へ広げるときは、[[prj-0001:pjr-m5sc-lesson-content-structure|PJR-M5SC]] の活動ディレクトリ規約に従い、同じ `ScratchBlocks.vue` をその活動の `components/` に置く。使う名前を授業の完成見本に合わせ、外部画像を追加する場合だけ出典・利用条件を記録する。
+- 見た目は開発サーバーでの人による確認が必要なため、No. 5 は open のままとする。
 
 ## 5. 関連ドキュメント
 
