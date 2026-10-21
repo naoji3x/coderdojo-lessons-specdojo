@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-6g9t-balloon-slides-design
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   owner: BA
   registered_at: "2026-10-21T13:40:02Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-21T15:28:39Z"
+  conclusion: 第2回のスライドをneversinkテーマで白基調・明るい表示に整え、scratchblocksで日本語のブロックの図を入れた。利用者が見た目を確かめた
   derived_from:
     - PJR-95RS
 ---
