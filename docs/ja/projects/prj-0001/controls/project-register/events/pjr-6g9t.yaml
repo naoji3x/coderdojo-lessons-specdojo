@@ -122,3 +122,32 @@
       from: "-"
       to: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T142505Z-886c-result.md:24:81 error MD013/line-length Lin…"
   previous_event_id: reg_daf8d69238f44adbb9d5bdb45c64815e
+- v: 1
+  id: reg_762face89e9c4005adb043660c4bd4f2
+  ts: "2026-10-21T14:36:40Z"
+  action: start
+  actor: terra-reporter
+  from_status: waiting
+  to_status: in-progress
+  reason: integration resumed
+  changes:
+    - field: status
+      from: waiting
+      to: in-progress
+    - field: block_reason
+      from: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T142505Z-886c-result.md:24:81 error MD013/line-length Lin…"
+      to: "-"
+  previous_event_id: reg_300731ccbb32438197fa441deb582a16
+- v: 1
+  id: reg_8dbd5b0f30a945b5bbae760e4e2432ee
+  ts: "2026-10-21T14:36:43Z"
+  action: review
+  actor: terra-reporter
+  from_status: in-progress
+  to_status: review
+  reason: ready for review
+  changes:
+    - field: status
+      from: in-progress
+      to: review
+  previous_event_id: reg_762face89e9c4005adb043660c4bd4f2
