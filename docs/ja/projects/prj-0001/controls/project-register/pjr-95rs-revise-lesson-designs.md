@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-95rs-revise-lesson-designs
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   owner: BA
   registered_at: "2026-10-20T12:59:14Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-21T11:16:42Z"
+  conclusion: 第2回（風船割りゲーム）の指導案とSlidevスライドをcourses/scratch-basic/lessons/020-balloon-game/に試作し、ビルドを確認した。移行で決める事項はPJR-3E2Kへ申し送った
   derived_from:
     - PJR-W9MV
     - PJR-M5SC

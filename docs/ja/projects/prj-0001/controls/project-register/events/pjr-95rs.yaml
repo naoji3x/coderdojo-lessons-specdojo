@@ -150,3 +150,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_44ae1d982e4242a4be87f2d8d99aea16
+- v: 1
+  id: reg_956d5a4a6ade455ea4d75634e3bdbcf9
+  ts: "2026-10-21T11:16:42Z"
+  action: close
+  actor: orchestrator
+  from_status: review
+  to_status: done
+  reason: 完了条件を満たすことをレビューで確認した。統合時の対処と試作で分かったことは対応結果に記録した
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-21"
+    - field: conclusion
+      from: "-"
+      to: 第2回（風船割りゲーム）の指導案とSlidevスライドをcourses/scratch-basic/lessons/020-balloon-game/に試作し、ビルドを確認した。移行で決める事項はPJR-3E2Kへ申し送った
+  previous_event_id: reg_0a21ebb452b94aa7b853853279e5c396
