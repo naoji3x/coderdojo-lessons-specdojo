@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-6G9T",
+  "run_id": "20261021T135643842Z-da3b90a5",
+  "updated_at": "2026-10-21T14:07:11.387Z",
+  "stages": {
+    "executor": {
+      "status": "succeeded",
+      "actor": "codex-expert-executor",
+      "attempts": 1,
+      "started_at": "2026-10-21T13:58:16.505Z",
+      "completed_at": "2026-10-21T14:06:19.877Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-6G9T/20261021T135643842Z-da3b90a5/evidence.json"
+    },
+    "reporter": {
+      "status": "succeeded",
+      "actor": "terra-reporter",
+      "attempts": 1,
+      "started_at": "2026-10-21T14:06:19.884Z",
+      "completed_at": "2026-10-21T14:06:30.948Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T135643Z-8868-result.md"
+    },
+    "integrate": {
+      "status": "running",
+      "actor": "terra-reporter",
+      "attempts": 2,
+      "started_at": "2026-10-21T14:07:11.387Z",
+      "completed_at": null,
+      "artifact_ref": null,
+      "repos": {
+        "project": {
+          "status": "failed",
+          "commit": null,
+          "merged_at": null,
+          "error": "Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T135643Z-8868-result.md:25:81 error MD013/line-length Line length [Expected: 80; Actual: 133] docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T135643Z-8868-result.md:27:81 error MD013/line-length Line length [Expected: 80; Actual: 143] docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T135643Z-8868-result.md:28:81 error MD013/line-length Line length [Expected: 80; Actual: 117] docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T135643Z-8868-result.md:33:81 error MD013/line-length Line length [Expected: 80; Actual: 204] docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T135643Z-8868-result.md:34:81 error MD013/line-length Line length [Expected: 80; Actual: 138] docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T135643Z-8868-result.md:35:81 error MD013/line-length Line length [Expected: 80; Actual: 192]"
+        }
+      }
+    }
+  },
+  "artifacts": {
+    "plan_ref": "docs/ja/projects/prj-0001/execution/exec/plans/pjr-6g9t-20261021T135643Z-8868-plan.md",
+    "result_ref": "docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T135643Z-8868-result.md"
+  }
+}
