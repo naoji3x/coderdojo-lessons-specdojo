@@ -7,11 +7,12 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: in-progress
+  item_status: waiting
   priority: medium
   owner: BA
   registered_at: "2026-10-21T13:40:02Z"
   due_on: "2026-10-31"
+  block_reason: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T142505Z-886c-result.md:24:81 error MD013/line-length Lin…"
   derived_from:
     - PJR-95RS
 ---
@@ -88,6 +89,13 @@ orchestrator がレビューし、PNG に出力して確かめた結果、次の
 
 - `npx slidev export <slides.md> --format png --output <作業用のディレクトリ>` で PNG に出力し、ブロックの図が Scratch の色（イベントは黄、変数は橙など）で、1行ずつ分かれて描かれていることを確かめる。Chromium とシステムのライブラリ、日本語のフォントは orchestrator が環境に入れた。出力した PNG は commit しない。
 - ブロックの日本語の名前は、scratchblocks の日本語の訳と一致していることを確かめた。引き続き、Stretch3 の実機で確かめる印は残す。
+
+### 4.3. 2回目の実行
+
+- `slides.md` の先頭に表紙用のスライド設定を置き、2枚目以降の設定は区切りの直後へ置いた。`style.css` は表紙と同じスライドで読み込むため、スタイル読込だけの空ページは作られない。
+- `ScratchBlocks.vue` は、各図の `text` コードブロックにある `pre` 要素の `textContent` を scratchblocks に渡すように直した。これにより、元の記法の改行・字下げ・空行が保たれる。日本語に加えて英語の翻訳も読み込み、C型ブロックを閉じる `end` を解釈できるようにした。
+- 得点の参照は `(得点)` に直した。得点、乱数、クローン、メッセージ送信、背景切替の全ての図で、元の scratchblocks 記法を `slides.md` に残している。[[prj-0001:pjr-m5sc-lesson-content-structure|PJR-M5SC]] に従い、`docs/guides/slidev-guide.md` の例と注意も同じ形式へ更新した。
+- `npx prettier --write` と `npx slidev build courses/scratch-basic/lessons/020-balloon-game/slides.md` は成功した。Slidev のパーサーで、空スライドなしの17枚全てにレイアウトと本文があることも確認した。PNG 出力は、この実行環境で Slidev がネットワークインターフェースを取得できず開始前に停止したため、開発サーバーまたは PNG 出力での人による目視確認を close 前に行う。`dist/` と作業用出力は Git 管理しない。
 
 ## 5. 関連ドキュメント
 
