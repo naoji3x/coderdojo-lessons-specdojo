@@ -7,12 +7,11 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: waiting
+  item_status: review
   priority: medium
   owner: BA
   registered_at: "2026-10-21T13:40:02Z"
   due_on: "2026-10-31"
-  block_reason: "integrate failed: project: Result Markdown notation violation before commit: docs/ja/projects/prj-0001/execution/exec/results/pjr-6g9t-20261021T145201Z-7f54-result.md:25:81 error MD013/line-length Lin…"
   derived_from:
     - PJR-95RS
 ---
@@ -58,7 +57,7 @@ agent の実行環境はネットワークに出られず、`package.json` は a
 | 4   | `npx slidev build` で確かめ、`slidev-guide.md` にブロックの図の書き方を書く | BA   | done | `dist/` は Git 管理しない                    |
 | 5   | 利用者が開発サーバーで見た目を確かめる                                      | BA   | open | close の前に行う                             |
 | 6   | 1回目のレビューの指摘（4.2）を直す                                          | BA   | done | 2回目の実行で対応した（4.3）                 |
-| 7   | 背景を白基調にする（4.4）                                                   | BA   | open | やり直しの指示に従う                         |
+| 7   | 背景を白基調にする（4.4）                                                   | BA   | done | 3回目の実行で対応した（4.5）                 |
 
 ## 4. 対応結果
 
@@ -117,6 +116,13 @@ orchestrator が2回目の成果物を PNG に出力して確かめ、4.2 の指
 - `npx prettier --check` と `npx slidev build`、Slidev の解析器で全17枚の `layout` が効いていることを確かめる。
 - この実行環境では PNG に出力できないため、見た目は統合のあとに orchestrator が PNG で確かめる。
 - 結果の要約・申し送りは、1項目を短い文にする。長いパスやコマンドは、文と分けて書く。
+
+### 4.5. 3回目の実行
+
+- 全17枚を `color: white` に統一し、白背景でも見分けられるように、節の左帯と見出し下線を考え方ごとの色にした。
+- 変数・乱数・クローン・メッセージは、番号と見出しを保ったまま、それぞれ橙・緑・黄橙・黄の帯で示した。
+- Scratchブロック図の枠は、白背景になじむ細い灰色線にした。図、スライドの構成、本文、実機確認印は変更していない。
+- Slidevの設定は区切りの直後に置き、`text` コードブロックのscratchblocks記法もそのまま保持した。
 
 ## 5. 関連ドキュメント
 

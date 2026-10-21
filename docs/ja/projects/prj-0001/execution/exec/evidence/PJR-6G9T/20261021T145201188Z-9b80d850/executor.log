@@ -1,0 +1,13 @@
+白背景へ統一し、各節は左帯と見出し下線で色分けしました。Scratchブロック図の枠も薄い灰色線に調整しています。
+
+更新:
+- [slides.md](/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-6G9T/coderdojo-lessons/courses/scratch-basic/lessons/020-balloon-game/slides.md)
+- [style.css](/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-6G9T/coderdojo-lessons/courses/scratch-basic/lessons/020-balloon-game/style.css)
+- [ScratchBlocks.vue](/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-6G9T/coderdojo-lessons/courses/scratch-basic/lessons/020-balloon-game/components/ScratchBlocks.vue)
+- [個票](/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-6G9T/project/docs/ja/projects/prj-0001/controls/project-register/pjr-6g9t-balloon-slides-design.md)
+
+`slidev build`、構造検査、Prettier、Markdown lint は成功しました。表示の最終確認のみ人手で必要です。
+
+<specdojo_executor_evidence>
+{"final_message":"第2回スライドを白基調へ統一し、節ごとの色付き左帯・見出し下線と薄いScratchブロック枠を反映しました。","validations":[{"command":"npx prettier --check courses/scratch-basic/lessons/020-balloon-game/slides.md courses/scratch-basic/lessons/020-balloon-game/style.css courses/scratch-basic/lessons/020-balloon-game/components/ScratchBlocks.vue && node --input-type=module -e \"Slidev parser structural check\"","status":"passed","summary":"17枚すべてにレイアウトと本文があり、全スライドが白背景、節の色分けクラスも確認しました。"},{"command":"npx slidev build courses/scratch-basic/lessons/020-balloon-game/slides.md","status":"passed","summary":"Slidevの本番ビルドが成功しました。"},{"command":"npx prettier --check docs/ja/projects/prj-0001/controls/project-register/pjr-6g9t-balloon-slides-design.md && npx markdownlint --disable MD013 -- docs/ja/projects/prj-0001/controls/project-register/pjr-6g9t-balloon-slides-design.md","status":"passed","summary":"個票の整形とMarkdown lintが成功しました。"},{"command":"git diff --check","status":"passed","summary":"両リポジトリで空白エラーはありません。"},{"command":"npx markdownlint <product markdown files>","status":"not_applicable","summary":"未実行","reason":"coderdojo-lessonsのpackage.jsonにmarkdownlintまたはmarkdownlint-cliの依存がありません。"},{"command":"npm test","status":"not_applicable","summary":"未実行","reason":"projectのtestはnpm initの仮スクリプトで、coderdojo-lessonsにはtestスクリプトがありません。"},{"command":"specdojo catalog validate","status":"not_applicable","summary":"未実行","reason":"対象プロジェクトにcatalog_pathが設定されていません。"},{"command":"npx slidev courses/scratch-basic/lessons/020-balloon-game/slides.md","status":"requires_human","summary":"開発サーバーまたはPNG出力で、白背景上の帯・下線・Scratchブロック図の見た目を人が確認する必要があります。"}]}
+</specdojo_executor_evidence>
