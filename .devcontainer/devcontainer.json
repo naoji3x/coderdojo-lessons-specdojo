@@ -3,7 +3,6 @@
   "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
   "remoteUser": "node",
   "init": true,
-
   "appPort": [3030, 3031],
   "portsAttributes": {
     "3030": {
@@ -15,7 +14,6 @@
       "onAutoForward": "notify"
     }
   },
-
   "workspaceMount": "source=${localWorkspaceFolder}/..,target=/workspaces/coderdojo-lessons-workspace,type=bind,consistency=cached",
   "workspaceFolder": "/workspaces/coderdojo-lessons-workspace/${localWorkspaceFolderBasename}",
   "features": {
@@ -24,9 +22,10 @@
       "upgradePackages": false
     },
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "tmux",
+      "packages": "tmux,emacs-nox,ripgrep,vim-nox",
       "upgradePackages": false
-    }
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
   },
   "mounts": [
     "source=coderdojo-lessons-specdojo-specdojo-git,target=/home/node/.config/git,type=volume",
@@ -44,19 +43,27 @@
     "CLAUDE_CONFIG_DIR": "/home/node/.claude",
     "OPENCODE_DISABLE_AUTO_UPDATE": "1"
   },
+  "remoteEnv": {
+    "PATH": "/home/node/.local/bin:${containerEnv:PATH}"
+  },
   "postCreateCommand": "bash .devcontainer/post-create.sh",
   "customizations": {
     "vscode": {
       "extensions": [
-        "github.copilot",
-        "github.copilot-chat",
-        "openai.chatgpt",
         "mhutchie.git-graph",
         "davidanson.vscode-markdownlint",
-        "esbenp.prettier-vscode",
         "redhat.vscode-yaml",
+        "esbenp.prettier-vscode",
+        "unifiedjs.vscode-remark",
+        "yzhang.markdown-all-in-one",
         "streetsidesoftware.code-spell-checker",
-        "unifiedjs.vscode-remark"
+        "editorconfig.editorconfig",
+        "usernamehw.errorlens",
+        "tamasfe.even-better-toml",
+        "anthropic.claude-code",
+        "openai.chatgpt",
+        "github.copilot",
+        "github.copilot-chat"
       ],
       // VS Code の設定（.vscode/settings.json と重複する項目もあるが、
       // コンテナ初回起動時にワークスペース設定が未反映でも既定値が効くようにするため保持する）
@@ -68,12 +75,30 @@
         "terminal.integrated.defaultProfile.linux": "zsh",
         "terminal.integrated.env.linux": {
           "PATH": "${env:HOME}/.local/bin:${workspaceFolder}/node_modules/.bin:${env:PATH}"
+        },
+        "[markdown]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[yaml]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "yaml.schemas": {
+          "./node_modules/specdojo/docs/specdojo/schemas/v1/agent-members.schema.yaml": ".specdojo/agent-members.yaml",
+          "./node_modules/specdojo/docs/specdojo/schemas/v1/exec-defaults.schema.yaml": ".specdojo/exec-defaults.yaml",
+          "./node_modules/specdojo/docs/specdojo/schemas/v1/job.schema.yaml": "docs/**/jobs/*.yaml",
+          "./node_modules/specdojo/docs/specdojo/schemas/v1/pm-members.schema.yaml": "docs/**/pm-members.yaml",
+          "./node_modules/specdojo/docs/specdojo/schemas/v1/pm-review-viewpoints.schema.yaml": "docs/**/pm-review-viewpoints.yaml",
+          "./node_modules/specdojo/docs/specdojo/schemas/v1/pm-roles.schema.yaml": "docs/**/pm-roles.yaml",
+          "./node_modules/specdojo/docs/specdojo/schemas/v1/routine.schema.yaml": "docs/**/routines/*.yaml",
+          "./node_modules/specdojo/docs/specdojo/schemas/v1/sch-defaults.schema.yaml": "docs/**/sch-defaults.yaml",
+          "./node_modules/specdojo/docs/specdojo/schemas/v1/sch-milestones.schema.yaml": "docs/**/sch-milestones.yaml",
+          "./node_modules/specdojo/docs/specdojo/schemas/v1/sch-strategy.schema.yaml": "docs/**/sch-strategy-*.yaml",
+          "./node_modules/specdojo/docs/specdojo/schemas/v1/sch-track.schema.yaml": "docs/**/sch-track-*.yaml"
         }
       }
     }
   },
-  "runArgs": ["--security-opt=seccomp=unconfined"],
-  "remoteEnv": {
-    "PATH": "/home/node/.local/bin:${containerEnv:PATH}"
-  }
+  "runArgs": ["--security-opt=seccomp=unconfined"]
 }
