@@ -21,7 +21,7 @@
     "lefthook": "^2.2.2",
     "markdownlint-cli": "^0.49.1",
     "prettier": "^3.9.10",
-    "specdojo": "^0.4.0"
+    "specdojo": "^0.4.2"
   },
   "dependencies": {
     "@specdojo/docs-lint": "^0.2.1",

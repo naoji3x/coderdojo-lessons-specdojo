@@ -1,21 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Docker が volume の mount 先の親を root で作るため、親の持ち主も戻す（PJR-GHBP）。
-for parent in "${HOME}/.local" "${HOME}/.local/share"; do
+# Docker creates named volume mount points as root when the image lacks them. Hand the mount
+# points and their parents back to the container user before git config and agent installers write into them.
+# Parents are chowned non-recursively, and mount points are chowned recursively.
+for parent in \
+  "${HOME}/.local" \
+  "${HOME}/.local/share" \
+  "${HOME}/.config"; do
   if [ -d "$parent" ]; then
     sudo chown "$(id -u):$(id -g)" "$parent"
   fi
 done
 
-# Some installers place binaries under ~/.local/bin.
-mkdir -p "${HOME}/.local/bin"
-export PATH="${HOME}/.local/bin:${PATH}"
-
-# Docker creates named volume mount points as root when the image lacks them. Hand them back to
-# the container user before git config and agent installers write into them.
 for dir in \
-  "${HOME}/.config" \
   "${HOME}/.config/git" \
   "${HOME}/.claude" \
   "${HOME}/.codex" \
@@ -27,6 +25,10 @@ for dir in \
     sudo chown -R "$(id -u):$(id -g)" "$dir"
   fi
 done
+
+# Some installers place binaries under ~/.local/bin. Ensure the directory exists and is on PATH.
+mkdir -p "${HOME}/.local/bin"
+export PATH="${HOME}/.local/bin:${PATH}"
 
 # Include the host ~/.gitconfig copied by Dev Containers at the top of the volume-backed global
 # config, so identity and other host settings take effect while container-specific settings written
@@ -64,6 +66,55 @@ fi
 
 git config --global core.quotepath false
 git config --global core.autocrlf input
+
+sudo npm install --global \
+  typescript@6.0.3 \
+  typescript-language-server@6.0.1 \
+  yaml-language-server@1.24.0 \
+  bash-language-server@5.8.1
+
+MARKSMAN_VERSION="2026-02-08"
+case "$(dpkg --print-architecture)" in
+  amd64)
+    MARKSMAN_ARCH="x64"
+    MARKSMAN_SHA256="be5098e8213219269c47fc0d916a66fa31ce0602ec967475c722260aabf26087"
+    ;;
+  arm64)
+    MARKSMAN_ARCH="arm64"
+    MARKSMAN_SHA256="db8e124527f7f8048e3e6c91821b9c52ef173d92c01e47d221bf1337afd962fb"
+    ;;
+  *)
+    echo "Unsupported architecture for Marksman: $(dpkg --print-architecture)" >&2
+    exit 1
+    ;;
+esac
+curl -fsSL --retry 3 \
+  "https://github.com/artempyanykh/marksman/releases/download/$MARKSMAN_VERSION/marksman-linux-$MARKSMAN_ARCH" \
+  -o /tmp/marksman
+echo "$MARKSMAN_SHA256  /tmp/marksman" | sha256sum -c -
+sudo install -m 0755 /tmp/marksman /usr/local/bin/marksman
+rm -f /tmp/marksman
+
+# Keep dotfiles authoritative: install the bundled defaults only when no supported init file exists.
+if [ ! -f "$HOME/.emacs" ] && \
+   [ ! -f "$HOME/.emacs.el" ] && \
+   [ ! -f "$HOME/.emacs.d/init.el" ] && \
+   [ ! -f "$HOME/.config/emacs/init.el" ]; then
+  if [ -d "$HOME/.emacs.d" ]; then
+    EMACS_INIT="$HOME/.emacs.d/init.el"
+  else
+    EMACS_INIT="$HOME/.config/emacs/init.el"
+  fi
+  mkdir -p "$(dirname "$EMACS_INIT")"
+  cp .devcontainer/emacs/init.el "$EMACS_INIT"
+  echo "Installed Emacs init: $EMACS_INIT"
+fi
+
+# Keep dotfiles authoritative: install the bundled defaults only when Vim has no user config.
+if [ ! -f "$HOME/.vimrc" ] && [ ! -f "$HOME/.vim/vimrc" ]; then
+  cp .devcontainer/vim/vimrc "$HOME/.vimrc"
+  echo "Installed Vim config: $HOME/.vimrc"
+fi
 
 if ! curl -fsSL https://claude.ai/install.sh | bash; then
   echo "Warning: Claude Code installer failed."
