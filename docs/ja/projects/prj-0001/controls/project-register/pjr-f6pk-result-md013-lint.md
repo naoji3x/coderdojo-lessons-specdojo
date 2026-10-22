@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-f6pk-result-md013-lint
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: open
+  item_status: done
   priority: high
   owner: DEV
   registered_at: "2026-10-21T22:55:04Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-22T10:10:48Z"
+  conclusion: ルートの .markdownlint.yaml で MD013 を false にし、commit hook も同じ設定を使うようにして、runner と hook の決まりをそろえた。
   derived_from:
     - PJR-6G9T
     - PJR-CZY8
