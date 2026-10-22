@@ -6,4 +6,4 @@ pre-commit:
       run: npx prettier --check {staged_files}
     - name: lint Markdown documentation
       glob: "*.md"
-      run: npx markdownlint --disable MD013 -- {staged_files}
+      run: npx markdownlint -- {staged_files}
