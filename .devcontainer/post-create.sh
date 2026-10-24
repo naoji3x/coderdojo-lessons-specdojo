@@ -138,3 +138,8 @@ if ! curl -fsSL https://antigravity.google/cli/install.sh | bash; then
 fi
 
 npm install
+
+# 投影スライドの kata を Slidev で表示・書き出し（tools/preview-lsd.sh）するとき、
+# Chromium の実行に必要なシステムのライブラリを入れる。Chromium 本体は npm install で
+# playwright-chromium が入れる。版をそろえるため、プロジェクトの playwright を使う。
+sudo ./node_modules/.bin/playwright install-deps chromium

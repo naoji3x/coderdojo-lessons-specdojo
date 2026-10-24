@@ -4,3 +4,6 @@ node_modules/
 docs/**/generated/*
 !docs/**/generated/.gitkeep
 docs/**/execution/exec/.locks/
+
+# 投影スライドの kata の表示に使う作業用のディレクトリ（tools/preview-lsd.sh）
+/tmp/

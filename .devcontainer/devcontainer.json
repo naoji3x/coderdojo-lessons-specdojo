@@ -22,7 +22,7 @@
       "upgradePackages": false
     },
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "tmux,emacs-nox,ripgrep,vim-nox",
+      "packages": "tmux,emacs-nox,ripgrep,vim-nox,fonts-noto-cjk",
       "upgradePackages": false
     },
     "ghcr.io/devcontainers/features/github-cli:1": {}
