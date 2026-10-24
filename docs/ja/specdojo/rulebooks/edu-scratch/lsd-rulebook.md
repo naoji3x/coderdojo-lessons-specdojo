@@ -6,7 +6,7 @@ specdojo:
   target_format: markdown
   recipe: undecided
   sample: edu-scratch:lsd-sample
-  template: undecided
+  template: edu-scratch:lsd-template
 ---
 
 # 投影スライド Rulebook
