@@ -2,17 +2,19 @@
 specdojo:
   id: prj-0001:pjr-br5a-lsd-rulebook-review
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: high
   difficulty: hard
   owner: BA
   registered_at: "2026-10-24T11:38:16Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-24T11:53:11Z"
+  conclusion: edu-scratch:lsd-rulebook を手本と照らして見直した。最小例は prettier-ignore で区切りの直後にページ設定を書く形へ直した。
   derived_from:
     - PJR-9DF9
 ---

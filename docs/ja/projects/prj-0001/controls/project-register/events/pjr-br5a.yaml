@@ -118,3 +118,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_5c775cd4b3d14bbab9cb3787663a0d66
+- v: 1
+  id: reg_554d1250619343d8a99cd8decdce41d1
+  ts: "2026-10-24T11:53:11Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: exec run の成果を orchestrator が完了条件と照らして確かめ、直っていなかった最小例を利用者の指定で orchestrator が直したため
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-24"
+    - field: conclusion
+      from: "-"
+      to: edu-scratch:lsd-rulebook を手本と照らして見直した。最小例は prettier-ignore で区切りの直後にページ設定を書く形へ直した。
+  previous_event_id: reg_fd046a93d7d645e9b4a844b43678e79f
