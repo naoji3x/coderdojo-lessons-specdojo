@@ -13,7 +13,7 @@ specdojo:
   owner: BA
   registered_at: "2026-10-24T12:02:38Z"
   due_on: "2026-10-31"
-  block_reason: rate limit reached
+  block_reason: "agent exited with non-zero code: resumed executor did not account for every plan target: edu-scratch:lsd-sample"
   derived_from:
     - PJR-BR5A
   approach: sample-authoring
