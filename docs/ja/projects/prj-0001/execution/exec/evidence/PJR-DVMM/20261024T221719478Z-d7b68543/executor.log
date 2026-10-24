@@ -1,0 +1,5 @@
+対応完了です。案内役の slot 規則と markdownlint 規則を手本・教材設定に合わせ、個票の対応結果も更新しました。
+
+<specdojo_executor_evidence>
+{"final_message":"rulebook の 6.2・6.5・7章を実態に合わせ、個票へ対応結果と手本1件による留意点を記録した。","validations":[{"command":"npx prettier --check docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md docs/ja/projects/prj-0001/controls/project-register/pjr-dvmm-lsd-rulebook-slot-lint.md","status":"passed","summary":"対象 Markdown 2 ファイルは Prettier の書式検査を通過。"},{"command":"npx markdownlint -- docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md docs/ja/projects/prj-0001/controls/project-register/pjr-dvmm-lsd-rulebook-slot-lint.md","status":"passed","summary":"対象 Markdown 2 ファイルは markdownlint を通過。"},{"command":"git diff --check","status":"passed","summary":"変更差分に空白エラーなし。"},{"command":"npm test","status":"not_applicable","summary":"未実行。","reason":"package.json の test は npm init の仮置きスクリプトであり、変更は Markdown 文書のみ。"},{"command":"specdojo catalog validate","status":"not_applicable","summary":"未実行。","reason":"対象プロジェクトの .specdojo/specdojo.config.json に catalog_path が設定されていない。"}]}
+</specdojo_executor_evidence>

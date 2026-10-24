@@ -53,7 +53,10 @@ specdojo:
 
 ## 4. 対応結果
 
-_TODO_: 完了時に、実施内容・成果物・残課題を記載する。未完了の場合は `-` とする。
+- 6.2 は、案内役を置かない slot を `:: note ::` に限定した。`:: note ::` の配置に引きずられて本文と重なるためであり、2 列の `:: left ::` と `:: right ::` への配置は手本と同様に許可した。
+- 6.5 と 7 章は、`slides.md` の markdownlint を教材リポジトリの `.markdownlint.yaml` に従わせ、文書内の `markdownlint-disable` 注釈で止められる規則を MD003 と MD022 に限定した。
+- `npx prettier --check docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md` と `npx markdownlint -- docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md` は成功した。
+- 手本は 1 件だけである。そのため、`:: note ::` 以外の slot や別レイアウトでの案内役の重なりは判断できない。追加の手本ができたときに、必要なら配置規則を見直す。
 
 ## 5. 関連ドキュメント
 
