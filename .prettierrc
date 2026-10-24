@@ -1,0 +1,14 @@
+{
+  "overrides": [
+    {
+      "files": [
+        "docs/ja/specdojo/samples/edu-scratch/lsd-*.md",
+        "docs/ja/specdojo/templates/edu-scratch/lsd-*.md"
+      ],
+      "options": {
+        "parser": "slidev",
+        "plugins": ["prettier-plugin-slidev"]
+      }
+    }
+  ]
+}
