@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-BR5A",
+  "run_id": "20261024T114556676Z-062a96bd",
+  "updated_at": "2026-10-24T11:49:16.884Z",
+  "stages": {
+    "executor": {
+      "status": "succeeded",
+      "actor": "terra-executor",
+      "attempts": 1,
+      "started_at": "2026-10-24T11:46:54.934Z",
+      "completed_at": "2026-10-24T11:49:06.614Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-BR5A/20261024T114556676Z-062a96bd/evidence.json"
+    },
+    "reporter": {
+      "status": "succeeded",
+      "actor": "terra-reporter",
+      "attempts": 1,
+      "started_at": "2026-10-24T11:49:06.618Z",
+      "completed_at": "2026-10-24T11:49:16.860Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/results/pjr-br5a-20261024T114556Z-b99445d0-result.md"
+    },
+    "integrate": {
+      "status": "running",
+      "actor": "terra-executor",
+      "attempts": 1,
+      "started_at": "2026-10-24T11:49:16.884Z",
+      "completed_at": null,
+      "artifact_ref": null
+    }
+  },
+  "artifacts": {
+    "plan_ref": "docs/ja/projects/prj-0001/execution/exec/plans/pjr-br5a-20261024T114556Z-b99445d0-plan.md",
+    "result_ref": "docs/ja/projects/prj-0001/execution/exec/results/pjr-br5a-20261024T114556Z-b99445d0-result.md"
+  }
+}
