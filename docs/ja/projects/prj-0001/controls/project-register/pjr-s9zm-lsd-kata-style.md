@@ -55,13 +55,13 @@ rulebook には `teacher-cat` 以外の class の決まりがない。
 
 ## 3. 作業内容
 
-| No  | 作業                                                        | 担当 | 状態 | メモ                                                     |
-| --- | ----------------------------------------------------------- | ---- | ---- | -------------------------------------------------------- |
-| 1   | 含める形を (i)・(ii) から決める                             | DEV  | open | (i) を採用。kata は単一 Markdown ファイルで配布するため  |
-| 2   | sample に `style.css` を含める                              | DEV  | open | sample の先頭 `<style>` に必要な規則を直接記載           |
-| 3   | Slidev で表示して確かめる                                   | DEV  | open | `tools/preview-lsd.sh png` は sandbox のポート取得で失敗 |
-| 4   | rulebook に `style.css` を含める規則を加える                | DEV  | open | `lsd-template` にも同じ `<style>` 方式を求める           |
-| 5   | rulebook に class の決まりを加え、sample の各ページに付ける | DEV  | open | 手本の `slides.md` に対応する class を追加               |
+| No  | 作業                                                        | 担当 | 状態 | メモ                                                                       |
+| --- | ----------------------------------------------------------- | ---- | ---- | -------------------------------------------------------------------------- |
+| 1   | 含める形を (i)・(ii) から決める                             | orch | done | exec は (i) を選んだが、表示で1ページ目にしか効かず、orch が (ii) に直した |
+| 2   | sample に `style.css` を含める                              | orch | done | 付属の `lsd-sample.css`                                                    |
+| 3   | Slidev で表示して確かめる                                   | orch | done | exec は sandbox で書き出せず、統合後に orch が確かめた                     |
+| 4   | rulebook に `style.css` を含める規則を加える                | orch | done | exec の規則を orch が Slidev の仕組みに合わせて直した                      |
+| 5   | rulebook に class の決まりを加え、sample の各ページに付ける | exec | done | 手本の `slides.md` に対応する class                                        |
 
 ## 4. 対応結果
 
@@ -69,6 +69,22 @@ rulebook には `teacher-cat` 以外の class の決まりがない。
 - `[[edu-scratch:lsd-sample|投影スライド sample]]` に、本文・案内役・節の扉・実機確認・めあて・標準完成の見た目を定める CSS を追加した。めあては `check-list`、節の扉は `section-slide section-<種類>`、実機確認は `device-check`、標準完成は `completion-grid` を使い、手本と同じ種類のページの class をそろえた。
 - `[[edu-scratch:lsd-rulebook|投影スライド Rulebook]]` に、通常の活動では `slides.md` から `./style.css` を読み込むこと、kata の sample と将来の template は同じ `<style>` 方式にすること、class ごとの使用箇所を記載した。
 - `tools/preview-lsd.sh png docs/ja/specdojo/samples/edu-scratch/lsd-sample.md` を実行したが、Slidev のポート取得時に sandbox の `uv_interface_addresses` が `Unknown system error 1` となり、Chromium の起動前に PNG を出力できなかった。統合後に sandbox 外の orchestrator が全ページを PNG 出力し、案内役の右下配置と本文文字サイズを確認する。
+
+orchestrator が確かめ、直したこと:
+
+- exec run（codex-expert-executor・terra-reporter）で統合した（`c60633b`）。class の決まりと sample の class は、完了条件どおりに入った。
+- 統合後に `tools/preview-lsd.sh png` で書き出すと、CSS は1ページ目にしか効いていなかった。2ページ目以降は、案内役が右下に出ず、節の色や `device-check` の見た目もなかった。
+- 原因: Slidev は Markdown の中の `<style>` を `<style scoped>` に書き換え、そのページだけに当てる（`@slidev/cli` の `MarkdownItStyleScoped`）。全ページに効くのは、`slides.md` と同じディレクトリの `style.css`・`styles.css`・`styles/index.css` の自動の読み込みだけである。手本で全ページに効いているのも、この自動の読み込みによる。
+- 利用者の指定で orchestrator が直した（`e5b3f02`、merge `afb0c25`）。
+  - sample の `<style>` のブロックを、付属の `lsd-sample.css` に移した（案 (ii)）。
+  - `tools/preview-lsd.sh` が、kata と同じ名前の `.css` を `style.css` として写すようにした。
+  - rulebook の規則を、`style.css` の自動の読み込みと `<style>` が scoped になることに合わせた。
+- 直した後に8ページを書き出し、全ページで案内役が右下に出ること、節の扉の色の帯と下線、`device-check`・`check-list`・`completion-grid` の見た目が出ることを確かめた。sample と rulebook は prettier と markdownlint を通る。
+
+残課題:
+
+- `kata list` と `kata status` が、付属の `lsd-sample.css` を ID `lsd-sample` の別の sample として表示する（`kata status` では `package-missing`）。kata の一覧が kata のディレクトリのファイルをすべて数えるためで、`kata show edu-scratch:lsd-sample` は正しく動く。
+- 教材の `slides.md` の先頭の `<style src="./style.css">` は、新しい規則では不要になる。消すかは、次に教材を直すときに判断する。
 
 ## 5. 関連ドキュメント
 
