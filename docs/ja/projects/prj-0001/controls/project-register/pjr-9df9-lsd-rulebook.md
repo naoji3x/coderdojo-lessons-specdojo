@@ -51,15 +51,30 @@ specdojo:
 
 | No  | 作業                                                           | 担当 | 状態 | メモ                |
 | --- | -------------------------------------------------------------- | ---- | ---- | ------------------- |
-| 1   | 手本と rulebook の執筆標準を読み、繰り返し使える規則を抜き出す | exec | open | 手本は読み取り専用  |
-| 2   | `edu-scratch:lsd-rulebook` を作る                              | exec | open | `status: draft`     |
-| 3   | 判断できない点を result の申し送りに書く                       | exec | open | 手本が1件だけのため |
+| 1   | 手本と rulebook の執筆標準を読み、繰り返し使える規則を抜き出す | exec | done | 手本は読み取り専用  |
+| 2   | `edu-scratch:lsd-rulebook` を作る                              | exec | done | `status: draft`     |
+| 3   | 判断できない点を result の申し送りに書く                       | exec | done | 手本が1件だけのため |
 
 ## 4. 対応結果
 
-_TODO_: 完了時に、実施内容・成果物・残課題を記載する。未完了の場合は `-` とする。
+`exec run --register --worktree` で terra-executor が rulebook を作り、
+`project/prj-0001/develop` へ統合した（`d5fda81`）。
+統合の前の markdownlint で止まらず、PJR-F6PK の残課題も確かめられた。
+
+- `docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md` を ID `edu-scratch:lsd-rulebook`、`status: draft` で作った。
+- `recipe`・`sample`・`template` は `undecided`。手本は変更されていない。
+
+orchestrator が完了条件と照らして確かめた結果:
+
+- 次の3点が残った。
+  1. 最小例のページ設定で、区切りの直後に空行がある。
+  2. `style.css` と案内役のキャラクターの知見が抜けている。原因の一つは、手本に `style.css`・`components/` を渡していなかったことである。
+  3. 手本にない規則がある。
+- 判断できない点を result の申し送りに書く条件は満たしていない。
+- 3点と申し送りは、見直しの todo [[prj-0001:pjr-br5a-lsd-rulebook-review]] へ引き継いだ。
 
 ## 5. 関連ドキュメント
 
+- [[prj-0001:pjr-br5a-lsd-rulebook-review]]：残った問題を引き継いだ見直しの項目
 - [[prj-0001:pjr-6g9t-balloon-slides-design]]：手本の投影スライドを作った項目
 - [[prj-0001:pjr-czy8-balloon-slides-characters]]：手本の案内役のキャラクターを整えた項目
