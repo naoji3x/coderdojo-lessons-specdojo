@@ -2,6 +2,7 @@
   "version": 1,
   "current_project": "prj-0001",
   "agent_members_path": ".specdojo/agent-members.yaml",
+  "kata_authority": "edu-scratch",
   "projects": {
     "prj-0001": {
       "repos": [
