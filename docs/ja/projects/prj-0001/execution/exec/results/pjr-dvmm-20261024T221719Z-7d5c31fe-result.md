@@ -34,3 +34,18 @@ specdojo:
 ## 4. 進め方
 
 個票の完了条件を基準に、関連する rulebook の規則を実態へ整合させ、対象 Markdown 文書の書式・lint と差分検査で確認した。
+
+## 5. トレーサビリティ
+
+runner がプロダクトリポジトリを統合した後に記録した、統合先の commit snapshot です。
+プロジェクトリポジトリの統合は、この result を含む merge commit で確認します。
+その merge commit には `Refs: prj-0001:PJR-DVMM` を付けます。
+PR が `not applicable` の行は、runner がローカルで統合し PR を経由していません。
+
+<!-- markdownlint-disable MD013 -->
+
+| trace key           | repository          | integration branch | PR             | commit snapshot             | recorded at              |
+| ------------------- | ------------------- | ------------------ | -------------- | --------------------------- | ------------------------ |
+| `prj-0001:PJR-DVMM` | `coderdojo-lessons` | `develop`          | not applicable | not applicable (no changes) | 2026-10-24T22:19:01.112Z |
+
+<!-- markdownlint-enable MD013 -->
