@@ -92,3 +92,29 @@
       from: "[\"edu-scratch:lsd-rulebook\"]"
       to: "-"
   previous_event_id: reg_9ccd4fcbdc9d49719694f8d3602b0bad
+- v: 1
+  id: reg_5c775cd4b3d14bbab9cb3787663a0d66
+  ts: "2026-10-24T11:46:16Z"
+  action: start
+  actor: terra-executor
+  from_status: waiting
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: waiting
+      to: in-progress
+  previous_event_id: reg_bd1adea76dd44dd69e4ee0e987ab4d5c
+- v: 1
+  id: reg_fd046a93d7d645e9b4a844b43678e79f
+  ts: "2026-10-24T11:49:19Z"
+  action: review
+  actor: terra-executor
+  from_status: in-progress
+  to_status: review
+  reason: ready for review
+  changes:
+    - field: status
+      from: in-progress
+      to: review
+  previous_event_id: reg_5c775cd4b3d14bbab9cb3787663a0d66

@@ -1,0 +1,5 @@
+rulebook と個票の対応結果を更新しました。最小例の区切り、Slidev の実例に基づく CSS・案内役・テーマ部品の規則、画像管理の扱いを見直し済みです。Prettier、markdownlint、差分検査に成功しています。
+
+<specdojo_executor_evidence>
+{"final_message":"投影スライド rulebook を手本に照らして改訂し、個票の対応結果も更新した。","validations":[{"command":"npx prettier --check docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md docs/ja/projects/prj-0001/controls/project-register/pjr-br5a-lsd-rulebook-review.md","status":"passed","summary":"変更した Markdown 2 ファイルは Prettier の書式に一致した。"},{"command":"npx markdownlint -- docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md docs/ja/projects/prj-0001/controls/project-register/pjr-br5a-lsd-rulebook-review.md","status":"passed","summary":"変更した Markdown 2 ファイルで markdownlint は成功した。"},{"command":"git diff --check","status":"passed","summary":"変更差分に空白エラーはない。"},{"command":"specdojo catalog validate","status":"not_applicable","summary":"カタログ検証は実行しない。","reason":"`.specdojo/specdojo.config.json` の prj-0001 に `catalog_path` が設定されていない。"}]}
+</specdojo_executor_evidence>
