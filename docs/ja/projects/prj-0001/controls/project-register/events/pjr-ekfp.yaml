@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_20a851f0c59342459376a9d019429e75
+  ts: "2026-10-24T23:30:24Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 投影スライドの template を作る
+    - field: description
+      from: ""
+      to: edu-scratch:lsd-rulebook と lsd-sample・第2回のスライドを手本に、新しい活動の投影スライドを書き始める雛形（edu-scratch:lsd-template と付属の lsd-template.css）を作り、rulebook の template を新しい ID へ更新する。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: difficulty
+      from: ""
+      to: hard
+    - field: owner
+      from: ""
+      to: _TODO_
+    - field: registered
+      from: ""
+      to: "2026-10-24"
+    - field: due
+      from: ""
+      to: _TODO_
+    - field: approach
+      from: ""
+      to: template-authoring
+    - field: targets
+      from: ""
+      to: "[\"edu-scratch:lsd-template\"]"
+    - field: sources
+      from: ""
+      to: "[\"edu-scratch:lsd-rulebook\",\"edu-scratch:lsd-sample\",\"docs/ja/specdojo/samples/edu-scratch/lsd-sample.css\",\"coderdojo-lessons:courses/*/lessons/*/slides.md\",\"coderdojo-lessons:courses/*/lessons/*/style.css\"]"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-S9ZM\"]"
