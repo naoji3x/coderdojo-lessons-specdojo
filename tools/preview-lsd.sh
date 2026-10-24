@@ -3,6 +3,7 @@
 #
 # kata のファイルには活動のコンポーネント（ScratchBlocks.vue など）がないため、
 # 教材のリポジトリの活動から components/ を写した作業用のディレクトリ（tmp/ の下）で動かす。
+# kata と同じ名前の .css（例: lsd-sample.css）があれば、style.css として一緒に写す。
 #
 # 使い方:
 #   tools/preview-lsd.sh serve <kata の .md> [slidev のオプション...]  # 既定は --port 3030 --remote
@@ -14,7 +15,7 @@
 set -euo pipefail
 
 usage() {
-  sed -n '7,9p' "$0" | sed 's/^# //' >&2
+  sed -n '8,10p' "$0" | sed 's/^# //' >&2
   exit 2
 }
 
@@ -42,6 +43,12 @@ rm -rf "$dir"
 mkdir -p "$dir"
 cp "$kata" "$dir/slides.md"
 cp -r "$components" "$dir/components"
+# kata と同じ名前の .css があれば style.css として写す。Slidev は style.css を全ページに読み込むが、
+# slides.md の中の <style> はそのページだけに効くため、kata の見た目は付属の .css に置く。
+css="${kata%.md}.css"
+if [ -f "$css" ]; then
+  cp "$css" "$dir/style.css"
+fi
 
 cd "$root"
 case "$mode" in
