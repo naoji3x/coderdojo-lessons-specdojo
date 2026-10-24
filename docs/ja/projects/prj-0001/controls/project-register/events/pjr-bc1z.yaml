@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_22b1f99fd7ac47a0b87575559a18c513
+  ts: "2026-10-24T11:50:39Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: rulebook-maintenance の plan が markdownlint（MD036）で止まる
+    - field: description
+      from: ""
+      to: カタログと pm-roles のない project で、見直しの plan のレビュー観点の欄が \_MISSING\_ だけの段落になり、着手の checkpoint が commit hook で止まる（SpecDojo 0.4.5）。
+    - field: type
+      from: ""
+      to: issue
+    - field: priority
+      from: ""
+      to: high
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-24"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-BR5A\"]"
