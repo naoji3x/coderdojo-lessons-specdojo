@@ -26,12 +26,13 @@
   margin-top: 0.35em;
 }
 
-.slidev-layout.cover p {
+/* neversink の表紙のレイアウトにも同じ強さの規則があり、後から読み込まれて勝つため、class を重ねて強くする。 */
+.slidev-layout.cover.cover p {
   font-size: 1.55rem;
 }
 
-.slidev-layout.cover .note,
-.slidev-layout.cover .note p {
+.slidev-layout.cover.cover .note,
+.slidev-layout.cover.cover .note p {
   font-size: 1.35rem;
 }
 
