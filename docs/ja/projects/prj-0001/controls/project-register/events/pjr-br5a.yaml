@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_3184724e1ef74af88cacd119420f2727
+  ts: "2026-10-24T11:38:16Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 投影スライドの rulebook を見直す
+    - field: description
+      from: ""
+      to: PJR-9DF9 で作った edu-scratch:lsd-rulebook の最小例の誤り、手本から抜けた知見、手本にない規則を、style.css と components を含む手本と照らして直す。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: high
+    - field: difficulty
+      from: ""
+      to: hard
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-24"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: approach
+      from: ""
+      to: rulebook-maintenance
+    - field: targets
+      from: ""
+      to: "[\"edu-scratch:lsd-rulebook\"]"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-9DF9\"]"
