@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-0BVZ",
+  "run_id": "20261024T141835194Z-78754181",
+  "updated_at": "2026-10-24T14:27:11.448Z",
+  "stages": {
+    "executor": {
+      "status": "succeeded",
+      "actor": "codex-expert-executor",
+      "attempts": 1,
+      "started_at": "2026-10-24T14:21:05.800Z",
+      "completed_at": "2026-10-24T14:26:55.020Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-0BVZ/20261024T141835194Z-78754181/evidence.json"
+    },
+    "reporter": {
+      "status": "succeeded",
+      "actor": "terra-reporter",
+      "attempts": 1,
+      "started_at": "2026-10-24T14:26:55.025Z",
+      "completed_at": "2026-10-24T14:27:07.977Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/results/pjr-0bvz-20261024T141835Z-8e2eadf9-result.md"
+    },
+    "integrate": {
+      "status": "succeeded",
+      "actor": "codex-expert-executor",
+      "attempts": 1,
+      "started_at": "2026-10-24T14:27:07.999Z",
+      "completed_at": "2026-10-24T14:27:11.448Z",
+      "artifact_ref": null,
+      "repos": {
+        "coderdojo-lessons": {
+          "status": "unchanged",
+          "commit": null,
+          "merged_at": null
+        },
+        "project": {
+          "status": "merged",
+          "commit": null,
+          "merged_at": "2026-10-24T14:27:10.298Z"
+        }
+      }
+    }
+  },
+  "artifacts": {
+    "plan_ref": "docs/ja/projects/prj-0001/execution/exec/plans/pjr-0bvz-20261024T141835Z-8e2eadf9-plan.md",
+    "result_ref": "docs/ja/projects/prj-0001/execution/exec/results/pjr-0bvz-20261024T141835Z-8e2eadf9-result.md"
+  }
+}
