@@ -64,3 +64,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_14a0ec7bef4a49aead7aa1449dbbdef3
+- v: 1
+  id: reg_5f922458a1a34f72a649185b404c123f
+  ts: "2026-10-24T22:29:46Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: exec run の成果を orchestrator が完了条件と照らして確かめたため
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-24"
+    - field: conclusion
+      from: "-"
+      to: "6.2 の slot の規則を :: note :: に絞り、6.5 と 7 章の markdownlint の規則を教材のリポジトリの設定に合わせた。"
+  previous_event_id: reg_bd4f874055fe4032b628c74670aae3c9

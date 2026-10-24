@@ -2,17 +2,19 @@
 specdojo:
   id: prj-0001:pjr-dvmm-lsd-rulebook-slot-lint
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   difficulty: medium
   owner: BA
   registered_at: "2026-10-24T22:03:38Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-24T22:29:46Z"
+  conclusion: "6.2 の slot の規則を :: note :: に絞り、6.5 と 7 章の markdownlint の規則を教材のリポジトリの設定に合わせた。"
   derived_from:
     - PJR-0BVZ
 ---
