@@ -137,3 +137,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_1833450d000b4c8f8e6d970b2de27401
+- v: 1
+  id: reg_c5ba68f44bca4d949141babdaa58c20d
+  ts: "2026-10-24T22:04:09Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: exec run の成果を orchestrator が完了条件と照らして確かめ、満たしていない記録の条件と rulebook との食い違いを PJR-DVMM へ引き継いだため
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-24"
+    - field: conclusion
+      from: "-"
+      to: edu-scratch:lsd-sample を draft で作り、rulebook の sample を新しい ID へ更新した。判断できない点の申し送りと rulebook との食い違いは PJR-DVMM へ引き継いだ。
+  previous_event_id: reg_3e60b97dc4f2422e8e85f588086d9aaa

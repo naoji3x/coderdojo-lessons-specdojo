@@ -2,17 +2,19 @@
 specdojo:
   id: prj-0001:pjr-0bvz-lsd-sample
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: high
   difficulty: hard
   owner: BA
   registered_at: "2026-10-24T12:02:38Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-24T22:04:09Z"
+  conclusion: edu-scratch:lsd-sample を draft で作り、rulebook の sample を新しい ID へ更新した。判断できない点の申し送りと rulebook との食い違いは PJR-DVMM へ引き継いだ。
   derived_from:
     - PJR-BR5A
   approach: sample-authoring
