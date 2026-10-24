@@ -7,12 +7,13 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: open
+  item_status: waiting
   priority: high
   difficulty: hard
   owner: BA
   registered_at: "2026-10-24T11:38:16Z"
   due_on: "2026-10-31"
+  block_reason: "checkpoint failed: Checkpoint commit failed (exec(register PJR-BR5A): start); staged changes rolled back (likely a failing git hook): format documentation and configuration: Checking formatting..."
   derived_from:
     - PJR-9DF9
   approach: rulebook-maintenance

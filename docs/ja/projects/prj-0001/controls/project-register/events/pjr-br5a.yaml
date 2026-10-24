@@ -44,3 +44,32 @@
     - field: derived_from
       from: ""
       to: "[\"PJR-9DF9\"]"
+- v: 1
+  id: reg_4e6319d087c547cc828836194e8c326f
+  ts: "2026-10-24T11:39:10Z"
+  action: start
+  actor: terra-executor
+  from_status: open
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: open
+      to: in-progress
+  previous_event_id: reg_3184724e1ef74af88cacd119420f2727
+- v: 1
+  id: reg_9ccd4fcbdc9d49719694f8d3602b0bad
+  ts: "2026-10-24T11:39:49Z"
+  action: wait
+  actor: terra-executor
+  from_status: in-progress
+  to_status: waiting
+  reason: "checkpoint failed: Checkpoint commit failed (exec(register PJR-BR5A): start); staged changes rolled back (likely a failing git hook): format documentation and configuration: Checking formatting..."
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: "checkpoint failed: Checkpoint commit failed (exec(register PJR-BR5A): start); staged changes rolled back (likely a failing git hook): format documentation and configuration: Checking formatting..."
+  previous_event_id: reg_4e6319d087c547cc828836194e8c326f
