@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_b809db96b8ef4cc5b6ef41677707ab20
+  ts: "2026-10-24T11:50:40Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: checkpoint の commit の失敗の要約が、失敗していない step を挙げる
+    - field: description
+      from: ""
+      to: 着手の checkpoint と待ち状態の記帳の commit が失敗したとき、runner の要約と block\_reason が、成功した prettier の step を失敗として挙げる（SpecDojo 0.4.5）。
+    - field: type
+      from: ""
+      to: issue
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-24"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-BR5A\"]"
