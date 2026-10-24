@@ -1,0 +1,4 @@
+# 投影スライドの kata（sample・template）はファイル全体が Slidev のスライドで、
+# 教材のリポジトリの markdownlint の設定に従う。このリポジトリの規則では検査しない。
+docs/ja/specdojo/samples/edu-scratch/lsd-*.md
+docs/ja/specdojo/templates/edu-scratch/lsd-*.md
