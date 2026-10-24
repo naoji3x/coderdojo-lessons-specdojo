@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_1c3eed9f2adf405fbc5ceed9ff9ae848
+  ts: "2026-10-24T12:02:38Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 投影スライドの sample を作る
+    - field: description
+      from: ""
+      to: 第2回の投影スライドを手本に、edu-scratch:lsd-rulebook に沿う投影スライドの完成例（edu-scratch:lsd-sample）を exec で作り、rulebook の sample を新しい ID へ更新する。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: high
+    - field: difficulty
+      from: ""
+      to: hard
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-24"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: approach
+      from: ""
+      to: sample-authoring
+    - field: targets
+      from: ""
+      to: "[\"edu-scratch:lsd-sample\"]"
+    - field: sources
+      from: ""
+      to: "[\"coderdojo-lessons:courses/*/lessons/*/slides.md\",\"coderdojo-lessons:courses/*/lessons/*/style.css\",\"edu-scratch:lsd-rulebook\"]"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-BR5A\"]"
