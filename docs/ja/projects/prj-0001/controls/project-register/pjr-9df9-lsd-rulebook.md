@@ -2,17 +2,19 @@
 specdojo:
   id: prj-0001:pjr-9df9-lsd-rulebook
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: high
   difficulty: hard
   owner: BA
   registered_at: "2026-10-24T11:29:03Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-24T11:39:03Z"
+  conclusion: edu-scratch:lsd-rulebook を draft で作った。最小例の誤り・抜けた知見・手本にない規則は PJR-BR5A へ引き継いだ。
   approach: rulebook-authoring
   targets:
     - edu-scratch:lsd-rulebook
