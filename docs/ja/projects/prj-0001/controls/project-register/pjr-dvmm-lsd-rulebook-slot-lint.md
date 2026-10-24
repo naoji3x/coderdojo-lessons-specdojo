@@ -47,9 +47,9 @@ specdojo:
 
 | No  | 作業                                            | 担当 | 状態 | メモ                                    |
 | --- | ----------------------------------------------- | ---- | ---- | --------------------------------------- |
-| 1   | 6.2 の slot の規則を `:: note ::` に絞る        | exec | open | 手本と sample の置き方に合わせる        |
-| 2   | 6.5 と7章の markdownlint の規則を実態に合わせる | exec | open | 教材のリポジトリの `.markdownlint.yaml` |
-| 3   | 判断できない点を result の申し送りに書く        | exec | open | 前の2件で書かれなかったため             |
+| 1   | 6.2 の slot の規則を `:: note ::` に絞る        | exec | done | 手本と sample の置き方に合わせる        |
+| 2   | 6.5 と7章の markdownlint の規則を実態に合わせる | exec | done | 教材のリポジトリの `.markdownlint.yaml` |
+| 3   | 判断できない点を result の申し送りに書く        | exec | done | 前の2件で書かれなかったため             |
 
 ## 4. 対応結果
 
@@ -57,6 +57,13 @@ specdojo:
 - 6.5 と 7 章は、`slides.md` の markdownlint を教材リポジトリの `.markdownlint.yaml` に従わせ、文書内の `markdownlint-disable` 注釈で止められる規則を MD003 と MD022 に限定した。
 - `npx prettier --check docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md` と `npx markdownlint -- docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md` は成功した。
 - 手本は 1 件だけである。そのため、`:: note ::` 以外の slot や別レイアウトでの案内役の重なりは判断できない。追加の手本ができたときに、必要なら配置規則を見直す。
+
+orchestrator が完了条件と照らして確かめたこと:
+
+- `exec run --register --worktree` で codex-expert-executor と terra-reporter が rulebook を直し、`project/prj-0001/develop` へ統合した（`b192e17`）。
+- rulebook の差分は 6.2・6.5・7章の4行だけで、frontmatter（`status: draft`、`sample: edu-scratch:lsd-sample`）は変わっていない。
+- rulebook は prettier と markdownlint を通る。sample と手本は変更されていない。
+- 判断できない点は、上の対応結果に書かれている。
 
 ## 5. 関連ドキュメント
 
