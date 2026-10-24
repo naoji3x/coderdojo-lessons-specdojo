@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_01da056a9af14ceca04362d592a7ac8d
+  ts: "2026-10-24T22:46:20Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 投影スライドの sample と template に style.css を含める
+    - field: description
+      from: ""
+      to: edu-scratch:lsd-sample は teacher-cat などの class を使うが style.css を含まず、単独では手本どおりに表示されない。style.css を含める形（sample への書き込みか付属のファイルか）を決め、sample を直し、lsd-template にも同じ形を求める。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: DEV
+    - field: registered
+      from: ""
+      to: "2026-10-24"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-0BVZ\"]"
