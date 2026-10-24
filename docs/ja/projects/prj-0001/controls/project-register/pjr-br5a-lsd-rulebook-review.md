@@ -27,6 +27,8 @@ specdojo:
 
 PJR-9DF9 で作った `edu-scratch:lsd-rulebook`（`docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md`）を、手本と照らして直す。
 
+approach の `rulebook-maintenance` で流したところ、SpecDojo 0.4.5 の見直しの plan が markdownlint（MD036）で止まったため、approach を外した todo として流す。
+
 PJR-9DF9 の成果を orchestrator が確かめたところ、次の3点が見つかった。
 
 1. 最小例のページ設定の書き方が誤っている。区切りの `---` の直後に空行があり、`layout: section` などが本文として扱われる。
@@ -55,6 +57,7 @@ PJR-9DF9 の成果を orchestrator が確かめたところ、次の3点が見�
   - 「めあてとふりかえりは必ず残す」
   - 「画像化したブロック図を Git 管理しない」。slidev-guide では、出典と利用条件を記録すれば画像を置いてよいとしている。
 - 手本が第2回の授業1件だけのため、ほかの授業に当てはまるか判断できない規則を、result の申し送りに日本語で列挙している。
+- 見直した rulebook が、rulebook の執筆標準 `specdojo:rulebook-authoring-standard`（`node_modules/specdojo/docs/ja/specdojo/standards/rulebook-authoring-standard.md`）の章立て・記述ルール・禁止事項に従っている。
 - frontmatter の `status` は `draft`、`recipe`・`sample`・`template` は `undecided` のままである。
 - 手本（coderdojo-lessons のファイル）は変更されていない。
 - rulebook が prettier と markdownlint を通る。
