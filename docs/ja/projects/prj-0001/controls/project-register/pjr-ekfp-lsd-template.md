@@ -10,18 +10,11 @@ specdojo:
   item_status: review
   priority: medium
   difficulty: hard
+  owner: BA
   registered_at: "2026-10-24T23:30:24Z"
+  due_on: "2026-10-31"
   derived_from:
     - PJR-S9ZM
-  approach: template-authoring
-  targets:
-    - edu-scratch:lsd-template
-  sources:
-    - edu-scratch:lsd-rulebook
-    - edu-scratch:lsd-sample
-    - docs/ja/specdojo/samples/edu-scratch/lsd-sample.css
-    - coderdojo-lessons:courses/*/lessons/*/slides.md
-    - coderdojo-lessons:courses/*/lessons/*/style.css
 ---
 
 # PJR-EKFP 投影スライドの template を作る

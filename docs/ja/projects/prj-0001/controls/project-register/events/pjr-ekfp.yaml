@@ -73,3 +73,28 @@
       from: in-progress
       to: review
   previous_event_id: reg_65b554d5098b4aa3a6ceb7cc3d309f0a
+- v: 1
+  id: reg_2a3129e25ba440fd8cf169f63b845f01
+  ts: "2026-10-24T23:46:28Z"
+  action: update
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: review
+  reason: 利用者の指定で担当と期限を決めた。template ができた後は register update が authoring の対象を検証し直して止まるため、approach の記録を外した（実行時の approach はイベントと plan・result に残る）
+  changes:
+    - field: owner
+      from: _TODO_
+      to: BA
+    - field: due
+      from: _TODO_
+      to: "2026-10-31"
+    - field: approach
+      from: template-authoring
+      to: "-"
+    - field: targets
+      from: "[\"edu-scratch:lsd-template\"]"
+      to: "-"
+    - field: sources
+      from: "[\"edu-scratch:lsd-rulebook\",\"edu-scratch:lsd-sample\",\"docs/ja/specdojo/samples/edu-scratch/lsd-sample.css\",\"coderdojo-lessons:courses/*/lessons/*/slides.md\",\"coderdojo-lessons:courses/*/lessons/*/style.css\"]"
+      to: "-"
+  previous_event_id: reg_66f644d95d544959a75f84db10d445a4
