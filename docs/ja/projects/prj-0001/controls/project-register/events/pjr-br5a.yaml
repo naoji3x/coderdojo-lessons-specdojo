@@ -73,3 +73,22 @@
       from: "-"
       to: "checkpoint failed: Checkpoint commit failed (exec(register PJR-BR5A): start); staged changes rolled back (likely a failing git hook): format documentation and configuration: Checking formatting..."
   previous_event_id: reg_4e6319d087c547cc828836194e8c326f
+- v: 1
+  id: reg_bd1adea76dd44dd69e4ee0e987ab4d5c
+  ts: "2026-10-24T11:45:45Z"
+  action: update
+  actor: specdojo-orchestrator
+  from_status: waiting
+  to_status: waiting
+  reason: rulebook-maintenance の plan が SpecDojo 0.4.5 で markdownlint（MD036）に止まるため、approach を外した todo として流し直す
+  changes:
+    - field: block_reason
+      from: "checkpoint failed: Checkpoint commit failed (exec(register PJR-BR5A): start); staged changes rolled back (likely a failing git hook): format documentation and configuration: Checking formatting..."
+      to: "-"
+    - field: approach
+      from: rulebook-maintenance
+      to: "-"
+    - field: targets
+      from: "[\"edu-scratch:lsd-rulebook\"]"
+      to: "-"
+  previous_event_id: reg_9ccd4fcbdc9d49719694f8d3602b0bad

@@ -13,12 +13,8 @@ specdojo:
   owner: BA
   registered_at: "2026-10-24T11:38:16Z"
   due_on: "2026-10-31"
-  block_reason: "checkpoint failed: Checkpoint commit failed (exec(register PJR-BR5A): start); staged changes rolled back (likely a failing git hook): format documentation and configuration: Checking formatting..."
   derived_from:
     - PJR-9DF9
-  approach: rulebook-maintenance
-  targets:
-    - edu-scratch:lsd-rulebook
 ---
 
 # PJR-BR5A 投影スライドの rulebook を見直す
