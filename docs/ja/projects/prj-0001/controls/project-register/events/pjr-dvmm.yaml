@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_0efd95fd3fb94ea4bbf83353378c609f
+  ts: "2026-10-24T22:03:38Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 投影スライドの rulebook の slot と markdownlint の規則を実態に合わせる
+    - field: description
+      from: ""
+      to: edu-scratch:lsd-rulebook の 6.2（案内役を slot に置かない）と 6.5（MD003・MD022 以外を止めない）が、手本と sample・教材のリポジトリの設定と食い違うため直す。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: difficulty
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-24"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-0BVZ\"]"
