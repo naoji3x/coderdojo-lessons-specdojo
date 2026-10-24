@@ -84,6 +84,7 @@ Scratch 授業で投影する Slidev スライドの置き方、ページ構成�
 - `neversink` の `SpeechBubble` は短い導入や励まし、`StickyNote` は観察の問い、`Admonition` はデバッグなどの注意を強調するときに使う。目的に合わない場合は部品を増やさない。
 - 文字の大きさ、余白、部品ごとの見た目は活動の `style.css` にまとめ、`slides.md` と同じ活動ディレクトリに置く。Slidev は `style.css` を全ページに自動で読み込む。各ページで個別指定しない。見出しの基準サイズは変えず、`p`、`li`、テーマの部品などを対象に調整する。
 - `slides.md` の中の `<style>` は、`<style src>` を含めて、そのページだけに効く（Slidev が scoped にする）。全ページに効かせる見た目には使わない。
+- レイアウトごとの規則（例: 表紙の `.slidev-layout.cover p`）は、テーマのレイアウトにも同じ強さの規則があり、テーマが後から読み込まれて勝つことがある。`.slidev-layout.cover.cover p` のように class を重ねて強くする。
 - `edu-scratch:lsd-sample` と将来作る `edu-scratch:lsd-template` は、見た目を kata と同じ名前の付属の `.css`（例: `lsd-sample.md` に対する `lsd-sample.css`）に置く。活動で使うときは、付属の `.css` を活動ディレクトリへ `style.css` として写す。`tools/preview-lsd.sh` も同じように写して表示する。
 
 ### 6.2. `style.css` の class
