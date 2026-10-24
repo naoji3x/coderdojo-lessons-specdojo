@@ -61,3 +61,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_a766ad138ba242a9b11d5d93fed03340
+- v: 1
+  id: reg_ced178f592db4427b7e714273da84b8e
+  ts: "2026-10-24T23:19:45Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: exec run の成果を表示して確かめ、全ページに効かなかった CSS を利用者の指定で orchestrator が直したため
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-24"
+    - field: conclusion
+      from: "-"
+      to: sample の見た目を付属の lsd-sample.css に置き、表示のときに style.css として写す形にした。rulebook に class の決まりと style.css の読み込みの規則を加えた。
+  previous_event_id: reg_afbbdb2fbae743c09aef7e8f6ea27788

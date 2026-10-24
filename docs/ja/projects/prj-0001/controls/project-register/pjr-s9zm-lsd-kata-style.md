@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-s9zm-lsd-kata-style
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   owner: DEV
   registered_at: "2026-10-24T22:46:20Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-24T23:19:45Z"
+  conclusion: sample の見た目を付属の lsd-sample.css に置き、表示のときに style.css として写す形にした。rulebook に class の決まりと style.css の読み込みの規則を加えた。
   derived_from:
     - PJR-0BVZ
 ---
