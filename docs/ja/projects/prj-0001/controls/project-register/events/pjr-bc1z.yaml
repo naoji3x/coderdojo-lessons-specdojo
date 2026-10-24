@@ -35,3 +35,22 @@
     - field: derived_from
       from: ""
       to: "[\"PJR-BR5A\"]"
+- v: 1
+  id: reg_a6a9e81e61c149cfa6fd957c542a1dc4
+  ts: "2026-10-24T13:44:36Z"
+  action: reject
+  actor: specdojo-orchestrator
+  from_status: open
+  to_status: rejected
+  reason: 利用者の判断で、SpecDojo 本体の不具合は本家で起票し、こちらでは追わないため
+  changes:
+    - field: status
+      from: open
+      to: rejected
+    - field: completed
+      from: "-"
+      to: "2026-10-24"
+    - field: conclusion
+      from: "-"
+      to: SpecDojo 本体の不具合のため、本家の登録簿 prj-0001 の PJR-SS72 で扱う。
+  previous_event_id: reg_22b1f99fd7ac47a0b87575559a18c513

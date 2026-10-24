@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-bc1z-maintenance-plan-md036
   type: project
-  status: draft
+  status: deprecated
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: issue
-  item_status: open
+  item_status: rejected
   priority: high
   owner: BA
   registered_at: "2026-10-24T11:50:39Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-24T13:44:36Z"
+  conclusion: SpecDojo 本体の不具合のため、本家の登録簿 prj-0001 の PJR-SS72 で扱う。
   derived_from:
     - PJR-BR5A
 ---
