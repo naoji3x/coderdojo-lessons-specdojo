@@ -7,7 +7,7 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: open
+  item_status: review
   priority: medium
   owner: DEV
   registered_at: "2026-10-24T22:46:20Z"
@@ -55,17 +55,20 @@ rulebook には `teacher-cat` 以外の class の決まりがない。
 
 ## 3. 作業内容
 
-| No  | 作業                                                        | 担当 | 状態 | メモ                                  |
-| --- | ----------------------------------------------------------- | ---- | ---- | ------------------------------------- |
-| 1   | 含める形を (i)・(ii) から決める                             | DEV  | open | Slidev のスタイルの範囲と kata の扱い |
-| 2   | sample に `style.css` を含める                              | DEV  | open | 手本の `style.css` が元               |
-| 3   | Slidev で表示して確かめる                                   | DEV  | open | `tools/preview-lsd.sh png`            |
-| 4   | rulebook に `style.css` を含める規則を加える                | DEV  | open | `lsd-template` を作るときにも使う     |
-| 5   | rulebook に class の決まりを加え、sample の各ページに付ける | DEV  | open | 手本の `slides.md` の付け方が元       |
+| No  | 作業                                                        | 担当 | 状態 | メモ                                                     |
+| --- | ----------------------------------------------------------- | ---- | ---- | -------------------------------------------------------- |
+| 1   | 含める形を (i)・(ii) から決める                             | DEV  | open | (i) を採用。kata は単一 Markdown ファイルで配布するため  |
+| 2   | sample に `style.css` を含める                              | DEV  | open | sample の先頭 `<style>` に必要な規則を直接記載           |
+| 3   | Slidev で表示して確かめる                                   | DEV  | open | `tools/preview-lsd.sh png` は sandbox のポート取得で失敗 |
+| 4   | rulebook に `style.css` を含める規則を加える                | DEV  | open | `lsd-template` にも同じ `<style>` 方式を求める           |
+| 5   | rulebook に class の決まりを加え、sample の各ページに付ける | DEV  | open | 手本の `slides.md` に対応する class を追加               |
 
 ## 4. 対応結果
 
-_TODO_: 完了時に、実施内容・成果物・残課題を記載する。未完了の場合は `-` とする。
+- kata は 1 ID に 1 Markdown ファイルであり、既存の `tools/preview-lsd.sh` も kata 本体だけを作業用ディレクトリへコピーする。そのため、外部 CSS を付属させる案 (ii) では単独表示と kata の配布形式を保証できない。sample 内の先頭 `<style>` ブロックへ必要な規則を直接書く案 (i) を採用した。
+- `[[edu-scratch:lsd-sample|投影スライド sample]]` に、本文・案内役・節の扉・実機確認・めあて・標準完成の見た目を定める CSS を追加した。めあては `check-list`、節の扉は `section-slide section-<種類>`、実機確認は `device-check`、標準完成は `completion-grid` を使い、手本と同じ種類のページの class をそろえた。
+- `[[edu-scratch:lsd-rulebook|投影スライド Rulebook]]` に、通常の活動では `slides.md` から `./style.css` を読み込むこと、kata の sample と将来の template は同じ `<style>` 方式にすること、class ごとの使用箇所を記載した。
+- `tools/preview-lsd.sh png docs/ja/specdojo/samples/edu-scratch/lsd-sample.md` を実行したが、Slidev のポート取得時に sandbox の `uv_interface_addresses` が `Unknown system error 1` となり、Chromium の起動前に PNG を出力できなかった。統合後に sandbox 外の orchestrator が全ページを PNG 出力し、案内役の右下配置と本文文字サイズを確認する。
 
 ## 5. 関連ドキュメント
 
