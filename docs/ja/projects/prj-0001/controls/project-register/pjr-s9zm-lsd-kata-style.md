@@ -26,6 +26,16 @@ specdojo:
 - sample（`docs/ja/specdojo/samples/edu-scratch/lsd-sample.md`）には、`style.css` を読み込む行も、スタイルの定義もない。
 - kata の sample は、1つの ID に1つのファイルという作りである。
 
+sample を Slidev で表示したところ、3ページ目以降で手本の見た目にならなかった。`style.css` 自体は読み込まれており（1・2ページ目の案内役の位置と本文の文字の大きさは効いていた）、sample が `style.css` の規則の目印となる class を付けていないためである。
+
+| ページ               | 手本の `slides.md`                                                          | sample                        |
+| -------------------- | --------------------------------------------------------------------------- | ----------------------------- |
+| 節の扉               | `class: section-slide section-observe` など                                 | `class` がない                |
+| 説明                 | 実機での確認の文に `<p class="device-check">`、ページ設定に `margin: tight` | `<p>` だけで、`margin` もない |
+| めあて・まとめ・発展 | `check-list`・`completion-grid`・`mission-list`                             | 普通のリストか、別の書き方    |
+
+rulebook には `teacher-cat` 以外の class の決まりがない。
+
 含める形の候補:
 
 | 案                                                                          | 内容                              | 確かめること                                                                             |
@@ -39,16 +49,19 @@ specdojo:
 - sample が `style.css` の内容（少なくとも `teacher-cat` の位置と、本文の文字の大きさ）を含み、決めた形で読み込んでいる。
 - sample を教材のリポジトリの作業用のディレクトリ（`tmp/` の下）に写して Slidev で表示し、全ページで案内役が右下に出ること、文字の大きさが手本と同じであることを確かめている。確かめた方法と結果を個票の対応結果に書いている。
 - `edu-scratch:lsd-rulebook` に、sample と template が `style.css` を同じ形で含める規則がある。rulebook のほかの箇所は変えていない。
+- rulebook に、`style.css` が定める class の一覧と、どのページ・要素に付けるかの決まりがある（例: 節の扉は `class: section-slide section-<種類>`、実機での確認の文は `device-check`）。
+- sample の各ページが、その class を使っている。手本と同じ種類のページ（節の扉・説明・まとめ）を表示したとき、見た目が手本と同じであることを確かめ、結果を個票の対応結果に書いている。
 - 変えたファイルが prettier と markdownlint の検査を通る（sample は `.prettierrc` の `slidev` parser と `.markdownlintignore` に従う）。
 
 ## 3. 作業内容
 
-| No  | 作業                                         | 担当 | 状態 | メモ                                  |
-| --- | -------------------------------------------- | ---- | ---- | ------------------------------------- |
-| 1   | 含める形を (i)・(ii) から決める              | DEV  | open | Slidev のスタイルの範囲と kata の扱い |
-| 2   | sample に `style.css` を含める               | DEV  | open | 手本の `style.css` が元               |
-| 3   | Slidev で表示して確かめる                    | DEV  | open | 教材のリポジトリの `tmp/` の下で      |
-| 4   | rulebook に `style.css` を含める規則を加える | DEV  | open | `lsd-template` を作るときにも使う     |
+| No  | 作業                                                        | 担当 | 状態 | メモ                                  |
+| --- | ----------------------------------------------------------- | ---- | ---- | ------------------------------------- |
+| 1   | 含める形を (i)・(ii) から決める                             | DEV  | open | Slidev のスタイルの範囲と kata の扱い |
+| 2   | sample に `style.css` を含める                              | DEV  | open | 手本の `style.css` が元               |
+| 3   | Slidev で表示して確かめる                                   | DEV  | open | 教材のリポジトリの `tmp/` の下で      |
+| 4   | rulebook に `style.css` を含める規則を加える                | DEV  | open | `lsd-template` を作るときにも使う     |
+| 5   | rulebook に class の決まりを加え、sample の各ページに付ける | DEV  | open | 手本の `slides.md` の付け方が元       |
 
 ## 4. 対応結果
 
