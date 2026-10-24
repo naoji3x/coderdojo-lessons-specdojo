@@ -1,0 +1,11 @@
+投影スライド用 rulebook を作成しました。
+
+- 追加: [lsd-rulebook.md](/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-9DF9/project/docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md:1)
+- `status: draft`、`sample` / `template: undecided`
+- 配置、構成、レイアウト、案内役、ScratchBlocks、実機確認、markdownlint 注釈を一般化して記載
+- 手本の product repository は未変更
+- result は executor-stage 指示に従い未編集
+
+<specdojo_executor_evidence>
+{"final_message":"Created edu-scratch:lsd-rulebook as a draft Slidev lesson-slide rulebook; reference files were not modified.","validations":[{"command":"npx prettier --write docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md","status":"passed","summary":"Formatted the new Markdown rulebook."},{"command":"npx markdownlint -- docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md","status":"passed","summary":"Markdownlint passed for the new rulebook."},{"command":"git diff --check","status":"passed","summary":"No whitespace errors in tracked changes."},{"command":"npm test","status":"not_applicable","summary":"No test run was required for this Markdown-only change.","reason":"The package test script is the npm-init placeholder and the changed file is outside the test applicability paths."},{"command":"specdojo catalog validate","status":"not_applicable","summary":"Catalog validation does not apply.","reason":"The project configuration has no catalog_path and this change is outside docs/ja/projects/."}]}
+</specdojo_executor_evidence>
