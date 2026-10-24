@@ -44,3 +44,16 @@
     - field: sources
       from: ""
       to: "[\"coderdojo-lessons:courses/*/lessons/*/slides.md\",\"coderdojo-lessons:docs/guides/slidev-guide.md\"]"
+- v: 1
+  id: reg_fb33aaccaf534030b5a5bedcbdb0b846
+  ts: "2026-10-24T11:29:43Z"
+  action: start
+  actor: terra-executor
+  from_status: open
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: open
+      to: in-progress
+  previous_event_id: reg_a8680b461a7249bfaee1ca2673a482d7
