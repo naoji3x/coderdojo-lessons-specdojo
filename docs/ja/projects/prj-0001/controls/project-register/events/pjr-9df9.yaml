@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_a8680b461a7249bfaee1ca2673a482d7
+  ts: "2026-10-24T11:29:03Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 投影スライドの rulebook を作る
+    - field: description
+      from: ""
+      to: 第2回の投影スライドと Slidev ガイドを手本に、投影スライドの rulebook（edu-scratch:lsd-rulebook）を exec で作る。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: high
+    - field: difficulty
+      from: ""
+      to: hard
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-24"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: approach
+      from: ""
+      to: rulebook-authoring
+    - field: targets
+      from: ""
+      to: "[\"edu-scratch:lsd-rulebook\"]"
+    - field: sources
+      from: ""
+      to: "[\"coderdojo-lessons:courses/*/lessons/*/slides.md\",\"coderdojo-lessons:docs/guides/slidev-guide.md\"]"
