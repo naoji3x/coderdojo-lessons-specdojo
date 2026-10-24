@@ -47,3 +47,32 @@
     - field: derived_from
       from: ""
       to: "[\"PJR-BR5A\"]"
+- v: 1
+  id: reg_cd11c27d72d74b28a0c0f77f7a21b51f
+  ts: "2026-10-24T12:11:00Z"
+  action: start
+  actor: codex-expert-executor
+  from_status: open
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: open
+      to: in-progress
+  previous_event_id: reg_1c3eed9f2adf405fbc5ceed9ff9ae848
+- v: 1
+  id: reg_ba89e7123a6b43b692a2e78c9b8fd7af
+  ts: "2026-10-24T12:13:16Z"
+  action: wait
+  actor: codex-expert-executor
+  from_status: in-progress
+  to_status: waiting
+  reason: rate limit reached
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: rate limit reached
+  previous_event_id: reg_cd11c27d72d74b28a0c0f77f7a21b51f
