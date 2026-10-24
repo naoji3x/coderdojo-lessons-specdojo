@@ -1,22 +1,17 @@
 ---
+# 活動の slides.md に写すときは specdojo: の欄を消す。教材の slides.md は SpecDojo の frontmatter を持たない。
 specdojo:
   id: edu-scratch:lsd-template
   type: template
   status: draft
-  frontmatter_template:
-    specdojo:
-      id: _PROJECT_ID_:_LOCAL_ID_
-      type: ui
-      status: draft
-      rulebook: edu-scratch:lsd-rulebook
-    theme: neversink
-    colorSchema: light
-    title: _ACTIVITY_TITLE_
-    layout: cover
-    color: white
-    slide_info: false
-    info: |
-      _ACTIVITY_OVERVIEW_
+theme: neversink
+colorSchema: light
+title: _ACTIVITY_TITLE_
+layout: cover
+color: white
+slide_info: false
+info: |
+  _ACTIVITY_OVERVIEW_
 ---
 
 <!-- markdownlint-disable MD003 MD022 -->
@@ -145,7 +140,8 @@ margin: tight
 
 :: right ::
 
-<ScratchBlocks label="_BLOCK_DIAGRAM_LABEL_" :scale="_BLOCK_DIAGRAM_SCALE_">
+<!-- scale はブロック図の大きさ。ページの余白に合わせて 0.6〜0.9 の範囲で調整する。 -->
+<ScratchBlocks label="_BLOCK_DIAGRAM_LABEL_" :scale="0.8">
 
 ```text
 _SCRATCH_BLOCKS_
