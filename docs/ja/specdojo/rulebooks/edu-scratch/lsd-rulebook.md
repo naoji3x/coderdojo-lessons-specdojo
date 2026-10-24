@@ -5,7 +5,7 @@ specdojo:
   status: draft
   target_format: markdown
   recipe: undecided
-  sample: undecided
+  sample: edu-scratch:lsd-sample
   template: undecided
 ---
 
