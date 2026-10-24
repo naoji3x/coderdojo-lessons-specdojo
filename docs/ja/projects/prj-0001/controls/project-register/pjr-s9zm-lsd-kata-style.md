@@ -88,6 +88,13 @@ orchestrator が確かめ、直したこと:
 - `kata list` と `kata status` が、付属の `lsd-sample.css` を ID `lsd-sample` の別の sample として表示する（`kata status` では `package-missing`）。kata の一覧が kata のディレクトリのファイルをすべて数えるためで、`kata show edu-scratch:lsd-sample` は正しく動く。
 - 教材の `slides.md` の先頭の `<style src="./style.css">` は、新しい規則では不要になる。消すかは、次に教材を直すときに判断する。
 
+close の後に片付けた残課題:
+
+- 教材の `slides.md` の `<style src="./style.css">` は、不要ではなかった。neversink の表紙のレイアウトにも `style.css` と同じ強さの規則があり、後から読み込まれて勝つ。1ページ目の `<style src>` は scoped になって強くなり、表紙でだけ `style.css` の規則を勝たせていた。
+  - 教材の `style.css` の表紙の規則に class を重ねて強くし、行を外した（coderdojo-lessons `035b42e`、merge `b697ff9`）。17ページの書き出しが、変える前と画像として一致することを確かめた。Slidev のガイドに `style.css` の扱いを加えた。
+  - 同じ理由で sample の表紙の文字も手本より小さかったため、`lsd-sample.css` の表紙の規則も強くし、rulebook に書き方を加えた（`8ddff4b`、merge `5245115`）。
+- `kata list`・`kata status` に付属の `.css` が出る件は、本家の SpecDojo に PJR-6HS2 として起票した。
+
 ## 5. 関連ドキュメント
 
 - [[prj-0001:pjr-0bvz-lsd-sample]]：sample を作った項目（派生元）
