@@ -16,6 +16,111 @@ info: |
 
 <!-- markdownlint-disable MD003 MD022 -->
 
+<style>
+:root {
+  --lesson-ink: #14213d;
+}
+
+.slidev-layout {
+  background: #fff;
+  color: var(--lesson-ink);
+  font-size: 1.2rem;
+}
+
+/* 本文を教室の後ろから読める大きさにする。 */
+.slidev-layout p,
+.slidev-layout li,
+.slidev-layout .text-xl {
+  font-size: 1.8rem;
+}
+
+.slidev-layout ul li,
+.slidev-layout ol li {
+  line-height: 1.45;
+  margin-bottom: 0.35em;
+  margin-top: 0.35em;
+}
+
+.slidev-layout.cover p {
+  font-size: 1.55rem;
+}
+
+.slidev-layout.cover .note,
+.slidev-layout.cover .note p {
+  font-size: 1.35rem;
+}
+
+.slidev-layout .speech-bubble p,
+.slidev-layout .sticky-note p {
+  font-size: 1.7rem;
+}
+
+.section-slide {
+  --section-accent: #2680c2;
+}
+
+.section-observe {
+  --section-accent: #2680c2;
+}
+
+.section-reflection {
+  --section-accent: #7357c7;
+}
+
+.section-slide .slidev-layout.section,
+.slidev-layout.section.section-slide {
+  border-left: 1.1rem solid var(--section-accent);
+  padding-left: 2.3rem;
+}
+
+.section-slide .slidev-layout.section h1,
+.slidev-layout.section.section-slide h1 {
+  border-bottom: 0.22rem solid var(--section-accent);
+  padding-bottom: 0.55rem;
+}
+
+.section-slide .slidev-layout.section h1 + p,
+.slidev-layout.section.section-slide h1 + p {
+  margin-top: 1.4rem;
+}
+
+.teacher-cat {
+  bottom: 14px;
+  line-height: 0;
+  position: absolute;
+  right: 18px;
+  z-index: 2;
+}
+
+p.device-check {
+  background: #fff8dc;
+  border-left: 0.35rem solid #e0a000;
+  border-radius: 0.35rem;
+  font-size: 1.3rem;
+  line-height: 1.35;
+  margin: 0.65rem 0 0;
+  padding: 0.45rem 0.65rem;
+}
+
+.mission-list li,
+.check-list li {
+  font-size: 1.9rem;
+  line-height: 1.65;
+}
+
+.completion-grid {
+  margin-right: 5.5rem;
+}
+
+.completion-grid > div {
+  font-size: 1.8rem;
+}
+
+.completion-grid + .speech-bubble {
+  margin-top: 2.75rem;
+}
+</style>
+
 # えらべるお話を作ろう
 
 **1コマ｜40分**
@@ -49,9 +154,11 @@ color: white
 
 :: right ::
 
-- はじめの場面から話が始まる
-- 選んだ答えを記録できる
-- 答えに合う場面へ進める
+<ul class="check-list">
+  <li>はじめの場面から話が始まる</li>
+  <li>選んだ答えを記録できる</li>
+  <li>答えに合う場面へ進める</li>
+</ul>
 
 <div class="teacher-cat" role="img" aria-label="案内役のねこ先生">
   <Cat :size="112" mood="excited" color="#8d99a6" />
@@ -60,6 +167,7 @@ color: white
 ---
 layout: section
 color: white
+class: section-slide section-observe
 ---
 
 # 完成見本を試して、
@@ -77,6 +185,7 @@ layout: two-cols-title
 columns: is-5
 color: white
 align: l-lt-lt
+margin: tight
 ---
 
 :: title ::
@@ -89,7 +198,7 @@ align: l-lt-lt
 2. 質問をして、答えを受け取る
 3. 旗から動かして、答えが変わるか確かめる
 
-<p>⚑ <strong>Scratch 3で実機で確かめる：</strong>質問ブロックと「答え」変数の名前を、授業用端末で実際に作ってから動かそう。</p>
+<p class="device-check">⚑ <strong>Scratch 3で実機で確かめる：</strong>質問ブロックと「答え」変数の名前を、授業用端末で実際に作ってから動かそう。</p>
 
 :: right ::
 
@@ -113,6 +222,7 @@ layout: two-cols-title
 columns: is-5
 color: white
 align: l-lt-lt
+margin: tight
 ---
 
 :: title ::
@@ -125,7 +235,7 @@ align: l-lt-lt
 - 答えごとに送るメッセージを変える
 - 1つの答えだけを変えて、行き先を比べる
 
-<p>⚑ <strong>Scratch 3で実機で確かめる：</strong>入力した言葉とメッセージ名が同じかを確認してから、旗で最初から試そう。</p>
+<p class="device-check">⚑ <strong>Scratch 3で実機で確かめる：</strong>入力した言葉とメッセージ名が同じかを確認してから、旗で最初から試そう。</p>
 
 :: right ::
 
@@ -158,9 +268,11 @@ color: white
 
 :: content ::
 
-- 旗を押すと、最初の質問が出る
-- 選んだ答えを変えると、次の場面も変わる
-- 友だちに1回ずつ選んでもらい、行き先を比べられる
+<div class="completion-grid grid grid-cols-2 gap-5 text-2xl mt-5">
+  <div class="p-4 rounded bg-orange-100">✓ 最初の質問が出る</div>
+  <div class="p-4 rounded bg-green-100">✓ 答えで次の場面が変わる</div>
+  <div class="p-4 rounded bg-amber-100">✓ 友だちにも選んでもらえる</div>
+</div>
 
 <SpeechBubble position="t" color="teal" shape="round" maxWidth="720px">
 
@@ -198,6 +310,7 @@ color: white
 ---
 layout: section
 color: white
+class: section-slide section-reflection
 ---
 
 # ふりかえり
