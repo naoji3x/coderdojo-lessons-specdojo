@@ -38,3 +38,18 @@ specdojo:
 ## 4. 進め方と実践の型の適用
 
 手本を一般化して再利用可能な投影スライドsampleとして作成し、rulebookから参照する形にした。
+
+## 5. トレーサビリティ
+
+runner がプロダクトリポジトリを統合した後に記録した、統合先の commit snapshot です。
+プロジェクトリポジトリの統合は、この result を含む merge commit で確認します。
+その merge commit には `Refs: prj-0001:PJR-0BVZ` を付けます。
+PR が `not applicable` の行は、runner がローカルで統合し PR を経由していません。
+
+<!-- markdownlint-disable MD013 -->
+
+| trace key           | repository          | integration branch | PR             | commit snapshot             | recorded at              |
+| ------------------- | ------------------- | ------------------ | -------------- | --------------------------- | ------------------------ |
+| `prj-0001:PJR-0BVZ` | `coderdojo-lessons` | `develop`          | not applicable | not applicable (no changes) | 2026-10-24T14:27:11.447Z |
+
+<!-- markdownlint-enable MD013 -->
