@@ -127,6 +127,9 @@ Scratch 授業で投影する Slidev スライドの置き方、ページ構成�
 
 次は構成と注釈の置き方だけを示す最小例である。題名、テーマ、レイアウト、学習内容は活動に合わせて置き換える。
 
+この例は `prettier-ignore` で整形の対象外にしている。prettier はコードブロックの中の Markdown も整形し、区切りの `---` の直後に空行を入れるため、ページ設定が本文として扱われる形に変わってしまう。
+
+<!-- prettier-ignore -->
 ````markdown
 ---
 theme: neversink
@@ -140,7 +143,6 @@ info: |
 # 活動の題名
 
 ---
-
 layout: section
 ---
 
@@ -149,7 +151,6 @@ layout: section
 作るものと、できるようになることを示す。
 
 ---
-
 layout: top-title
 ---
 
