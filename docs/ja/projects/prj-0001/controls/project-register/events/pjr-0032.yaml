@@ -60,3 +60,16 @@
       from: "[\"coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md\",\"coderdojo-lessons:docs/course-design/course-plan.md\"]"
       to: "[\"coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md\",\"coderdojo-lessons:docs/course-design/course-plan.md\",\"edu-scratch:lpl-rulebook\",\"edu-scratch:lpl-sample\"]"
   previous_event_id: reg_e6f10a2acf7a4a7e820b3747294682a1
+- v: 1
+  id: reg_bab816729e0e4bae8f2cf0dbaae26751
+  ts: "2026-10-25T04:36:41Z"
+  action: start
+  actor: codex-expert-executor
+  from_status: open
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: open
+      to: in-progress
+  previous_event_id: reg_570a2269aed04157807ba35bb196fa0c
