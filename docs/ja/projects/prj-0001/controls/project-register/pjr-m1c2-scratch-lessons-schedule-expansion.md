@@ -12,7 +12,7 @@ specdojo:
   owner: BA
   registered_at: "2026-10-25T09:08:33Z"
   due_on: "2026-10-31"
-  block_reason: "executor reported incomplete: strategy設計案・設定差分案・個票を更新。16タスクのschema・依存・BA・各0.25日をメモリ上で検証した。保護設定とkataのgrade不足により実行用trackは未生成。教材生成・agent実行・result編集は行っていない。"
+  block_reason: "resumed executor did not account for every plan target: docs/ja/projects/prj-0001/controls/project-register/pjr-m1c2-scratch-lessons-schedule-expansion.md, docs/ja/projects/prj-0001/schedule/sch-strat…"
   derived_from:
     - PJR-Y36G
 ---
