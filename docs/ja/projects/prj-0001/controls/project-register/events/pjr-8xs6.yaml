@@ -80,3 +80,19 @@
       from: "checkpoint failed: ENOENT: no such file or directory, mkdir '/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-8XS6'"
       to: "-"
   previous_event_id: reg_f8a1678c23ea4864ac117d73b58b1725
+- v: 1
+  id: reg_edae7c3470374812ba141d6cd05cc029
+  ts: "2026-10-25T08:03:06Z"
+  action: wait
+  actor: sol-executor
+  from_status: in-progress
+  to_status: waiting
+  reason: "executor reported incomplete: スライド・指導案を乱数→クローン→得点→メッセージの順に整合させ、補足2ページ、ブロック拡大、実装先の明記を行い、個票を更新した。既存のMarkdownlint設定との衝突が残るため未完了。resultは編集していない。"
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: "executor reported incomplete: スライド・指導案を乱数→クローン→得点→メッセージの順に整合させ、補足2ページ、ブロック拡大、実装先の明記を行い、個票を更新した。既存のMarkdownlint設定との衝突が残るため未完了。resultは編集していない。"
+  previous_event_id: reg_ebfbc06f18c74f35969512de7aecd03c
