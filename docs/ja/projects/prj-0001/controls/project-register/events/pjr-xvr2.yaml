@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_024bfeaa6c814a6b98053bf39fc5c1e1
+  ts: "2026-10-25T01:59:14Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 第2回の指導案を、先生と一緒に操作する進め方に直す
+    - field: description
+      from: ""
+      to: 指導案の kata の手本にする前に、第2回の lesson-plan.md を直す。先生と一緒に画面を見ながら操作する進め方を主体にし、基本制作の時間の内訳・クローンとクリア後のつまずき・評価・発展の時間の使い方・保存と見せ合いを加える。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: high
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-25"
+    - field: due
+      from: ""
+      to: "2026-10-31"
