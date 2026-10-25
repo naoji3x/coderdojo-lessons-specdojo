@@ -35,3 +35,32 @@
     - field: derived_from
       from: ""
       to: "[\"PJR-Y36G\"]"
+- v: 1
+  id: reg_425a8755c41346f0b1d71a9756ce6b12
+  ts: "2026-10-25T09:37:50Z"
+  action: start
+  actor: sol-executor
+  from_status: open
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: open
+      to: in-progress
+  previous_event_id: reg_f4b6f2a782d54faa9c4fa73137a42d4e
+- v: 1
+  id: reg_75cde729bc7444a18f0c95eabc842def
+  ts: "2026-10-25T09:47:40Z"
+  action: wait
+  actor: sol-executor
+  from_status: in-progress
+  to_status: waiting
+  reason: "executor reported incomplete: strategy設計案・設定差分案・個票を更新。16タスクのschema・依存・BA・各0.25日をメモリ上で検証した。保護設定とkataのgrade不足により実行用trackは未生成。教材生成・agent実行・result編集は行っていない。"
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: "executor reported incomplete: strategy設計案・設定差分案・個票を更新。16タスクのschema・依存・BA・各0.25日をメモリ上で検証した。保護設定とkataのgrade不足により実行用trackは未生成。教材生成・agent実行・result編集は行っていない。"
+  previous_event_id: reg_425a8755c41346f0b1d71a9756ce6b12

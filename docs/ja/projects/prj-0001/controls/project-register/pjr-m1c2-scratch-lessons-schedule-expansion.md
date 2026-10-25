@@ -7,11 +7,12 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: open
+  item_status: waiting
   priority: medium
   owner: BA
   registered_at: "2026-10-25T09:08:33Z"
   due_on: "2026-10-31"
+  block_reason: "executor reported incomplete: strategy設計案・設定差分案・個票を更新。16タスクのschema・依存・BA・各0.25日をメモリ上で検証した。保護設定とkataのgrade不足により実行用trackは未生成。教材生成・agent実行・result編集は行っていない。"
   derived_from:
     - PJR-Y36G
 ---
