@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-W05J",
+  "run_id": "20261025T043243666Z-3ed81fab",
+  "stage": {
+    "role": "executor",
+    "actor": "codex-expert-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T04:34:08.667Z",
+    "completed_at": "2026-10-25T04:35:40.588Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-w05j-lpl-sample.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lpl-sample.md",
+      "status": "M"
+    }
+  ],
+  "attempt_changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-w05j-lpl-sample.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lpl-sample.md",
+      "status": "M"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 2,
+    "summary": ".../prj-0001/controls/project-register/pjr-w05j-lpl-sample.md     | 8 +++++---\n docs/ja/specdojo/samples/edu-scratch/lpl-sample.md                | 4 ++--\n 2 files changed, 7 insertions(+), 5 deletions(-)"
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npx prettier --write docs/ja/specdojo/samples/edu-scratch/lpl-sample.md docs/ja/projects/prj-0001/controls/project-register/pjr-w05j-lpl-sample.md",
+      "status": "passed",
+      "summary": "対象Markdownを整形済み"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint -- docs/ja/specdojo/samples/edu-scratch/lpl-sample.md docs/ja/projects/prj-0001/controls/project-register/pjr-w05j-lpl-sample.md",
+      "status": "passed",
+      "summary": "対象Markdownのlint成功"
+    },
+    {
+      "source": "executor",
+      "command": "node tools/check-slidev-files.mjs docs/ja/specdojo/samples/edu-scratch/lpl-sample.md docs/ja/projects/prj-0001/controls/project-register/pjr-w05j-lpl-sample.md",
+      "status": "passed",
+      "summary": "pre-commit相当の文書確認成功"
+    },
+    {
+      "source": "executor",
+      "command": "git diff --check",
+      "status": "passed",
+      "summary": "差分に空白エラーなし"
+    },
+    {
+      "source": "executor",
+      "command": "npm test",
+      "status": "not_applicable",
+      "summary": "実行不要",
+      "reason": "package.json の test は npm init のプレースホルダスクリプトであり、対象外です。"
+    },
+    {
+      "source": "executor",
+      "command": "npx specdojo catalog validate",
+      "status": "not_applicable",
+      "summary": "実行不要",
+      "reason": "対象projectの設定に catalog_path がありません。"
+    }
+  ],
+  "final_message": "差し戻し2点を解消し、個票の作業記録を更新しました。",
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-W05J/20261025T043243666Z-3ed81fab/executor.log",
+      "bytes": 1301,
+      "truncated": false
+    }
+  ]
+}

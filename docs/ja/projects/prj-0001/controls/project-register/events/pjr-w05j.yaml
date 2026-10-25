@@ -147,3 +147,32 @@
       from: "[\"edu-scratch:lpl-sample\"]"
       to: "-"
   previous_event_id: reg_d0065e7de1a2435b95df219ec278ee42
+- v: 1
+  id: reg_e8431e63b2b545e98820dc1185b479e9
+  ts: "2026-10-25T04:33:12Z"
+  action: start
+  actor: codex-expert-executor
+  from_status: waiting
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: waiting
+      to: in-progress
+    - field: block_reason
+      from: "checkpoint failed: Checkpoint commit failed (exec(register PJR-W05J): start); staged changes rolled back (likely a failing git hook): check Slidev decks and their lint settings: Checking formatting..."
+      to: "-"
+  previous_event_id: reg_9e1e8b2ea35b422b9e57943983e821c7
+- v: 1
+  id: reg_19a5e3aa2fa245f3a78ca8d0ab3b0edf
+  ts: "2026-10-25T04:35:54Z"
+  action: review
+  actor: codex-expert-executor
+  from_status: in-progress
+  to_status: review
+  reason: ready for review
+  changes:
+    - field: status
+      from: in-progress
+      to: review
+  previous_event_id: reg_e8431e63b2b545e98820dc1185b479e9

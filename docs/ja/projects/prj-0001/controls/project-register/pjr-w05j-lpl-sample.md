@@ -7,13 +7,12 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: waiting
+  item_status: review
   priority: medium
   difficulty: hard
   owner: BA
   registered_at: "2026-10-25T04:17:01Z"
   due_on: "2026-10-31"
-  block_reason: "checkpoint failed: Checkpoint commit failed (exec(register PJR-W05J): start); staged changes rolled back (likely a failing git hook): check Slidev decks and their lint settings: Checking formatting..."
   derived_from:
     - PJR-0H02
 ---
@@ -43,9 +42,9 @@ specdojo:
 
 | No  | 作業                                               | 担当 | 状態 | メモ                   |
 | --- | -------------------------------------------------- | ---- | ---- | ---------------------- |
-| 1   | 先行成果と手本・執筆標準を読み、作成範囲を確認する | exec | open | 先行項目 PJR-0H02      |
-| 2   | lpl-sampleをdraftで作成する                        | exec | open | 指定のkataだけを変更   |
-| 3   | 静的検査と申し送りを記録する                       | exec | open | resultはreporterが記述 |
+| 1   | 先行成果と手本・執筆標準を読み、作成範囲を確認する | exec | done | 先行項目 PJR-0H02      |
+| 2   | lpl-sampleをdraftで作成する                        | exec | done | 指定のkataだけを変更   |
+| 3   | 静的検査と申し送りを記録する                       | exec | done | resultはreporterが記述 |
 | 4   | 完了条件と他kataとの整合をレビューする             | orch | open | 次の段階への入力を確認 |
 
 ## 4. 対応結果
@@ -53,6 +52,8 @@ specdojo:
 - sample-maintenanceによる再実行は、生成planのBAロール未解決マーカー `_MISSING_` がMD036に抵触し、checkpoint commitで停止した。executorは未開始。検査を無効化せず、通常のregister実行で個票本文の修正指示を実施する。
 
 - 統合後レビューで、対象経験（1.1と2章）と時間不足時の到達線（3.1と6章）の不整合を確認し、同じtodoで修正を差し戻した。次の実行でこの2点を解消する。
+
+- 統合後レビューの差し戻しを解消した。対象を、Scratch の基本操作とイベント、繰り返し、座標、条件分岐、当たり判定を経験した学習者へ改め、最終回で既習内容を組み合わせる位置づけと整合させた。時間不足時は 3.1 の最低完成形である初期化と方向キー移動を優先し、成功判定・操作終了・再開は残り時間と到達状況に応じて取り組む標準完成形として区別した。
 
 - [[edu-scratch:lpl-sample|宇宙船を着陸させよう！]] を、別題材の仮想的な 40 分授業の完成例として追加した。ねらい、使用機能、最低・標準・発展の完成形、活動、見取りを対応付け、開始から終了までの時間合計を 40 分にそろえた。
 - [[edu-scratch:lpl-rulebook|活動別指導案 Rulebook]] の frontmatter に `sample: edu-scratch:lpl-sample` だけを追加した。本文の規定は変更していない。
