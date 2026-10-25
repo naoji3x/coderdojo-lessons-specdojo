@@ -208,3 +208,16 @@
       from: "resumed executor did not account for every plan target: docs/ja/projects/prj-0001/controls/project-register/pjr-m1c2-scratch-lessons-schedule-expansion.md, docs/ja/projects/prj-0001/schedule/sch-strat…"
       to: "-"
   previous_event_id: reg_51c77070e1bb462ab68e8a99b35a3a7b
+- v: 1
+  id: reg_763ca402353c41a6b9253d39eaf1e69f
+  ts: "2026-10-25T12:39:46Z"
+  action: review
+  actor: flash-high-executor
+  from_status: in-progress
+  to_status: review
+  reason: ready for review
+  changes:
+    - field: status
+      from: in-progress
+      to: review
+  previous_event_id: reg_7e5476d0f05f4afc9a2c3744bbb368df
