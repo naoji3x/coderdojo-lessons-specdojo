@@ -33,6 +33,14 @@ specdojo:
 - コース計画と既存の第2回lesson-plan.md・slides.mdへメタ情報を反映し、カタログIDと一意に対応させる。新規教材のIDはカタログで宣言するが、未作成ファイルを作成済みとして扱わない。第2回は完成済みの本文を維持し、今回のメタ情報・リンク変更だけを適用する。statusは先行規約と確認結果に従い、処理状態と文書成熟度を混同しない。
 - カタログ検証とbuild、変更Markdown/YAMLの整形・lint・適用されるメタ情報schema検証、リンク検証、差分検査を通す。第2回スライドのbuildと全19ページの解析を確認し、frontmatter変更後も特に17〜19ページをPNGで確認する。根拠・変更範囲・検証結果を個票へ残す。
 
+### 追従修正：教材IDとbased_onの修飾を外す
+
+- 先行PJR-VD0XのID規約訂正をレビューしてから実行する。この追記を旧対応結果中の修飾付き教材IDより優先する。移動済みのコース計画は再移動せず、過去の個票・イベント・plan/resultを書き換えない。新しい対応結果へ訂正を追記する。
+- 宣言済み教材リポジトリの `courses/scratch-basic/course-plan.md` の `specdojo.id` を `cpl-scratch-basic`、`courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md` を `lpl-balloon-game`、同 `slides.md` を `lsd-balloon-game` にする。指導案の `based_on` は `cpl-scratch-basic`、スライドは `lpl-balloon-game` とし、実在する修飾なし教材IDで一意に解決する。
+- カタログのプロジェクト自身のIDや `project_id: prj-0001`、kataの `edu-scratch:`、登録簿の `prj-0001:` は変更しない。カタログ `local_id` と教材IDの対応、`depends_on` の推移閉包、CLIの対象指定用修飾形との違いを確認する。カタログや今後のSchedule入力に残る現在有効な教材IDの説明だけを必要に応じて訂正し、履歴の一括置換はしない。
+- 教材本文・授業順序・完成形・45分の配分・全19ページの本文とページ別設定を維持する。`type`・`status`・準拠rulebookは、IDの修飾訂正だけを理由に変更しない。教材3件のschema、カタログ検証とbuild、ID参照、リンク、整形・lint・Slidev buildとページ解析を再検証する。
+- orchestratorがPNG出力で表示維持を確認する。特に17〜19ページは、既存サーバーの古い解析状態と新規起動の出力を区別する。後続PJR-M1C2へ修飾なし教材IDとCLI解決の確認結果を申し送り、Schedule生成やgrade評価には本項目で着手しない。
+
 ## 3. 作業内容
 
 | No  | 作業                                                 | 担当 | 状態 | メモ                                                                                          |

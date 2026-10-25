@@ -28,6 +28,14 @@ specdojo:
 - コース計画のメタ情報も既存schemaと照合して扱いを記録する。準拠rulebookが未整備ならその事実を明記し、無関係なrulebookを割り当てたり、今回の範囲外の新規kataを勝手に作ったりしない。
 - 今回の作業対象はkataと実行記録とし、教材本体・配置パス・Scheduleは変更しない。draftのkataを検証成功だけでreadyへ昇格しない。変更ファイルの整形・lint・適用可能なschema検証・Slidevのsample/templateのbuildや解析・差分検査を行い、結果と未確定事項を個票に記録する。
 
+### 差し戻し：プロダクト文書の修飾なしID
+
+- 利用者の指摘に基づき、先行実行で採用した「教材IDは `<project_id>:<local_id>`」という方針を訂正する。この追記を旧完了条件・旧対応結果中のID方針より優先する。旧対応結果は当時の実施記録として残し、新しい対応結果へ訂正理由と検証を追記する。
+- `specdojo:id-and-file-naming-standard` のプロダクト文書・プロジェクト文書・型の文書の区別を正本にする。コース計画・指導案・教材スライドはプロダクト文書なので、`specdojo.id` はカタログの `local_id` と一致する修飾なしIDを採用する。例は `cpl-scratch-basic`・`lpl-balloon-game`・`lsd-balloon-game`。CLIが受け付ける `<project-id>:<local-id>` の指定形式と、成果物本文の正規IDを区別する。
+- 対象7 kata（lpl-rulebook・lpl-recipe・lpl-template・lpl-sample・lsd-slidev-rulebook・lsd-slidev-template・lsd-slidev-sample）の規約・例・YAMLコメントの教材用記入欄を整合させる。教材用 `_PROJECT_ID_:_LOCAL_ID_` は修飾なしIDの記入欄へ直す。教材間の `based_on` 例も修飾なしにする。kata自身の `edu-scratch:` ID・参照と、プロジェクト文書の `prj-0001:` IDは変更しない。
+- `type` のschema上の値とIDのnamespaceは別の概念として扱い、存在しない `type: product` や `product:` authorityを新設しない。コース計画のrulebook要否判断も今回のID訂正と混ぜない。教材本文・Schedule・教材リポジトリは本項目では変更しない。
+- schema・整形・lint・カタログID解決・Slidevのsample/templateの解析とbuildを再確認し、教材化したメタ情報の修飾なしIDも既存schemaを通す。旧方針のどの箇所を訂正したかと、後続PJR-Y36Gへの申し送りを個票へ記録する。
+
 ## 3. 作業内容
 
 | No  | 作業                                               | 担当 | 状態 | メモ                                                                         |
