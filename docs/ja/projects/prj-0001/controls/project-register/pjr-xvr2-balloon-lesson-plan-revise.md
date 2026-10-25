@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-xvr2-balloon-lesson-plan-revise
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: high
   owner: BA
   registered_at: "2026-10-25T01:59:14Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-25T02:17:20Z"
+  conclusion: 第2回の指導案を、先生と一緒に操作し各段階で改造する進め方に直し、基本制作の内訳・クローンとクリア後の扱い・つまずき・評価・保存と見せ合いを加えた。
 ---
 
 # PJR-XVR2 第2回の指導案を、先生と一緒に操作する進め方に直す
