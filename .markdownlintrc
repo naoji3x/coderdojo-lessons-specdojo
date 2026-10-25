@@ -10,5 +10,8 @@
   // 見出しの末尾の句読点。子ども向け教材の題名や見出しで使う「！」は許可する（coderdojo-lessons/.markdownlint.yaml と同じ）。
   "MD026": {
     "punctuation": ".,;:。，；："
-  }
+  },
+
+  // review plan テンプレートの prettier-ignore 表（MD055/MD056 無効化区間）と Prettier 整形表が混在しても許容する。
+  "MD060": false
 }
