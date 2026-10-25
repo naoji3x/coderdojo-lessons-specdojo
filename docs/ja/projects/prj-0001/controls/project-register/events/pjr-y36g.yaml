@@ -64,3 +64,32 @@
       from: "-"
       to: executor rate limit reached
   previous_event_id: reg_3be2b294710a4214992a5a51ede21025
+- v: 1
+  id: reg_f67ddc204abe4cdf975cfcd5e1f1916f
+  ts: "2026-10-25T09:28:05Z"
+  action: start
+  actor: sol-executor
+  from_status: waiting
+  to_status: in-progress
+  reason: executor resumed
+  changes:
+    - field: status
+      from: waiting
+      to: in-progress
+    - field: block_reason
+      from: executor rate limit reached
+      to: "-"
+  previous_event_id: reg_ed1fd57bbe8f454e859c9ad40bc1daac
+- v: 1
+  id: reg_7217d52acf9245168a85e83a9299cbeb
+  ts: "2026-10-25T09:34:46Z"
+  action: review
+  actor: sol-executor
+  from_status: in-progress
+  to_status: review
+  reason: ready for review
+  changes:
+    - field: status
+      from: in-progress
+      to: review
+  previous_event_id: reg_f67ddc204abe4cdf975cfcd5e1f1916f

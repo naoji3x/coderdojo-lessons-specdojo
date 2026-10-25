@@ -7,12 +7,11 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: waiting
+  item_status: review
   priority: medium
   owner: BA
   registered_at: "2026-10-25T09:08:29Z"
   due_on: "2026-10-31"
-  block_reason: executor rate limit reached
   derived_from:
     - PJR-VD0X
 ---
@@ -36,19 +35,58 @@ specdojo:
 
 ## 3. 作業内容
 
-| No  | 作業                                                 | 担当 | 状態 | メモ |
-| --- | ---------------------------------------------------- | ---- | ---- | ---- |
-| 1   | 先行kataとコース計画の現行参照を確認する             | BA   | open | -    |
-| 2   | コース計画を移動し現行リンクとカタログ依存を更新する | BA   | open | -    |
-| 3   | コース計画と既存第2回教材にメタ情報を反映する        | BA   | open | -    |
-| 4   | カタログ・リンク・メタ情報・Slidev表示を検証する     | BA   | open | -    |
+| No  | 作業                                                 | 担当 | 状態 | メモ                                                                                          |
+| --- | ---------------------------------------------------- | ---- | ---- | --------------------------------------------------------------------------------------------- |
+| 1   | 先行kataとコース計画の現行参照を確認する             | BA   | done | 先行個票の統合後レビューと更新済みrulebook・既存schemaを確認                                  |
+| 2   | コース計画を移動し現行リンクとカタログ依存を更新する | BA   | done | README・後続個票を更新し、コース計画を独立登録、5指導案の依存を追加                           |
+| 3   | コース計画と既存第2回教材にメタ情報を反映する        | BA   | done | 3文書のIDをカタログと対応させ、成熟度はdraftを維持                                            |
+| 4   | カタログ・リンク・メタ情報・Slidev表示を検証する     | BA   | done | 静的検査・build・19ページの解析は成功。PNG表示確認はsandbox制約で `requires_human`（4.4参照） |
 
 ## 4. 対応結果
 
--
+### 4.1. 前提と採用したメタ情報
+
+- [[prj-0001:pjr-vd0x-teaching-artifact-metadata-kata|PJR-VD0X]] の「統合後レビュー（orchestrator）」で、統合コミット `d5200e9` の7 kataが完了条件を満たし、後続PJR-Y36Gへの支障がないと確認されている。個票の処理状態は `review` のままだが、この明示的なレビュー記録と更新済みの [[edu-scratch:lpl-rulebook|指導案 Rulebook]]・[[edu-scratch:lsd-slidev-rulebook|投影スライド Rulebook]] を根拠に着手した。
+- 導入済みSpecDojoの共通・成果物frontmatter schemaと `dct.schema.yaml` を照合した。3文書はいずれも成果物固有の `id`、`type: project`、`status: draft` を持つ。`status` は文書成熟度であり、第2回が既存完成教材であることやScheduleの処理状態とは区別する。人間による成熟度の判定を行わず、`ready` へ昇格していない。
+- コース計画は人が判断して保守する独立成果物なので、カタログの `kind: work` とした。全5回の対象・ねらい・使用機能・積み上がり・45分構成・指導方針の対応、および配置・ID・参照先の一意性を `done_criteria` とした。専用rulebookは未整備で要否未判断のため、カタログは `rulebook: undecided`、成果物自身はschemaが許す `rulebook: none` とし、無関係なrulebookや新規kataを追加していない。
+
+### 4.2. 変更した成果物と範囲
+
+| ファイル（教材側は `coderdojo-lessons:`）                                                                        | 実施内容                                                                                                                                                                                                     |
+| ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `coderdojo-lessons:docs/course-design/course-plan.md` → `coderdojo-lessons:courses/scratch-basic/course-plan.md` | 正本を移動し、`prj-0001:cpl-scratch-basic` を付与。旧設計5件への相対リンクだけを移動先基準へ修正した。学習内容・45分構成・コース方針は維持した。                                                             |
+| `coderdojo-lessons:README.md`                                                                                    | コース計画の入口を新パスへ更新した。                                                                                                                                                                         |
+| `coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md`                                | `prj-0001:lpl-balloon-game`、準拠先 `edu-scratch:lpl-rulebook`、確認した根拠 `prj-0001:cpl-scratch-basic` の `based_on` を追加した。授業本文は変更していない。                                               |
+| `coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md`                                     | 既存先頭frontmatterへ `prj-0001:lsd-balloon-game`、準拠先 `edu-scratch:lsd-slidev-rulebook`、同じ回の指導案への `based_on` を追加した。theme・title・本文・ページ別設定・区切りは維持した。                  |
+| `docs/ja/projects/prj-0001/010-deliverables-catalog/dct-scratch-lessons.yaml`                                    | コース計画を追加し、全5指導案の `depends_on` を `cpl-scratch-basic` とした。スライド5件の同じ回の指導案への依存は維持した。共通 `base_path` をコース直下に上げ、各回のパスは既存配置へ解決するよう調整した。 |
+| `docs/ja/projects/prj-0001/controls/project-register/pjr-m1c2-scratch-lessons-schedule-expansion.md`             | 今後の実行入力となる関連文書の参照を新ID・新パスへ更新した。                                                                                                                                                 |
+| 本個票                                                                                                           | 作業内容・根拠・検証・人手確認の申し送りを記録した。                                                                                                                                                         |
+
+- 移動元の5つの旧設計リンクは同じファイルを参照し続けるが、旧設計を確認済みの根拠として `based_on` へ取り込んでいない。後続指導案の入力は、新しいコース計画IDから解決する。
+- カタログの11件のID・配置が一意に対応する。存在する教材はコース計画・第2回指導案・第2回スライドの3件だけで、未作成の第1・3・4・5回の8ファイルは宣言のみとし、作成していない。既存10教材の解決後パスは変更前と一致する。
+- 旧パスの参照を検索し、README・現行カタログ・後続PJR-M1C2を更新した。過去の完了済み個票・レビュー済み作業の記録・plan/result・イベントにある当時のパスは監査履歴として維持した。Scheduleはこの作業では変更していない。
+
+### 4.3. 成功した検証
+
+- 両リポジトリの `package.json`、hook、SpecDojo設定の有無と検査条件を確認した。変更Markdown/YAMLを各リポジトリの `npx prettier --write` で整形し、`npx prettier --check` でも確認した。第2回スライドには教材側の既存Slidev parser設定が適用される。
+- project側の変更2個票に `npx markdownlint --`、`node tools/check-slidev-files.mjs` を実行した。教材側にはmarkdownlint依存もlint hookもないため、教材側のmarkdownlintは非適用とした。
+- `npx specdojo catalog validate --project prj-0001`：成功。未作成の第1・3・4・5回の計8文書について文書未検出の既存警告が出るが、存在する3文書の `based_on` の検証は成功した。
+- `npx specdojo catalog build --project prj-0001`：成功。生成される `generated/dct-scratch-lessons.md` と `generated/dct-index.md` は既存のGit除外対象であり、YAMLを正本とする。
+- `node tmp/pjr-y36g/verify.mjs`：導入済みAjv 2020で教材3件の成果物メタ情報、変更2個票の登録項目メタ情報、カタログ全体のschema検証に成功した。11件のID・配置の一意性、全5指導案→コース計画・全5スライド→同じ回の指導案の依存、`based_on` の推移閉包、実在3件・未作成8件も確認した。
+- 同じ検証でGitのHEADから読み出した変更前本文と比較した。コース計画は移動に必要なリンク修正と整形以外が一致し、第2回指導案はメタ情報を除く本文が一致した。教材側Slidev 53.0.0のparserで変更前後とも全19ページを解析し、全ページの本文・ノート・順序・`specdojo` を除くページ設定が一致した。READMEと3教材のローカル相対リンク7件の実在を確認した。一時スクリプトと比較用データは検証後に削除した。
+- 教材リポジトリで `npx slidev build courses/scratch-basic/lessons/020-balloon-game/slides.md --out dist`：成功。初回は出力先の相対パス指定を誤り、書込不可で失敗したが、活動配下の `dist/` に直して再実行した。Neversinkの将来のVite設定に関する警告は既存で、buildは成功している。
+- 両リポジトリの `git diff --check` と差分範囲を確認した。登録簿一覧、個票frontmatterの処理状態、イベント、既存の実行証跡、Git設定にはexecutorから変更を加えていない。再開前から存在するrunner管理の差分は維持した。resultはreporter/runnerが記入する。
+- `npm run validate:schema:file` は両リポジトリでscriptがないため非適用。`npm run typecheck`・`npm run test:unit` も両リポジトリでscriptがなく、ソース変更もない。`npm test` はproject側が初期の仮script、教材側がscriptなしのため非適用。schema検証は上記の直接検証で実施した。
+
+### 4.4. 人手確認と後続への申し送り
+
+- PNG表示確認は `requires_human`。教材側で `npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --output tmp/pjr-y36g/png --wait 1500` を実行したが、sandboxの `uv_interface_addresses` 制約で停止した。`HOST=127.0.0.1` を指定した再実行も待受ポートを開けず停止した。さらに、ローカルサーバーを使わずbuild済みHTMLをPlaywrightで描画する方法を試したが、Chromium起動が `sandbox_host_linux.cc:41` の `Operation not permitted` で停止した。PNGは生成できておらず、17〜19ページを目視済みとは扱わない。
+- sandbox外の教材リポジトリで `npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --output courses/scratch-basic/lessons/020-balloon-game/dist/png --wait 1500` を実行し、全19ページの生成と、特に17ページ「発展ミッション」・18ページ「うまくいかないときは」・19ページ「ふりかえり」の文字・部品・案内役に切れや重なりがないことを確認する。buildと全19ページの構造・本文比較は上記のとおり成功している。
+- [[prj-0001:pjr-m1c2-scratch-lessons-schedule-expansion|PJR-M1C2]] では、コース計画 `cpl-scratch-basic` と完成済みの第2回 `lpl-balloon-game` / `lsd-balloon-game` を新規作業から除外する。残り8成果物だけをScheduleへ展開する。専用コース計画rulebookの要否は未判断であり、今回の移行だけを根拠にkata作成や成熟度の昇格を行わない。
+- reporter/runnerは本節のPNG人手確認と後続への注意点をresultへ反映する。保護設定の変更提案はない。
 
 ## 5. 関連ドキュメント
 
 - [[prj-0001:pjr-vd0x-teaching-artifact-metadata-kata]]：先行作業
-- `coderdojo-lessons:docs/course-design/course-plan.md`：現在のコース計画（移動後は新パスへ読み替える）
+- [[prj-0001:cpl-scratch-basic|Scratch基礎 コース計画]]：`coderdojo-lessons:courses/scratch-basic/course-plan.md`
 - `docs/ja/projects/prj-0001/010-deliverables-catalog/dct-scratch-lessons.yaml`：成果物カタログ

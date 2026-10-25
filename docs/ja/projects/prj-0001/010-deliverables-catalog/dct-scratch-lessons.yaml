@@ -7,15 +7,35 @@ part_of:
   - prj-0001:dct-index
 project_id: prj-0001
 domain: scratch-lessons
-base_path: /../coderdojo-lessons/courses/scratch-basic/lessons
+base_path: /../coderdojo-lessons/courses/scratch-basic
 groups:
+  - name: コース計画
+    deliverables:
+      - local_id: cpl-scratch-basic
+        name: Scratch基礎 コース計画（全5回）
+        kind: work
+        depends_on: []
+        overview: 全5回の学習内容・積み上がり・45分構成・コース方針を定め、各回の指導案の根拠とする。
+        path: course-plan.md
+        rulebook: undecided
+        done_criteria:
+          - text: 対象・環境・全5回のねらいと使用機能・学習内容の積み上がり・各回45分の構成・指導方針が対応し、指導案作成の入力として確認できること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+          - text: 教材リポジトリ内の正本の配置・成果物ID・参照先が一意に解決し、旧設計へのリンクと確認済みの指導案の根拠を区別できること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+        note: 人が判断して保守する計画のためworkとする。既存計画を移行したもので、教材作成Scheduleでは新規作業から除外する。専用rulebookは未整備で要否未判断のためundecidedとし、本体の準拠先はnoneとする。旧設計へのリンクは移動前の参照先を維持するが、指導案の根拠として無条件に採用しない。
   - name: 第1回 猫から逃げろ！追いかけっこゲーム
-    base_path: 010-chase-game
+    base_path: lessons/010-chase-game
     deliverables:
       - local_id: lpl-chase-game
         name: 第1回 指導案
         kind: work
-        depends_on: []
+        depends_on:
+          - cpl-scratch-basic
         overview: 「猫から逃げろ！追いかけっこゲーム」の授業の進め方と到達条件を定める。
         path: lesson-plan.md
         rulebook: edu-scratch:lpl-rulebook
@@ -28,7 +48,7 @@ groups:
             roles:
               - QE
             viewpoint: vp-qe-verifiability
-        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は courses/scratch-basic/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
       - local_id: lsd-chase-game
         name: 第1回 投影スライド
         kind: work
@@ -46,14 +66,15 @@ groups:
             roles:
               - QE
             viewpoint: vp-qe-verifiability
-        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は courses/scratch-basic/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
   - name: 第2回 風船割りゲームを作ろう！
-    base_path: 020-balloon-game
+    base_path: lessons/020-balloon-game
     deliverables:
       - local_id: lpl-balloon-game
         name: 第2回 指導案
         kind: work
-        depends_on: []
+        depends_on:
+          - cpl-scratch-basic
         overview: 「風船割りゲームを作ろう！」の授業の進め方と到達条件を定める。
         path: lesson-plan.md
         rulebook: edu-scratch:lpl-rulebook
@@ -66,7 +87,7 @@ groups:
             roles:
               - QE
             viewpoint: vp-qe-verifiability
-        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は courses/scratch-basic/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
       - local_id: lsd-balloon-game
         name: 第2回 投影スライド
         kind: work
@@ -84,14 +105,15 @@ groups:
             roles:
               - QE
             viewpoint: vp-qe-verifiability
-        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は courses/scratch-basic/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
   - name: 第3回 音楽と図形のプログラミングアート
-    base_path: 030-music-art
+    base_path: lessons/030-music-art
     deliverables:
       - local_id: lpl-music-art
         name: 第3回 指導案
         kind: work
-        depends_on: []
+        depends_on:
+          - cpl-scratch-basic
         overview: 「音楽と図形のプログラミングアート」の授業の進め方と到達条件を定める。
         path: lesson-plan.md
         rulebook: edu-scratch:lpl-rulebook
@@ -104,7 +126,7 @@ groups:
             roles:
               - QE
             viewpoint: vp-qe-verifiability
-        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は courses/scratch-basic/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
       - local_id: lsd-music-art
         name: 第3回 投影スライド
         kind: work
@@ -122,14 +144,15 @@ groups:
             roles:
               - QE
             viewpoint: vp-qe-verifiability
-        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は courses/scratch-basic/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
   - name: 第4回 AIにじゃんけんを覚えさせよう！
-    base_path: 040-ai-rps
+    base_path: lessons/040-ai-rps
     deliverables:
       - local_id: lpl-ai-rps
         name: 第4回 指導案
         kind: work
-        depends_on: []
+        depends_on:
+          - cpl-scratch-basic
         overview: 「AIにじゃんけんを覚えさせよう！」の授業の進め方と到達条件を定める。
         path: lesson-plan.md
         rulebook: edu-scratch:lpl-rulebook
@@ -142,7 +165,7 @@ groups:
             roles:
               - QE
             viewpoint: vp-qe-verifiability
-        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は courses/scratch-basic/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
       - local_id: lsd-ai-rps
         name: 第4回 投影スライド
         kind: work
@@ -160,14 +183,15 @@ groups:
             roles:
               - QE
             viewpoint: vp-qe-verifiability
-        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は courses/scratch-basic/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
   - name: 第5回 オリジナル作品を作ろう！
-    base_path: 050-original-project
+    base_path: lessons/050-original-project
     deliverables:
       - local_id: lpl-original-project
         name: 第5回 指導案
         kind: work
-        depends_on: []
+        depends_on:
+          - cpl-scratch-basic
         overview: 「オリジナル作品を作ろう！」の授業の進め方と到達条件を定める。
         path: lesson-plan.md
         rulebook: edu-scratch:lpl-rulebook
@@ -180,7 +204,7 @@ groups:
             roles:
               - QE
             viewpoint: vp-qe-verifiability
-        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は courses/scratch-basic/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
       - local_id: lsd-original-project
         name: 第5回 投影スライド
         kind: work
@@ -198,4 +222,4 @@ groups:
             roles:
               - QE
             viewpoint: vp-qe-verifiability
-        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は courses/scratch-basic/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。

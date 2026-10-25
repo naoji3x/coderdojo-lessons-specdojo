@@ -49,5 +49,5 @@ specdojo:
 ## 5. 関連ドキュメント
 
 - [[prj-0001:pjr-y36g-course-plan-catalog-and-metadata]]：先行作業
-- `coderdojo-lessons:docs/course-design/course-plan.md`：現在のコース計画（移動後は新パスへ読み替える）
+- [[prj-0001:cpl-scratch-basic|Scratch基礎 コース計画]]：`coderdojo-lessons:courses/scratch-basic/course-plan.md`
 - `docs/ja/projects/prj-0001/010-deliverables-catalog/dct-scratch-lessons.yaml`：成果物カタログ
