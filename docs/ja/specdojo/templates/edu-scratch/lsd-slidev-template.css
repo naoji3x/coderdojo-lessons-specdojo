@@ -1,5 +1,5 @@
 /*
- * edu-scratch:lsd-template の見た目。活動では slides.md と同じディレクトリに style.css として置く。
+ * edu-scratch:lsd-slidev-template の見た目。活動では slides.md と同じディレクトリに style.css として置く。
  * Slidev は style.css を全ページに読み込む。slides.md の中の <style> はそのページだけに効くため使わない。
  */
 :root {

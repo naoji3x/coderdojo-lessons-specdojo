@@ -1,7 +1,7 @@
 ---
 # 活動の slides.md に写すときは specdojo: の欄を消す。教材の slides.md は SpecDojo の frontmatter を持たない。
 specdojo:
-  id: edu-scratch:lsd-template
+  id: edu-scratch:lsd-slidev-template
   type: template
   status: draft
 theme: neversink

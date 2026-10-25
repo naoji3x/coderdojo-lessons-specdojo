@@ -1,9 +1,9 @@
 ---
 specdojo:
-  id: edu-scratch:lsd-sample
+  id: edu-scratch:lsd-slidev-sample
   type: sample
   status: draft
-  rulebook: edu-scratch:lsd-rulebook
+  rulebook: edu-scratch:lsd-slidev-rulebook
 theme: neversink
 colorSchema: light
 title: えらべるお話を作ろう

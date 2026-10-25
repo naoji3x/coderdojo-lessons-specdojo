@@ -2,8 +2,8 @@
   "overrides": [
     {
       "files": [
-        "docs/ja/specdojo/samples/**/lsd-*.md",
-        "docs/ja/specdojo/templates/**/lsd-*.md"
+        "docs/ja/specdojo/samples/**/*-slidev-sample.md",
+        "docs/ja/specdojo/templates/**/*-slidev-template.md"
       ],
       "options": {
         "parser": "slidev",

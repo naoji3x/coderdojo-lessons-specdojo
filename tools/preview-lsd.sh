@@ -3,7 +3,7 @@
 #
 # kata のファイルには活動のコンポーネント（ScratchBlocks.vue など）がないため、
 # 教材のリポジトリの活動から components/ を写した作業用のディレクトリ（tmp/ の下）で動かす。
-# kata と同じ名前の .css（例: lsd-sample.css）があれば、style.css として一緒に写す。
+# kata と同じ名前の .css（例: lsd-slidev-sample.css）があれば、style.css として一緒に写す。
 #
 # 使い方:
 #   tools/preview-lsd.sh serve <kata の .md> [slidev のオプション...]  # 既定は --port 3030 --remote
