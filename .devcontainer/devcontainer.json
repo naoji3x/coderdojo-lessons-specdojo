@@ -2,6 +2,7 @@
   "name": "specdojo-agent-env",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
   "remoteUser": "node",
+  "shutdownAction": "none",
   "init": true,
   "appPort": [3030, 3031],
   "portsAttributes": {
