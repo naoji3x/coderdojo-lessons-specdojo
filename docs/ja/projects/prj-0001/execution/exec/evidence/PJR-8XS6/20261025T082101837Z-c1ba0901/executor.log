@@ -1,0 +1,98 @@
+スライド・指導案の整合性を確認し、座標図の文字サイズを修正しました。静的検査とビルドは成功しました。PNGでの最終確認はsandbox外での実施を引き継ぎます。
+
+<specdojo_executor_evidence>
+{
+  "completion_status": "complete",
+  "final_message": "制作順序・補足説明・実装先の分割を確認し、8ページのSVG文字サイズを修正。個票を更新し、静的検査とビルドは成功。resultは編集していない。",
+  "handoff": [
+    "統合後に orchestrator が coderdojo-lessons で `npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --output courses/scratch-basic/lessons/020-balloon-game/dist/pjr-8xs6-review` を実行し、全19ページを確認する。特に8ページの座標値・軸名・「今回の乱数」の重なりとはみ出しの解消を確認する。sandboxでは `uv_interface_addresses` エラーにより書き出せなかったため、個票の作業4はopenのままとした。",
+    "MD025のファイル限定注釈は、個票の明示指示を優先した対応。理由コメントを確認し、教材2ファイルのlintは成功した。共有CSS・lint設定・登録簿の状態・個票のステータス項目は今回変更していない。"
+  ],
+  "validations": [
+    {
+      "command": "npx prettier --write courses/scratch-basic/lessons/020-balloon-game/slides.md courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "passed",
+      "summary": "coderdojo-lessonsで教材2ファイルを整形。"
+    },
+    {
+      "command": "npx prettier --check courses/scratch-basic/lessons/020-balloon-game/slides.md courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "passed",
+      "summary": "coderdojo-lessonsで教材2ファイルの書式検査成功。"
+    },
+    {
+      "command": "../project/node_modules/.bin/markdownlint --config .markdownlint.yaml courses/scratch-basic/lessons/020-balloon-game/slides.md courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "passed",
+      "summary": "教材ルートからproject導入済みCLIを使用。教材の設定で両ファイルとも違反なし。"
+    },
+    {
+      "command": "npx slidev build courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "passed",
+      "summary": "coderdojo-lessonsで本番ビルド成功。別途Slidev parserで全19ページと制作順序を確認。"
+    },
+    {
+      "command": "npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --output courses/scratch-basic/lessons/020-balloon-game/dist/pjr-8xs6-review",
+      "status": "requires_human",
+      "summary": "sandboxの `uv_interface_addresses` エラーで起動不可。統合後にorchestratorが全ページを描画確認する。"
+    },
+    {
+      "command": "npx prettier --write docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "passed",
+      "summary": "個票を整形。"
+    },
+    {
+      "command": "npx prettier --check docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "passed",
+      "summary": "個票の書式検査成功。"
+    },
+    {
+      "command": "npx markdownlint -- docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "passed",
+      "summary": "個票のlint成功。"
+    },
+    {
+      "command": "node tools/check-slidev-files.mjs docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "passed",
+      "summary": "projectのSlidevファイル・設定整合検査成功。"
+    },
+    {
+      "command": "npx specdojo catalog validate --project prj-0001",
+      "status": "passed",
+      "summary": "カタログ検査成功。対象外の未作成教材8件について警告あり。"
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed",
+      "summary": "projectとcoderdojo-lessonsの両リポジトリで成功。"
+    },
+    {
+      "command": "npm run validate:schema:file",
+      "status": "not_applicable",
+      "summary": "スキーマ検査の適用なし。",
+      "reason": "projectのpackage.jsonに当該scriptがなく、今回のexecutor編集はMarkdownのみ。"
+    },
+    {
+      "command": "npm test",
+      "status": "not_applicable",
+      "summary": "テストの適用なし。",
+      "reason": "projectはnpm initの仮テストのみ、教材リポジトリにはtest scriptがない。変更は文書のみ。"
+    }
+  ],
+  "target_coverage": [
+    {
+      "target": "docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "changed",
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md"
+    },
+    {
+      "target": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "changed",
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md"
+    },
+    {
+      "target": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "changed",
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md"
+    }
+  ]
+}
+</specdojo_executor_evidence>

@@ -160,3 +160,19 @@
       from: "-"
       to: "agent exited with non-zero code: }"
   previous_event_id: reg_6b5c23f5f12f44d7aa71d446951f5b06
+- v: 1
+  id: reg_d50b8b6384d24e0ab69841b3ec68bc45
+  ts: "2026-10-25T08:21:01Z"
+  action: start
+  actor: sol-executor
+  from_status: waiting
+  to_status: in-progress
+  reason: executor resumed
+  changes:
+    - field: status
+      from: waiting
+      to: in-progress
+    - field: block_reason
+      from: "agent exited with non-zero code: }"
+      to: "-"
+  previous_event_id: reg_d61db665a4de473c974b6398b40fc2cf
