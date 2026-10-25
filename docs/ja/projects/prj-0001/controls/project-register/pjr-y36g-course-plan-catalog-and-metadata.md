@@ -53,6 +53,12 @@ specdojo:
 
 ## 4. 対応結果
 
+### 修飾なしIDへの訂正後レビュー（orchestrator）
+
+- 教材側 `8fb764d`、プロジェクト側 `22c2a96` の統合を確認した。教材3件の正規IDは `cpl-scratch-basic`・`lpl-balloon-game`・`lsd-balloon-game`、教材間の `based_on` はそれぞれ `cpl-scratch-basic`・`lpl-balloon-game` である。カタログのプロジェクトIDと、kata・登録簿のnamespaceは維持している。過去の修飾付き教材IDの採用判断は訂正済みであり、旧実行記録は当時の履歴として残す。
+- schema・ID解決・カタログ・リンク・整形・lint・Slidev build・全19ページの本文と設定の維持を確認したexecutorの成功記録をレビューした。親側でも統合後の実ファイルのIDとbased_onを検証した。
+- 統合後の教材developで `npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --output /tmp/pjr-y36g-bare-id-integrated` が終了コード0で全19ページを出力した。17〜19ページを新しいPNGで目視し、正常に描画され切れや案内役との重なりがないことを確認した。全19PNGのSHA-256も修正前の確認済み画像と一致し、ID訂正による表示変化はなかった。FloatingVueの既存コンソールエラーは出るが、出力・表示確認に支障はなかった。
+
 ### 統合後レビュー（orchestrator）
 
 - プロジェクト側 `628d442`、教材側 `684351a` の統合成果を完了条件に照らして確認した。コース計画は `courses/scratch-basic/course-plan.md` に移動され、ID `prj-0001:cpl-scratch-basic` でカタログ・既存教材のメタ情報・依存関係が一致している。本文・時間配分と第2回スライド全19ページの本文・設定を維持した検証記録、相対リンク7件、schema・カタログ・build等の成功を確認した。未作成教材8件の既存警告以外に後続Scheduleを妨げる不整合は見つからなかった。
