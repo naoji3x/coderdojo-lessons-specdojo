@@ -112,3 +112,16 @@
       from: "checkpoint failed: npm ci failed in /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-NH2Z/coderdojo-lessons (exit 1)"
       to: "-"
   previous_event_id: reg_846cc74d83c54c4e95830a1f42d23557
+- v: 1
+  id: reg_77e3e35f176c4f439108746709f55498
+  ts: "2026-10-25T02:45:40Z"
+  action: review
+  actor: codex-expert-executor
+  from_status: in-progress
+  to_status: review
+  reason: ready for review
+  changes:
+    - field: status
+      from: in-progress
+      to: review
+  previous_event_id: reg_a8eadc849c074c2db4ad400e73825b79
