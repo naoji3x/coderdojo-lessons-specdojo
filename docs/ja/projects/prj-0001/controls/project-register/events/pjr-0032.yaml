@@ -86,3 +86,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_bab816729e0e4bae8f2cf0dbaae26751
+- v: 1
+  id: reg_e2b5dd84a51343ecbf2045afc2bc2e72
+  ts: "2026-10-25T05:00:29Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: 利用者のclose依頼に基づき、exec成果物をorchestratorがレビューし、Prettier・Markdownlint・Slidev検査・exec validate・差分検査を再確認してclose。詳細は個票の対応結果と実行resultを参照。
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-25"
+    - field: conclusion
+      from: "-"
+      to: 成果物・実行記録を完了条件と照合し、関連kataの整合と静的検査の通過を確認した。差し戻し事項は解消済みでcloseを妨げる問題なし。kataはdraftのままとする。
+  previous_event_id: reg_9c24d1ab9ca144a482a1a0aaa4f0a26b
