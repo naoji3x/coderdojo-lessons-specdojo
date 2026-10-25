@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../../../../../../node_modules/specdojo/docs/specdojo/schemas/v1/grade-done-criteria.schema.yaml
+id: lpl-original-project-grade-criteria
+document: lpl-original-project
+path: ../coderdojo-lessons/courses/scratch-basic/lessons/050-original-project/lesson-plan.md
+graded_at: "2026-10-25T22:53:36.762Z"
+graded_by: flash-high-executor
+content_hash: f46a9be33d02e2379a11497d33905b220c7408314383f42e0a166c2478474abf
+summary:
+  satisfied: 2
+  unsatisfied: 0
+  total: 2
+criteria:
+  - id: DC-001
+    text: コース計画の第5回「オリジナル作品を作ろう！」の対象・ねらい・機能・45分の授業構成に対応し、未確認事項を識別できること。
+    roles:
+      - QE
+    viewpoint: vp-qe-verifiability
+    status: satisfied
+  - id: DC-002
+    text: ねらい・最低／標準／発展の完成形・活動・時間配分・見取り・進度差対応が整合し、開始・終了・再開と保存の扱いを確認できること。
+    roles:
+      - QE
+    viewpoint: vp-qe-verifiability
+    status: satisfied
