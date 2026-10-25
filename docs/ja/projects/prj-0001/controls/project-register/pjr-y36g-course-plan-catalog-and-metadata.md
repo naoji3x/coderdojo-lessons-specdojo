@@ -44,6 +44,11 @@ specdojo:
 
 ## 4. 対応結果
 
+### 統合後レビュー（orchestrator）
+
+- プロジェクト側 `628d442`、教材側 `684351a` の統合成果を完了条件に照らして確認した。コース計画は `courses/scratch-basic/course-plan.md` に移動され、ID `prj-0001:cpl-scratch-basic` でカタログ・既存教材のメタ情報・依存関係が一致している。本文・時間配分と第2回スライド全19ページの本文・設定を維持した検証記録、相対リンク7件、schema・カタログ・build等の成功を確認した。未作成教材8件の既存警告以外に後続Scheduleを妨げる不整合は見つからなかった。
+- orchestratorが作業worktreeで `npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --output /tmp/pjr-y36g-metadata-review` を実行し、終了コード0で全19ページを出力した。17〜19ページのPNGはメタ情報追加前に目視確認済みの画像とSHA-256が一致し、表示の維持を確認した。PNG出力時のFloatingVueの既存コンソールエラーはあるが、出力と確認には支障がなかった。
+
 ### 4.1. 前提と採用したメタ情報
 
 - [[prj-0001:pjr-vd0x-teaching-artifact-metadata-kata|PJR-VD0X]] の「統合後レビュー（orchestrator）」で、統合コミット `d5200e9` の7 kataが完了条件を満たし、後続PJR-Y36Gへの支障がないと確認されている。個票の処理状態は `review` のままだが、この明示的なレビュー記録と更新済みの [[edu-scratch:lpl-rulebook|指導案 Rulebook]]・[[edu-scratch:lsd-slidev-rulebook|投影スライド Rulebook]] を根拠に着手した。
