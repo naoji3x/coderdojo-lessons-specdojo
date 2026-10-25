@@ -7,12 +7,13 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: waiting
   priority: medium
   difficulty: hard
   owner: BA
   registered_at: "2026-10-25T04:17:01Z"
   due_on: "2026-10-31"
+  block_reason: "checkpoint failed: Checkpoint commit failed (exec(register PJR-W05J): start); staged changes rolled back (likely a failing git hook): check Slidev decks and their lint settings: Checking formatting..."
   derived_from:
     - PJR-0H02
   approach: sample-maintenance
@@ -51,6 +52,8 @@ specdojo:
 | 4   | 完了条件と他kataとの整合をレビューする             | orch | open | 次の段階への入力を確認 |
 
 ## 4. 対応結果
+
+- sample-maintenanceによる再実行は、生成planのBAロール未解決マーカー `_MISSING_` がMD036に抵触し、checkpoint commitで停止した。executorは未開始。検査を無効化せず、通常のregister実行で個票本文の修正指示を実施する。
 
 - 統合後レビューで、対象経験（1.1と2章）と時間不足時の到達線（3.1と6章）の不整合を確認し、同じtodoで修正を差し戻した。次の実行でこの2点を解消する。
 
