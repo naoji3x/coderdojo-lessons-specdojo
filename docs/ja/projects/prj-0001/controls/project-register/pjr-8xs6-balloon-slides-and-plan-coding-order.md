@@ -12,7 +12,7 @@ specdojo:
   owner: BA
   registered_at: "2026-10-25T06:58:36Z"
   due_on: "2026-10-31"
-  block_reason: 'Error: {   "name": "UnknownError",   "data": {     "message": "Unexpected server error. Check server logs for details.",     "ref": "err_02735082"   } }'
+  block_reason: "agent exited with non-zero code: }"
   derived_from:
     - PJR-NH2Z
 ---

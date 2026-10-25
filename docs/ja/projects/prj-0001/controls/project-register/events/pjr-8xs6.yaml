@@ -128,3 +128,35 @@
       from: "-"
       to: "Error: {   \"name\": \"UnknownError\",   \"data\": {     \"message\": \"Unexpected server error. Check server logs for details.\",     \"ref\": \"err_02735082\"   } }"
   previous_event_id: reg_a75c4e0e7c764401ac28e4764e2786fc
+- v: 1
+  id: reg_6b5c23f5f12f44d7aa71d446951f5b06
+  ts: "2026-10-25T08:20:00Z"
+  action: start
+  actor: gemma-reporter
+  from_status: waiting
+  to_status: in-progress
+  reason: reporter resumed
+  changes:
+    - field: status
+      from: waiting
+      to: in-progress
+    - field: block_reason
+      from: "Error: {   \"name\": \"UnknownError\",   \"data\": {     \"message\": \"Unexpected server error. Check server logs for details.\",     \"ref\": \"err_02735082\"   } }"
+      to: "-"
+  previous_event_id: reg_5ff800e598144f8498381781c6388bb3
+- v: 1
+  id: reg_d61db665a4de473c974b6398b40fc2cf
+  ts: "2026-10-25T08:20:03Z"
+  action: wait
+  actor: gemma-reporter
+  from_status: in-progress
+  to_status: waiting
+  reason: "agent exited with non-zero code: }"
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: "agent exited with non-zero code: }"
+  previous_event_id: reg_6b5c23f5f12f44d7aa71d446951f5b06
