@@ -1,0 +1,15 @@
+第5回投影スライド（`coderdojo-lessons:courses/scratch-basic/lessons/050-original-project/slides.md`）の作成と検証が完了しました。
+
+### 実施内容
+
+1. **投影スライドの作成**:
+   - [`slides.md`](file:///workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-T-SCRATCH-LESSONS-lsd-original-project-010/coderdojo-lessons/courses/scratch-basic/lessons/050-original-project/slides.md) を作成。指導案（`lpl-original-project`）に沿って、表紙、めあて、これまでの振り返り、企画・コース選択（4コース）、ベース作品準備、自由制作と試行錯誤（初期化ブロックと実機確認、コース別ヒント、デバッグ合言葉）、標準完成・発展の到達確認、発表・見せ合い、保存手順、5回の振り返りの全16ページで構成。
+   - [`style.css`](file:///workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-T-SCRATCH-LESSONS-lsd-original-project-010/coderdojo-lessons/courses/scratch-basic/lessons/050-original-project/style.css) を配置し、案内役（`teacher-cat`）や各種コンポーネントとの重なり・文字切れを防止するスタイルを定義。
+   - `components/ScratchBlocks.vue` を配置し、Scratchブロック図の描画に対応。
+2. **品質・描画検証**:
+   - `Prettier` による構文整形・検査を実施。
+   - `Slidev` ビルド（`npx slidev build`）および全ページ（1〜16ページ）のPNG画像出力（`npx slidev export --format png`）を実行。全画像を目視確認し、文字・ブロック図・実機確認注記の切れや案内役との重なりがないことを確認。
+
+<specdojo_executor_evidence>
+{"completion_status":"complete","final_message":"第5回投影スライド（slides.md）およびstyle.css、ScratchBlocksコンポーネントを作成し、Prettier整形、Slidevビルド、全16ページのPNG画像出力・目視確認を完了しました。","handoff":[],"validations":[{"command":"cd coderdojo-lessons && npx prettier --check courses/scratch-basic/lessons/050-original-project/slides.md courses/scratch-basic/lessons/050-original-project/style.css","status":"passed","summary":"Prettier formatting check passed for slides.md and style.css"},{"command":"cd coderdojo-lessons && npx slidev build courses/scratch-basic/lessons/050-original-project/slides.md","status":"passed","summary":"Slidev build succeeded without errors"},{"command":"cd coderdojo-lessons && npx slidev export courses/scratch-basic/lessons/050-original-project/slides.md --format png","status":"passed","summary":"All 16 slide pages exported to PNG and visually confirmed free of cutoff and overlap"},{"command":"npx markdownlint courses/scratch-basic/lessons/050-original-project/slides.md","status":"not_applicable","reason":"markdownlint is not installed in coderdojo-lessons package.json"},{"command":"npm test","status":"not_applicable","reason":"No test script in package.json (placeholder only in project repo)"},{"command":"specdojo catalog validate","status":"not_applicable","reason":"No changes in docs/ja/projects/ (deliverable target is in product repository coderdojo-lessons)"}]}
+</specdojo_executor_evidence>
