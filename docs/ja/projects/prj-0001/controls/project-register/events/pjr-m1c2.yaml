@@ -64,3 +64,35 @@
       from: "-"
       to: "executor reported incomplete: strategy設計案・設定差分案・個票を更新。16タスクのschema・依存・BA・各0.25日をメモリ上で検証した。保護設定とkataのgrade不足により実行用trackは未生成。教材生成・agent実行・result編集は行っていない。"
   previous_event_id: reg_425a8755c41346f0b1d71a9756ce6b12
+- v: 1
+  id: reg_e7fdae714cc04a86bd7b28616e74803f
+  ts: "2026-10-25T11:22:47Z"
+  action: start
+  actor: flash-high-executor
+  from_status: waiting
+  to_status: in-progress
+  reason: executor resumed
+  changes:
+    - field: status
+      from: waiting
+      to: in-progress
+    - field: block_reason
+      from: "executor reported incomplete: strategy設計案・設定差分案・個票を更新。16タスクのschema・依存・BA・各0.25日をメモリ上で検証した。保護設定とkataのgrade不足により実行用trackは未生成。教材生成・agent実行・result編集は行っていない。"
+      to: "-"
+  previous_event_id: reg_75cde729bc7444a18f0c95eabc842def
+- v: 1
+  id: reg_d4518081208044ffb4f469d879e96a76
+  ts: "2026-10-25T11:23:13Z"
+  action: wait
+  actor: flash-high-executor
+  from_status: in-progress
+  to_status: waiting
+  reason: "resumed executor did not account for every plan target: docs/ja/projects/prj-0001/controls/project-register/pjr-m1c2-scratch-lessons-schedule-expansion.md, docs/ja/projects/prj-0001/schedule/sch-strat…"
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: "resumed executor did not account for every plan target: docs/ja/projects/prj-0001/controls/project-register/pjr-m1c2-scratch-lessons-schedule-expansion.md, docs/ja/projects/prj-0001/schedule/sch-strat…"
+  previous_event_id: reg_e7fdae714cc04a86bd7b28616e74803f
