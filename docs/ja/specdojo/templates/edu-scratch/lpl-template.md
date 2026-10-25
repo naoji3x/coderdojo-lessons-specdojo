@@ -7,19 +7,19 @@ specdojo:
   rulebook: edu-scratch:lpl-rulebook
 # 教材用記入欄（コメントを外して上の specdojo 全体と置換し、値を確定する）：
 # specdojo:
-#   id: _PROJECT_ID_:_LOCAL_ID_
+#   id: _LOCAL_ID_
 #   type: project
 #   status: draft
 #   rulebook: edu-scratch:lpl-rulebook
-# _PROJECT_ID_ はカタログの project_id、_LOCAL_ID_ は対象行の local_id。
-# 例：prj-0001:lpl-balloon-game。教材用記入欄のコメントは教材化時に削除する。
+# _LOCAL_ID_ はカタログの対象行の local_id。プロダクト文書なので修飾子を付けない。
+# 例：lpl-balloon-game。教材用記入欄のコメントは教材化時に削除する。
 ---
 
 <!--
 作成者向け（教材化時にこの案内と各節の作成者向けコメントを削除する）：
 
 - 先頭の kata 自身の `specdojo:` を、教材用記入欄に従って成果物固有の値へ置き換える。教材の frontmatter は残し、kata の ID と `type: template` はコピーしない。
-- `id` はカタログの `<project_id>:<local_id>`、`type` は `project`、`status` は `draft`、`rulebook` は `edu-scratch:lpl-rulebook`。`ready` への昇格は人間が判断する。
+- `id` はカタログの `local_id` と一致する修飾なし ID、`type` は `project`、`status` は `draft`、`rulebook` は `edu-scratch:lpl-rulebook`。`type` と ID の namespace は別の概念。`ready` への昇格は人間が判断する。
 - 任意の `based_on` はカタログの `depends_on` の推移閉包に含まれる確認済みの先行成果物だけを指定する。未登録のコース計画 ID や独自フィールドを追加しない。
 - 題材・問い・制作手順・時間配分の内容設計は recipe と活動の根拠で決める。この雛形では、決めた内容をどこに記入するかだけを示す。
 - `_UPPER_SNAKE_` と _TODO_ を活動に合う値で埋める。不要な任意分岐は、その案内を含めて削除する。

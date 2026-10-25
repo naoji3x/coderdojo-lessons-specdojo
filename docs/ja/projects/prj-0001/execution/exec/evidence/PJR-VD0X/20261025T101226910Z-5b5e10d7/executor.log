@@ -1,0 +1,82 @@
+<specdojo_executor_evidence>
+{
+  "completion_status": "complete",
+  "final_message": "7 kataの教材ID・記入欄・参照例を修飾なしIDへ訂正し、個票へ根拠・検証結果・申し送りを追記しました。教材本体・Schedule・ステータス・resultは未変更です。",
+  "handoff": [
+    "PJR-Y36Gでは今回のkata訂正をレビュー後、実在教材3件のIDを `cpl-scratch-basic`・`lpl-balloon-game`・`lsd-balloon-game` へ訂正する。指導案の `based_on` は `cpl-scratch-basic`、スライドは `lpl-balloon-game` とする。移動済みコース計画の再移動は不要。",
+    "個票第4.6節が今回の訂正結果。旧対応結果は履歴として保持した。コース計画の専用rulebookは未整備であり、カタログの `rulebook: undecided` と教材の `rulebook: none` を区別する。`type: project` とIDのnamespaceは別の概念として維持する。",
+    "reporter/runnerは変更8ファイル、検証結果、個票第4.6.4節の申し送りをresultへ反映する。未確定判断・保護設定変更提案・未完了事項はない。"
+  ],
+  "validations": [
+    {
+      "command": "npx prettier --check docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md docs/ja/specdojo/templates/edu-scratch/lpl-template.md docs/ja/specdojo/samples/edu-scratch/lpl-sample.md docs/ja/specdojo/rulebooks/edu-scratch/lsd-slidev-rulebook.md docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.md docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md docs/ja/projects/prj-0001/controls/project-register/pjr-vd0x-teaching-artifact-metadata-kata.md",
+      "status": "passed",
+      "summary": "変更8ファイルの整形確認に成功。個票の最終修正後も再確認済み。"
+    },
+    {
+      "command": "npx markdownlint -- docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md docs/ja/specdojo/templates/edu-scratch/lpl-template.md docs/ja/specdojo/samples/edu-scratch/lpl-sample.md docs/ja/specdojo/rulebooks/edu-scratch/lsd-slidev-rulebook.md docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.md docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md docs/ja/projects/prj-0001/controls/project-register/pjr-vd0x-teaching-artifact-metadata-kata.md",
+      "status": "passed",
+      "summary": "通常のlintに成功。ignore対象のSlidev2件は専用規則で別途確認。個票の最終修正後も成功。"
+    },
+    {
+      "command": "npx markdownlint --config .markdownlint-slidev.yaml --ignore-path /dev/null -- docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.md docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md",
+      "status": "passed",
+      "summary": "Slidev専用lintに成功。"
+    },
+    {
+      "command": "node tools/check-slidev-files.mjs docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md docs/ja/specdojo/templates/edu-scratch/lpl-template.md docs/ja/specdojo/samples/edu-scratch/lpl-sample.md docs/ja/specdojo/rulebooks/edu-scratch/lsd-slidev-rulebook.md docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.md docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md docs/ja/projects/prj-0001/controls/project-register/pjr-vd0x-teaching-artifact-metadata-kata.md",
+      "status": "passed",
+      "summary": "Slidevの命名と整形・lint設定の対応に成功。"
+    },
+    {
+      "command": "node tmp/pjr-vd0x/verify.mjs",
+      "status": "passed",
+      "summary": "既存schemaの24ケース、11成果物のID・パス一意性と対象解決、修飾なし `based_on` の依存閉包と負例を確認。template11ページ・sample9ページの本文・メモ・順序・ページ設定の一致を確認。一時スクリプトは削除済み。"
+    },
+    {
+      "command": "npx slidev build tmp/pjr-vd0x/decks/lsd-slidev-template/slides.md --out dist",
+      "status": "passed",
+      "summary": "教材用メタ情報へ置換したtemplateのbuildに成功。"
+    },
+    {
+      "command": "npx slidev build tmp/pjr-vd0x/decks/lsd-slidev-sample/slides.md --out dist",
+      "status": "passed",
+      "summary": "教材用メタ情報へ置換したsampleのbuildに成功。"
+    },
+    {
+      "command": "npx specdojo catalog validate --project prj-0001",
+      "status": "passed",
+      "summary": "成功。未作成教材8件に対する既存の文書未検出警告のみ。"
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed",
+      "summary": "差分検査に成功。変更は7 kataと個票のみ。教材リポジトリに変更なし。"
+    },
+    {
+      "command": "npm run validate:schema:file",
+      "status": "not_applicable",
+      "summary": "メタ情報はAjvで検証済み。",
+      "reason": "script未定義かつYAML/YMLファイルの変更なし。"
+    },
+    {
+      "command": "npm run typecheck",
+      "status": "not_applicable",
+      "summary": "非適用。",
+      "reason": "script未定義で、変更はMarkdownのみ。"
+    },
+    {
+      "command": "npm run test:unit",
+      "status": "not_applicable",
+      "summary": "非適用。",
+      "reason": "package.jsonにscriptが定義されていない。"
+    },
+    {
+      "command": "npm test",
+      "status": "not_applicable",
+      "summary": "非適用。",
+      "reason": "初期の仮test scriptのみが定義されている。"
+    }
+  ]
+}
+</specdojo_executor_evidence>

@@ -7,12 +7,13 @@ specdojo:
   rulebook: edu-scratch:lsd-slidev-rulebook
 # 教材用記入欄（コメントを外して上の specdojo 全体と置換し、値を確定する）：
 # specdojo:
-#   id: _PROJECT_ID_:_LOCAL_ID_
+#   id: _LOCAL_ID_
 #   type: project
 #   status: draft
 #   rulebook: edu-scratch:lsd-slidev-rulebook
-# _PROJECT_ID_ はカタログの project_id、_LOCAL_ID_ は対象行の local_id。
-# 例：prj-0001:lsd-balloon-game。ready への昇格は人間が判断する。
+# _LOCAL_ID_ はカタログの対象行の local_id。プロダクト文書なので修飾子を付けない。
+# 例：lsd-balloon-game。type の値と ID の namespace は別の概念。
+# ready への昇格は人間が判断する。
 # 任意の based_on は depends_on の推移閉包内の確認済み先行成果物だけを指定する。
 # 教材化時はこの案内コメントを除く。下の Slidev 設定は同じ先頭 frontmatter に残す。
 # YAML ブロックの追加や、ページ区切り・ページ別 layout・授業の順序と時間の変更は不要。

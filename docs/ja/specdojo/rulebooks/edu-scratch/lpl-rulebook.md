@@ -40,8 +40,8 @@ Scratch の活動ごとに作る指導案の置き方と、学習目標、制作
 - `<nnn>` は活動順を表す 3 桁の連番、`<activity-id>` は活動を区別する小文字ハイフン区切りの名前とし、同じコース内で重複させない。
 - ファイル名は `lesson-plan.md` とする。完成見本、開始用プロジェクト、投影資料などは、それぞれの成果物の規約に従って管理し、指導案の複製として置かない。
 - カタログと Schedule で管理する指導案は、ファイル先頭の YAML frontmatter に成果物固有の `specdojo:` を持つ。kata の ID や `type: template` / `sample` を教材へコピーしない。
-- `id` はカタログの `project_id` と対象行の `local_id` をコロンで結んだ `<project_id>:<local_id>` とする。同じ project の全カタログで `local_id` を一意にし、配置パスと 1 対 1 に対応させる。ファイル名や活動ディレクトリ名から別の ID を作らない。
-- 例えば `project_id: prj-0001`、`local_id: lpl-balloon-game` の成果物 ID は `prj-0001:lpl-balloon-game`。型の所有元を示す `edu-scratch:` と、教材を管理する project の修飾子を区別する。
+- 指導案・コース計画・教材スライドはプロダクト文書であり、[[specdojo:id-and-file-naming-standard|ドキュメントIDおよびファイル命名標準]] に従って、`id` はカタログの対象行の `local_id` と一致する修飾なし ID とする。同じ SpecDojo Unit 内で一意にし、配置パスと 1 対 1 に対応させる。ファイル名や活動ディレクトリ名から別の ID を作らない。
+- 例えば `project_id: prj-0001`、`local_id: lpl-balloon-game` の教材自身の正規 ID は `lpl-balloon-game`。CLI の成果物指定やカタログ内部の識別に使う `<project-id>:<local-id>` と、教材の `specdojo.id` を区別する。プロジェクト文書の `prj-0001:`、型の文書の `edu-scratch:` はそれぞれの文書に残す。
 
 ## 4. 推奨 Frontmatter 項目
 
@@ -51,13 +51,13 @@ Scratch の活動ごとに作る指導案の置き方と、学習目標、制作
 
 | 項目       | 採用値・根拠                                                                                                                                 |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`       | 第3章の `<project_id>:<local_id>`。共通 schema の小文字・数字・ハイフン・コロンの制約に従う。                                                |
-| `type`     | `project`。授業設計を扱うプロジェクト文書として成果物 schema の列挙値を使う。独自の `lesson-plan` 型は追加しない。                           |
+| `id`       | 第3章の修飾なし `local_id`。共通 schema が許容する小文字・数字・ハイフンを使う。                                                             |
+| `type`     | `project`。既存の成果物 schema の列挙値を使う。これは ID の namespace とは別の概念であり、独自の `product`・`lesson-plan` 型は追加しない。   |
 | `status`   | 作成・移行時は `draft`。文書成熟度であり、Schedule の実行状態や授業実施済みを表さない。検証成功だけで `ready` にせず、人間が昇格を判断する。 |
 | `rulebook` | `edu-scratch:lpl-rulebook`。実在するこの rulebook の ID を使い、カタログの宣言とも一致させる。                                               |
 
 - 題名は H1、対象、所要時間、テーマなどの授業概要は本文に記載する。`specdojo:` 配下へ `title`、`duration`、`course_id`、`project_id`、`depends_on` など未定義の項目を増やさない。
-- `based_on`、`part_of`、`supersedes` は schema にある任意の ID 配列であり、必要な場合だけ使う。`based_on` は確認済みの根拠だけとし、カタログの `depends_on` の推移閉包に含まれる先行成果物に限る。コース計画への依存が未登録なら、本文の位置づけに根拠を記し、メタ情報への追加はカタログ整備後に行う。
+- `based_on`、`part_of`、`supersedes` は schema にある任意の ID 配列であり、必要な場合だけ使う。`based_on` は確認済みの根拠だけとし、カタログの `depends_on` の推移閉包に含まれる先行成果物に限る。教材間の参照は修飾なしの正規 ID（例：`cpl-scratch-basic`）を使う。コース計画への依存が未登録なら、本文の位置づけに根拠を記し、メタ情報への追加はカタログ整備後に行う。
 - メタ情報を追加するために授業本文、活動順序、時間、配置パスや Schedule を変更しない。
 
 ### 4.2. kata と教材用記入欄
@@ -68,9 +68,9 @@ Scratch の活動ごとに作る指導案の置き方と、学習目標、制作
 
 ### 4.3. コース計画の扱い
 
-コース計画も同じ成果物 schema を使い、`type: project`、作成・移行時の `status: draft`、登録するカタログと一致する `<project_id>:<local_id>` を採用できる。現時点ではコース計画用の rulebook は未整備なので、`rulebook: none` とする。これは共通 schema が許可する値であり、指導案やカタログ用の無関係な rulebook を割り当てない。
+コース計画もプロダクト文書であり、同じ成果物 schema を使って、`type: project`、作成・移行時の `status: draft`、登録するカタログの `local_id` と一致する修飾なし ID（例：`cpl-scratch-basic`）を採用できる。現時点ではコース計画用の rulebook は未整備なので、`rulebook: none` とする。これは共通 schema が許可する値であり、指導案やカタログ用の無関係な rulebook を割り当てない。
 
-コース計画のカタログ登録・ID確定・教材本体への反映は後続作業で行う。この指導案 kata の対象をコース計画本文へ拡張したり、新しいコース計画 kata を作ったりしない。カタログ側の `rulebook` の未整備表現（`undecided` 等）と、成果物 frontmatter の `none` は別の schema の値であり、混用しない。
+コース計画のカタログとの照合・教材本体への反映は後続作業で行う。この指導案 kata の対象をコース計画本文へ拡張したり、新しいコース計画 kata を作ったりしない。カタログ側の `rulebook` の未整備表現（`undecided` 等）と、成果物 frontmatter の `none` は別の schema の値であり、混用しない。
 
 ## 5. 本文要件
 

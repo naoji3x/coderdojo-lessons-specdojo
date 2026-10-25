@@ -7,10 +7,11 @@ specdojo:
 # 上は kata 自身のメタ情報。教材化時は教材固有の specdojo に置き換える。
 # 仮想カタログの project_id: prj-example、local_id: lsd-branching-story に対応する例：
 # specdojo:
-#   id: prj-example:lsd-branching-story
+#   id: lsd-branching-story
 #   type: project
 #   status: draft
 #   rulebook: edu-scratch:lsd-slidev-rulebook
+# 教材はプロダクト文書なので、id は local_id と一致する修飾なし ID。type の値とは別の概念。
 # この仮想 ID は実在のカタログ登録を表さない。実際の対象行に合わせ、案内コメントを削除する。
 # 下の theme・title 等は同じ先頭 frontmatter に残す。ページ区切りと各ページの設定も維持する。
 theme: neversink
