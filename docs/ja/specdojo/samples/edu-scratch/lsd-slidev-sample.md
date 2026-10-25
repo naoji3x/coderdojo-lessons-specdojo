@@ -93,7 +93,11 @@ margin: tight
 2. 質問をして、答えを受け取る
 3. 旗から動かして、答えが変わるか確かめる
 
-<p class="device-check">⚑ <strong>Scratch 3で実機で確かめる：</strong>質問ブロックと「答え」変数の名前を、授業用端末で実際に作ってから動かそう。</p>
+<StickyNote color="orange-light" width="100%" title="改造してみよう">
+
+質問を「好きな食べ物は？」に変えると、お話の分かれ道はどう変わる？
+
+</StickyNote>
 
 :: right ::
 
@@ -107,6 +111,8 @@ margin: tight
 ```
 
 </ScratchBlocks>
+
+<p class="device-check">⚑ <strong>Scratch 3で実機で確かめる：</strong>質問ブロックと「答え」変数の名前を、授業用端末で実際に作ってから動かそう。</p>
 
 <div class="teacher-cat" role="img" aria-label="案内役のねこ先生">
   <Cat :size="112" mood="blissful" color="#8d99a6" />
@@ -130,7 +136,11 @@ margin: tight
 - 答えごとに送るメッセージを変える
 - 1つの答えだけを変えて、行き先を比べる
 
-<p class="device-check">⚑ <strong>Scratch 3で実機で確かめる：</strong>入力した言葉とメッセージ名が同じかを確認してから、旗で最初から試そう。</p>
+<StickyNote color="yellow-light" width="100%" title="改造してみよう">
+
+「森」の行き先を「お城」に変えると、選んだ人へのお話はどう変わる？
+
+</StickyNote>
 
 :: right ::
 
@@ -147,6 +157,8 @@ end
 ```
 
 </ScratchBlocks>
+
+<p class="device-check">⚑ <strong>Scratch 3で実機で確かめる：</strong>入力した言葉とメッセージ名が同じかを確認してから、旗で最初から試そう。</p>
 
 <div class="teacher-cat" role="img" aria-label="案内役のねこ先生">
   <Cat :size="112" mood="blissful" color="#8d99a6" />
@@ -174,6 +186,23 @@ color: white
 うまくいったら、選べる道をもう1つ増やしてみよう！
 
 </SpeechBubble>
+
+<div class="teacher-cat" role="img" aria-label="案内役のねこ先生">
+  <Cat :size="112" mood="lovestruck" color="#8d99a6" />
+</div>
+
+---
+layout: top-title
+color: white
+---
+
+:: title ::
+
+# 保存して、友だちと遊ぼう
+
+:: content ::
+
+この活動では、作品に名前を付けて端末へ保存したら、隣の友だちに「森」と「海」を選んでもらおう。選んだ道でお話が変わるかを一緒に確かめよう。
 
 <div class="teacher-cat" role="img" aria-label="案内役のねこ先生">
   <Cat :size="112" mood="lovestruck" color="#8d99a6" />

@@ -7,7 +7,7 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: open
+  item_status: review
   priority: medium
   owner: BA
   registered_at: "2026-10-25T03:48:38Z"
@@ -51,7 +51,10 @@ PJR-NH2Zで得た段階ごとの改造問い、実機確認注記の柔軟な配
 
 ## 4. 対応結果
 
-_TODO_: 完了時に、実施内容・成果物・残課題を記載する。未完了の場合は `-` とする。
+- [[edu-scratch:lsd-slidev-rulebook|投影スライド Rulebook]] の 6.1 に、実機確認注記をブロック図側へ置ける柔軟な配置と、問い・注記の全文、案内役との重なりを確認する条件を追加した。6.6 には、指導案で「変えて試す」を求める制作段階だけに、先生と基本操作をした後の短い改造問いを置く規定を追加した。保存・共有とゲーム固有処理を全活動の必須にしないことも明記した。
+- [[edu-scratch:lsd-slidev-sample|えらべるお話を作ろう]] は、質問を変える段階と行き先を変える段階に短い「改造してみよう」の問いを置き、実機確認注記を各 `ScratchBlocks` の直後へ分散した。端末への保存と隣の友だちに選んでもらう共有も、この活動の具体例として追加した。
+- [[edu-scratch:lsd-slidev-template|投影スライド Template]] は、指導案の各制作段階に対応する `_MODIFICATION_QUESTION_` の欄、注記の配置を選ぶ案内、保存・共有を扱う場合だけ具体化する `_SAVE_AND_SHARE_INSTRUCTION_` の欄を追加した。対象 Markdown は Prettier、rulebook・個票の Markdownlint、sample・template の Slidev 用 Markdownlint、`node tools/check-slidev-files.mjs` を通過した。
+- PNG の描画確認は、統合後に orchestrator が `bash tools/preview-lsd.sh png docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md` と `bash tools/preview-lsd.sh png docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.md` を実行して全ページを出力し、変更ページの下切れ、注記・問いと案内役の重なり、ブロック図を目視するよう引き継ぐ。この exec では PNG を成功として記録しておらず、作業用コピーへのプレースホルダー補完も行っていない。
 
 ## 5. 関連ドキュメント
 
