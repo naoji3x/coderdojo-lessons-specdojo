@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_e6f10a2acf7a4a7e820b3747294682a1
+  ts: "2026-10-25T04:17:10Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 指導案のtemplateを作る
+    - field: description
+      from: ""
+      to: 先行するlpl-rulebookとlpl-sampleに基づき、新しい活動の指導案を書き始める雛形edu-scratch:lpl-templateをdraftで作る。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: difficulty
+      from: ""
+      to: hard
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-25"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: approach
+      from: ""
+      to: template-authoring
+    - field: targets
+      from: ""
+      to: "[\"edu-scratch:lpl-template\"]"
+    - field: sources
+      from: ""
+      to: "[\"coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md\",\"coderdojo-lessons:docs/course-design/course-plan.md\"]"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-W05J\"]"
