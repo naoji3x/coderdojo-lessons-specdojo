@@ -1,0 +1,19 @@
+第4回 指導案（`coderdojo-lessons/courses/scratch-basic/lessons/040-ai-rps/lesson-plan.md`）の作成と検証が完了しました。
+
+### 実施概要
+
+1. **成果物の新規作成**:
+   - `courses/scratch-basic/lessons/040-ai-rps/lesson-plan.md` を作成しました。
+   - Frontmatter に正規 ID `lpl-ai-rps`、`type: project`、`status: draft`、`rulebook: edu-scratch:lpl-rulebook`、および先行成果物 `cpl-scratch-basic` への `based_on` を定義しました。
+2. **コース計画の具体化**:
+   - 第4回「AIにじゃんけんを覚えさせよう！」の対象（小学校高学年）、所要時間（45分）、ねらい、および使用機能（ImageClassifier2Scratch, ML2Scratch, 画像分類, 条件分岐）を反映しました。
+   - 最低完成形、標準完成形、発展形を明確に定義し、開始用プロジェクト（先生側で用意するじゃんけん基本部分）と児童による制作（画像学習と勝敗判定）の切り分けを記述しました。
+   - 45分の授業構成（導入5分、基本制作30分［デモ・準備5分／画像学習13分／判定ブロック12分］、発展5分、まとめ・保存5分）を整合させました。
+   - 未確認事項（学校のカメラ利用制限・アクセス許可、Chromebookでの再読込時のモデル保持状況）を `_TODO_:` として識別しました。
+3. **検証と静的検査**:
+   - Prettier によるフォーマット検査に合格しました。
+   - Markdownlint による構文検査に合格しました。
+
+<specdojo_executor_evidence>
+{"completion_status":"complete","final_message":"第4回 指導案（lpl-ai-rps）を新規作成し、PrettierおよびMarkdownlintの静的検査に合格しました。","handoff":["学校管理者に対するChromebookカメラ利用制限およびStretch3アクセス許可の事前確認（授業実施2週間前まで）","Stretch3で保存した.sb3再読み込み時のML2Scratch学習モデル保持状況の実機事前検証"],"validations":[{"command":"cd coderdojo-lessons && npx prettier --check courses/scratch-basic/lessons/040-ai-rps/lesson-plan.md","status":"passed","summary":"Prettier check passed with no formatting errors"},{"command":"npx --prefix project markdownlint --config project/.markdownlintrc coderdojo-lessons/courses/scratch-basic/lessons/040-ai-rps/lesson-plan.md","status":"passed","summary":"Markdownlint check passed with 0 errors"},{"command":"npm test","status":"not_applicable","reason":"test script is absent or placeholder in package.json"},{"command":"npm run validate:schema:file","status":"not_applicable","reason":"no changed *.yaml or *.yml files"},{"command":"specdojo catalog validate","status":"not_applicable","reason":"changes outside docs/ja/projects/"}]}
+</specdojo_executor_evidence>
