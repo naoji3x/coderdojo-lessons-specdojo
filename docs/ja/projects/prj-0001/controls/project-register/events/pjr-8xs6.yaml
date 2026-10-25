@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_8e6c4c2f42ad4d7d8d81d9c920838d67
+  ts: "2026-10-25T06:58:36Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: 第2回のコーディング順見直しと補足説明追加、および指導案との整合のため
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 第2回のスライドと指導案をコーディング順に見直し補足説明を加える
+    - field: description
+      from: ""
+      to: 第2回（風船割りゲーム）の制作順序を「1.乱数 → 2.クローン → 3.得点 → 4.メッセージ」に見直し、slides.md への座標・クローン役割・ステージと風船の実装先の説明追加およびブロック図の拡大と、lesson-plan.md の順序・記述の整合を行う。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-25"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-NH2Z\"]"
