@@ -2,7 +2,7 @@
   "schema_version": 1,
   "task_id": "PJR-VD0X",
   "run_id": "20261025T090947567Z-5438a3b0",
-  "updated_at": "2026-10-25T09:22:04.658Z",
+  "updated_at": "2026-10-25T09:22:07.911Z",
   "stages": {
     "executor": {
       "status": "succeeded",
@@ -21,12 +21,24 @@
       "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/results/pjr-vd0x-20261025T090947Z-e5574701-result.md"
     },
     "integrate": {
-      "status": "running",
+      "status": "succeeded",
       "actor": "sol-executor",
       "attempts": 1,
       "started_at": "2026-10-25T09:22:04.658Z",
-      "completed_at": null,
-      "artifact_ref": null
+      "completed_at": "2026-10-25T09:22:07.911Z",
+      "artifact_ref": null,
+      "repos": {
+        "coderdojo-lessons": {
+          "status": "unchanged",
+          "commit": null,
+          "merged_at": null
+        },
+        "project": {
+          "status": "merged",
+          "commit": null,
+          "merged_at": "2026-10-25T09:22:06.522Z"
+        }
+      }
     }
   },
   "artifacts": {
