@@ -35,3 +35,16 @@
     - field: derived_from
       from: ""
       to: "[\"PJR-NH2Z\"]"
+- v: 1
+  id: reg_5591a1c6ba0b4c37abcb65bd7a5025cb
+  ts: "2026-10-25T03:49:42Z"
+  action: start
+  actor: codex-expert-executor
+  from_status: open
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: open
+      to: in-progress
+  previous_event_id: reg_715ab59e5e084055a349903b10a9ffa9
