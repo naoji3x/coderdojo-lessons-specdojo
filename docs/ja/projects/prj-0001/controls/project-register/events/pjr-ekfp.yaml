@@ -98,3 +98,22 @@
       from: "[\"edu-scratch:lsd-rulebook\",\"edu-scratch:lsd-sample\",\"docs/ja/specdojo/samples/edu-scratch/lsd-sample.css\",\"coderdojo-lessons:courses/*/lessons/*/slides.md\",\"coderdojo-lessons:courses/*/lessons/*/style.css\"]"
       to: "-"
   previous_event_id: reg_66f644d95d544959a75f84db10d445a4
+- v: 1
+  id: reg_8f770bde318649a6bd6d0fe1a1d7c341
+  ts: "2026-10-25T01:03:50Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: exec run の成果を orchestrator が完了条件と照らしてレビューし、表示の崩れを利用者の指定で直したうえで確かめたため
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-25"
+    - field: conclusion
+      from: "-"
+      to: 投影スライドの template（edu-scratch:lsd-template と lsd-template.css）を作り、rulebook の template を更新した。テーマが読み込まれない frontmatter は orchestrator が直し、10 ページの表示を確かめた。
+  previous_event_id: reg_2a3129e25ba440fd8cf169f63b845f01

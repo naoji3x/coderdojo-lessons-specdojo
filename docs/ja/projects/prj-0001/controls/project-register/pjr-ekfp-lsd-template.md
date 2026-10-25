@@ -7,12 +7,14 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   difficulty: hard
   owner: BA
   registered_at: "2026-10-24T23:30:24Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-25T01:03:50Z"
+  conclusion: 投影スライドの template（edu-scratch:lsd-template と lsd-template.css）を作り、rulebook の template を更新した。テーマが読み込まれない frontmatter は orchestrator が直し、10 ページの表示を確かめた。
   derived_from:
     - PJR-S9ZM
 ---
