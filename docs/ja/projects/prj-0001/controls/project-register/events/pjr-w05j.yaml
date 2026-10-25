@@ -131,3 +131,19 @@
       from: "-"
       to: "checkpoint failed: Checkpoint commit failed (exec(register PJR-W05J): start); staged changes rolled back (likely a failing git hook): check Slidev decks and their lint settings: Checking formatting..."
   previous_event_id: reg_6602da139a04457eb0bfd7e842f05b12
+- v: 1
+  id: reg_9e1e8b2ea35b422b9e57943983e821c7
+  ts: "2026-10-25T04:32:13Z"
+  action: update
+  actor: specdojo-orchestrator
+  from_status: waiting
+  to_status: waiting
+  reason: maintenanceの生成planが未解決ロールのマーカーでlint失敗するため、個票に対象と完了条件を明記した通常register実行へ切り替える
+  changes:
+    - field: approach
+      from: sample-maintenance
+      to: "-"
+    - field: targets
+      from: "[\"edu-scratch:lpl-sample\"]"
+      to: "-"
+  previous_event_id: reg_d0065e7de1a2435b95df219ec278ee42

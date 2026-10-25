@@ -16,9 +16,6 @@ specdojo:
   block_reason: "checkpoint failed: Checkpoint commit failed (exec(register PJR-W05J): start); staged changes rolled back (likely a failing git hook): check Slidev decks and their lint settings: Checking formatting..."
   derived_from:
     - PJR-0H02
-  approach: sample-maintenance
-  targets:
-    - edu-scratch:lpl-sample
 ---
 
 # PJR-W05J 指導案のsampleを作る
