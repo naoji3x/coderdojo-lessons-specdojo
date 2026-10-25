@@ -176,3 +176,16 @@
       from: "agent exited with non-zero code: }"
       to: "-"
   previous_event_id: reg_d61db665a4de473c974b6398b40fc2cf
+- v: 1
+  id: reg_36edd339dd03456584d29cb2f5ac5d68
+  ts: "2026-10-25T08:24:36Z"
+  action: review
+  actor: luna-reporter
+  from_status: in-progress
+  to_status: review
+  reason: ready for review
+  changes:
+    - field: status
+      from: in-progress
+      to: review
+  previous_event_id: reg_d50b8b6384d24e0ab69841b3ec68bc45
