@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_f4b6f2a782d54faa9c4fa73137a42d4e
+  ts: "2026-10-25T09:08:33Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: 利用者が推奨案のtodo起票を依頼し、担当BA・期限2026-10-31を指定したため
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: コース計画と指導案からスライドへ進む教材Scheduleを展開する
+    - field: description
+      from: ""
+      to: カタログとメタ情報の整備後、第2回を完成済みとして第1・3・4・5回を指導案作成・レビュー・スライド作成・レビューへ展開する。各フェーズは0.25日とする。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-25"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-Y36G\"]"
