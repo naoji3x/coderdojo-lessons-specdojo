@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-XVR2",
+  "run_id": "20261025T015952709Z-fe89abe1",
+  "stage": {
+    "role": "executor",
+    "actor": "codex-expert-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T02:01:29.784Z",
+    "completed_at": "2026-10-25T02:04:31.619Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-xvr2-balloon-lesson-plan-revise.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "M"
+    }
+  ],
+  "attempt_changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-xvr2-balloon-lesson-plan-revise.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "M"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 2,
+    "summary": ".../pjr-xvr2-balloon-lesson-plan-revise.md              | 17 ++++++++++-------\n 1 file changed, 10 insertions(+), 7 deletions(-)\n[coderdojo-lessons]\n.../lessons/020-balloon-game/lesson-plan.md        | 65 +++++++++++++---------\n 1 file changed, 39 insertions(+), 26 deletions(-)"
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npx prettier --write courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "passed",
+      "summary": "指導案を整形し、128行で目安内に収まりました。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --check courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "passed",
+      "summary": "指導案がPrettier形式に適合しています。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --check docs/ja/projects/prj-0001/controls/project-register/pjr-xvr2-balloon-lesson-plan-revise.md",
+      "status": "passed",
+      "summary": "個票がPrettier形式に適合しています。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint -- docs/ja/projects/prj-0001/controls/project-register/pjr-xvr2-balloon-lesson-plan-revise.md",
+      "status": "passed",
+      "summary": "個票のMarkdown lintを通過しました。"
+    },
+    {
+      "source": "executor",
+      "command": "node tools/check-slidev-files.mjs docs/ja/projects/prj-0001/controls/project-register/pjr-xvr2-balloon-lesson-plan-revise.md",
+      "status": "passed",
+      "summary": "プロジェクトのpre-commit相当の文書チェックを通過しました。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint -- courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "not_applicable",
+      "summary": "実行対象外です。",
+      "reason": "coderdojo-lessonsのpackage.jsonにmarkdownlintのローカル依存がありません。"
+    },
+    {
+      "source": "executor",
+      "command": "npm test",
+      "status": "not_applicable",
+      "summary": "実行対象外です。",
+      "reason": "projectのtest scriptはnpm initのプレースホルダです。"
+    },
+    {
+      "source": "executor",
+      "command": "npm test",
+      "status": "not_applicable",
+      "summary": "実行対象外です。",
+      "reason": "coderdojo-lessonsのpackage.jsonにtest scriptがありません。"
+    },
+    {
+      "source": "executor",
+      "command": "specdojo catalog validate",
+      "status": "not_applicable",
+      "summary": "実行対象外です。",
+      "reason": "対象projectにはcatalog_pathが設定されていません。"
+    }
+  ],
+  "final_message": "第2回の指導案を一緒に操作する授業進行へ更新し、個票へ対応結果とスライドとの差分を記録しました。",
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-XVR2/20261025T015952709Z-fe89abe1/executor.log",
+      "bytes": 2040,
+      "truncated": false
+    }
+  ]
+}
