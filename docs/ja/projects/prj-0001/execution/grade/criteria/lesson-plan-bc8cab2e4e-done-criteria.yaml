@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../../../../../../node_modules/specdojo/docs/specdojo/schemas/v1/grade-done-criteria.schema.yaml
+id: lpl-ai-rps-grade-criteria
+document: lpl-ai-rps
+path: ../coderdojo-lessons/courses/scratch-basic/lessons/040-ai-rps/lesson-plan.md
+graded_at: "2026-10-25T22:38:28.596Z"
+graded_by: flash-high-executor
+content_hash: 4bec7d9279f929d8809f692a7addf8bed2613a19b4b22489d43e86bf9196a3de
+summary:
+  satisfied: 2
+  unsatisfied: 0
+  total: 2
+criteria:
+  - id: DC-001
+    text: コース計画の第4回「AIにじゃんけんを覚えさせよう！」の対象・ねらい・機能・45分の授業構成に対応し、未確認事項を識別できること。
+    roles:
+      - QE
+    viewpoint: vp-qe-verifiability
+    status: satisfied
+  - id: DC-002
+    text: ねらい・最低／標準／発展の完成形・活動・時間配分・見取り・進度差対応が整合し、開始・終了・再開と保存の扱いを確認できること。
+    roles:
+      - QE
+    viewpoint: vp-qe-verifiability
+    status: satisfied
