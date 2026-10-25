@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "task_id": "T-SCRATCH-LESSONS-lpl-music-art-010",
+  "run_id": "20261025T222052787Z-11108fb3",
+  "stage": {
+    "role": "executor",
+    "actor": "flash-high-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T22:21:51.980Z",
+    "completed_at": "2026-10-25T22:29:08.675Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/030-music-art/lesson-plan.md",
+      "status": "??"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 1,
+    "summary": ""
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "cd coderdojo-lessons && npx prettier --check courses/scratch-basic/lessons/030-music-art/lesson-plan.md",
+      "status": "passed",
+      "summary": "Prettier check passed with no formatting errors"
+    },
+    {
+      "source": "executor",
+      "command": "npx --prefix project markdownlint --config project/.markdownlintrc coderdojo-lessons/courses/scratch-basic/lessons/030-music-art/lesson-plan.md",
+      "status": "passed",
+      "summary": "Markdownlint check passed with 0 errors"
+    },
+    {
+      "source": "executor",
+      "command": "npm test",
+      "status": "not_applicable",
+      "summary": "",
+      "reason": "test script is absent or placeholder in package.json"
+    },
+    {
+      "source": "executor",
+      "command": "npm run validate:schema:file",
+      "status": "not_applicable",
+      "summary": "",
+      "reason": "no changed *.yaml or *.yml files"
+    },
+    {
+      "source": "executor",
+      "command": "specdojo catalog validate",
+      "status": "not_applicable",
+      "summary": "",
+      "reason": "changes outside docs/ja/projects/"
+    }
+  ],
+  "final_message": "第3回 指導案（lpl-music-art）を新規作成し、PrettierおよびMarkdownlintの静的検査に合格しました。",
+  "completion_status": "complete",
+  "handoff": [
+    "教室環境で児童が一斉に音楽拡張の音を鳴らした際の音響環境（内蔵スピーカーの音量上限の統一、または個別イヤホン利用の要否）を学校・実施会場と授業実施2週間前までに事前確認する（担当: 授業責任者）",
+    "Chromebook実機で複雑な幾何学模様（繰り返し数十回以上）を描画した際の負荷と描画速度を授業実施1週間前までに確認する（担当: 教材担当者）",
+    "Stretch3でペン・音楽拡張を含むプロジェクトを.sb3形式で保存し、再度開いた際に拡張ブロックが正常に保持されるかを実機で授業実施1週間前までに確認する（担当: 教材担当者）"
+  ],
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/T-SCRATCH-LESSONS-lpl-music-art-010/20261025T222052787Z-11108fb3/executor.log",
+      "bytes": 3705,
+      "truncated": false
+    }
+  ]
+}
