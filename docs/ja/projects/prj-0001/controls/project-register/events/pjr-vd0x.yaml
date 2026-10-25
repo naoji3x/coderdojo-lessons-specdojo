@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_6ecadbefd2ba43c39fb13f06b15ebb7f
+  ts: "2026-10-25T09:08:25Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: 利用者が推奨案のtodo起票を依頼し、担当BA・期限2026-10-31を指定したため
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 教材成果物のSpecDojoメタ情報を扱うkataを整備する
+    - field: description
+      from: ""
+      to: 指導案とSlidevスライドのkataに、成果物自身のID・状態・準拠rulebookを記録する規約と記入欄を整備し、コース計画にも適用するメタ情報の扱いを明確にする。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-25"
+    - field: due
+      from: ""
+      to: "2026-10-31"
