@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "task_id": "T-SCRATCH-LESSONS-lsd-music-art-010",
+  "run_id": "20261025T232124164Z-738be6b4",
+  "updated_at": "2026-10-25T23:36:47.473Z",
+  "stages": {
+    "executor": {
+      "status": "succeeded",
+      "actor": "flash-high-executor",
+      "attempts": 1,
+      "started_at": "2026-10-25T23:22:20.665Z",
+      "completed_at": "2026-10-25T23:36:28.627Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/evidence/T-SCRATCH-LESSONS-lsd-music-art-010/20261025T232124164Z-738be6b4/evidence.json"
+    },
+    "reporter": {
+      "status": "succeeded",
+      "actor": "flash-reporter",
+      "attempts": 1,
+      "started_at": "2026-10-25T23:36:28.629Z",
+      "completed_at": "2026-10-25T23:36:47.438Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/results/T-SCRATCH-LESSONS-lsd-music-art-010-result.md"
+    },
+    "integrate": {
+      "status": "running",
+      "actor": "flash-high-executor",
+      "attempts": 1,
+      "started_at": "2026-10-25T23:36:47.473Z",
+      "completed_at": null,
+      "artifact_ref": null
+    }
+  }
+}
