@@ -35,3 +35,80 @@
     - field: derived_from
       from: ""
       to: "[\"PJR-XVR2\"]"
+- v: 1
+  id: reg_66a1286bab144650aec67cfb452a5ff5
+  ts: "2026-10-25T02:25:29Z"
+  action: start
+  actor: codex-expert-executor
+  from_status: open
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: open
+      to: in-progress
+  previous_event_id: reg_20bbb3940a3b4d41a5d89e02e4dbb5c6
+- v: 1
+  id: reg_99732dce8e46456a9addb64a206ed666
+  ts: "2026-10-25T02:25:31Z"
+  action: wait
+  actor: codex-expert-executor
+  from_status: in-progress
+  to_status: waiting
+  reason: "checkpoint failed: ENOENT: no such file or directory, mkdir '/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-NH2Z'"
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: "checkpoint failed: ENOENT: no such file or directory, mkdir '/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-NH2Z'"
+  previous_event_id: reg_66a1286bab144650aec67cfb452a5ff5
+- v: 1
+  id: reg_c39cfb763f484291ac026a5664a0698a
+  ts: "2026-10-25T02:27:03Z"
+  action: start
+  actor: codex-expert-executor
+  from_status: waiting
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: waiting
+      to: in-progress
+    - field: block_reason
+      from: "checkpoint failed: ENOENT: no such file or directory, mkdir '/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-NH2Z'"
+      to: "-"
+  previous_event_id: reg_99732dce8e46456a9addb64a206ed666
+- v: 1
+  id: reg_846cc74d83c54c4e95830a1f42d23557
+  ts: "2026-10-25T02:28:13Z"
+  action: wait
+  actor: codex-expert-executor
+  from_status: in-progress
+  to_status: waiting
+  reason: "checkpoint failed: npm ci failed in /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-NH2Z/coderdojo-lessons (exit 1)"
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: "checkpoint failed: npm ci failed in /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-NH2Z/coderdojo-lessons (exit 1)"
+  previous_event_id: reg_c39cfb763f484291ac026a5664a0698a
+- v: 1
+  id: reg_a8eadc849c074c2db4ad400e73825b79
+  ts: "2026-10-25T02:40:34Z"
+  action: start
+  actor: codex-expert-executor
+  from_status: waiting
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: waiting
+      to: in-progress
+    - field: block_reason
+      from: "checkpoint failed: npm ci failed in /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-NH2Z/coderdojo-lessons (exit 1)"
+      to: "-"
+  previous_event_id: reg_846cc74d83c54c4e95830a1f42d23557
