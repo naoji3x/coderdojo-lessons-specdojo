@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-8XS6",
+  "run_id": "20261025T084337639Z-532fabd3",
+  "stage": {
+    "role": "executor",
+    "actor": "sol-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T08:44:41.044Z",
+    "completed_at": "2026-10-25T08:48:27.423Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "M"
+    }
+  ],
+  "attempt_changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "M"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 3,
+    "summary": "...jr-8xs6-balloon-slides-and-plan-coding-order.md | 27 +++++++++++++++-------\n 1 file changed, 19 insertions(+), 8 deletions(-)\n[coderdojo-lessons]\n.../lessons/020-balloon-game/lesson-plan.md        | 53 ++++++++++++----------\n .../lessons/020-balloon-game/slides.md             | 12 +++--\n 2 files changed, 38 insertions(+), 27 deletions(-)"
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npx prettier --write courses/scratch-basic/lessons/020-balloon-game/slides.md courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "passed",
+      "summary": "coderdojo-lessons：教材2ファイルを整形。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --check courses/scratch-basic/lessons/020-balloon-game/slides.md courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "passed",
+      "summary": "coderdojo-lessons：教材2ファイルの整形検査成功。"
+    },
+    {
+      "source": "executor",
+      "command": "node ../project/node_modules/markdownlint-cli/markdownlint.js --config .markdownlint.yaml courses/scratch-basic/lessons/020-balloon-game/slides.md courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "passed",
+      "summary": "coderdojo-lessons：教材側の規則を指定し、project導入済みCLIで2ファイルのlint成功。"
+    },
+    {
+      "source": "executor",
+      "command": "npx slidev build courses/scratch-basic/lessons/020-balloon-game/slides.md --out /tmp/pjr-8xs6-build",
+      "status": "passed",
+      "summary": "coderdojo-lessons：最終変更後の本番ビルド成功。一時出力は削除済み。"
+    },
+    {
+      "source": "executor",
+      "command": "npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --range 17-19 --output /tmp/pjr-8xs6-missions-review",
+      "status": "requires_human",
+      "summary": "sandboxの `uv_interface_addresses` エラーで起動不可。統合後のPNG確認を申し送り。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --write docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "passed",
+      "summary": "project：個票を整形。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --check docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "passed",
+      "summary": "project：個票の整形検査成功。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint -- docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "passed",
+      "summary": "project：個票のlint成功。"
+    },
+    {
+      "source": "executor",
+      "command": "node tools/check-slidev-files.mjs docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "passed",
+      "summary": "project：Slidevファイル／設定整合検査成功。"
+    },
+    {
+      "source": "executor",
+      "command": "npx specdojo catalog validate --project prj-0001",
+      "status": "passed",
+      "summary": "project：カタログ検査成功。対象外の未作成教材8件について既存の警告あり。"
+    },
+    {
+      "source": "executor",
+      "command": "git diff --check",
+      "status": "passed",
+      "summary": "projectとcoderdojo-lessonsの両方で成功。差分照合により全19ページ・17ページ以外の内容維持・既存4案の保持も確認。"
+    },
+    {
+      "source": "executor",
+      "command": "npm test",
+      "status": "not_applicable",
+      "summary": "テストの適用なし。",
+      "reason": "projectは仮のtest scriptのみ、coderdojo-lessonsにはtest scriptがなく、変更はMarkdown文書のみ。"
+    },
+    {
+      "source": "executor",
+      "command": "npm run validate:schema:file",
+      "status": "not_applicable",
+      "summary": "schema検査の適用なし。",
+      "reason": "両リポジトリに該当scriptがなく、YAMLファイルも変更していない。"
+    }
+  ],
+  "final_message": "17ページの発展ミッションに色・タップ音・クリア時の音楽の3案を追加し、既存4案と合わせて2列に配置しました。指導案の発展形・事前準備・活動・見取り・支援を整合させ、個票を更新しました。整形・lint・Slidev buildは成功。他の18ページ、標準完成形、制作順序、時間配分は維持しています。",
+  "completion_status": "complete",
+  "handoff": [
+    "統合後にorchestratorが教材リポジトリで `npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --range 17-19 --output /tmp/pjr-8xs6-missions-review` を実行し、17〜19ページの全文・下切れ・案内役との重なりを確認してください。sandboxでは `uv_interface_addresses` エラーで起動できず、今回のPNGは未確認です。個票の作業8にも記録しました。",
+    "授業前に教師が色変更・タップ音・クリア時の音楽を実機確認してください。特に「すべてを止める」と音楽再生の競合を確認し、ゲームを停止しながら音楽を鳴らす終了処理と旗での再開を検証する事項を指導案へ記載しました。resultへの反映はreporterに委ねます。"
+  ],
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-8XS6/20261025T084337639Z-532fabd3/executor.log",
+      "bytes": 4408,
+      "truncated": false
+    }
+  ]
+}
