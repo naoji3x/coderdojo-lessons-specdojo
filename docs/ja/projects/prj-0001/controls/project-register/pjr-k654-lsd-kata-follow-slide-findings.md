@@ -51,6 +51,12 @@ PJR-NH2Zで得た段階ごとの改造問い、実機確認注記の柔軟な配
 
 ## 4. 対応結果
 
+### 完了レビュー（2026-10-25、specdojo-orchestrator）
+
+- 判定：完了条件を満たし、close を妨げる指摘なし。rulebook の6.1・6.6・6.7、sample の制作2ページ・保存共有ページ、template の改造問い・注記配置・任意の保存共有欄が対応している。風船ゲーム固有処理や保存・共有を全活動の必須にしていない。
+- 統合差分と個票・result・描画記録を照合した。sample の4・5・7ページ、代表値補完後の template の6・8ページのPNG確認を根拠とし、素の template のプレースホルダーと作成者向け案内の重なりは、教材化時の補完・除去と各教材の描画確認を前提に扱う。任意の長い入力での収まりまで保証する判定ではない。
+- レビュー時に対象5文書の Prettier、rulebook・個票・result の Markdownlint、sample・template の Slidev 専用 Markdownlint（`--ignore-path /dev/null`）、`node tools/check-slidev-files.mjs`、`npx specdojo exec validate --project prj-0001`、`git diff --check` を実行し、すべて通過した。exec validate の schedule 未設定に関する警告は今回の対象外。
+
 ### 統合後の確認結果
 
 - 2026-10-25、統合commit `f45fcfd` の sample を `bash tools/preview-lsd.sh png docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md`、template を同手順の template パス指定で出力し、sample は全9ページ、template は全11ページのPNG出力に成功した（終了コード0）。sample の4・5ページ（制作・改造・注記・図）と7ページ（保存共有）を目視し、必要な全文が画面内で読め、案内役と文字が重ならないことを確認した。
