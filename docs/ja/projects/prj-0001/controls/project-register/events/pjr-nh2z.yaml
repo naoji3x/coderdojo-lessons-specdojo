@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_20bbb3940a3b4d41a5d89e02e4dbb5c6
+  ts: "2026-10-25T02:12:07Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 第2回のスライドを、直した指導案に合わせる
+    - field: description
+      from: ""
+      to: 第2回の slides.md に、元の風船を隠す・一定時間でクローンを消す・すべてを止める・旗で背景を戻す処理を加え、先生と一緒に操作して各段階の最後に改造する進め方に合わせる。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-25"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-XVR2\"]"
