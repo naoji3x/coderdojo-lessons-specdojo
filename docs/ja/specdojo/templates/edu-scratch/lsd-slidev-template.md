@@ -136,7 +136,12 @@ margin: tight
 2. _BUILD_STEP_2_
 3. _BUILD_STEP_3_
 
-<p class="device-check">⚑ <strong>Scratch 3で実機で確かめる：</strong>_DEVICE_CHECK_INSTRUCTION_</p>
+<!-- 指導案のこの制作段階に「変えて試す」がある場合だけ、短い問いを入れる。ない場合はこの StickyNote を削除する。 -->
+<StickyNote color="orange-light" width="100%" title="改造してみよう">
+
+_MODIFICATION_QUESTION_
+
+</StickyNote>
 
 :: right ::
 
@@ -149,11 +154,14 @@ _SCRATCH_BLOCKS_
 
 </ScratchBlocks>
 
+<!-- 注記は手順・問いの列が詰まる場合、ブロック図の直後へ置く。全文が画面内で読め、案内役と重ならないことを描画で確かめる。 -->
+<p class="device-check">⚑ <strong>Scratch 3で実機で確かめる：</strong>_DEVICE_CHECK_INSTRUCTION_</p>
+
 <div class="teacher-cat" role="img" aria-label="案内役のねこ先生">
   <Cat :size="112" mood="blissful" color="#8d99a6" />
 </div>
 
-_TODO_: 扱う概念ごとに、この「節の扉」と「説明・制作」のページを追加する。
+_TODO_: 扱う概念ごとに、この「節の扉」と「説明・制作」のページを追加する。指導案の各制作段階に「変えて試す」があれば、その段階に合う `_MODIFICATION_QUESTION_` をそれぞれ入れる。問いを一律に追加しない。
 
 ---
 layout: top-title
@@ -178,6 +186,25 @@ color: white
 _COMPLETION_ENCOURAGEMENT_
 
 </SpeechBubble>
+
+<div class="teacher-cat" role="img" aria-label="案内役のねこ先生">
+  <Cat :size="112" mood="lovestruck" color="#8d99a6" />
+</div>
+
+---
+layout: top-title
+color: white
+---
+
+:: title ::
+
+# 保存・共有する場合
+
+:: content ::
+
+<!-- 指導案で保存・共有を扱う場合だけ、このページを残す。保存形式・保存先・相手・遊び方を具体化し、扱わない場合はページ全体を削除する。 -->
+
+_SAVE_AND_SHARE_INSTRUCTION_
 
 <div class="teacher-cat" role="img" aria-label="案内役のねこ先生">
   <Cat :size="112" mood="lovestruck" color="#8d99a6" />
