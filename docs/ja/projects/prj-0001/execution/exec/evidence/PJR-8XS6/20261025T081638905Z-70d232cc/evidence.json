@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-8XS6",
+  "run_id": "20261025T081638905Z-70d232cc",
+  "stage": {
+    "role": "executor",
+    "actor": "sol-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T08:16:38.905Z",
+    "completed_at": "2026-10-25T08:18:24.712Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/events/pjr-8xs6.yaml",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "M"
+    }
+  ],
+  "attempt_changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "M"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 4,
+    "summary": ".../controls/project-register/events/pjr-8xs6.yaml       | 16 ++++++++++++++++\n .../pjr-8xs6-balloon-slides-and-plan-coding-order.md     |  7 +++----\n 2 files changed, 19 insertions(+), 4 deletions(-)\n[coderdojo-lessons]\n.../lessons/020-balloon-game/lesson-plan.md        |  99 ++++++-------\n .../lessons/020-balloon-game/slides.md             | 159 ++++++++++++++++-----\n 2 files changed, 178 insertions(+), 80 deletions(-)"
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npx prettier --write courses/scratch-basic/lessons/020-balloon-game/slides.md courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "passed",
+      "summary": "coderdojo-lessonsの教材2ファイルを整形済み。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --check courses/scratch-basic/lessons/020-balloon-game/slides.md courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "passed",
+      "summary": "教材2ファイルの整形検査が成功。"
+    },
+    {
+      "source": "executor",
+      "command": "node ../project/node_modules/markdownlint-cli/markdownlint.js --config .markdownlint.yaml courses/scratch-basic/lessons/020-balloon-game/slides.md courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "passed",
+      "summary": "教材ルートからproject導入済みCLIと教材設定で検査。2ファイルとも違反0件。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --write docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "passed",
+      "summary": "個票を整形済み。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --check docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "passed",
+      "summary": "個票の整形検査が成功。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint -- docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "passed",
+      "summary": "個票のMarkdownlintが成功。"
+    },
+    {
+      "source": "executor",
+      "command": "node tools/check-slidev-files.mjs docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "passed",
+      "summary": "projectのpre-commit相当検査が成功。"
+    },
+    {
+      "source": "executor",
+      "command": "npx specdojo catalog validate --project prj-0001",
+      "status": "passed",
+      "summary": "カタログ検査が成功。対象外の未作成教材8件について既存警告あり。"
+    },
+    {
+      "source": "executor",
+      "command": "npx slidev build courses/scratch-basic/lessons/020-balloon-game/slides.md --out dist/pjr-8xs6-build",
+      "status": "passed",
+      "summary": "coderdojo-lessonsで本番ビルドが成功。"
+    },
+    {
+      "source": "executor",
+      "command": "git diff --check",
+      "status": "passed",
+      "summary": "projectとcoderdojo-lessonsの両リポジトリで成功。"
+    },
+    {
+      "source": "executor",
+      "command": "npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --output courses/scratch-basic/lessons/020-balloon-game/dist/pjr-8xs6-review",
+      "status": "requires_human",
+      "summary": "sandboxの `uv_interface_addresses` エラーで起動不可。統合後にorchestratorが全19ページを書き出して表示を確認する。"
+    }
+  ],
+  "target_coverage": [
+    {
+      "target": "docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "status": "changed",
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-8xs6-balloon-slides-and-plan-coding-order.md",
+      "reason": ""
+    },
+    {
+      "target": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "changed",
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "reason": ""
+    },
+    {
+      "target": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "changed",
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "reason": ""
+    }
+  ],
+  "final_message": "スライド・指導案・個票の更新を完了。Markdownlintの衝突を解消し、整形・静的検査・Slidevビルドが成功した。",
+  "completion_status": "complete",
+  "handoff": [
+    "統合後にorchestratorがcoderdojo-lessonsで `npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --output courses/scratch-basic/lessons/020-balloon-game/dist/pjr-8xs6-review` を実行し、全19ページを目視確認する。sandboxでは `uv_interface_addresses` エラーにより起動不可。特に1・5・7・8・10・11・13・15・19ページの文字・ブロック図・実機確認注記・改造の問いの切れ、案内役との重なり、拡大したクローン図の可読性を確認する。個票の作業4はopenのまま。",
+    "再開時の個票の明示指示を優先し、slides.md先頭の既存注釈にMD025を追加した。近傍コメントにページごとにH1を置くためのファイル限定の例外と記載済み。教材の共有設定・rulebookは変更していない。前回のlint失敗は解消済みで、個票の対応結果にも記録した。"
+  ],
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-8XS6/20261025T081638905Z-70d232cc/executor.log",
+      "bytes": 5158,
+      "truncated": false
+    },
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-8XS6/20261025T081638905Z-70d232cc/reporter-attempt-1.stdout.log",
+      "bytes": 0,
+      "truncated": false
+    },
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-8XS6/20261025T081638905Z-70d232cc/reporter-attempt-1.stderr.log",
+      "bytes": 166,
+      "truncated": false
+    }
+  ]
+}
