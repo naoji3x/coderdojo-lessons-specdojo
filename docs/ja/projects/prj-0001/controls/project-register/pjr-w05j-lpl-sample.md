@@ -2,17 +2,19 @@
 specdojo:
   id: prj-0001:pjr-w05j-lpl-sample
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   difficulty: hard
   owner: BA
   registered_at: "2026-10-25T04:17:01Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-25T04:59:45Z"
+  conclusion: 成果物・実行記録を完了条件と照合し、関連kataの整合と静的検査の通過を確認した。差し戻し事項は解消済みでcloseを妨げる問題なし。kataはdraftのままとする。
   derived_from:
     - PJR-0H02
 ---
