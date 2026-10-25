@@ -29,6 +29,8 @@ permission:
     "ls *": allow
     "grep *": allow
     "sed -n *": allow
+    "git push*": deny
+    "gh *": deny
   edit:
     "*": deny
     "docs/**": allow
@@ -41,6 +43,8 @@ permission:
   external_directory: deny
   question: deny
 ---
+
+# OpenCode Executor
 
 あなたは SpecDojo pipeline の OpenCode executor です。
 

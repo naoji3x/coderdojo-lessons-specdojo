@@ -13,7 +13,10 @@
     "orch:opencode": "specdojo orchestrator launch --provider opencode -- --agent specdojo-orchestrator",
     "orch:agy": "specdojo orchestrator launch --provider antigravity -- --add-dir \"$(pwd)\" -i \"$(cat .specdojo/antigravity/orchestrator.md)\"",
     "orch:copilot": "specdojo orchestrator launch --provider copilot -- --agent specdojo-orchestrator",
-    "prepare": "lefthook install"
+    "prepare": "lefthook install",
+    "orch:flash": "specdojo orchestrator launch --provider antigravity -- --add-dir \"$(pwd)\" --model gemini-3.8-flash-high -i \"$(cat .specdojo/antigravity/orchestrator.md)\"",
+    "orch:sol": "specdojo orchestrator launch --provider codex -- -m gpt-6.1-sol \"$(cat .specdojo/codex/orchestrator.md)\"",
+    "orch:luna": "specdojo orchestrator launch --provider codex -- -m gpt-6-luna \"$(cat .specdojo/codex/orchestrator.md)\""
   },
   "keywords": [],
   "author": "",
@@ -29,7 +32,7 @@
     "prettier-plugin-slidev": "^1.0.5",
     "scratchblocks": "^3.7.1",
     "slidev-theme-neversink": "^0.4.1",
-    "specdojo": "^0.4.5"
+    "specdojo": "^0.4.6"
   },
   "dependencies": {
     "@specdojo/docs-lint": "^0.2.1",

@@ -44,13 +44,43 @@ members:
     priority: 2
     persona: execution-reporter
     scheduler_strategy: fifo
-  - nickname: terra-executor
-    display_name: Codex Terra Executor
+  - nickname: opus-executor
+    display_name: Claude Opus Executor
+    email: null
+    roles: []
+    type: agent
+    provider: claude
+    model: opus
+    mode: edit
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: expert
+    priority: 2
+    persona: task-executor
+    scheduler_strategy: critical-first
+  - nickname: opus-review-executor
+    display_name: Claude Opus Review Executor
+    email: null
+    roles: []
+    type: agent
+    provider: claude
+    model: opus
+    mode: review
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: expert
+    priority: 2
+    persona: multi-viewpoint-reviewer
+    scheduler_strategy: fifo
+  - nickname: luna-executor
+    display_name: Codex Luna Executor
     email: null
     roles: []
     type: agent
     provider: codex
-    model: gpt-5.6-terra
+    model: gpt-6-luna
     mode: edit
     stage_role: executor
     capabilities:
@@ -59,28 +89,13 @@ members:
     priority: 1
     persona: task-executor
     scheduler_strategy: critical-first
-  - nickname: codex-expert-executor
-    display_name: Codex Expert Executor
+  - nickname: luna-review-executor
+    display_name: Codex Luna Review Executor
     email: null
     roles: []
     type: agent
     provider: codex
-    model: gpt-5.6-terra
-    mode: edit
-    stage_role: executor
-    capabilities:
-      - web_search
-    proficiency: expert
-    priority: 1
-    persona: task-executor
-    scheduler_strategy: critical-first
-  - nickname: terra-review-executor
-    display_name: Codex Terra Review Executor
-    email: null
-    roles: []
-    type: agent
-    provider: codex
-    model: gpt-5.6-terra
+    model: gpt-6-luna
     mode: review
     stage_role: executor
     capabilities:
@@ -89,18 +104,48 @@ members:
     priority: 1
     persona: multi-viewpoint-reviewer
     scheduler_strategy: fifo
-  - nickname: terra-reporter
-    display_name: Codex Terra Reporter
+  - nickname: luna-reporter
+    display_name: Codex Luna Reporter
     email: null
     roles: []
     type: agent
     provider: codex
-    model: gpt-5.6-terra
+    model: gpt-6-luna
     stage_role: reporter
     capabilities: []
     proficiency: normal
     priority: 1
     persona: execution-reporter
+    scheduler_strategy: fifo
+  - nickname: sol-executor
+    display_name: Codex Sol Executor
+    email: null
+    roles: []
+    type: agent
+    provider: codex
+    model: gpt-6.1-sol
+    mode: edit
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: expert
+    priority: 1
+    persona: task-executor
+    scheduler_strategy: critical-first
+  - nickname: sol-review-executor
+    display_name: Codex Sol Review Executor
+    email: null
+    roles: []
+    type: agent
+    provider: codex
+    model: gpt-6.1-sol
+    mode: review
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: expert
+    priority: 1
+    persona: multi-viewpoint-reviewer
     scheduler_strategy: fifo
   - nickname: gemma-executor
     display_name: OpenCode Gemma Executor
@@ -108,7 +153,7 @@ members:
     roles: []
     type: agent
     provider: opencode
-    model: ollama-local/gemma4:31b-mlx-work-64k
+    model: ollama-local/gemma4:26b
     mode: edit
     stage_role: executor
     capabilities:
@@ -123,7 +168,7 @@ members:
     roles: []
     type: agent
     provider: opencode
-    model: ollama-local/gemma4:31b-mlx-work-64k
+    model: ollama-local/gemma4:26b
     mode: review
     stage_role: executor
     capabilities:
@@ -138,7 +183,7 @@ members:
     roles: []
     type: agent
     provider: opencode
-    model: ollama-local/gemma4:31b-mlx-work-64k
+    model: ollama-local/gemma4:26b
     mode: report
     stage_role: reporter
     capabilities: []
@@ -161,6 +206,21 @@ members:
     priority: 4
     persona: task-executor
     scheduler_strategy: critical-first
+  - nickname: flash-high-executor
+    display_name: Antigravity Flash High Executor
+    email: null
+    roles: []
+    type: agent
+    provider: antigravity
+    model: gemini-3.8-flash-high
+    mode: edit
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: expert
+    priority: 3
+    persona: task-executor
+    scheduler_strategy: critical-first
   - nickname: flash-review-executor
     display_name: Antigravity Flash Review Executor
     email: null
@@ -174,6 +234,21 @@ members:
       - web_search
     proficiency: normal
     priority: 4
+    persona: multi-viewpoint-reviewer
+    scheduler_strategy: fifo
+  - nickname: flash-high-review-executor
+    display_name: Antigravity Flash High Review Executor
+    email: null
+    roles: []
+    type: agent
+    provider: antigravity
+    model: gemini-3.8-flash-high
+    mode: review
+    stage_role: executor
+    capabilities:
+      - web_search
+    proficiency: expert
+    priority: 3
     persona: multi-viewpoint-reviewer
     scheduler_strategy: fifo
   - nickname: flash-reporter
@@ -234,12 +309,20 @@ aliases:
     alias_of: sonnet-review-executor
   - nickname: claude-reporter
     alias_of: sonnet-reporter
+  - nickname: claude-expert-executor
+    alias_of: opus-executor
+  - nickname: claude-expert-review-executor
+    alias_of: opus-review-executor
   - nickname: codex-executor
-    alias_of: terra-executor
+    alias_of: luna-executor
   - nickname: codex-review-executor
-    alias_of: terra-review-executor
+    alias_of: luna-review-executor
   - nickname: codex-reporter
-    alias_of: terra-reporter
+    alias_of: luna-reporter
+  - nickname: codex-expert-executor
+    alias_of: sol-executor
+  - nickname: codex-expert-review-executor
+    alias_of: sol-review-executor
   - nickname: opencode-executor
     alias_of: gemma-executor
   - nickname: opencode-review-executor
@@ -248,7 +331,11 @@ aliases:
     alias_of: gemma-reporter
   - nickname: agy-executor
     alias_of: flash-executor
+  - nickname: agy-expert-executor
+    alias_of: flash-high-executor
   - nickname: agy-review-executor
     alias_of: flash-review-executor
+  - nickname: agy-expert-review-executor
+    alias_of: flash-high-review-executor
   - nickname: agy-reporter
     alias_of: flash-reporter
