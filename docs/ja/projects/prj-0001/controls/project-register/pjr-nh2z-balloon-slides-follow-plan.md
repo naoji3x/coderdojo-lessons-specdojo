@@ -7,12 +7,11 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: waiting
+  item_status: review
   priority: medium
   owner: BA
   registered_at: "2026-10-25T02:12:07Z"
   due_on: "2026-10-31"
-  block_reason: 統合後のPNG確認で7・9・11ページの実機確認注記が下端で切れ、13ページの改造の問いが案内役と重なることを確認。slides.mdの文量・配置を調整し、必要な問い・実機確認注記をすべて読める状態にする。指導案・style.css・components/は変更しない。修正後にorchestratorがPNGを再確認する。
   derived_from:
     - PJR-XVR2
 ---

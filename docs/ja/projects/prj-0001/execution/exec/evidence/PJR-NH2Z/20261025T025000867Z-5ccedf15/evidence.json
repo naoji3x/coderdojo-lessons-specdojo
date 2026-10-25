@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-NH2Z",
+  "run_id": "20261025T025000867Z-5ccedf15",
+  "stage": {
+    "role": "executor",
+    "actor": "codex-expert-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T02:51:18.629Z",
+    "completed_at": "2026-10-25T02:52:54.153Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [],
+  "attempt_changes": [],
+  "diff_summary": {
+    "files_changed": 0,
+    "summary": ""
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npx prettier --check courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "passed",
+      "summary": "Slidev parser の整形検査に合格しました。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "not_applicable",
+      "summary": "Markdownlint は実行していません。",
+      "reason": "coderdojo-lessons の package.json に markdownlint-cli または markdownlint の依存がありません。"
+    },
+    {
+      "source": "executor",
+      "command": "slidev export --format png courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "requires_human",
+      "summary": "統合後に PNG 出力で表示を確認する必要があります。"
+    }
+  ],
+  "final_message": "対象スライドと個票の対応結果は既に完了条件を満たしていたため、追加編集は不要でした。Prettier 検査に合格しています。",
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-NH2Z/20261025T025000867Z-5ccedf15/executor.log",
+      "bytes": 1070,
+      "truncated": false
+    }
+  ]
+}
