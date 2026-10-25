@@ -1,0 +1,12 @@
+{
+  "v": 1,
+  "ts": "2026-10-25T14:29:44Z",
+  "type": "claim",
+  "task_id": "T-SCRATCH-LESSONS-lsd-chase-game-010",
+  "by": "flash-high-executor",
+  "msg": "auto-run",
+  "meta": {
+    "claim_owner": "",
+    "planned_owner": "BA"
+  }
+}

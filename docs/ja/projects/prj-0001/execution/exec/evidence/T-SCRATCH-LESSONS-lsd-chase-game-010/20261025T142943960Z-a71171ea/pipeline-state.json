@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "task_id": "T-SCRATCH-LESSONS-lsd-chase-game-010",
+  "run_id": "20261025T142943960Z-a71171ea",
+  "updated_at": "2026-10-25T14:32:10.115Z",
+  "stages": {
+    "executor": {
+      "status": "succeeded",
+      "actor": "flash-high-executor",
+      "attempts": 1,
+      "started_at": "2026-10-25T14:30:56.240Z",
+      "completed_at": "2026-10-25T14:31:43.082Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/evidence/T-SCRATCH-LESSONS-lsd-chase-game-010/20261025T142943960Z-a71171ea/evidence.json"
+    },
+    "reporter": {
+      "status": "succeeded",
+      "actor": "flash-reporter",
+      "attempts": 1,
+      "started_at": "2026-10-25T14:31:43.085Z",
+      "completed_at": "2026-10-25T14:32:05.133Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/results/T-SCRATCH-LESSONS-lsd-chase-game-010-result.md"
+    },
+    "integrate": {
+      "status": "succeeded",
+      "actor": "flash-high-executor",
+      "attempts": 1,
+      "started_at": "2026-10-25T14:32:05.187Z",
+      "completed_at": "2026-10-25T14:32:10.115Z",
+      "artifact_ref": null,
+      "repos": {
+        "coderdojo-lessons": {
+          "status": "unchanged",
+          "commit": null,
+          "merged_at": null
+        },
+        "project": {
+          "status": "merged",
+          "commit": null,
+          "merged_at": "2026-10-25T14:32:10.113Z"
+        }
+      }
+    }
+  }
+}
