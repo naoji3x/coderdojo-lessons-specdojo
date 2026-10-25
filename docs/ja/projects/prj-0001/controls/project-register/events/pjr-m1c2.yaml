@@ -221,3 +221,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_7e5476d0f05f4afc9a2c3744bbb368df
+- v: 1
+  id: reg_d8255398d3124241bcd8d8982b3bd5d3
+  ts: "2026-10-25T12:49:55Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: 完了条件（8成果物・16タスクのSchedule展開、第2回とコース計画の除外、BA・0.25日、exec validate/refresh/plan検証、申し送り記録）の充足を確認
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-25"
+    - field: conclusion
+      from: "-"
+      to: 先行レビュー確認の上、sch-strategy-scratch-lessons.yamlの定義とschedule buildによるsch-track-scratch-lessons.yaml（第1・3・4・5回の8成果物・16タスク、第2回とコース計画除外、全担当BA、全フェーズ0.25日、指導案レビュー完了後にスライド作成へ進む依存、未合意の日付・履歴なし）の生成、exec validate/refresh/planの通過、および後続のgrade・日付合意に関する申し送り記録を確認し完了。
+  previous_event_id: reg_763ca402353c41a6b9253d39eaf1e69f

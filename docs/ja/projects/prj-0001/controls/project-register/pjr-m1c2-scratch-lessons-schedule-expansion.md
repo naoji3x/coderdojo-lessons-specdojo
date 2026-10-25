@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-m1c2-scratch-lessons-schedule-expansion
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   owner: BA
   registered_at: "2026-10-25T09:08:33Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-25T12:49:55Z"
+  conclusion: 先行レビュー確認の上、sch-strategy-scratch-lessons.yamlの定義とschedule buildによるsch-track-scratch-lessons.yaml（第1・3・4・5回の8成果物・16タスク、第2回とコース計画除外、全担当BA、全フェーズ0.25日、指導案レビュー完了後にスライド作成へ進む依存、未合意の日付・履歴なし）の生成、exec validate/refresh/planの通過、および後続のgrade・日付合意に関する申し送り記録を確認し完了。
   derived_from:
     - PJR-Y36G
 ---
