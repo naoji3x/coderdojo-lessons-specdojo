@@ -55,11 +55,19 @@ specdojo:
 | 1   | `slides.md` をコーディング順に並べ替え、座標とクローンの説明ページを追加する           | exec | done | ブロック図の拡大も含む                        |
 | 2   | `slides.md` の得点・メッセージのページでステージと風船の実装先を分けて明記する         | exec | done | -                                             |
 | 3   | `lesson-plan.md` の制作順序とステージ・風船の役割分担を `slides.md` に合わせて更新する | exec | done | 5章の表・5.1・6章などを整合させる             |
-| 4   | 統合後に PNG 書き出しで全ページの表示（切れ・重なり・ブロックの可読性）を確認する      | orch | open | `npx slidev export --format png` で目視確認   |
+| 4   | 統合後に PNG 書き出しで全ページの表示（切れ・重なり・ブロックの可読性）を確認する      | orch | done | `npx slidev export --format png` で目視確認   |
 | 5   | 対象スライドだけで MD025 を許可し、教材2ファイルの lint を再実行する                   | exec | done | 注釈の理由を近傍に記載。共有設定は変更しない  |
 | 6   | 座標図の各 text に文字サイズを明示し、PNGレビューの指摘を修正する                      | exec | done | 数値・意味を維持。統合後に8ページを再描画確認 |
 
 ## 4. 対応結果
+
+### 統合後の表示確認（orchestrator）
+
+- `codex-expert-executor`（実体 `sol-executor`）と `codex-reporter`（実体 `luna-reporter`）で実行し、教材側 `develop` の `cf74aee` とプロジェクト側 `project/prj-0001/develop` の `110d3b5` へ統合した。gemma-reporterはOpenCodeに `ollama-local` providerが未登録のため起動できず、利用者の指示によりreporterを変更した。
+- 全19ページのPNGを目視し、8ページの座標図の文字重なりを差し戻した。executorが各SVG textへpx単位の文字サイズを明示し、再出力した8ページで座標値・軸名・乱数範囲の説明が判読でき、重なりとはみ出しが解消されたことを確認した。他の18ページも文字・ブロック図・実機確認注記・改造の問いの切れや案内役との重なりは見つからなかった。
+- 統合後に教材リポジトリで `npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --output /tmp/pjr-8xs6-integrated-review` を実行し、終了コード0で19ページを書き出した。全PNGのSHA-256が確認済みの修正後worktree画像と一致した。出力時にFloatingVueのPopperに関する既存のコンソールエラーが出たが、全ページの描画・確認には支障がなかった。Scratch実機での名称・操作確認はスライドの注記に残している。
+
+### executorの実施記録
 
 - 再開前の変更を完了条件と照合し、executor による成果物編集と静的検査を完了した。前回の `MD025` エラーは、個票の明示指示に従い対象スライドだけの注釈で解消した。PNGレビューの8ページの指摘にも、SVGの文字サイズを直接指定して対応した。登録簿・個票のステータス項目、result、設定ファイルは変更していない。統合後のPNG確認は orchestrator の作業4として残す。
 - `coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md`：全17ページから19ページに変更。「今日使う4つの考え方」を乱数・クローン・得点（変数）・メッセージに統一し、乱数の直後（8ページ）にx・y座標と今回の範囲（x: -200〜200、y: -140〜140）の補足を追加した。ステージの全体範囲と中央も図示し、風船の大きさに合わせた実機確認を促した。
