@@ -32,6 +32,8 @@ specdojo:
 
 ## 2. 完了条件
 
+- 統合後レビューの差し戻しを解消する。sample 1.1の「Scratchを初めて使う」と2章の既習内容を使う最終回の前提が矛盾するため、この仮想授業はイベント・繰り返し・座標・条件分岐等を経験した学習者が対象であると整合させる。6章の時間不足時の必須内容は3.1の最低完成形（初期化と方向キー移動）と一致させ、成功判定・停止・再開の標準完成形は残り時間と到達状況に応じて取り組むものとして区別する。
+
 - PJR-0H02のrulebook作成・レビューが済んでから実行する。実行前にorchestratorが `edu-scratch:lpl-rulebook` をsourcesへ追加する。
 - `docs/ja/specdojo/samples/edu-scratch/lpl-sample.md` を ID `edu-scratch:lpl-sample`、`type: sample`、`status: draft`、`rulebook: edu-scratch:lpl-rulebook` で作り、sample-authoring-standardに沿う。
 - 風船ゲームを丸写しせず、別題材の想定授業として完成した指導案例を作る。題材や時間・対象はサンプル内の仮想設定と明示し、実際に実施・検証した授業、利用者と合意したコース変更のように書かない。1件の例で全活動の標準を決めない。
@@ -53,6 +55,8 @@ specdojo:
 | 4   | 完了条件と他kataとの整合をレビューする             | orch | open | 次の段階への入力を確認 |
 
 ## 4. 対応結果
+
+- 統合後レビューで、対象経験（1.1と2章）と時間不足時の到達線（3.1と6章）の不整合を確認し、同じtodoで修正を差し戻した。次の実行でこの2点を解消する。
 
 - [[edu-scratch:lpl-sample|宇宙船を着陸させよう！]] を、別題材の仮想的な 40 分授業の完成例として追加した。ねらい、使用機能、最低・標準・発展の完成形、活動、見取りを対応付け、開始から終了までの時間合計を 40 分にそろえた。
 - [[edu-scratch:lpl-rulebook|活動別指導案 Rulebook]] の frontmatter に `sample: edu-scratch:lpl-sample` だけを追加した。本文の規定は変更していない。
