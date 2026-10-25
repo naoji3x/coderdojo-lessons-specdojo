@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "task_id": "T-SCRATCH-LESSONS-lpl-chase-game-010",
+  "run_id": "20261025T130925491Z-fd30a9f5",
+  "stage": {
+    "role": "executor",
+    "actor": "flash-high-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T13:11:47.122Z",
+    "completed_at": "2026-10-25T13:19:56.075Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/010-chase-game/lesson-plan.md",
+      "status": "??"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 1,
+    "summary": ""
+  },
+  "validations": [],
+  "final_message": "",
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/T-SCRATCH-LESSONS-lpl-chase-game-010/20261025T130925491Z-fd30a9f5/executor.log",
+      "bytes": 0,
+      "truncated": false
+    }
+  ]
+}
