@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_47dab6ea11f14a40a29eaf2312e7c0e9
+  ts: "2026-10-25T04:16:43Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 指導案のrulebookを作る
+    - field: description
+      from: ""
+      to: 修正済みの第2回指導案とコース計画を手本に、指導案の構成・記載条件・禁止事項を一般化したedu-scratch:lpl-rulebookをdraftで作る。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: difficulty
+      from: ""
+      to: hard
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-25"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: approach
+      from: ""
+      to: rulebook-authoring
+    - field: targets
+      from: ""
+      to: "[\"edu-scratch:lpl-rulebook\"]"
+    - field: sources
+      from: ""
+      to: "[\"coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md\",\"coderdojo-lessons:docs/course-design/course-plan.md\"]"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-XVR2\"]"
