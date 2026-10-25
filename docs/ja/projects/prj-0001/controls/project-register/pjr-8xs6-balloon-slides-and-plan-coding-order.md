@@ -7,11 +7,12 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: open
+  item_status: waiting
   priority: medium
   owner: BA
   registered_at: "2026-10-25T06:58:36Z"
   due_on: "2026-10-31"
+  block_reason: "executor reported incomplete: スライド・指導案を乱数→クローン→得点→メッセージの順に整合させ、補足2ページ、ブロック拡大、実装先の明記を行い、個票を更新した。既存のMarkdownlint設定との衝突が残るため未完了。resultは編集していない。"
   derived_from:
     - PJR-NH2Z
 ---
