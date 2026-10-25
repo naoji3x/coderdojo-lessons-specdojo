@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "task_id": "T-SCRATCH-LESSONS-lpl-original-project-010",
+  "run_id": "20261025T223005523Z-fe403e48",
+  "stage": {
+    "role": "executor",
+    "actor": "flash-high-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T22:30:59.931Z",
+    "completed_at": "2026-10-25T22:36:25.035Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/050-original-project/lesson-plan.md",
+      "status": "??"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 1,
+    "summary": ""
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "cd coderdojo-lessons && npx prettier --check courses/scratch-basic/lessons/050-original-project/lesson-plan.md",
+      "status": "passed",
+      "summary": "Prettier check passed with no formatting errors"
+    },
+    {
+      "source": "executor",
+      "command": "npx --prefix project markdownlint --config project/.markdownlintrc coderdojo-lessons/courses/scratch-basic/lessons/050-original-project/lesson-plan.md",
+      "status": "passed",
+      "summary": "Markdownlint check passed with 0 errors"
+    },
+    {
+      "source": "executor",
+      "command": "npm test",
+      "status": "not_applicable",
+      "summary": "",
+      "reason": "test script is absent or placeholder in package.json"
+    },
+    {
+      "source": "executor",
+      "command": "npm run validate:schema:file",
+      "status": "not_applicable",
+      "summary": "",
+      "reason": "no changed *.yaml or *.yml files"
+    },
+    {
+      "source": "executor",
+      "command": "specdojo catalog validate",
+      "status": "not_applicable",
+      "summary": "",
+      "reason": "changes outside docs/ja/projects/"
+    }
+  ],
+  "final_message": "第5回 指導案（`lpl-original-project`）を新規作成し、PrettierおよびMarkdownlintの静的検査に合格しました。",
+  "completion_status": "complete",
+  "handoff": [
+    "児童のChromebook端末上に第1〜4回の作品保存ファイル（.sb3）が正しく残っているか、または共有フォルダ等からの配布手段が必要かの事前確認（授業実施1週間前まで、担当: 授業責任者）",
+    "コースC（AIコース）選択希望者に備えたChromebook内蔵カメラのアクセス許可およびML2Scratch拡張機能の動作状況の事前確認（授業前日、担当: 教材担当者）",
+    "Chromebookにおける保存先フォルダの空き容量と、児童が迷わないファイル名の指定手順の確認（授業実施3日前まで、担当: 教材担当者）"
+  ],
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/T-SCRATCH-LESSONS-lpl-original-project-010/20261025T223005523Z-fe403e48/executor.log",
+      "bytes": 2567,
+      "truncated": false
+    }
+  ]
+}
