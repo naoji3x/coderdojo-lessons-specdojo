@@ -58,3 +58,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_27c426238f554fa0ae29f26612ad2c38
+- v: 1
+  id: reg_944b183258ff4287ae863819aff4021a
+  ts: "2026-10-25T02:04:16Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: exec run の成果を orchestrator が完了条件と照らしてレビューし、表示も書き出して確かめたため
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-25"
+    - field: conclusion
+      from: "-"
+      to: 投影スライドの kata を lsd-slidev-* に改め、Slidev の見分けを本家の --slidev と同じ glob にそろえた。
+  previous_event_id: reg_2f19b651a20e4acb9f6314e0f4c2916d

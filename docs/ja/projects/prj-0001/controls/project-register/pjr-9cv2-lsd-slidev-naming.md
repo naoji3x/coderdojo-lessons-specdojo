@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-9cv2-lsd-slidev-naming
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   owner: DEV
   registered_at: "2026-10-25T01:43:39Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-25T02:04:16Z"
+  conclusion: 投影スライドの kata を lsd-slidev-* に改め、Slidev の見分けを本家の --slidev と同じ glob にそろえた。
 ---
 
 # PJR-9CV2 投影スライドの kata の名前を本家の決まり（-slidev-）にそろえる
