@@ -61,3 +61,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_5591a1c6ba0b4c37abcb65bd7a5025cb
+- v: 1
+  id: reg_e4f2662381ea44f1943d4156e1a51c96
+  ts: "2026-10-25T04:09:56Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: 指定executor/reporterのworktree実行で更新・統合し、orchestratorが差分・完了条件・PNG記録を照合して静的検査を確認した。closeを妨げる指摘なし。
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-25"
+    - field: conclusion
+      from: "-"
+      to: rulebook・sample・templateの更新と描画確認を完了し、レビューで完了条件の充足を確認した
+  previous_event_id: reg_90055af953de467c8e765548eac32ef6
