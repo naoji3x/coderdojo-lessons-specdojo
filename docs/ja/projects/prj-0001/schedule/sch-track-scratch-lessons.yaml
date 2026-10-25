@@ -1,0 +1,200 @@
+# yaml-language-server: $schema=../../../../../node_modules/specdojo/docs/specdojo/schemas/v1/sch-track.schema.yaml
+kind: track
+id: prj-0001:sch-track-scratch-lessons
+type: project
+status: draft
+title: スケジュールトラック（scratch-lessons）
+rulebook: specdojo:sch-rulebook
+version: 1
+project_id: prj-0001
+track: scratch-lessons
+settings: {}
+tasks:
+  - local_id: lpl-chase-game
+    phase_suffix: "010"
+    phase_set: author-review
+    phase_id: draft
+    name: 成果物を作成する
+    duration_days: 0.25
+    depends_on: []
+    owner: BA
+    description: >-
+      対象成果物をカタログの配置先に作成する。指導案はコース計画を明示的な入力とし、 同じ回の対象・ねらい・使用機能・45分構成を具体化する。スライドは同じ回の指導案レビュー完了後に作成する。
+      旧設計を未確認のまま根拠へ加えず、成果物固有のメタ情報を記入する。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成は実行しない。
+  - local_id: lpl-chase-game
+    phase_suffix: "020"
+    phase_set: author-review
+    phase_id: review
+    name: 成果物の作成結果をレビューする
+    duration_days: 0.25
+    depends_on:
+      - T-SCRATCH-LESSONS-lpl-chase-game-010
+    owner: BA
+    description: >-
+      同じ成果物の作成タスク完了後に、最新のgrade結果とカタログの完了条件に基づいて作成タスクの完了可否を判断する。 指導案レビューが完了するまで同じ回のスライド作成へ進めない。
+      gradeが未作成・古い場合は推測でレビューを完了せず、評価を先に行う。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成・レビューは実行しない。
+  - local_id: lsd-chase-game
+    phase_suffix: "010"
+    phase_set: author-review
+    phase_id: draft
+    name: 成果物を作成する
+    duration_days: 0.25
+    depends_on:
+      - T-SCRATCH-LESSONS-lpl-chase-game-020
+    owner: BA
+    description: >-
+      対象成果物をカタログの配置先に作成する。指導案はコース計画を明示的な入力とし、 同じ回の対象・ねらい・使用機能・45分構成を具体化する。スライドは同じ回の指導案レビュー完了後に作成する。
+      旧設計を未確認のまま根拠へ加えず、成果物固有のメタ情報を記入する。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成は実行しない。
+  - local_id: lsd-chase-game
+    phase_suffix: "020"
+    phase_set: author-review
+    phase_id: review
+    name: 成果物の作成結果をレビューする
+    duration_days: 0.25
+    depends_on:
+      - T-SCRATCH-LESSONS-lsd-chase-game-010
+    owner: BA
+    description: >-
+      同じ成果物の作成タスク完了後に、最新のgrade結果とカタログの完了条件に基づいて作成タスクの完了可否を判断する。 指導案レビューが完了するまで同じ回のスライド作成へ進めない。
+      gradeが未作成・古い場合は推測でレビューを完了せず、評価を先に行う。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成・レビューは実行しない。
+  - local_id: lpl-music-art
+    phase_suffix: "010"
+    phase_set: author-review
+    phase_id: draft
+    name: 成果物を作成する
+    duration_days: 0.25
+    depends_on: []
+    owner: BA
+    description: >-
+      対象成果物をカタログの配置先に作成する。指導案はコース計画を明示的な入力とし、 同じ回の対象・ねらい・使用機能・45分構成を具体化する。スライドは同じ回の指導案レビュー完了後に作成する。
+      旧設計を未確認のまま根拠へ加えず、成果物固有のメタ情報を記入する。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成は実行しない。
+  - local_id: lpl-music-art
+    phase_suffix: "020"
+    phase_set: author-review
+    phase_id: review
+    name: 成果物の作成結果をレビューする
+    duration_days: 0.25
+    depends_on:
+      - T-SCRATCH-LESSONS-lpl-music-art-010
+    owner: BA
+    description: >-
+      同じ成果物の作成タスク完了後に、最新のgrade結果とカタログの完了条件に基づいて作成タスクの完了可否を判断する。 指導案レビューが完了するまで同じ回のスライド作成へ進めない。
+      gradeが未作成・古い場合は推測でレビューを完了せず、評価を先に行う。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成・レビューは実行しない。
+  - local_id: lsd-music-art
+    phase_suffix: "010"
+    phase_set: author-review
+    phase_id: draft
+    name: 成果物を作成する
+    duration_days: 0.25
+    depends_on:
+      - T-SCRATCH-LESSONS-lpl-music-art-020
+    owner: BA
+    description: >-
+      対象成果物をカタログの配置先に作成する。指導案はコース計画を明示的な入力とし、 同じ回の対象・ねらい・使用機能・45分構成を具体化する。スライドは同じ回の指導案レビュー完了後に作成する。
+      旧設計を未確認のまま根拠へ加えず、成果物固有のメタ情報を記入する。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成は実行しない。
+  - local_id: lsd-music-art
+    phase_suffix: "020"
+    phase_set: author-review
+    phase_id: review
+    name: 成果物の作成結果をレビューする
+    duration_days: 0.25
+    depends_on:
+      - T-SCRATCH-LESSONS-lsd-music-art-010
+    owner: BA
+    description: >-
+      同じ成果物の作成タスク完了後に、最新のgrade結果とカタログの完了条件に基づいて作成タスクの完了可否を判断する。 指導案レビューが完了するまで同じ回のスライド作成へ進めない。
+      gradeが未作成・古い場合は推測でレビューを完了せず、評価を先に行う。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成・レビューは実行しない。
+  - local_id: lpl-ai-rps
+    phase_suffix: "010"
+    phase_set: author-review
+    phase_id: draft
+    name: 成果物を作成する
+    duration_days: 0.25
+    depends_on: []
+    owner: BA
+    description: >-
+      対象成果物をカタログの配置先に作成する。指導案はコース計画を明示的な入力とし、 同じ回の対象・ねらい・使用機能・45分構成を具体化する。スライドは同じ回の指導案レビュー完了後に作成する。
+      旧設計を未確認のまま根拠へ加えず、成果物固有のメタ情報を記入する。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成は実行しない。
+  - local_id: lpl-ai-rps
+    phase_suffix: "020"
+    phase_set: author-review
+    phase_id: review
+    name: 成果物の作成結果をレビューする
+    duration_days: 0.25
+    depends_on:
+      - T-SCRATCH-LESSONS-lpl-ai-rps-010
+    owner: BA
+    description: >-
+      同じ成果物の作成タスク完了後に、最新のgrade結果とカタログの完了条件に基づいて作成タスクの完了可否を判断する。 指導案レビューが完了するまで同じ回のスライド作成へ進めない。
+      gradeが未作成・古い場合は推測でレビューを完了せず、評価を先に行う。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成・レビューは実行しない。
+  - local_id: lsd-ai-rps
+    phase_suffix: "010"
+    phase_set: author-review
+    phase_id: draft
+    name: 成果物を作成する
+    duration_days: 0.25
+    depends_on:
+      - T-SCRATCH-LESSONS-lpl-ai-rps-020
+    owner: BA
+    description: >-
+      対象成果物をカタログの配置先に作成する。指導案はコース計画を明示的な入力とし、 同じ回の対象・ねらい・使用機能・45分構成を具体化する。スライドは同じ回の指導案レビュー完了後に作成する。
+      旧設計を未確認のまま根拠へ加えず、成果物固有のメタ情報を記入する。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成は実行しない。
+  - local_id: lsd-ai-rps
+    phase_suffix: "020"
+    phase_set: author-review
+    phase_id: review
+    name: 成果物の作成結果をレビューする
+    duration_days: 0.25
+    depends_on:
+      - T-SCRATCH-LESSONS-lsd-ai-rps-010
+    owner: BA
+    description: >-
+      同じ成果物の作成タスク完了後に、最新のgrade結果とカタログの完了条件に基づいて作成タスクの完了可否を判断する。 指導案レビューが完了するまで同じ回のスライド作成へ進めない。
+      gradeが未作成・古い場合は推測でレビューを完了せず、評価を先に行う。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成・レビューは実行しない。
+  - local_id: lpl-original-project
+    phase_suffix: "010"
+    phase_set: author-review
+    phase_id: draft
+    name: 成果物を作成する
+    duration_days: 0.25
+    depends_on: []
+    owner: BA
+    description: >-
+      対象成果物をカタログの配置先に作成する。指導案はコース計画を明示的な入力とし、 同じ回の対象・ねらい・使用機能・45分構成を具体化する。スライドは同じ回の指導案レビュー完了後に作成する。
+      旧設計を未確認のまま根拠へ加えず、成果物固有のメタ情報を記入する。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成は実行しない。
+  - local_id: lpl-original-project
+    phase_suffix: "020"
+    phase_set: author-review
+    phase_id: review
+    name: 成果物の作成結果をレビューする
+    duration_days: 0.25
+    depends_on:
+      - T-SCRATCH-LESSONS-lpl-original-project-010
+    owner: BA
+    description: >-
+      同じ成果物の作成タスク完了後に、最新のgrade結果とカタログの完了条件に基づいて作成タスクの完了可否を判断する。 指導案レビューが完了するまで同じ回のスライド作成へ進めない。
+      gradeが未作成・古い場合は推測でレビューを完了せず、評価を先に行う。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成・レビューは実行しない。
+  - local_id: lsd-original-project
+    phase_suffix: "010"
+    phase_set: author-review
+    phase_id: draft
+    name: 成果物を作成する
+    duration_days: 0.25
+    depends_on:
+      - T-SCRATCH-LESSONS-lpl-original-project-020
+    owner: BA
+    description: >-
+      対象成果物をカタログの配置先に作成する。指導案はコース計画を明示的な入力とし、 同じ回の対象・ねらい・使用機能・45分構成を具体化する。スライドは同じ回の指導案レビュー完了後に作成する。
+      旧設計を未確認のまま根拠へ加えず、成果物固有のメタ情報を記入する。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成は実行しない。
+  - local_id: lsd-original-project
+    phase_suffix: "020"
+    phase_set: author-review
+    phase_id: review
+    name: 成果物の作成結果をレビューする
+    duration_days: 0.25
+    depends_on:
+      - T-SCRATCH-LESSONS-lsd-original-project-010
+    owner: BA
+    description: >-
+      同じ成果物の作成タスク完了後に、最新のgrade結果とカタログの完了条件に基づいて作成タスクの完了可否を判断する。 指導案レビューが完了するまで同じ回のスライド作成へ進めない。
+      gradeが未作成・古い場合は推測でレビューを完了せず、評価を先に行う。 実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成・レビューは実行しない。
