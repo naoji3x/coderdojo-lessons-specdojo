@@ -2,17 +2,19 @@
 specdojo:
   id: prj-0001:pjr-0h02-lpl-rulebook
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   difficulty: hard
   owner: BA
   registered_at: "2026-10-25T04:16:43Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-25T04:59:06Z"
+  conclusion: 修正済み指導案とコース計画に基づく一般化、9章の記載条件、活動固有事項の分離と後続kata参照を確認した。 静的検査を再確認して問題なし。kataはdraftのままとする。
   derived_from:
     - PJR-XVR2
   approach: rulebook-authoring

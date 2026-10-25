@@ -73,3 +73,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_4c938502f2384c6496ca4e9652bb5b67
+- v: 1
+  id: reg_b466f4e65dd24d85beec5b7dd33efc8b
+  ts: "2026-10-25T04:59:06Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: 利用者のclose依頼に基づき、exec成果物をorchestratorが完了条件と照合し、静的検査を再確認してclose。詳細は個票の対応結果と実行resultを参照。
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-25"
+    - field: conclusion
+      from: "-"
+      to: 修正済み指導案とコース計画に基づく一般化、9章の記載条件、活動固有事項の分離と後続kata参照を確認した。 静的検査を再確認して問題なし。kataはdraftのままとする。
+  previous_event_id: reg_618ccd9a0bd344df9d065e1167c7998b
