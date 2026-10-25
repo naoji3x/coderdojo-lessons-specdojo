@@ -4,10 +4,11 @@ specdojo:
   type: exec-result
   task_id: T-SCRATCH-LESSONS-lsd-ai-rps-010
   mode: edit
-  status: in_progress
+  status: complete
   project_id: prj-0001
   plan_ref: exec/plans/T-SCRATCH-LESSONS-lsd-ai-rps-010-plan.md
   started_at: "2026-10-25T22:59:06.635Z"
+  completed_at: "2026-10-25T23:20:50.581Z"
   agent: flash-high-executor
   execution: agent
   approach: fully-guided
@@ -19,16 +20,25 @@ specdojo:
 
 ## 1. 実施内容
 
-_TODO_: 実施した内容の要約を記入する。
+- 第4回「AIにじゃんけんを覚えさせよう！」の投影スライド（`coderdojo-lessons:courses/scratch-basic/lessons/040-ai-rps/slides.md`）を新規作成し、必要なスタイルおよびコンポーネントを整備した。
+- Slidev による全19ページの PNG 画像出力と目視確認を実施し、テキスト・ブロック図・実機確認注記の切れや重なりがないことを確認した。
+- Prettier によるコード書式検査に合格した。
 
 ## 2. 変更ファイル
 
-_TODO_: 変更したファイルのパスを記入する。
+- `coderdojo-lessons:courses/scratch-basic/lessons/040-ai-rps/components/ScratchBlocks.vue`: スライド内で Scratch ブロック図を表示するためのコンポーネントを新規作成・整備した。
+- `coderdojo-lessons:courses/scratch-basic/lessons/040-ai-rps/slides.md`: 第4回 投影スライド（全19ページ）を新規作成した。
+- `coderdojo-lessons:courses/scratch-basic/lessons/040-ai-rps/style.css`: スライド表示用のスタイルシートを新規作成・整備した。
 
 ## 3. 申し送り
 
-_TODO_: 後続タスクへの申し送り事項を記入する（なければ削除）。
+- 学校管理者に対するChromebookカメラ利用制限およびStretch3アクセス許可状況の事前確認（授業実施2週間前まで、担当: 授業責任者）
+- Stretch3で保存した.sb3再読み込み時のML2Scratch学習モデル保持状況の実機事前検証（担当: 教材担当者）
+- 適用外の検証: `npx markdownlint courses/scratch-basic/lessons/040-ai-rps/slides.md`（coderdojo-lessons の package.json に markdownlint が依存関係として含まれておらず、lefthook.yml にも Markdown lint ジョブが定義されていないため）
+- 適用外の検証: `npm test`（package.json の test スクリプトが存在しないか初期プレースホルダのため）
+- 適用外の検証: `npm run validate:schema:file`（変更された `*.yaml` または `*.yml` ファイルが存在しないため）
+- 適用外の検証: `specdojo catalog validate`（変更対象がプロダクトリポジトリ coderdojo-lessons の教材ファイル（courses/配下）のみであり、docs/ja/projects/ 配下の変更を含まないため）
 
 ## 4. 進め方と実践の型の適用
 
-_TODO_: `approach` に従ってどう進めたか、その進め方の中で実践の型（rulebook / recipe / sample / template）をどう適用したかを記入する（`fully-guided` で rulebook / recipe / sample / template をどう使い分けたか、`recipe-guided` で recipe のみを基準にした内容、`freeform` で実践の型より優先した実例やプロジェクト文脈、`retrofit` で実際に参照した実装パス・抽出した現在動作・反映/新設判断・未反映の乖離・未確認範囲、`rulebook-authoring` などの authoring 系で手本から一般化した内容・変更しなかった手本・参照の付け替えまたは見送り、`rulebook-maintenance` などの maintenance 系で見直した実践の型とその根拠、など）。実践の型を基準にしなかった場合は、その判断と代わりに根拠にした内容も記入する。複数文書間に矛盾があり rulebook を正として判断した箇所、参照範囲から外れていた文書とその代わりに根拠にした内容があれば、あわせて記録する。
+fully-guided アプローチに従い、`docs/ja/specdojo/rulebooks/edu-scratch/lsd-slidev-rulebook.md` を構造基準とし、`docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md` を形式の参考として第4回投影スライドを作成した。完了条件である `done_criteria` に基づき、Slidev による全19ページの PNG 画像出力と目視確認を行い、表示崩れがないことを検証した。
