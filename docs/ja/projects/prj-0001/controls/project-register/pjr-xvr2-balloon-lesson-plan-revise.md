@@ -7,11 +7,12 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: waiting
   priority: high
   owner: BA
   registered_at: "2026-10-25T01:59:14Z"
   due_on: "2026-10-31"
+  block_reason: 利用者と相談した方針（途中のプロジェクトを配らない・早く終わった児童は改造・端末に .sb3 で保存）に合わせて、exec で流し直すため差し戻す
 ---
 
 # PJR-XVR2 第2回の指導案を、先生と一緒に操作する進め方に直す

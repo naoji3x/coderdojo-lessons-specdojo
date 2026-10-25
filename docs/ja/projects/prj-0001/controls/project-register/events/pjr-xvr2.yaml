@@ -58,3 +58,19 @@
       from: in-progress
       to: review
   previous_event_id: reg_e554deac5c094feda35a3f7f94ed06ed
+- v: 1
+  id: reg_06598c52e7b94d0db6fb027eb6c18759
+  ts: "2026-10-25T02:11:01Z"
+  action: wait
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: waiting
+  reason: 利用者と相談した方針（途中のプロジェクトを配らない・早く終わった児童は改造・端末に .sb3 で保存）に合わせて、exec で流し直すため差し戻す
+  changes:
+    - field: status
+      from: review
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: 利用者と相談した方針（途中のプロジェクトを配らない・早く終わった児童は改造・端末に .sb3 で保存）に合わせて、exec で流し直すため差し戻す
+  previous_event_id: reg_7bb0a1e064ca46d19b4eb4d0891b1bf7
