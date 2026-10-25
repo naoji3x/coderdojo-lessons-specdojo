@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "push:develop": "git push origin project/prj-0001/develop",
+    "push:lessons": "git -C ../coderdojo-lessons push origin develop",
     "orch:opus": "specdojo orchestrator launch --provider claude -- --agent specdojo-orchestrator --model opus",
     "orch:sonnet": "specdojo orchestrator launch --provider claude -- --agent specdojo-orchestrator --model sonnet",
     "orch:codex": "specdojo orchestrator launch --provider codex -- \"$(cat .specdojo/codex/orchestrator.md)\"",
