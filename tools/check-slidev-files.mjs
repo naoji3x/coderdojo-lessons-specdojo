@@ -18,11 +18,11 @@ import { load } from "js-yaml";
 
 // Slidev のスライドと見なす名前。3 つの設定ファイルは、この glob をそのまま使う。
 const SLIDEV_GLOBS = [
-  "docs/ja/specdojo/samples/**/lsd-*.md",
-  "docs/ja/specdojo/templates/**/lsd-*.md",
+  "docs/ja/specdojo/samples/**/*-slidev-sample.md",
+  "docs/ja/specdojo/templates/**/*-slidev-template.md",
 ];
 const SLIDEV_NAME =
-  /^docs\/ja\/specdojo\/(samples|templates)\/(.+\/)?lsd-[^/]*\.md$/;
+  /^docs\/ja\/specdojo\/(?:samples\/(?:.+\/)?[^/]+-slidev-sample|templates\/(?:.+\/)?[^/]+-slidev-template)\.md$/;
 const SLIDEV_MARKDOWNLINT_CONFIG = ".markdownlint-slidev.yaml";
 
 const sameGlobs = (globs) =>
@@ -125,7 +125,7 @@ if (misnamed.length > 0) {
   console.error("Slidev のスライドが、名前の決まりに沿っていません:");
   for (const path of misnamed) console.error(`  ${path}`);
   console.error(
-    "投影スライドの kata は docs/ja/specdojo/{samples,templates}/ の下に置き、ID を lsd- で始めてください。\n" +
+    "投影スライドの kata は docs/ja/specdojo/{samples,templates}/ の下に置き、形式を入れた <対象>-slidev-<種類> の名前にしてください。\n" +
       "別の決まりを加える場合は、このファイルの SLIDEV_GLOBS・SLIDEV_NAME と 3 つの設定ファイルをそろえてください。",
   );
 }

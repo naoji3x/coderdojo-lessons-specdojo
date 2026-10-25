@@ -7,7 +7,7 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: open
+  item_status: review
   priority: medium
   owner: DEV
   registered_at: "2026-10-25T01:43:39Z"
@@ -71,7 +71,11 @@ rulebook の本文:
 
 ## 4. 対応結果
 
-_TODO_: 完了時に、実施内容・成果物・残課題を記載する。未完了の場合は `-` とする。
+- `lsd-rulebook`、`lsd-sample`、`lsd-template` の Markdown と付属 CSS を、それぞれ `lsd-slidev-rulebook`、`lsd-slidev-sample`、`lsd-slidev-template` へ改名し、kata の ID、frontmatter の参照、CSS 注釈、プレビュー用注釈を新しい名前に更新した。
+- `.markdownlint-cli2.yaml`、`.prettierrc`、`.markdownlintignore`、`tools/check-slidev-files.mjs` の Slidev 判定を、sample の `docs/ja/specdojo/samples/**/*-slidev-sample.md` と template の `docs/ja/specdojo/templates/**/*-slidev-template.md` に統一した。Slidev 用 override の順序は維持した。
+- rulebook の 3 章と 6.6 を、形式を名前に含める命名規則と上記 glob に合わせた。Marp など別形式には `<対象>-marp-<種類>` を使うことも明記した。
+- `rg` で maintained kata・設定・ツールを検索し、旧 ID と旧ファイル名が残っていないことを確認した。close 済み個票、exec の plan・result・evidence は履歴として対象外にした。
+- `node tools/check-slidev-files.mjs`、Slidev parser による sample・template の Prettier、rulebook の markdownlint は成功した。表示の確認は統合後に orchestrator が `tools/preview-lsd.sh png` で行う。
 
 ## 5. 関連ドキュメント
 

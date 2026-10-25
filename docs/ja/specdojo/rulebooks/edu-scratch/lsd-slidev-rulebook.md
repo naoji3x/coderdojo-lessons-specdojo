@@ -1,12 +1,12 @@
 ---
 specdojo:
-  id: edu-scratch:lsd-rulebook
+  id: edu-scratch:lsd-slidev-rulebook
   type: rulebook
   status: draft
   target_format: markdown
   recipe: undecided
-  sample: edu-scratch:lsd-sample
-  template: edu-scratch:lsd-template
+  sample: edu-scratch:lsd-slidev-sample
+  template: edu-scratch:lsd-slidev-template
 ---
 
 # 投影スライド Rulebook
@@ -39,7 +39,7 @@ Scratch 授業で投影する Slidev スライドの置き方、ページ構成�
 - `<nnn>` は活動の順序を表す 3 桁の連番、`<activity-id>` は活動を区別する小文字ハイフン区切りの名前にする。
 - 活動固有の画像などは `assets/`、フロントマターやコンポーネントから参照する公開素材は `public/`、活動固有の表示部品は `components/` に置く。
 - `dist/` と `node_modules/.slidev/` は生成物なので Git 管理しない。投影内容を変えるときは生成物ではなく `slides.md` と必要な入力素材を変更する。
-- 投影スライドの kata（sample・template）の ID は `lsd-` で始め（例: `lsd-sample`、`lsd-workshop-sample`）、`docs/ja/specdojo/samples/` または `docs/ja/specdojo/templates/` の下に置く。整形（prettier の `slidev` parser）と markdownlint の Slidev 用の規則は、この名前で Slidev のスライドを見分けて当てる。
+- 投影スライドの kata は、形式を名前に入れる。rulebook は `<対象>-slidev-rulebook`、sample は `<対象>-slidev-sample`、template は `<対象>-slidev-template` とする（本家の `--slidev` の scaffold と同じ）。`docs/ja/specdojo/rulebooks/`、`docs/ja/specdojo/samples/`、`docs/ja/specdojo/templates/` の対応する下に置く。整形（prettier の `slidev` parser）と markdownlint の Slidev 用の規則は、sample と template の名前で Slidev のスライドを見分けて当てる。Marp など別形式のスライドは、`<対象>-marp-<種類>` のように形式を変える。
 
 ## 4. 推奨 Frontmatter 項目
 
@@ -86,7 +86,7 @@ Scratch 授業で投影する Slidev スライドの置き方、ページ構成�
 - 文字の大きさ、余白、部品ごとの見た目は活動の `style.css` にまとめ、`slides.md` と同じ活動ディレクトリに置く。Slidev は `style.css` を全ページに自動で読み込む。各ページで個別指定しない。見出しの基準サイズは変えず、`p`、`li`、テーマの部品などを対象に調整する。
 - `slides.md` の中の `<style>` は、`<style src>` を含めて、そのページだけに効く（Slidev が scoped にする）。全ページに効かせる見た目には使わない。
 - レイアウトごとの規則（例: 表紙の `.slidev-layout.cover p`）は、テーマのレイアウトにも同じ強さの規則があり、テーマが後から読み込まれて勝つことがある。`.slidev-layout.cover.cover p` のように class を重ねて強くする。
-- `edu-scratch:lsd-sample` と将来作る `edu-scratch:lsd-template` は、見た目を kata と同じ名前の付属の `.css`（例: `lsd-sample.md` に対する `lsd-sample.css`）に置く。活動で使うときは、付属の `.css` を活動ディレクトリへ `style.css` として写す。`tools/preview-lsd.sh` も同じように写して表示する。
+- `edu-scratch:lsd-slidev-sample` と `edu-scratch:lsd-slidev-template` は、見た目を kata と同じ名前の付属の `.css`（例: `lsd-slidev-sample.md` に対する `lsd-slidev-sample.css`）に置く。活動で使うときは、付属の `.css` を活動ディレクトリへ `style.css` として写す。`tools/preview-lsd.sh` も同じように写して表示する。
 
 ### 6.2. `style.css` の class
 
@@ -131,7 +131,7 @@ Scratch 授業で投影する Slidev スライドの置き方、ページ構成�
 ### 6.6. Markdownlint の注釈
 
 - `slides.md` の markdownlint は、教材リポジトリの `.markdownlint.yaml` の設定に従う。文書内で規則を無効化する注釈は、先頭の `markdownlint-disable MD003 MD022` だけにする。
-- 投影スライドの kata は、kata のリポジトリの `.markdownlint-slidev.yaml` の規則で検査する。VS Code では `.markdownlint-cli2.yaml` の `overrides` が、名前（3 章）で見分けた kata にこの規則を当てる。commit hook の markdownlint-cli はファイルごとに規則を変えられないため、`.markdownlintignore` で検査から外す。
+- 投影スライドの kata は、kata のリポジトリの `.markdownlint-slidev.yaml` の規則で検査する。VS Code では `.markdownlint-cli2.yaml` の `overrides` が、`docs/ja/specdojo/samples/**/*-slidev-sample.md` と `docs/ja/specdojo/templates/**/*-slidev-template.md` で見分けた kata にこの規則を当てる。commit hook の markdownlint-cli はファイルごとに規則を変えられないため、`.markdownlintignore` で検査から外す。
 - 見出し、リスト、コードブロック、表などは教材リポジトリの Markdown 規則に従い、注釈を書式の不備の回避に使わない。
 - Slidev 固有のページ設定を変更したら、注釈が先頭にあり、MD003 と MD022 だけを対象にしていることを確認する。
 

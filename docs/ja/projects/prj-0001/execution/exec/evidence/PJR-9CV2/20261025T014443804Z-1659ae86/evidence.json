@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-9CV2",
+  "run_id": "20261025T014443804Z-1659ae86",
+  "stage": {
+    "role": "executor",
+    "actor": "codex-expert-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T01:46:19.048Z",
+    "completed_at": "2026-10-25T01:49:45.245Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": ".markdownlint-cli2.yaml",
+      "status": "M"
+    },
+    {
+      "path": ".markdownlintignore",
+      "status": "M"
+    },
+    {
+      "path": ".prettierrc",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-9cv2-lsd-slidev-naming.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md",
+      "status": "D"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lsd-sample.css",
+      "status": "D"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lsd-sample.md",
+      "status": "D"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lsd-template.css",
+      "status": "D"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lsd-template.md",
+      "status": "D"
+    },
+    {
+      "path": "tools/check-slidev-files.mjs",
+      "status": "M"
+    },
+    {
+      "path": "tools/preview-lsd.sh",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/rulebooks/edu-scratch/lsd-slidev-rulebook.md",
+      "status": "??"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.css",
+      "status": "??"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md",
+      "status": "??"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.css",
+      "status": "??"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.md",
+      "status": "??"
+    }
+  ],
+  "attempt_changes": [
+    {
+      "path": ".markdownlint-cli2.yaml",
+      "status": "M"
+    },
+    {
+      "path": ".markdownlintignore",
+      "status": "M"
+    },
+    {
+      "path": ".prettierrc",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-9cv2-lsd-slidev-naming.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md",
+      "status": "D"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lsd-sample.css",
+      "status": "D"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lsd-sample.md",
+      "status": "D"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lsd-template.css",
+      "status": "D"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lsd-template.md",
+      "status": "D"
+    },
+    {
+      "path": "tools/check-slidev-files.mjs",
+      "status": "M"
+    },
+    {
+      "path": "tools/preview-lsd.sh",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/rulebooks/edu-scratch/lsd-slidev-rulebook.md",
+      "status": "??"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.css",
+      "status": "??"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md",
+      "status": "??"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.css",
+      "status": "??"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.md",
+      "status": "??"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 16,
+    "summary": ".markdownlint-cli2.yaml                            |   6 +-\n .markdownlintignore                                |   4 +-\n .prettierrc                                        |   4 +-\n .../project-register/pjr-9cv2-lsd-slidev-naming.md |   6 +-\n .../specdojo/rulebooks/edu-scratch/lsd-rulebook.md | 146 ------------\n .../ja/specdojo/samples/edu-scratch/lsd-sample.css | 107 ---------\n docs/ja/specdojo/samples/edu-scratch/lsd-sample.md | 219 ------------------\n .../templates/edu-scratch/lsd-template.css         | 111 ---------\n .../specdojo/templates/edu-scratch/lsd-template.md | 252 ---------------------\n tools/check-slidev-files.mjs                       |   8 +-\n tools/preview-lsd.sh                               |   2 +-\n 11 files changed, 17 insertions(+), 848 deletions(-)"
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npx prettier --check .markdownlint-cli2.yaml .prettierrc tools/check-slidev-files.mjs docs/ja/specdojo/rulebooks/edu-scratch/lsd-slidev-rulebook.md docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.md docs/ja/projects/prj-0001/controls/project-register/pjr-9cv2-lsd-slidev-naming.md",
+      "status": "passed",
+      "summary": "対象の整形を確認"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint -- docs/ja/specdojo/rulebooks/edu-scratch/lsd-slidev-rulebook.md docs/ja/projects/prj-0001/controls/project-register/pjr-9cv2-lsd-slidev-naming.md",
+      "status": "passed",
+      "summary": "rulebook と個票の Markdown lint を通過"
+    },
+    {
+      "source": "executor",
+      "command": "node tools/check-slidev-files.mjs",
+      "status": "passed",
+      "summary": "Slidev の命名、glob、override 順序を検証"
+    },
+    {
+      "source": "executor",
+      "command": "rg -n -S 'edu-scratch:lsd-(rulebook|sample|template)|(^|/)lsd-(rulebook|sample|template)\\.(md|css)' docs/ja/specdojo .markdownlint-cli2.yaml .prettierrc .markdownlintignore tools/check-slidev-files.mjs tools/preview-lsd.sh",
+      "status": "passed",
+      "summary": "維持対象に旧 ID・旧ファイル名がないことを確認"
+    },
+    {
+      "source": "executor",
+      "command": "npm run typecheck",
+      "status": "not_applicable",
+      "summary": "typecheck script はない",
+      "reason": "package.json に typecheck script がない"
+    },
+    {
+      "source": "executor",
+      "command": "npm run test:unit",
+      "status": "not_applicable",
+      "summary": "unit test script はない",
+      "reason": "package.json に test:unit script がない"
+    },
+    {
+      "source": "executor",
+      "command": "specdojo catalog validate",
+      "status": "not_applicable",
+      "summary": "catalog validation は対象外",
+      "reason": "対象 project に catalog_path が設定されていない"
+    },
+    {
+      "source": "executor",
+      "command": "tools/preview-lsd.sh png docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md",
+      "status": "requires_human",
+      "summary": "sandbox では Slidev を起動できないため、統合後に orchestrator が PNG 出力を確認"
+    }
+  ],
+  "final_message": "Slidev kata を新しい命名へ改名し、参照・glob・検査規則・個票の対応結果を更新しました。表示確認は統合後の orchestrator に引き継ぎます。",
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-9CV2/20261025T014443804Z-1659ae86/executor.log",
+      "bytes": 2140,
+      "truncated": false
+    }
+  ]
+}
