@@ -74,7 +74,7 @@ providers:
         - out of memory
         - model is loading
   antigravity:
-    command_template: agy --sandbox --add-dir "$(pwd)" --model {model} -p "$(cat)"
+    command_template: agy --sandbox --add-dir "$(pwd)/.." --dangerously-skip-permissions --model {model} -p "$(cat)"
     rate_limit_detection:
       stderr_patterns:
         - rate limit
