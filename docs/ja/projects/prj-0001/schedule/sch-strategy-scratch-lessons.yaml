@@ -39,22 +39,34 @@ phase_sets:
       duration_days: 0.25
       execution: agent
       mode: edit
+      approach: fully-guided
+      agent_pipeline:
+        stages:
+          - stage_role: executor
+            proficiency: expert
+          - stage_role: reporter
+            proficiency: normal
       description: >-
         対象成果物をカタログの配置先に作成する。指導案はコース計画を明示的な入力とし、
         同じ回の対象・ねらい・使用機能・45分構成を具体化する。スライドは同じ回の指導案レビュー完了後に作成する。
         旧設計を未確認のまま根拠へ加えず、成果物固有のメタ情報を記入する。
-        実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成は実行しない。
     - id: review
       name: 成果物の作成結果をレビューする
       task_suffix: "020"
       duration_days: 0.25
       execution: agent
       mode: review
+      approach: fully-guided
+      agent_pipeline:
+        stages:
+          - stage_role: executor
+            proficiency: expert
+          - stage_role: reporter
+            proficiency: normal
       description: >-
         同じ成果物の作成タスク完了後に、最新のgrade結果とカタログの完了条件に基づいて作成タスクの完了可否を判断する。
         指導案レビューが完了するまで同じ回のスライド作成へ進めない。
         gradeが未作成・古い場合は推測でレビューを完了せず、評価を先に行う。
-        実践の型の保存済みgrade確定と日付・稼働条件合意の前に実際の教材作成・レビューは実行しない。
 default_phase_set: author-review
 owner_rules:
   - local_ids:
@@ -76,4 +88,3 @@ settings:
     開始日・期限・カレンダーは未合意のため設定しない。個票の期限2026-10-31を教材Scheduleへ転記しない。
     kata整備とコース計画移行はPJR-VD0X・PJR-Y36Gの統合後レビューを確認済み。
     schedule_pathとexecution_pathの設定反映後、npx specdojo schedule buildでsch-track-scratch-lessons.yamlを生成済み。
-    kataの保存済みgrade確定および教材作成の開始日・カレンダー合意後に実際の作成タスクを実行する。
