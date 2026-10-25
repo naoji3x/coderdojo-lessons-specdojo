@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_f18cd153ef6942a9823c18e0d6dcdc9e
+  ts: "2026-10-25T01:43:39Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 投影スライドの kata の名前を本家の決まり（-slidev-）にそろえる
+    - field: description
+      from: ""
+      to: 投影スライドの kata を lsd-slidev-rulebook・lsd-slidev-sample・lsd-slidev-template に改め、Slidev の見分けを \*-slidev-sample.md・\*-slidev-template.md の glob にそろえる。形式（Slidev・Marp）が増えても設定を変えずに済み、本家の --slidev の scaffold とも一致させるため。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: DEV
+    - field: registered
+      from: ""
+      to: "2026-10-25"
+    - field: due
+      from: ""
+      to: "2026-10-31"
