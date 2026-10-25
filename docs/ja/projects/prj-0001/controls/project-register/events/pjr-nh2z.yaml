@@ -157,3 +157,16 @@
       from: 統合後のPNG確認で7・9・11ページの実機確認注記が下端で切れ、13ページの改造の問いが案内役と重なることを確認。slides.mdの文量・配置を調整し、必要な問い・実機確認注記をすべて読める状態にする。指導案・style.css・components/は変更しない。修正後にorchestratorがPNGを再確認する。
       to: "-"
   previous_event_id: reg_2f1276b046ed4768a7317a5039c314f3
+- v: 1
+  id: reg_4edadd499c0b490ca5184ea407fdbdb9
+  ts: "2026-10-25T02:53:03Z"
+  action: review
+  actor: codex-expert-executor
+  from_status: in-progress
+  to_status: review
+  reason: ready for review
+  changes:
+    - field: status
+      from: in-progress
+      to: review
+  previous_event_id: reg_3e72fa8d97644d86991ac452e88c4d65
