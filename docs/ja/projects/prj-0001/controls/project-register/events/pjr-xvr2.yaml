@@ -74,3 +74,19 @@
       from: "-"
       to: 利用者と相談した方針（途中のプロジェクトを配らない・早く終わった児童は改造・端末に .sb3 で保存）に合わせて、exec で流し直すため差し戻す
   previous_event_id: reg_7bb0a1e064ca46d19b4eb4d0891b1bf7
+- v: 1
+  id: reg_53b9e19b190f4bf68f79f4bd050dc780
+  ts: "2026-10-25T02:11:11Z"
+  action: start
+  actor: codex-expert-executor
+  from_status: waiting
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: waiting
+      to: in-progress
+    - field: block_reason
+      from: 利用者と相談した方針（途中のプロジェクトを配らない・早く終わった児童は改造・端末に .sb3 で保存）に合わせて、exec で流し直すため差し戻す
+      to: "-"
+  previous_event_id: reg_06598c52e7b94d0db6fb027eb6c18759
