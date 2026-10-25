@@ -86,3 +86,19 @@
       from: in-progress
       to: review
   previous_event_id: reg_d00b2845eb3e4d52bd03bfddbbafb392
+- v: 1
+  id: reg_b0e4ee8cd4ae4bb281dc6d8f38e93347
+  ts: "2026-10-25T04:29:56Z"
+  action: update
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: review
+  reason: 作成済みsampleのレビュー指摘修正へ移り、authoring専用sourcesは個票本文の根拠記述を残して解除する
+  changes:
+    - field: approach
+      from: sample-authoring
+      to: sample-maintenance
+    - field: sources
+      from: "[\"coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md\",\"coderdojo-lessons:docs/course-design/course-plan.md\",\"edu-scratch:lpl-rulebook\"]"
+      to: "-"
+  previous_event_id: reg_f91f6a5b733b476cb77cb4302368f043

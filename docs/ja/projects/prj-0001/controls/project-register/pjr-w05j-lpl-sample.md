@@ -15,13 +15,9 @@ specdojo:
   due_on: "2026-10-31"
   derived_from:
     - PJR-0H02
-  approach: sample-authoring
+  approach: sample-maintenance
   targets:
     - edu-scratch:lpl-sample
-  sources:
-    - coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md
-    - coderdojo-lessons:docs/course-design/course-plan.md
-    - edu-scratch:lpl-rulebook
 ---
 
 # PJR-W05J 指導案のsampleを作る
