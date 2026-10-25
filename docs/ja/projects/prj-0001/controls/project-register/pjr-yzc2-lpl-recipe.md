@@ -50,14 +50,23 @@ specdojo:
 
 | No  | 作業                                               | 担当 | 状態 | メモ                   |
 | --- | -------------------------------------------------- | ---- | ---- | ---------------------- |
-| 1   | 先行成果と手本・執筆標準を読み、作成範囲を確認する | exec | open | 先行項目 PJR-0032      |
-| 2   | lpl-recipeをdraftで作成する                        | exec | open | 指定のkataだけを変更   |
-| 3   | 静的検査と申し送りを記録する                       | exec | open | resultはreporterが記述 |
-| 4   | 完了条件と他kataとの整合をレビューする             | orch | open | 次の段階への入力を確認 |
+| 1   | 先行成果と手本・執筆標準を読み、作成範囲を確認する | exec | done | 先行項目 PJR-0032      |
+| 2   | lpl-recipeをdraftで作成する                        | exec | done | 指定のkataだけを変更   |
+| 3   | 静的検査と申し送りを記録する                       | exec | done | resultはreporterが記述 |
+| 4   | 完了条件と他kataとの整合をレビューする             | orch | done | 次の段階への入力を確認 |
 
 ## 4. 対応結果
 
-_TODO_: 完了時に、実施内容・成果物・残課題を記載する。未完了の場合は `-` とする。
+### 統合後のレビューと確認結果
+
+- 実施・確認記録（orchestrator、2026-10-25）：`e215831` の統合内容を確認。入力収集、全体手順、9章の書き方、深掘り、同観点の良い例／悪い例、レビュー観点、仕上げチェックを8章で記したrecipeを作成した。本文にrulebook・sample・templateへの参照・照合指示を置かず、recipe自身の言葉で指導案の章と手順を示している。対応関係はfrontmatterで宣言し、rulebookのrecipe参照だけを更新した。
+- 統合後レビュー：4点とも `draft` で、rulebookからsample・template・recipeが実在するIDで参照され、sampleとrecipeは同じrulebookを参照する。9章の指導案の役割と、ねらい・完成形・活動・見取り・時間不足時の優先順位が対応している。今回の作成範囲で後続作業を妨げる不整合は見つからなかった。
+- 手本は修正済みの第2回指導案1件とコース計画に限る。別の授業や授業実践での有効性・所要時間を検証したわけではなく、sampleの40分や対象経験は仮想設定である。手本から妥当性を断定できない授業条件・実機操作・所要時間は、利用時に確認する。旧設計は根拠にしていない。教材リポジトリは未変更。
+- 統合後に4つのkataのPrettier・Markdownlint・`node tools/check-slidev-files.mjs`・`git diff --check` を実行して通過し、`npx specdojo exec validate --project prj-0001` も通過した。schedule未設定の警告は本作業の対象外。rulebookとrecipeは `kata list` でrepository由来として解決できることも確認した。plan/resultの保存を確認し、作成者向けのtemplateのプレースホルダーを除き、実行結果に未記入の雛形は残していない。
+
+### 実行時の記録
+
+- execの作成結果と統合後レビューは以下に記録した。
 
 ## 5. 関連ドキュメント
 
