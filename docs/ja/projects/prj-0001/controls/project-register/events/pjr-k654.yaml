@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_715ab59e5e084055a349903b10a9ffa9
+  ts: "2026-10-25T03:48:38Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 投影スライドの型に段階的な改造と表示確認の知見を反映する
+    - field: description
+      from: ""
+      to: PJR-NH2Zで得た段階ごとの改造問い、実機確認注記の柔軟な配置、描画による下切れ・重なり確認を、投影スライドのrulebook・sample・templateへ反映し、保存・共有の案内を指導案に応じて具体化できるようにする。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-25"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-NH2Z\"]"
