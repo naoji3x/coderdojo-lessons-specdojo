@@ -7,6 +7,12 @@ pre-commit:
     - name: lint Markdown documentation
       glob: "*.md"
       run: npx markdownlint -- {staged_files}
-    - name: check Slidev deck names
-      glob: "*.md"
-      run: node tools/check-slidev-names.mjs {staged_files}
+    # Slidev のスライドの名前と、専用の設定の glob・順番を確かめる。設定ファイルを変えたときも走らせる。
+    - name: check Slidev decks and their lint settings
+      glob:
+        - "*.md"
+        - ".markdownlint-cli2.yaml"
+        - ".markdownlintignore"
+        - ".prettierrc"
+        - "tools/check-slidev-files.mjs"
+      run: node tools/check-slidev-files.mjs {staged_files}

@@ -1,7 +1,8 @@
 # VS Code の markdownlint の拡張（markdownlint-cli2）の設定。
 # 基本の設定は .markdownlintrc から読み込み、Slidev のスライドにだけ .markdownlint-slidev.yaml を当てる。
 # Slidev のスライドは名前で見分ける。投影スライドの kata は、sample と template で ID が lsd- で始まるもの。
-# この glob は .prettierrc・.markdownlintignore・tools/check-slidev-names.mjs と同じにする。
+# この glob は .prettierrc・.markdownlintignore・tools/check-slidev-files.mjs と同じにする。
+# overrides は最初に一致した 1 つだけが使われるため、Slidev 用の override を先頭に置く（commit hook で確かめる）。
 config:
   extends: .markdownlintrc
 overrides:
