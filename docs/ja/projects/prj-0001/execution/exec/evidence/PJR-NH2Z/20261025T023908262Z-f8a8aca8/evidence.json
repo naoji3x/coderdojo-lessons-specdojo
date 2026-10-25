@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-NH2Z",
+  "run_id": "20261025T023908262Z-f8a8aca8",
+  "stage": {
+    "role": "executor",
+    "actor": "codex-expert-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T02:41:26.138Z",
+    "completed_at": "2026-10-25T02:45:24.983Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-nh2z-balloon-slides-follow-plan.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "M"
+    }
+  ],
+  "attempt_changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-nh2z-balloon-slides-follow-plan.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "M"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 2,
+    "summary": ".../controls/project-register/pjr-nh2z-balloon-slides-follow-plan.md | 5 ++++-\n 1 file changed, 4 insertions(+), 1 deletion(-)\n[coderdojo-lessons]\n.../scratch-basic/lessons/020-balloon-game/slides.md   | 18 ++++++++++++++++++\n 1 file changed, 18 insertions(+)"
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npx prettier --write courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "passed",
+      "summary": "Slidev parserで整形済み。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --check courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "passed",
+      "summary": "スライドのPrettier検査に合格。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --write docs/ja/projects/prj-0001/controls/project-register/pjr-nh2z-balloon-slides-follow-plan.md",
+      "status": "passed",
+      "summary": "個票を整形済み。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint docs/ja/projects/prj-0001/controls/project-register/pjr-nh2z-balloon-slides-follow-plan.md",
+      "status": "passed",
+      "summary": "個票のMarkdownlint検査に合格。"
+    },
+    {
+      "source": "executor",
+      "command": "git diff --check",
+      "status": "passed",
+      "summary": "両リポジトリで差分の空白エラーなし。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "not_applicable",
+      "summary": "実行しない。",
+      "reason": "coderdojo-lessonsのpackage.jsonにmarkdownlint系パッケージが導入されていない。"
+    },
+    {
+      "source": "executor",
+      "command": "npm test",
+      "status": "not_applicable",
+      "summary": "実行しない。",
+      "reason": "projectリポジトリのtestはnpm initの仮スクリプトであり、coderdojo-lessonsにはtestスクリプトがない。"
+    },
+    {
+      "source": "executor",
+      "command": "npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png",
+      "status": "requires_human",
+      "summary": "個票の指定により、SlidevのPNG表示確認は統合後にorchestratorが実施する。"
+    }
+  ],
+  "final_message": "第2回スライドに開始背景への復帰、元の風船を隠す処理、クローンの削除、クリア後の停止を追加し、各制作段階の改造問いと保存・見せ合いの案内を指導案に合わせた。個票の対応結果も更新した。",
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-NH2Z/20261025T023908262Z-f8a8aca8/executor.log",
+      "bytes": 2010,
+      "truncated": false
+    }
+  ]
+}
