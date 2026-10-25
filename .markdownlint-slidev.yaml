@@ -1,0 +1,9 @@
+# Slidev のスライド（投影スライドの kata）に当てる markdownlint の規則。
+# .markdownlint-cli2.yaml の overrides から読み込む。教材のリポジトリの .markdownlint.yaml に合わせている。
+MD003: false # ページ設定の --- が setext 形式の見出しと判定されるため
+MD022: false # 同上
+MD024: false # 「ふりかえり」など、同じ見出しが複数のページにある
+MD025: false # ページごとに H1 を置く
+MD033: false # Vue の部品と HTML の要素を使う
+MD036: false # 「第2回｜45分」のような強調だけの行と、template のプレースホルダ
+MD041: false # 最初の行は frontmatter

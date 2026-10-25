@@ -1,0 +1,9 @@
+{
+  // markdownlint の基本の設定。markdownlint-cli（commit hook と、exec run の統合直前の result の検査）が読む。
+  // VS Code の拡張（markdownlint-cli2）は、.markdownlint-cli2.yaml からこのファイルを読み込む。
+  // .markdownlint.yaml にしないのは、markdownlint-cli2 が .markdownlint.yaml を見つけると overrides を当てないため。
+  // markdownlint-cli は、ファイルが { で始まるときだけ JSON として読む。コメントは { の内側に書く。
+
+  // 行の長さ。日本語の文とパスを含む行は 80 文字を超えやすく、行の長さで内容を区切らない。
+  "MD013": false
+}

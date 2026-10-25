@@ -1,4 +1,5 @@
-# 投影スライドの kata（sample・template）はファイル全体が Slidev のスライドで、
-# 教材のリポジトリの markdownlint の設定に従う。このリポジトリの規則では検査しない。
-docs/ja/specdojo/samples/edu-scratch/lsd-*.md
-docs/ja/specdojo/templates/edu-scratch/lsd-*.md
+# 投影スライドの kata（sample・template）は Slidev のスライドで、markdownlint-cli（commit hook）は
+# ファイルごとに規則を変えられないため、検査から外す。VS Code では .markdownlint-cli2.yaml の
+# overrides で Slidev 用の規則を当てる。glob は .markdownlint-cli2.yaml と同じにする。
+docs/ja/specdojo/samples/**/lsd-*.md
+docs/ja/specdojo/templates/**/lsd-*.md
