@@ -21,6 +21,9 @@ specdojo:
   sources:
     - coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md
     - coderdojo-lessons:docs/course-design/course-plan.md
+    - edu-scratch:lpl-rulebook
+    - edu-scratch:lpl-sample
+    - edu-scratch:lpl-template
 ---
 
 # PJR-YZC2 指導案のrecipeを作る

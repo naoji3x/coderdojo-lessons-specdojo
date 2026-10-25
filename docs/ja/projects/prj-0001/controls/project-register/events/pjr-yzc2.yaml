@@ -47,3 +47,16 @@
     - field: derived_from
       from: ""
       to: "[\"PJR-0032\"]"
+- v: 1
+  id: reg_758fba69c1a74030a3c9b0c960585edb
+  ts: "2026-10-25T04:42:38Z"
+  action: update
+  actor: specdojo-orchestrator
+  from_status: open
+  to_status: open
+  reason: 作成・確認済みのrulebook・sample・templateをrecipe作成の入力へ追加する
+  changes:
+    - field: sources
+      from: "[\"coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md\",\"coderdojo-lessons:docs/course-design/course-plan.md\"]"
+      to: "[\"coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md\",\"coderdojo-lessons:docs/course-design/course-plan.md\",\"edu-scratch:lpl-rulebook\",\"edu-scratch:lpl-sample\",\"edu-scratch:lpl-template\"]"
+  previous_event_id: reg_887132c3f823427b8e92263cc4ce35e5
