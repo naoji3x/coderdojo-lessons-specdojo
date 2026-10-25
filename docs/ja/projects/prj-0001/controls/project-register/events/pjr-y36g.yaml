@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_38e92c65cd484ac8a473d12bbe63fdc4
+  ts: "2026-10-25T09:08:29Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: 利用者が推奨案のtodo起票を依頼し、担当BA・期限2026-10-31を指定したため
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: コース計画を教材配下へ移動しカタログと既存教材のメタ情報を整える
+    - field: description
+      from: ""
+      to: course-plan.mdをcourses/scratch-basicへ移動して成果物登録し、指導案からの依存を宣言する。先行するメタ情報規約に従い、コース計画と既存の第2回教材へ成果物メタ情報を反映する。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-25"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-VD0X\"]"
