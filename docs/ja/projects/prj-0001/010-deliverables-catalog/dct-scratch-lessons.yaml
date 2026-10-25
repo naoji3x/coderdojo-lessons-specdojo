@@ -7,6 +7,8 @@ part_of:
   - prj-0001:dct-index
 project_id: prj-0001
 domain: scratch-lessons
+# 教材自身の specdojo.id と教材間の based_on は local_id と一致する修飾なしID。
+# CLIの対象指定 prj-0001:<local_id> はカタログ解決用で、教材自身の正規IDとは区別する。
 base_path: /../coderdojo-lessons/courses/scratch-basic
 groups:
   - name: コース計画

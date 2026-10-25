@@ -25,6 +25,8 @@ specdojo:
 
 先行するコース計画の移動・カタログ・メタ情報整備を入力として、Scratch教材を作成するScheduleのstrategyとtrackを生成・検証する。このtodoではagentによる教材作成の実行を開始しない。
 
+教材自身の `specdojo.id` と教材間の `based_on` は、カタログの `local_id` と一致する修飾なしIDを使う。入力となる既存教材は [[cpl-scratch-basic|コース計画]]・[[lpl-balloon-game|第2回指導案]]・[[lsd-balloon-game|第2回スライド]]。CLIのカタログ対象指定用の `prj-0001:<local_id>` と区別し、修飾形を教材自身のIDへ転記しない。11件のカタログ行は修飾なし・修飾付きの両指定から同じ配置へ解決するが、未作成8件の文書IDは教材作成時にも修飾なしで記入する。
+
 ## 2. 完了条件
 
 - 先行するkata整備と、コース計画の移動・カタログ・既存教材メタ情報反映がレビュー済みであることを確認してから実行する。コース計画を以後の指導案作成の明示的な入力として解決できるようにする。
@@ -50,5 +52,5 @@ specdojo:
 ## 5. 関連ドキュメント
 
 - [[prj-0001:pjr-y36g-course-plan-catalog-and-metadata]]：先行作業
-- [[prj-0001:cpl-scratch-basic|Scratch基礎 コース計画]]：`coderdojo-lessons:courses/scratch-basic/course-plan.md`
+- [[cpl-scratch-basic|Scratch基礎 コース計画]]：`coderdojo-lessons:courses/scratch-basic/course-plan.md`
 - `docs/ja/projects/prj-0001/010-deliverables-catalog/dct-scratch-lessons.yaml`：成果物カタログ
