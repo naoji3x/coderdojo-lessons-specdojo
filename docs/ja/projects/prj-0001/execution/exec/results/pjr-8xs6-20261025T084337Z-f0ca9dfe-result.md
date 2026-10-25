@@ -36,3 +36,18 @@ specdojo:
 ## 4. 進め方
 
 スライドと指導案の内容を整合させ、整形・lint・Slidev buildを実行しました。
+
+## 5. トレーサビリティ
+
+runner がプロダクトリポジトリを統合した後に記録した、統合先の commit snapshot です。
+プロジェクトリポジトリの統合は、この result を含む merge commit で確認します。
+その merge commit には `Refs: prj-0001:PJR-8XS6` を付けます。
+PR が `not applicable` の行は、runner がローカルで統合し PR を経由していません。
+
+<!-- markdownlint-disable MD013 -->
+
+| trace key           | repository          | integration branch | PR             | commit snapshot                            | recorded at              |
+| ------------------- | ------------------- | ------------------ | -------------- | ------------------------------------------ | ------------------------ |
+| `prj-0001:PJR-8XS6` | `coderdojo-lessons` | `develop`          | not applicable | `be0030b271803eba8ebb346a9e58f9dbf716d118` | 2026-10-25T08:48:39.439Z |
+
+<!-- markdownlint-enable MD013 -->
