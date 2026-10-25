@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-vd0x-teaching-artifact-metadata-kata
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   owner: BA
   registered_at: "2026-10-25T09:08:25Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-25T10:35:31Z"
+  conclusion: 教材IDをauthorityなしとする訂正後の7 kataをレビューし、規約・例・参照の整合と検証成功を確認したため完了とする。
 ---
 
 # PJR-VD0X 教材成果物のSpecDojoメタ情報を扱うkataを整備する
