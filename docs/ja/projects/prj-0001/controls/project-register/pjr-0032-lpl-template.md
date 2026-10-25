@@ -7,7 +7,7 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: open
+  item_status: review
   priority: medium
   difficulty: hard
   owner: BA
@@ -55,7 +55,10 @@ specdojo:
 
 ## 4. 対応結果
 
-_TODO_: 完了時に、実施内容・成果物・残課題を記載する。未完了の場合は `-` とする。
+- [[edu-scratch:lpl-template|活動別指導案 Template]] を `draft` で新規作成し、教材用 `lesson-plan.md` の本文だけを記入する章・表・プレースホルダを用意した。kata 自身の `specdojo:` メタ情報は教材へ写さず、教材化時に削除する作成者向け案内でその扱いを明示した。
+- [[edu-scratch:lpl-rulebook|活動別指導案 Rulebook]] の frontmatter では `template` のみを `edu-scratch:lpl-template` に更新した。sample と rulebook 本文は変更していない。
+- `coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md` と `coderdojo-lessons:docs/course-design/course-plan.md` を読み取り専用の根拠として確認した。手本からは、概要、位置づけ、完成形、準備、授業の流れ、進度差、見取り、つまずき、まとめの対応関係だけを一般化した。題材、対象、時間、機能、進行、保存・共有の具体値と、コース計画の固定の 45 分構成は引き継がなかった。
+- 発展形、教師の提示と学習者の操作を組み合わせる進め方、保存・共有の扱いを任意分岐として示した。内容設計の問いや手順は recipe と活動の根拠で決めるものとし、雛形には置いていない。判断できない点はない。`npx prettier --write`、`npx markdownlint --`、`node tools/check-slidev-files.mjs`、`git diff --check` の結果はすべて成功した。
 
 ## 5. 関連ドキュメント
 

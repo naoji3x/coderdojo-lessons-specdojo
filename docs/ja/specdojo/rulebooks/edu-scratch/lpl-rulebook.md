@@ -4,6 +4,7 @@ specdojo:
   type: rulebook
   status: draft
   target_format: markdown
+  template: edu-scratch:lpl-template
   sample: edu-scratch:lpl-sample
 ---
 

@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-0032",
+  "run_id": "20261025T043640284Z-bb2d69ec",
+  "stage": {
+    "role": "executor",
+    "actor": "codex-expert-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T04:37:40.378Z",
+    "completed_at": "2026-10-25T04:41:54.176Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-0032-lpl-template.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lpl-template.md",
+      "status": "??"
+    }
+  ],
+  "attempt_changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-0032-lpl-template.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lpl-template.md",
+      "status": "??"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 3,
+    "summary": ".../prj-0001/controls/project-register/pjr-0032-lpl-template.md      | 5 ++++-\n docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md               | 1 +\n 2 files changed, 5 insertions(+), 1 deletion(-)"
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npx prettier --write docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md docs/ja/specdojo/templates/edu-scratch/lpl-template.md docs/ja/projects/prj-0001/controls/project-register/pjr-0032-lpl-template.md",
+      "status": "passed",
+      "summary": "All changed Markdown files are formatted."
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint -- docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md docs/ja/specdojo/templates/edu-scratch/lpl-template.md docs/ja/projects/prj-0001/controls/project-register/pjr-0032-lpl-template.md",
+      "status": "passed",
+      "summary": "Markdown lint passed for all changed Markdown files."
+    },
+    {
+      "source": "executor",
+      "command": "node tools/check-slidev-files.mjs docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md docs/ja/specdojo/templates/edu-scratch/lpl-template.md docs/ja/projects/prj-0001/controls/project-register/pjr-0032-lpl-template.md",
+      "status": "passed",
+      "summary": "Configured pre-commit Slidev configuration check passed."
+    },
+    {
+      "source": "executor",
+      "command": "git diff --check",
+      "status": "passed",
+      "summary": "No whitespace errors in tracked changes; the new template was also checked with git diff --no-index --check."
+    },
+    {
+      "source": "executor",
+      "command": "npm run test:unit",
+      "status": "not_applicable",
+      "summary": "No unit-test command was run.",
+      "reason": "The project package.json has no test:unit script; its only test script is the npm-init placeholder."
+    },
+    {
+      "source": "executor",
+      "command": "npx specdojo catalog validate",
+      "status": "not_applicable",
+      "summary": "Catalog validation was not run.",
+      "reason": "The current project configuration has no catalog_path."
+    }
+  ],
+  "final_message": "Created the draft lesson-plan template, linked it from the rulebook, and recorded the generalized sources and validation outcomes in the task record.",
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-0032/20261025T043640284Z-bb2d69ec/executor.log",
+      "bytes": 1930,
+      "truncated": false
+    }
+  ]
+}
