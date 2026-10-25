@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_887132c3f823427b8e92263cc4ce35e5
+  ts: "2026-10-25T04:17:24Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 指導案のrecipeを作る
+    - field: description
+      from: ""
+      to: 先行する指導案の型と手本を基に、入力の収集からねらい・完成形・時間配分・見取りを組み立てる自己完結した手順edu-scratch:lpl-recipeをdraftで作る。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: difficulty
+      from: ""
+      to: hard
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-25"
+    - field: due
+      from: ""
+      to: "2026-10-31"
+    - field: approach
+      from: ""
+      to: recipe-authoring
+    - field: targets
+      from: ""
+      to: "[\"edu-scratch:lpl-recipe\"]"
+    - field: sources
+      from: ""
+      to: "[\"coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md\",\"coderdojo-lessons:docs/course-design/course-plan.md\"]"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-0032\"]"
