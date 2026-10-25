@@ -7,11 +7,12 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: in-progress
+  item_status: waiting
   priority: medium
   owner: BA
   registered_at: "2026-10-25T09:08:29Z"
   due_on: "2026-10-31"
+  block_reason: executor rate limit reached
   derived_from:
     - PJR-VD0X
 ---
@@ -49,5 +50,5 @@ specdojo:
 ## 5. 関連ドキュメント
 
 - [[prj-0001:pjr-vd0x-teaching-artifact-metadata-kata]]：先行作業
-- `coderdojo-lessons:docs/course-design/course-plan.md`：現在のコース計画（移動後は新パスへ読み替える）
+- [[prj-0001:cpl-scratch-basic|Scratch基礎 コース計画]]：`coderdojo-lessons:courses/scratch-basic/course-plan.md`
 - `docs/ja/projects/prj-0001/010-deliverables-catalog/dct-scratch-lessons.yaml`：成果物カタログ
