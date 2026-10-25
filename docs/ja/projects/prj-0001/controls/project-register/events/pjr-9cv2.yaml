@@ -32,3 +32,16 @@
     - field: due
       from: ""
       to: "2026-10-31"
+- v: 1
+  id: reg_27c426238f554fa0ae29f26612ad2c38
+  ts: "2026-10-25T01:44:44Z"
+  action: start
+  actor: codex-expert-executor
+  from_status: open
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: open
+      to: in-progress
+  previous_event_id: reg_f18cd153ef6942a9823c18e0d6dcdc9e
