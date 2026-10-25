@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../../../../../../node_modules/specdojo/docs/specdojo/schemas/v1/grade-done-criteria.schema.yaml
+id: lsd-ai-rps-grade-criteria
+document: lsd-ai-rps
+path: ../coderdojo-lessons/courses/scratch-basic/lessons/040-ai-rps/slides.md
+graded_at: "2026-10-25T23:56:20.358Z"
+graded_by: flash-high-executor
+content_hash: 6323a5c2adf83e449566429ba388bcc32cf29563c3b0cc944899a7541656b9a5
+summary:
+  satisfied: 2
+  unsatisfied: 0
+  total: 2
+criteria:
+  - id: DC-001
+    text: 同じ回のレビュー済み指導案に、説明・制作・試行・到達確認・振り返りの内容と順序が対応していること。
+    roles:
+      - QE
+    viewpoint: vp-qe-verifiability
+    status: satisfied
+  - id: DC-002
+    text: Slidev buildと全ページの画像出力が成功し、文字やブロック図・実機確認注記の切れや重なりがないこと。
+    roles:
+      - QE
+    viewpoint: vp-qe-verifiability
+    status: satisfied
