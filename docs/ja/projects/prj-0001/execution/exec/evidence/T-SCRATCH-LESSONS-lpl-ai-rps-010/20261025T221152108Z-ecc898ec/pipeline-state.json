@@ -2,7 +2,7 @@
   "schema_version": 1,
   "task_id": "T-SCRATCH-LESSONS-lpl-ai-rps-010",
   "run_id": "20261025T221152108Z-ecc898ec",
-  "updated_at": "2026-10-25T22:20:16.743Z",
+  "updated_at": "2026-10-25T22:20:19.010Z",
   "stages": {
     "executor": {
       "status": "succeeded",
@@ -21,12 +21,24 @@
       "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/results/T-SCRATCH-LESSONS-lpl-ai-rps-010-result.md"
     },
     "integrate": {
-      "status": "running",
+      "status": "succeeded",
       "actor": "flash-high-executor",
       "attempts": 1,
       "started_at": "2026-10-25T22:20:16.743Z",
-      "completed_at": null,
-      "artifact_ref": null
+      "completed_at": "2026-10-25T22:20:19.010Z",
+      "artifact_ref": null,
+      "repos": {
+        "coderdojo-lessons": {
+          "status": "merged",
+          "commit": "9e8d5963e991154ef32edb346044e326af73f2d5",
+          "merged_at": "2026-10-25T22:20:19.006Z"
+        },
+        "project": {
+          "status": "merged",
+          "commit": null,
+          "merged_at": "2026-10-25T22:20:19.008Z"
+        }
+      }
     }
   }
 }
