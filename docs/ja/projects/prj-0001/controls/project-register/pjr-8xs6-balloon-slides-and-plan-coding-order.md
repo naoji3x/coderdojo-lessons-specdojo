@@ -59,13 +59,13 @@ specdojo:
 
 ## 4. 対応結果
 
-- executor による成果物編集と静的検査は完了した。再開時の指示に従ってスライド内の Markdownlint 注釈を修正し、前回の検査失敗を解消した。統合後の PNG 表示確認は orchestrator に引き継ぐ。登録簿・個票のステータス項目、result、設定ファイルは変更していない。
+- executor による成果物編集は完了したが、既存の Markdownlint 設定との不整合が残るため、この実行の完了判定は `incomplete` とする。登録簿・個票のステータス項目、result、設定ファイルは変更していない。
 - `coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md`：全17ページから19ページに変更。「今日使う4つの考え方」を乱数・クローン・得点（変数）・メッセージに統一し、乱数の直後（8ページ）にx・y座標と今回の範囲（x: -200〜200、y: -140〜140）の補足を追加した。ステージの全体範囲と中央も図示し、風船の大きさに合わせた実機確認を促した。
 - 同スライドのクローン（10ページ）は元の風船とクローンのブロックを左右に分け、両方を `:scale="0.85"` に拡大した（変更前は1図で `:scale="0.5"`）。乱数で場所を決めるブロックを含め、旗の下からクローンの開始時へ移す手順も示した。直後（11ページ）に、元は旗で隠れて繰り返し作り、クローンは乱数の場所へ表示して3秒後に消える役割を説明した。
 - 同スライドの得点（13ページ）はステージの初期化と風船のクリック処理を別々のブロック図にした。メッセージ（15ページ）は風船の送信とステージの受信を明記し、クリック処理全体を示して加算→10点判定・送信→クローン削除の順を確認できるようにした。得点の共有範囲、旗での再開、各段階の改造の問いと実機確認注記を残した。
 - `coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md`：ねらい、使用機能、標準完成形、事前準備、5章の表、5.1、見取り、つまずき対応、まとめを乱数→クローン→得点→メッセージの順と実装先に合わせた。クローン段階では時間後の削除、得点段階ではクリック加算・削除を作るよう区別した。基本制作は5分・10分・5分・5分とし、授業全体の45分を維持した。時間不足時に最低完成形へ戻る支援も補足した。
 - 検証：教材2ファイルの Prettier 整形、Slidev の本番ビルド、指導案の Markdownlint、両リポジトリの差分検査を実施した。Markdownlint は教材にローカル依存がないため、project に導入済みの CLI を教材ルートから教材の `.markdownlint.yaml` 指定で実行した。成果物カタログ検査は成功し、対象外の未作成教材8件の既存警告が出た。
-- 再開時の静的検査対応：個票の明示指示を本タスクの例外として優先し、`slides.md` 先頭の注釈を `markdownlint-disable MD003 MD022 MD025` にした。近傍の HTML コメントに、Slidev のページごとに H1 を置くため、このファイルだけ `MD025` を無効化する理由を記載した。教材全体の lint 設定・共有設定・rulebook は変更していない。教材ルートで `node ../project/node_modules/markdownlint-cli/markdownlint.js --config .markdownlint.yaml courses/scratch-basic/lessons/020-balloon-game/slides.md courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md` を再実行し、2ファイルとも違反0件で通過した。
+- 未解消の静的検査：スライド全体の Markdownlint は `MD025`（1文書に複数のH1）19件で失敗した。同じ設定で変更前の `HEAD` を標準入力から検査しても17件発生し、それ以外の規則違反はない。Slidev の各ページにH1を置く構造と教材の `.markdownlint.yaml` の `MD025` が衝突している。次のアクションは、runner／人間が教材設定についてスライド限定の `MD025: false` などの方針を決め、必要な設定変更後にスライド・指導案の lint を再実行すること。変更対象は教材2ファイルに限定され、設定変更は親 runner の担当なので、この実行では設定・禁止注釈を追加していない。
 - 表示確認の申し送り：`coderdojo-lessons` で `npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --output courses/scratch-basic/lessons/020-balloon-game/dist/pjr-8xs6-review` を試したが、sandbox 内では `uv_interface_addresses` のエラーで起動できず、PNGは未確認。統合後に orchestrator が同コマンドで全19ページを書き出し、特に変更した1・5・7・8・10・11・13・15・19ページについて、本文・ブロック図・実機確認注記・改造の問いの切れと案内役との重なり、クローン図の実際の可読性を確認する。作業4はその確認まで open のままとする。
 
 ## 5. 関連ドキュメント
