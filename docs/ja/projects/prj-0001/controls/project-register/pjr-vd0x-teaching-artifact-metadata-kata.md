@@ -38,6 +38,10 @@ specdojo:
 
 ## 4. 対応結果
 
+### 統合後レビュー（orchestrator）
+
+- `d5200e9` の統合成果と個票・resultを完了条件に照らして確認した。7 kataのID・メタ情報の扱い・templateとsampleの区別・recipeの自己完結性・draft維持が整合し、整形・lint・schema・Slidev解析とbuildの成功記録を確認した。教材本体は未変更。後続PJR-Y36Gへ進める上で妨げとなる不整合は見つからなかった。コース計画のID確定は後続項目で行い、専用rulebook未整備とschema上の `rulebook: none` の扱いも申し送りを確認した。
+
 ### 4.1. 採用した規約と根拠
 
 - SpecDojo 0.4.6 の `docs/specdojo/schemas/v1/common-frontmatter.schema.yaml` と `deliverable-frontmatter.schema.yaml` を確認した。教材の `specdojo:` 配下には必須の `id`・`type`・`status`・`rulebook` を置く。`type: project` は成果物schemaの既存列挙値、作成・移行時の `status: draft` は文書成熟度であり、実行状態や授業実施済みを意味しない。`ready` への昇格は人間が判断する。
