@@ -222,3 +222,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_d85622e43d9a438ebd3f33fa68045e49
+- v: 1
+  id: reg_7a9756c558774076b11edfd9383c6398
+  ts: "2026-10-25T03:20:49Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: 指定executor/reporterで修正・統合し、orchestratorがPNG表示と検証結果を確認した
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-25"
+    - field: conclusion
+      from: "-"
+      to: 指導案への追従と表示修正を完了し、統合後のPNGで確認済み
+  previous_event_id: reg_009645a826c04465af739f12fb1213ca

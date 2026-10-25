@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-nh2z-balloon-slides-follow-plan
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   owner: BA
   registered_at: "2026-10-25T02:12:07Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-25T03:20:49Z"
+  conclusion: 指導案への追従と表示修正を完了し、統合後のPNGで確認済み
   derived_from:
     - PJR-XVR2
 ---
