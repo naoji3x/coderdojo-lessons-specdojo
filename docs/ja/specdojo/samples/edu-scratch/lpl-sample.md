@@ -4,6 +4,14 @@ specdojo:
   type: sample
   status: draft
   rulebook: edu-scratch:lpl-rulebook
+# 上は kata 自身のメタ情報。教材化時は教材固有の specdojo に置き換える。
+# 仮想カタログの project_id: prj-example、local_id: lpl-space-landing に対応する例：
+# specdojo:
+#   id: prj-example:lpl-space-landing
+#   type: project
+#   status: draft
+#   rulebook: edu-scratch:lpl-rulebook
+# この仮想 ID は実在のカタログ登録を表さない。実際の対象行に合わせ、案内コメントを削除する。
 ---
 
 # 宇宙船を着陸させよう

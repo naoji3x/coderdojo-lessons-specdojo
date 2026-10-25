@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-VD0X",
+  "run_id": "20261025T090947567Z-5438a3b0",
+  "stage": {
+    "role": "executor",
+    "actor": "sol-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T09:11:28.879Z",
+    "completed_at": "2026-10-25T09:21:16.031Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-vd0x-teaching-artifact-metadata-kata.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/rulebooks/edu-scratch/lsd-slidev-rulebook.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lpl-sample.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lpl-template.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.md",
+      "status": "M"
+    }
+  ],
+  "attempt_changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-vd0x-teaching-artifact-metadata-kata.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/rulebooks/edu-scratch/lsd-slidev-rulebook.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lpl-sample.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lpl-template.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.md",
+      "status": "M"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 8,
+    "summary": ".../pjr-vd0x-teaching-artifact-metadata-kata.md    | 61 +++++++++++++++++++---\n docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md | 23 +++++---\n .../specdojo/rulebooks/edu-scratch/lpl-rulebook.md | 35 +++++++++++--\n .../rulebooks/edu-scratch/lsd-slidev-rulebook.md   | 35 ++++++++++++-\n docs/ja/specdojo/samples/edu-scratch/lpl-sample.md |  8 +++\n .../samples/edu-scratch/lsd-slidev-sample.md       |  9 ++++\n .../specdojo/templates/edu-scratch/lpl-template.md | 15 +++++-\n .../templates/edu-scratch/lsd-slidev-template.md   | 14 ++++-\n 8 files changed, 176 insertions(+), 24 deletions(-)"
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npx prettier --check $(git diff --name-only -- '*.md')",
+      "status": "passed",
+      "summary": "変更Markdown全8件の整形を確認。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint -- $(git diff --name-only -- '*.md')",
+      "status": "passed",
+      "summary": "既存設定に従って変更Markdownを検査。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint --config .markdownlint-slidev.yaml --ignore-path /dev/null -- docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.md docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md",
+      "status": "passed",
+      "summary": "Slidevの2件を専用規則で検査。"
+    },
+    {
+      "source": "executor",
+      "command": "node tools/check-slidev-files.mjs $(git diff --name-only -- '*.md')",
+      "status": "passed",
+      "summary": "Slidevの命名と整形・lint設定の対応を確認。"
+    },
+    {
+      "source": "executor",
+      "command": "node tmp/pjr-vd0x/verify.mjs",
+      "status": "passed",
+      "summary": "7 kata・個票・全10件の教材用メタ情報・仮想例・コース計画例のschema検証に成功。template全11ページ、sample全9ページで変更前後と教材用置換版の本文・順序・ページ設定が一致。一時ファイルは削除済み。"
+    },
+    {
+      "source": "executor",
+      "command": "npx slidev build tmp/pjr-vd0x/build/lsd-slidev-template/slides.md --out dist",
+      "status": "passed",
+      "summary": "教材用メタ情報へ置換したtemplateのbuild成功。"
+    },
+    {
+      "source": "executor",
+      "command": "npx slidev build tmp/pjr-vd0x/build/lsd-slidev-sample/slides.md --out dist",
+      "status": "passed",
+      "summary": "教材用メタ情報へ置換したsampleのbuild成功。"
+    },
+    {
+      "source": "executor",
+      "command": "npx specdojo catalog validate --project prj-0001",
+      "status": "passed",
+      "summary": "カタログ検証成功。予定済みで未作成の教材8件について文書未検出警告あり。"
+    },
+    {
+      "source": "executor",
+      "command": "git diff --check",
+      "status": "passed",
+      "summary": "空白エラーなし。変更範囲は7 kataと個票。"
+    },
+    {
+      "source": "executor",
+      "command": "git -C ../coderdojo-lessons diff --exit-code HEAD",
+      "status": "passed",
+      "summary": "教材リポジトリの変更なし。"
+    },
+    {
+      "source": "executor",
+      "command": "npm run validate:schema:file",
+      "status": "not_applicable",
+      "summary": "メタ情報は別途Ajv 2020で検証済み。",
+      "reason": "script未定義で、YAML/YMLファイルの変更もない。"
+    },
+    {
+      "source": "executor",
+      "command": "npm run typecheck",
+      "status": "not_applicable",
+      "summary": "型検査の適用なし。",
+      "reason": "script未定義で、変更はMarkdownのみ。"
+    },
+    {
+      "source": "executor",
+      "command": "npm run test:unit",
+      "status": "not_applicable",
+      "summary": "単体テストの適用なし。",
+      "reason": "対象リポジトリにscriptがない。"
+    },
+    {
+      "source": "executor",
+      "command": "npm test",
+      "status": "not_applicable",
+      "summary": "初期の仮テストを除外。",
+      "reason": "package.jsonのtestは初期の「Error: no test specified」を出して終了する仮script。"
+    }
+  ],
+  "final_message": "7件のkataと個票を更新し、教材固有のメタ情報規約を整備しました。整形・lint・schema検証・Slidev build/解析は成功。教材本体・Schedule・ステータス・resultは変更していません。",
+  "completion_status": "complete",
+  "handoff": [
+    "個票の対応結果に採用根拠、全10件のID対応、変更内容、検証結果を記録済み。reporter/runnerはresultへ反映してください。",
+    "コース計画は専用rulebook未整備のため、`type: project`・`status: draft`・`rulebook: none`を採用可能と確認。実際の`local_id`と`id`はPJR-Y36Gのカタログ登録時に確定し、依存関係を整えてから教材へ反映します。",
+    "標準の`frontmatter_template`は導入済み成果物schemaでは拒否されるため、教材用記入欄をYAMLコメントで表現しました。将来自動展開へ移す場合はschema対応を確認してください。"
+  ],
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-VD0X/20261025T090947567Z-5438a3b0/executor.log",
+      "bytes": 3667,
+      "truncated": false
+    }
+  ]
+}
