@@ -47,3 +47,16 @@
     - field: derived_from
       from: ""
       to: "[\"PJR-0H02\"]"
+- v: 1
+  id: reg_ba19e3a6ea9c4f0bbadc4dc7a7973902
+  ts: "2026-10-25T04:24:55Z"
+  action: update
+  actor: specdojo-orchestrator
+  from_status: open
+  to_status: open
+  reason: 作成済みのrulebookをsampleの読み取り専用の入力へ追加する
+  changes:
+    - field: sources
+      from: "[\"coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md\",\"coderdojo-lessons:docs/course-design/course-plan.md\"]"
+      to: "[\"coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md\",\"coderdojo-lessons:docs/course-design/course-plan.md\",\"edu-scratch:lpl-rulebook\"]"
+  previous_event_id: reg_08e23206e7534c489dc1d710b9e4358d
