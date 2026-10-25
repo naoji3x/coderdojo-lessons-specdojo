@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-y36g-course-plan-catalog-and-metadata
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   owner: BA
   registered_at: "2026-10-25T09:08:29Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-25T10:35:41Z"
+  conclusion: コース計画の移動、カタログと既存教材の修飾なしID・依存参照の整合をレビューし、検証と全19ページの表示確認を満たしたため完了とする。
   derived_from:
     - PJR-VD0X
 ---
