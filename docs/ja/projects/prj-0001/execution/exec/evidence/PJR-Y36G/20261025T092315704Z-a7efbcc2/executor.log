@@ -1,0 +1,653 @@
+Reading prompt from stdin...
+OpenAI Codex v0.163.0
+--------
+workdir: /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-Y36G/project
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-Y36G/coderdojo-lessons]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a1725f-ff20-7a22-a47d-3f1161ed838e
+--------
+user
+---
+specdojo:
+  id: prj-0001:xep-pjr-y36g-20261025t092315z-a99c548c
+  type: exec-plan
+  rulebook: none
+  task_id: PJR-Y36G
+  name: "コース計画を教材配下へ移動しカタログと既存教材のメタ情報を整える"
+  mode: edit
+  status: ready
+  project_id: prj-0001
+  origin: register
+  owner: BA
+---
+
+# Edit Plan: PJR-Y36G コース計画を教材配下へ移動しカタログと既存教材のメタ情報を整える
+
+## 1. このタスクで行うこと
+
+プロジェクト登録簿の項目 PJR-Y36G「コース計画を教材配下へ移動しカタログと既存教材のメタ情報を整える」に対応する。
+
+先行項目 [[prj-0001:pjr-vd0x-teaching-artifact-metadata-kata\|PJR-VD0X]] の完了・レビュー後に着手する。
+
+## 2. 対象項目
+
+- `id`: PJR-Y36G
+- `type`: todo
+- `priority`: medium
+- `owner`: BA
+- `due`: 2026-10-31
+- `個票`: `docs/ja/projects/prj-0001/controls/project-register/pjr-y36g-course-plan-catalog-and-metadata.md`
+- `result`: `docs/ja/projects/prj-0001/execution/exec/results/pjr-y36g-20261025T092315Z-a99c548c-result.md`
+
+## 3. 進め方
+
+1. 個票（存在する場合）を読み、目的・完了条件・制約を把握する。登録簿の一覧は大きいため読まない。
+2. 個票に完了条件がある場合はそれを作業の基準にする。無い場合はタイトルと説明から完了条件の仮説を立て、記録する。pipeline では個票の対応結果と executor の報告の `handoff` に書き、result を直接書ける実行形式では result に明記する。
+3. 関連する成果物・設計書・実装を確認し、対象ファイルを特定して変更する。
+4. 個票が存在する場合は、個票の作業内容・対応結果セクションを実施内容で更新する。
+5. 個票の完了条件が result への記載を求める場合、pipeline の executor は個票の対応結果と報告の `handoff` の両方に書く。reporter と runner が result の申し送りへ反映する。executor は result を直接編集しない。
+6. 判断に迷う箇所は _TODO_ / _ASSUMPTION_ で残し、根拠と次のアクションを記録する。pipeline では個票の対応結果と報告の `handoff` に書き、result を直接書ける実行形式では result に書く。
+
+### grade result から展開された finding
+
+- なし
+
+plan に展開された finding は、message と同じ viewpoint ID の判定根拠に照らして解消する。未解消、根拠不足、または判断不能の場合は、理由と次のアクションを記録する。pipeline では個票の対応結果と報告の `handoff` に書き、result を直接書ける実行形式では result に書く。grade result サイドカーは再評価時に更新されるため、本タスクでは直接編集しない。
+
+## 4. 完了手順
+
+1. 「進め方」に従って対応を完了する。
+2. 共通規約に従って、必要な整形・静的検査を実行する。
+3. result に実施内容・変更ファイル・申し送りを記入する。pipeline では executor は実施内容・変更ファイル・検証結果を報告し、申し送りを `handoff` に記載する。reporter と runner が result を記入する。これはタスク完了に必須であり、_TODO_ を残したまま終了しない（詳細は共通規約を参照）。
+4. 登録簿（`pjr-index.md`）の行と個票のステータス項目は変更しない。状態遷移（review / close など）は runner と人間が行う。
+
+## 5. 異常終了の条件
+
+- 前提不足・対象ファイル不明・静的検査未解消の場合は異常終了する（終了コード 1）。
+- 標準エラー出力に理由を出力する（例: `blocked: <reason>; need=<next action>; ref=<path>`）。
+- agent 自身は登録簿の状態を変更せず、終了コードと標準エラー出力で runner に結果を返す。
+
+## 共通: 記法・成果物規約
+
+作業を始める前に、共通の規約の詳細 `node_modules/specdojo/docs/ja/specdojo/exec-templates/xep-common-conventions-template.md` を読み、その内容に従う。次の箇条書きは、そのうち守らないと失敗に直結する要点である。
+
+- result（review plan の場合は review result）への記入は、タスク完了に必須の作業である。成果物の編集とは別に、最後に必ず実施する。
+- 終了コード 0 で完了する前に、result の必須セクションをすべて実際の内容で埋め、プレースホルダ（_TODO_ など）や未記入のセクションを残さない。
+- 文書へのリンクは、対象文書が既に存在する場合は `[[id|title]]` 形式で記載する（`id` は project 修飾 doc id）。
+- リンクを表（テーブル）のセル内に置く場合は、区切りの `|` を `[[id\|title]]` のようにエスケープする。エスケープしないと列がずれて表が壊れ、prettier 整形でセルが分割されて固定化される。
+- まだ存在しない文書を参照する場合は、`[[...]]` ではなく `` `id` `` または `` `filename` `` のようにバッククォートで仮置きする。
+- Markdown の自由記述では、`_` を含む識別子・フィールド名（例: `depends_on`）を必ずインラインコードで囲む。result に描画される executor evidence や reporter の自由記述も同じ記法にする。
+- 成果物 frontmatter の `status` を `ready` に変更しない。`ready` への昇格は人間のみが行うため、`draft` のまま据え置く（exec のコミット時ガードでも昇格はブロックされる）。
+- ファイルの読み取り・書き込み・編集は、作業ディレクトリ（カレントディレクトリ）からの相対パスで指定する。絶対パスを自分で組み立てたり、作業ディレクトリ名を推測して指定したりしない（作業ディレクトリ名の取り違えは外部パス扱いになり拒否される）。
+- 検査を実行する前に、リポジトリの `package.json`、`.specdojo/specdojo.config.json`、hook 設定（`lefthook.yml` など）を読み、本共通規約の詳細にある検査表の適用条件で、実行する検査を決める。
+- 適用条件を満たさない検査は実行せず、executor evidence の validations に `not_applicable` と非適用の理由を `reason` へ記録する。適用される検査が 1 つもない場合も同じく、該当する検査ごとに `not_applicable` と理由を記録する。
+- `not_run` は、適用される検査を実行できたのに実行しなかった場合だけに使う。runner は `not_run` を検証失敗として扱い、タスクを先へ進めない。
+- `pipeline.parent_validations` に設定された検査は executor evidence の validations に含めなくてよい。executor が同じ検査を `not_run` または `not_applicable` として含めても、同じリポジトリで実行した親 runner の結果を正とする。
+
+---
+
+# Pipeline executor stage instructions
+
+This invocation is the executor stage of an executor/reporter pipeline. Edit and validate the
+artifacts required by the plan, but do not create or update the result file. Any plan instruction
+that assigns result writing or lifecycle transitions to the agent belongs to the later reporter or
+runner stage and does not apply here.
+
+Put unresolved decisions, proposed protected-configuration changes, and next actions in the
+report's optional `handoff` array (up to 100 non-empty strings, each at most 4000 characters).
+For register tasks, also record them in the ticket's response/results section. If a completion
+condition asks for a note in the result, write it in both places instead of editing the result.
+The runner preserves `handoff` in the edit result's handoff section after the reporter stage.
+Use an empty array when there are no handoff notes. Reports without this field remain valid.
+
+Report task completion in `completion_status`: use `complete` only when all work required by
+the plan is done. If you stop with unfinished work, use `incomplete`, summarize the reason in
+`final_message`, and list the remaining work in `handoff`. A zero exit code and passing parent
+validations do not override `incomplete`; the runner preserves the worktree for executor resume.
+Omitting this field is supported for legacy reports and implies `complete`.
+
+The parent runner owns Git commits and repository configuration. Do not run git commit or change
+local, global, or system Git configuration, including user.name and user.email. A Git state change
+will stop the pipeline before validation, reporting, commit, or merge.
+
+Do not create disposable or scratch files at the repository root; place them in `tmp/` within
+the worktree or outside the repository. Files under `tmp/` are excluded from commits.
+
+When writing Markdown in the final evidence, wrap identifiers or field names containing an
+underscore in inline code (for example, `depends_on`).
+
+
+
+
+Use validation status `requires_human` only for a check that cannot run from the agent sandbox,
+such as launching a real agent CLI, consuming a usage quota or incurring a charge, or requiring
+credentials or a host-side operation. Do not use it for a check that could run but was skipped;
+report that as `not_run`. A `requires_human` check is carried into the result as a human handoff
+and does not block pipeline completion.
+
+Use validation status `not_applicable` when the repository does not meet a check's applicability
+conditions, and include a non-empty `reason`. The runner carries it into the result without
+blocking completion, but rejects the claim when it can confirm the check applies:
+- `npm run <script>` / `npm test`: the script exists in package.json and any change-type
+  condition below is met. The placeholder `test` script that `npm init` writes
+  (`echo "Error: no test specified" && exit 1`) counts as absent.
+- `npx <package>`: the package is in package.json dependencies or devDependencies and any
+  change-type condition below is met.
+- `npm run validate:schema:file` requires a changed `*.yaml` or `*.yml` file; Prettier
+  requires a changed `*.md`, `*.ts`, `*.js`, `*.json`, `*.yaml`, or `*.yml` file;
+  markdownlint requires a changed `*.md` file.
+- A command that targets a declared product repository (a `<repo>:<path>` argument or
+  `--prefix <repo>`) is judged by that repository's package.json, not the project repository's.
+- `specdojo catalog validate`: the run's target project (or `--project <id>`) sets `catalog_path`
+  and your changes reach `docs/ja/projects/`. A project without `catalog_path`, or changes
+  outside `docs/ja/projects/`, is a valid reason; state it in `reason`.
+
+Do not run or report `specdojo index build`. It writes `.specdojo/doc-index.json`, which the
+agent may not write, and the runner regenerates the index while preparing the worktree and before
+integration.
+
+End the final response with exactly one machine-readable report using this envelope. Do not place
+Markdown fences around the JSON.
+
+<specdojo_executor_evidence>
+{"completion_status":"complete|incomplete","final_message":"concise outcome","handoff":[],"validations":[{"command":"exact command","status":"passed|failed|not_run|not_applicable|requires_human","summary":"concise result or required human check","reason":"required when status is not_applicable"}]}
+</specdojo_executor_evidence>
+
+# Task repositories
+
+This task spans several repositories. The working directory is the project repository worktree. The product repositories are checked out as separate worktrees of the same task:
+
+- `coderdojo-lessons`: /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-Y36G/coderdojo-lessons (environment variable `SPECDOJO_REPO_CODERDOJO_LESSONS`)
+
+Edit product files under those absolute paths (or via the environment variables); paths relative to the working directory refer to the project repository only. When reporting a product file (for example in target_coverage), write it as `<repo>:<path>` relative to that repository root, e.g. `coderdojo-lessons:src/index.ts`. Do not commit or change Git configuration in any repository.
+
+warning: Codex could not find bubblewrap on PATH. Install bubblewrap with your OS package manager. See the sandbox prerequisites: https://developers.openai.com/codex/concepts/sandboxing#prerequisites. Codex will use the bundled bubblewrap in the meantime.
+codex
+個票と共通規約を読み、先行タスクの完了状況と対象ファイルを確認してから、移動・メタ情報整備・検証を進めます。
+
+exec
+/bin/bash -lc "pwd; rg --files -g 'AGENTS.md' -g 'package.json' -g '*lefthook*' -g '.specdojo/specdojo.config.json' -g 'pjr-y36g-course-plan-catalog-and-metadata.md' -g 'xep-common-conventions-template.md' -g '*vd0x*' -g '"'!node_modules'"' -g '"'!pjr-index.md'"' . ../coderdojo-lessons" in /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-Y36G/project
+ succeeded in 0ms:
+/workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-Y36G/project
+./lefthook.yml
+./package.json
+../coderdojo-lessons/lefthook.yml
+../coderdojo-lessons/package.json
+./docs/ja/projects/prj-0001/controls/project-register/pjr-y36g-course-plan-catalog-and-metadata.md
+./docs/ja/projects/prj-0001/controls/project-register/pjr-f48k-setup-lefthook.md
+./docs/ja/projects/prj-0001/controls/project-register/pjr-vd0x-teaching-artifact-metadata-kata.md
+./docs/ja/projects/prj-0001/execution/exec/plans/pjr-vd0x-20261025T090947Z-e5574701-plan.md
+./docs/ja/projects/prj-0001/execution/exec/results/pjr-vd0x-20261025T090947Z-e5574701-result.md
+./docs/ja/projects/prj-0001/controls/project-register/events/pjr-vd0x.yaml
+
+exec
+/bin/bash -lc 'cat node_modules/specdojo/docs/ja/specdojo/exec-templates/xep-common-conventions-template.md' in /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-Y36G/project
+ succeeded in 0ms:
+## 共通: 記法・成果物規約
+
+この規約は、生成される全 exec plan に共通で適用される。result の完了条件、他文書を参照する際のリンク記法、成果物の状態（status）の扱いを統一する。
+
+要点（次の `plan-essentials` マーカーの間の箇条書き）は、plan の本文にもそのまま転記される。plan に転記するとき、`_SCHEMA_REF_` はタスクごとに解決した schema のパスに置き換わり、schema の無いタスクではその行が除かれる。
+
+<!-- plan-essentials:start -->
+
+- result（review plan の場合は review result）への記入は、タスク完了に必須の作業である。成果物の編集とは別に、最後に必ず実施する。
+- 終了コード 0 で完了する前に、result の必須セクションをすべて実際の内容で埋め、プレースホルダ（_TODO_ など）や未記入のセクションを残さない。
+- 文書へのリンクは、対象文書が既に存在する場合は `[[id|title]]` 形式で記載する（`id` は project 修飾 doc id）。
+- リンクを表（テーブル）のセル内に置く場合は、区切りの `|` を `[[id\|title]]` のようにエスケープする。エスケープしないと列がずれて表が壊れ、prettier 整形でセルが分割されて固定化される。
+- まだ存在しない文書を参照する場合は、`[[...]]` ではなく `` `id` `` または `` `filename` `` のようにバッククォートで仮置きする。
+- Markdown の自由記述では、`_` を含む識別子・フィールド名（例: `depends_on`）を必ずインラインコードで囲む。result に描画される executor evidence や reporter の自由記述も同じ記法にする。
+- 成果物 frontmatter の `status` を `ready` に変更しない。`ready` への昇格は人間のみが行うため、`draft` のまま据え置く（exec のコミット時ガードでも昇格はブロックされる）。
+- ファイルの読み取り・書き込み・編集は、作業ディレクトリ（カレントディレクトリ）からの相対パスで指定する。絶対パスを自分で組み立てたり、作業ディレクトリ名を推測して指定したりしない（作業ディレクトリ名の取り違えは外部パス扱いになり拒否される）。
+- 検査を実行する前に、リポジトリの `package.json`、`.specdojo/specdojo.config.json`、hook 設定（`lefthook.yml` など）を読み、本共通規約の詳細にある検査表の適用条件で、実行する検査を決める。
+- 適用条件を満たさない検査は実行せず、executor evidence の validations に `not_applicable` と非適用の理由を `reason` へ記録する。適用される検査が 1 つもない場合も同じく、該当する検査ごとに `not_applicable` と理由を記録する。
+- `not_run` は、適用される検査を実行できたのに実行しなかった場合だけに使う。runner は `not_run` を検証失敗として扱い、タスクを先へ進めない。
+- `pipeline.parent_validations` に設定された検査は executor evidence の validations に含めなくてよい。executor が同じ検査を `not_run` または `not_applicable` として含めても、同じリポジトリで実行した親 runner の結果を正とする。
+- YAML 成果物を編集した場合、対応 schema `_SCHEMA_REF_` に従って記述する。`package.json` に `validate:schema:file` script がある場合だけ、`npm run validate:schema:file -- --schema _SCHEMA_REF_ --data <対象ファイル>` で schema 検査を実施する。適用した検査でエラーが出た場合は修正してから完了とする。
+
+<!-- plan-essentials:end -->
+
+- 成果物に変更が不要と判断した場合でも、result の記入は省略しない。変更不要と判断した理由と根拠を result に記入してから完了する。
+- result の変更ファイル欄には、変更したファイル（成果物・ソース・テストなど）ごとの実施内容を具体的に記入する。
+- result が未記入・プレースホルダのまま終了コード 0 で終了すると、runner は成果物未完了（block）として扱い、タスクはやり直しになる。完了前に result の記入漏れがないことを必ず確認する。
+- result の frontmatter は scaffold 済みの構造を正本とする。`id` / `task_id` / `mode` / `project_id` / `plan_ref` / `agent` / `execution` / `approach` / `targets` はキーの追加・削除・改名をせず、scaffold された値のまま維持する。見出し構成（`# Edit Result` などの H1、`## 1.` 以降の章立て）も独自の構成に置き換えない。埋めるのは本文セクションの `_TODO_` プレースホルダの中身だけである。`status` と `completed_at` は完了処理（runner 側）が更新するため、自分で書き換えない。
+- plan に「プロジェクトコンテキスト」章がある場合、そこに挙がる文書はプロジェクト共通の前提を読むための参照であり、成果物 frontmatter の `based_on` へ転記しない。参照して得た前提は本文の記述内容へ反映する。
+- 成果物 frontmatter の `based_on` に書けるのは、その成果物の `depends_on` の推移閉包に含まれる先行成果物だけである。閉包外の ID を書くと `catalog validate` が「`based_on` が `depends_on` の推移閉包に含まれていません」としてエラーになり、コミットがブロックされる。`based_on` を増やす必要が生じた場合は、自分で転記せず、根拠不足として result に記録する。
+- 編集・書き込みが作業ディレクトリ外（`external_directory`）として拒否された場合、原因はパス指定の誤り（誤った絶対パス・ディレクトリ名の取り違え）である。bash の heredoc などへ回避的に切り替えず、相対パスに直したうえで同じ編集ツールで再実行する。
+- 作業用のファイル（編集用スクリプト、検証用の一時データなど）はリポジトリの外（一時ディレクトリ）または worktree の `tmp/` 配下に置き、終了前に削除する。使い捨てのファイルを最上位に作らない。`tmp/` 配下のファイルは commit の対象から除外される。
+- 整形・静的検査は、この plan の完了手順または本共通規約で明示されたコマンドを実行する。変更対象に必要な test、build、schema 検証は、plan に個別記載がなくても実行してよい。同じ test script では対象限定と全件を同一 executor run 内で連続実行せず、どちらか一方に絞る。下表、plan、またはプロジェクト標準が全件 test を求める場合は、全件を1回だけ実行して対象限定の実行を省く。この制約は executor が sandbox 内で実行する test script の回数に対するものであり、親検証に設定された ID のコマンドは対象外である（親 runner が別途実行する）。実行したコマンド・対象・結果は result に記録する。
+- executor / reporter pipeline で親 runner の検証が設定されている場合、executor は設定済み ID に対応するコマンドを sandbox 内で実行せず、executor 終了後に親 runner が固定許可リストから実行して evidence へ追記する。`validate-schema` は `npm run validate:schema`、`test-unit` は `npm run test:unit`、`test-integration` は `npm run test:integration` に対応する。executor は親検証と同じコマンドの対象限定版も追加せず、二重実行しない。executor が親検証のコマンドを validations に含めた場合も、同じリポジトリで実行された親 runner の結果を正とし、executor の `not_run` / `not_applicable` は pipeline を失敗させない。
+- 適用条件の判定と `not_applicable` / `not_run` の使い分けは、要点に記した規則に従う。誤って `not_run` と記録しても、npm script・依存 package の不在、または SpecDojo サブコマンドの設定上の非適用を runner が機械的に確定できる場合は適用外として扱われるが、この救済を前提に記録を省略しない。
+- 依存パッケージの有無は、対象リポジトリの `package.json` の `dependencies` / `devDependencies` と、リポジトリに固定された package manager の設定を基準に判断する。`npx` が未導入パッケージをネットワークから一時取得できることは、導入済みとはみなさない。設定ファイルがない、壊れているなどの理由で適用条件を確定できない検査は実行せず、validations に `not_applicable` として理由と次の確認事項を記録する。
+- `npm init` が `package.json` に入れる仮の `test` script（`echo "Error: no test specified" && exit 1` と、引用符の有無・種類や空白だけが違う変種）は、常に失敗する仮置きであり、`test` script がないものとみなす。`npm test` は実行せず、validations に `not_applicable` と、仮の script である旨を `reason` に記録する。runner も同じ判断で `not_applicable` を受け付ける。本物の test script がある場合は適用される。
+- Markdown 成果物を編集した場合、Prettier が導入されているときだけ `npx prettier --write <対象ファイル>` で整形する。`markdownlint-cli` または `markdownlint` が導入されているときだけ `npx markdownlint <対象ファイル>` を実行し、`markdownlint-cli2` を採用するリポジトリでは、そのリポジトリで定めた CLI2 のコマンドを実行する。適用した検査でエラーが出た場合は修正してから完了とする。
+- 終了する前に、コミット時に実行される検査（pre-commit 相当）のうち、現在のリポジトリに設定され、上記の適用条件を満たすものを先回りで実行する。適用した検査の失敗はすべて修正してから完了する。
+- 実行対象は、変更したファイルの種別で判断する。下表のうち、変更したファイルが該当し、かつ適用条件を満たす行の検査を実行する。該当行がない場合や適用条件を満たさない場合は追加の検査は不要である。ただし親検証に設定された ID のコマンドは下表よりも優先し、executor は実行しない。下表に同じコマンドが挙がっていても、親 runner の実行に委ねる。
+- 検査コマンドの正本はリポジトリの hook 設定（`lefthook.yml` など）である。下表と設定が食い違う場合は、適用条件を満たす設定側のコマンドに合わせ、実行したコマンドと結果を result に記録する。`specdojo` コマンドは、リポジトリで定められた起動方法（`npx specdojo <subcommand>`、`npx tsx src/specdojo.ts <subcommand>` など）で実行する。ただし、sandbox 環境で `tsx` の IPC エラー（`EPERM`）が発生する場合は、代わりに `node --import tsx src/specdojo.ts <subcommand>` を使用して実行する。
+
+| 変更したファイル                                                                                       | 適用条件                                                                                                                                    | 実行する検査                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `*.md`                                                                                                 | 対応するローカル依存が `package.json` にある                                                                                                | `npx prettier --write <対象ファイル>`、導入済み実装に対応する markdownlint コマンド                                                   |
+| `*.ts` / `*.js` / `*.json` / `*.yaml` / `*.yml`                                                        | Prettier が `package.json` にある                                                                                                           | `npx prettier --write <対象ファイル>`                                                                                                 |
+| `src/`、`tests/`、`scripts/`、`tools/`、`tsconfig*.json`                                               | `package.json` に `typecheck` script がある                                                                                                 | `npm run typecheck`                                                                                                                   |
+| `src/`、`tests/`、`docs/ja/specdojo/templates/`、`docs/ja/specdojo/exec-templates/`、`vitest.config.*` | pipeline executor は `test:unit`、それ以外は `test` script が `package.json` にある（`npm init` の仮の `test` script は、ないものとみなす） | pipeline executor は `npm run test:unit`、それ以外は `npm test`（`test-unit` が親検証に設定されている場合は executor では実行しない） |
+| `docs/ja/projects/` 配下                                                                               | 対象 project に `catalog_path` が設定されている                                                                                             | `specdojo catalog validate`                                                                                                           |
+| `dct-*.yaml`                                                                                           | 対象 project に `catalog_path` が設定されている                                                                                             | `specdojo catalog build`                                                                                                              |
+| `pjr-index.md`                                                                                         | 対象 project に `project_register_path` が設定されている                                                                                    | `specdojo register build`                                                                                                             |
+| `sch-*.yaml`                                                                                           | 対象 project に `schedule_path` が設定されている                                                                                            | `specdojo exec refresh`                                                                                                               |
+| `docs/` 配下                                                                                           | リポジトリで定められた起動方法により SpecDojo CLI を実行できる                                                                              | `specdojo index build`                                                                                                                |
+
+<!-- review-only:start -->
+
+### review の判断手順
+
+review plan に共通で適用する。review はタスクの成果を判定し、成果物の品質は判定しない。成果物の品質は grade が一度だけ評価する。review はその評価結果（grade・finding）を事実として受け取り、このタスクを完了してよいかを判断する（[[bps-task-completion]]）。
+
+- 成果物を再評価しない。観点ごとの pass / fail を付け直したり、評価結果の判定を自分の判断で置き換えたりしない。評価結果の内容に疑義がある場合は、疑義の内容と再評価が必要な理由を改善指示に記録する。
+- 評価結果の鮮度を最初に確認する（`E-01`）。plan の「評価結果」章に示す評価対象と `--target` を使い、`specdojo grade list --target <対象種別> --path <評価対象> --changed-only` を実行する。`--target deliverable` の場合は `--dependency-changed` でも同様に実行する。いずれかが評価対象のパスを出力した場合、または評価結果サイドカーが存在しない場合は、評価結果が最新でない。成果物を自分で評価して補わず、verdict を `grade-stale` とする。
+- 評価結果を確定できない場合（`E-02`）は、verdict を `grade-unavailable` とする。サイドカーを読み取れない場合と、`specdojo grade list --target <対象種別> --path <評価対象> --incomplete` が評価対象のパスを出力する場合（評価パイプラインが未完了）が該当する。
+- 評価結果が最新であれば、サイドカーの `verdict` / `score` / `finding_counts` / `findings`、および `done_criteria`（存在する場合）を読み取る。
+- 変更内容・この plan・実行記録・完了条件・最新の finding を照合し、このタスクの範囲と完了条件を満たすかを判断する（`S-02`）。完了条件の充足は、評価結果に判定がある場合はそれを事実として用いる。評価結果が扱わない事項を review で確かめる。対象は、フェーズ説明が求めた変更が行われたか、対象外の変更が混入していないか、実行記録の検証結果が成功しているかである。実行記録（先行する edit タスクの result）を特定できない場合は、確認できなかったことを判断根拠に記録する。
+- finding が残っていても、このタスクの範囲と完了条件を満たしていれば完了できる。その場合は finding を消去・再評価せず、完了を妨げない理由と必要な改善指示を記録する。
+- 判断の根拠は、評価結果・成果物・plan・実行記録を実際に読んで得た具体的な事実に限る。executor の最終メッセージや result の自己申告を、そのまま、または言い換えて根拠にしない。
+- verdict を記録する直前に鮮度の確認を再実行する。最初の確認の後に成果物が変更されて評価結果が最新でなくなった場合は、verdict を `changed-during-review` とする（review 中の成果物変更）。
+
+verdict は次の 6 値から 1 つを選ぶ。各値は [[bps-task-completion]] の検証・受入観点と一対一に対応する。
+
+| verdict                  | 受入観点                | 選ぶ条件                                                                          | 記録すること                                               |
+| ------------------------ | ----------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| `complete`               | 完了可能                | 評価結果が最新で、plan と完了条件を満たし、完了を妨げる未充足事項がない           | 照合した根拠                                               |
+| `complete-with-findings` | 品質 finding を伴う完了 | 評価結果に finding があるが、このタスクの範囲と完了条件は満たしている             | finding が完了を妨げない理由と改善指示                     |
+| `incomplete`             | 品質良好だが未完了      | plan または完了条件に未充足事項がある（grade の良否は問わない）                   | 未充足事項と、再計画に使う改善指示                         |
+| `grade-stale`            | 評価結果が最新でない    | 評価結果がない、`content_hash` が一致しない、または評価コンテキストの変化が未反映 | 鮮度確認のコマンドと出力。完了可否は判断しない             |
+| `grade-unavailable`      | 評価不能                | 評価結果を読み取れない、または評価パイプラインが未完了で grade・finding が未確定  | 評価不能の理由と不足情報。完了は保留する                   |
+| `changed-during-review`  | review 中の成果物変更   | 最初の鮮度確認の後に成果物が変更され、評価結果が最新でなくなった                  | 変更を検知した確認の出力。verdict を確定せず再評価を求める |
+
+- verdict が `complete` 以外でも、review result を記録できた場合は正常終了する（終了コード 0）。runner は verdict に応じて再評価または再計画へ進む。
+- review result の章立ては `評価結果の確認`、`判断根拠`、`未充足事項・改善指示`、`approach に応じた確認`、`decision` である。`decision` の `verdict` は必ず上表の値で埋める。
+
+<!-- review-only:end -->
+
+exec
+/bin/bash -lc "ls -a; rg --files -g 'AGENTS.md' -g '"'!node_modules'"' .. /workspaces 2>/dev/null" in /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-Y36G/project
+ succeeded in 5241ms:
+.
+..
+.agents
+.aws
+.claude
+.codex
+.devcontainer
+.git
+.github
+.gitignore
+.markdownlint-cli2.yaml
+.markdownlint-slidev.yaml
+.markdownlintignore
+.markdownlintrc
+.opencode
+.prettierignore
+.prettierrc
+.specdojo
+.vscode
+docs
+lefthook.yml
+node_modules
+package-lock.json
+package.json
+prj-0001.code-workspace
+tools
+/workspaces/coderdojo-lessons-workspace/specdojo/AGENTS.md
+
+exec
+/bin/bash -lc 'cat docs/ja/projects/prj-0001/controls/project-register/pjr-y36g-course-plan-catalog-and-metadata.md docs/ja/projects/prj-0001/controls/project-register/pjr-vd0x-teaching-artifact-metadata-kata.md docs/ja/projects/prj-0001/execution/exec/results/pjr-vd0x-20261025T090947Z-e5574701-result.md package.json .specdojo/specdojo.config.json lefthook.yml ../coderdojo-lessons/package.json ../coderdojo-lessons/.specdojo/specdojo.config.json ../coderdojo-lessons/lefthook.yml' in /workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-Y36G/project
+ exited 1 in 0ms:
+---
+specdojo:
+  id: prj-0001:pjr-y36g-course-plan-catalog-and-metadata
+  type: project
+  status: draft
+  rulebook: specdojo:pjr-rulebook
+  part_of:
+    - prj-0001:pjr-index
+  item_type: todo
+  item_status: in-progress
+  priority: medium
+  owner: BA
+  registered_at: "2026-10-25T09:08:29Z"
+  due_on: "2026-10-31"
+  derived_from:
+    - PJR-VD0X
+---
+
+# PJR-Y36G コース計画を教材配下へ移動しカタログと既存教材のメタ情報を整える
+
+## 1. 概要
+
+先行項目 [[prj-0001:pjr-vd0x-teaching-artifact-metadata-kata|PJR-VD0X]] の完了・レビュー後に着手する。
+
+先行todoのkataレビュー後に、宣言済み教材リポジトリcoderdojo-lessonsのコース計画を教材配下へ配置し、カタログと実在する教材のメタ情報を整える。未作成の第1・3・4・5回の教材本文は作らない。
+
+## 2. 完了条件
+
+- 先行する教材メタ情報kataの整備・レビューが完了してから実行する。更新済みの規約に従い、成果物固有のメタ情報を扱う。
+- coderdojo-lessons/docs/course-design/course-plan.mdをcourses/scratch-basic/course-plan.mdへ移動する。本文の学習内容・45分構成・コース方針は変更せず、移動に必要な相対リンクとメタ情報だけを修正する。旧設計の指導案を根拠へ無条件に取り込まない。
+- READMEと現行カタログ・今後の実行入力などの有効な参照を新パスへ更新し、移動先からリンクが解決できることを確認する。過去の完了済み個票・イベント・plan/resultに記録された当時のパスは監査履歴として書き換えない。
+- dct-scratch-lessons.yamlへコース計画を独立成果物として追加し、既存の全5回の指導案のdepends_onへコース計画のlocal_idを追加する。スライドは同じ回の指導案への依存を維持する。kindとdone_criteriaは人が保守するコース計画の役割と既存schemaに基づいて定める。
+- コース計画と既存の第2回lesson-plan.md・slides.mdへメタ情報を反映し、カタログIDと一意に対応させる。新規教材のIDはカタログで宣言するが、未作成ファイルを作成済みとして扱わない。第2回は完成済みの本文を維持し、今回のメタ情報・リンク変更だけを適用する。statusは先行規約と確認結果に従い、処理状態と文書成熟度を混同しない。
+- カタログ検証とbuild、変更Markdown/YAMLの整形・lint・適用されるメタ情報schema検証、リンク検証、差分検査を通す。第2回スライドのbuildと全19ページの解析を確認し、frontmatter変更後も特に17〜19ページをPNGで確認する。根拠・変更範囲・検証結果を個票へ残す。
+
+## 3. 作業内容
+
+| No  | 作業                                                 | 担当 | 状態 | メモ |
+| --- | ---------------------------------------------------- | ---- | ---- | ---- |
+| 1   | 先行kataとコース計画の現行参照を確認する             | BA   | open | -    |
+| 2   | コース計画を移動し現行リンクとカタログ依存を更新する | BA   | open | -    |
+| 3   | コース計画と既存第2回教材にメタ情報を反映する        | BA   | open | -    |
+| 4   | カタログ・リンク・メタ情報・Slidev表示を検証する     | BA   | open | -    |
+
+## 4. 対応結果
+
+-
+
+## 5. 関連ドキュメント
+
+- [[prj-0001:pjr-vd0x-teaching-artifact-metadata-kata]]：先行作業
+- `coderdojo-lessons:docs/course-design/course-plan.md`：現在のコース計画（移動後は新パスへ読み替える）
+- `docs/ja/projects/prj-0001/010-deliverables-catalog/dct-scratch-lessons.yaml`：成果物カタログ
+---
+specdojo:
+  id: prj-0001:pjr-vd0x-teaching-artifact-metadata-kata
+  type: project
+  status: draft
+  rulebook: specdojo:pjr-rulebook
+  part_of:
+    - prj-0001:pjr-index
+  item_type: todo
+  item_status: review
+  priority: medium
+  owner: BA
+  registered_at: "2026-10-25T09:08:25Z"
+  due_on: "2026-10-31"
+---
+
+# PJR-VD0X 教材成果物のSpecDojoメタ情報を扱うkataを整備する
+
+## 1. 概要
+
+コース計画・指導案・投影スライドをカタログとScheduleで管理するため、成果物自身のspecdojoメタ情報の規約を先に整える。kata自身のメタ情報を教材へコピーするのではなく、教材固有のメタ情報を記入する方針へ変更する。
+
+## 2. 完了条件
+
+- 既存のSpecDojoメタ情報schema・カタログのID解決・教材リポジトリの文書規約を確認し、成果物のid・type・status・rulebookなどの採用項目と値の根拠を明記する。カタログlocal_idと成果物IDの対応を一意にし、存在しないrulebookや未検証の独自フィールドを追加しない。
+- edu-scratch:lpl-rulebook・lpl-template・lpl-sample・lpl-recipeと、edu-scratch:lsd-slidev-rulebook・lsd-slidev-template・lsd-slidev-sampleの関連箇所を整合させる。指導案templateのメタ情報を削除する案内は、kata自身のメタ情報と成果物用の記入欄を区別する案内へ改める。recipeの自己完結性と各kataの責務は維持する。
+- Slidevは先頭の既存frontmatterにtheme・title等とspecdojo名前空間を共存させ、ページ区切りやページ別layoutを壊さない記法を定める。教材の内容・授業順序・時間は変更しない。
+- コース計画のメタ情報も既存schemaと照合して扱いを記録する。準拠rulebookが未整備ならその事実を明記し、無関係なrulebookを割り当てたり、今回の範囲外の新規kataを勝手に作ったりしない。
+- 今回の作業対象はkataと実行記録とし、教材本体・配置パス・Scheduleは変更しない。draftのkataを検証成功だけでreadyへ昇格しない。変更ファイルの整形・lint・適用可能なschema検証・Slidevのsample/templateのbuildや解析・差分検査を行い、結果と未確定事項を個票に記録する。
+
+## 3. 作業内容
+
+| No  | 作業                                               | 担当 | 状態 | メモ                                                                         |
+| --- | -------------------------------------------------- | ---- | ---- | ---------------------------------------------------------------------------- |
+| 1   | メタ情報schemaとカタログのID解決を確認する         | BA   | done | 共通・成果物schema、カタログ実装、教材のREADME・Slidevガイド・lint設定を確認 |
+| 2   | 指導案・スライドの関連kataを整備する               | BA   | done | 7 kataの教材固有メタ情報、記入欄、仮想例、作成・確認手順を整合               |
+| 3   | 規約間の整合と静的検査を確認して対応結果を記録する | BA   | done | 整形・lint・schema・カタログ・Slidev build/解析・差分検査を実施              |
+
+## 4. 対応結果
+
+### 統合後レビュー（orchestrator）
+
+- `d5200e9` の統合成果と個票・resultを完了条件に照らして確認した。7 kataのID・メタ情報の扱い・templateとsampleの区別・recipeの自己完結性・draft維持が整合し、整形・lint・schema・Slidev解析とbuildの成功記録を確認した。教材本体は未変更。後続PJR-Y36Gへ進める上で妨げとなる不整合は見つからなかった。コース計画のID確定は後続項目で行い、専用rulebook未整備とschema上の `rulebook: none` の扱いも申し送りを確認した。
+
+### 4.1. 採用した規約と根拠
+
+- SpecDojo 0.4.6 の `docs/specdojo/schemas/v1/common-frontmatter.schema.yaml` と `deliverable-frontmatter.schema.yaml` を確認した。教材の `specdojo:` 配下には必須の `id`・`type`・`status`・`rulebook` を置く。`type: project` は成果物schemaの既存列挙値、作成・移行時の `status: draft` は文書成熟度であり、実行状態や授業実施済みを意味しない。`ready` への昇格は人間が判断する。
+- `rulebook` は指導案が [[edu-scratch:lpl-rulebook|活動別指導案 Rulebook]]、スライドが [[edu-scratch:lsd-slidev-rulebook|投影スライド Rulebook]]。両方とも実在し、現行カタログの宣言と一致する。任意の `based_on`・`part_of`・`supersedes` は必要時のみ使い、`based_on` はカタログの `depends_on` の推移閉包内の確認済み先行成果物に限る。独自の型・項目は追加していない。
+- `node_modules/specdojo/dist/catalog/build-references.js` のカタロググラフが `project_id` と `local_id` をコロンで結び、依存先も同じprojectで修飾することを確認した。`dist/catalog/build.js` によるproject内全カタログの重複確認も照合した。教材の物理配置先リポジトリ名や、kata所有元の `edu-scratch:` を教材IDの修飾子にしない。
+- 教材リポジトリの `README.md`、`docs/guides/slidev-guide.md`、`.markdownlint.yaml`、`package.json`、`lefthook.yml` を確認した。既存の教材にはSpecDojoメタ情報がなく、Slidevは先頭frontmatterにテーマ等を置く。今回のkataはこの先頭ブロックへ `specdojo:` を共存させる規約を追加し、パス・ページ区切り・ページ別設定の規約を維持した。
+- [[specdojo:document-metadata-standard|ドキュメントメタ情報標準]] は `frontmatter_template` を定めているが、導入済み成果物schemaの `unevaluatedProperties: false` ではその項目が拒否されることをAjv 2020で確認した。今回はschemaや設定を変更せず、templateの先頭YAMLコメントに教材用記入欄を置く。kata自身の `specdojo:` 全体を記入済みの教材用ブロックへ置き換え、案内コメントを除く方式とした。template自身にも実在の準拠rulebookを明記し、実値のメタ情報は既存schemaを通した。
+
+### 4.2. カタログとのID対応
+
+以下は [[prj-0001:dct-scratch-lessons|Scratch教材 成果物カタログ]] の現行宣言との対応であり、未作成の教材を作成済みとするものではない。各パスは `coderdojo-lessons:courses/scratch-basic/lessons/` からの相対パス。
+
+| 活動ディレクトリ       | 指導案の `local_id` → 成果物 `id`                        | スライドの `local_id` → 成果物 `id`                      |
+| ---------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `010-chase-game`       | `lpl-chase-game` → `prj-0001:lpl-chase-game`             | `lsd-chase-game` → `prj-0001:lsd-chase-game`             |
+| `020-balloon-game`     | `lpl-balloon-game` → `prj-0001:lpl-balloon-game`         | `lsd-balloon-game` → `prj-0001:lsd-balloon-game`         |
+| `030-music-art`        | `lpl-music-art` → `prj-0001:lpl-music-art`               | `lsd-music-art` → `prj-0001:lsd-music-art`               |
+| `040-ai-rps`           | `lpl-ai-rps` → `prj-0001:lpl-ai-rps`                     | `lsd-ai-rps` → `prj-0001:lsd-ai-rps`                     |
+| `050-original-project` | `lpl-original-project` → `prj-0001:lpl-original-project` | `lsd-original-project` → `prj-0001:lsd-original-project` |
+
+各行の指導案ファイル名は `lesson-plan.md`、スライドは `slides.md`。全10件のIDとパスがそれぞれ一意であることを確認した。
+
+### 4.3. 変更したkata
+
+- [[edu-scratch:lpl-rulebook|指導案 rulebook]]：IDの決め方、採用項目の根拠、kataと教材の区別、コース計画の扱いを定義した。
+- [[edu-scratch:lpl-template|指導案 template]]：メタ情報を削除する案内を教材用記入欄への置換案内へ変更した。本文の記入構造は維持した。
+- [[edu-scratch:lpl-sample|指導案 sample]]：仮想カタログに対応する教材メタ情報例をYAMLコメントに追加した。授業本文は変更していない。
+- [[edu-scratch:lpl-recipe|指導案 recipe]]：カタログの入力確認、4項目の記入方法、置換・schema確認を自己完結した説明で追加し、授業設計手順を維持した。
+- [[edu-scratch:lsd-slidev-rulebook|スライド rulebook]]：4項目と根拠、先頭の既存frontmatterへの共存例、ページ設定を維持する規約を追加した。
+- [[edu-scratch:lsd-slidev-template|スライド template]]・[[edu-scratch:lsd-slidev-sample|スライド sample]]：教材用記入欄・仮想例をYAMLコメントに追加し、kataのメタ情報との区別を示した。Slidevの設定と投影本文は維持した。
+
+### 4.4. 検証結果
+
+- `npx prettier --write` / `npx prettier --check`：上記7 kataと本個票を対象に整形・確認し成功。
+- `npx markdownlint --`：変更Markdownを対象に成功。Slidevの2件は既存のignore設定に従うため、別途 `npx markdownlint --config .markdownlint-slidev.yaml --ignore-path /dev/null -- docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.md docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md` で専用規則を適用し成功。
+- `node tools/check-slidev-files.mjs`：変更Markdownについて、Slidevのファイル名と専用整形・lint設定の対応を確認し成功。
+- `node tmp/pjr-vd0x/verify.mjs`：一時スクリプトで導入済みAjv 2020と既存schemaを使い、7 kataと個票、template記入欄を現行10件のIDへ置換したメタ情報、sampleの仮想例2件、コース計画の仮想登録例を検証し成功。全10件のうちスライド5件はカタログで宣言された指導案への `based_on` も含めた。スクリプトと作業用データは検証後に削除した。
+- 同スクリプトでSlidev 53.0.0が使用するparserを使い、template全11ページ・sample全9ページを解析した。変更前・更新後・教材用メタ情報に置換した作業用コピーの間で、本文・ページ数・順序・ページ別設定（`specdojo` を除く）が一致した。指導案sampleの本文、templateの作成者向けコメント以外の本文も変更前と一致した。
+- `npx slidev build tmp/pjr-vd0x/build/lsd-slidev-template/slides.md --out dist` と `npx slidev build tmp/pjr-vd0x/build/lsd-slidev-sample/slides.md --out dist`：ともに成功。教材用メタ情報へ置換したコピーに付属CSSと既存の `ScratchBlocks.vue` を添え、出力は各コピー配下の `dist/` に限定した。初回は一時コピーのCSS・コンポーネントが読み取れず失敗したが、通常の読み書きで作業用コピーを作り直して解消した。テーマ由来の将来のVite設定警告は残るがbuildは成功している。
+- `npx specdojo catalog validate --project prj-0001`：成功。未作成の第1・3・4・5回の指導案・スライド計8件について既存の文書未検出警告がある。対象外の教材は新規作成していない。
+- `git diff --check` と差分範囲の確認：成功。変更は7 kataと本個票に限定し、教材リポジトリ、配置パス、カタログ、Schedule、登録簿一覧、個票frontmatterのステータスは変更していない。kataの `status: draft` も維持した。
+- `npm run validate:schema:file` はscript未定義かつYAML/YML変更なしのため非適用。`npm run typecheck`・`npm run test:unit` はscript未定義、`npm test` は初期の仮scriptのため非適用。メタ情報のschema検証は上記のAjvによる検証で行った。投影本文・レイアウトを変えていないため、rulebook第6.7節のPNG目視条件には該当しない。
+
+### 4.5. 後続作業への申し送り
+
+- コース計画は現状カタログ未登録で、専用rulebookも未整備。採用可能なメタ情報は `type: project`、`status: draft`、`rulebook: none` と確認済み。実際の `local_id` と `id` は [[prj-0001:pjr-y36g-course-plan-catalog-and-metadata|PJR-Y36G]] でカタログ登録時に確定し、指導案の依存関係を整えてから根拠IDへ反映する。今回はコース計画の移動・教材本文のメタ情報反映・新規kata作成を行っていない。
+- `frontmatter_template` の標準と導入済みschemaの不整合は、今回のYAMLコメント方式で回避した。将来自動展開へ移す場合はschema対応を別途確認する。本タスクに保護設定の変更提案や未完了事項はない。
+- resultはexecutorから編集せず、上記の実施内容・変更8ファイル・検証結果と本節の申し送りをreporter/runnerが記入する。
+
+## 5. 関連ドキュメント
+
+- [[edu-scratch:lpl-rulebook]]
+- [[edu-scratch:lpl-template]]
+- [[edu-scratch:lpl-sample]]
+- [[edu-scratch:lpl-recipe]]
+- [[edu-scratch:lsd-slidev-rulebook]]
+- [[edu-scratch:lsd-slidev-template]]
+- [[edu-scratch:lsd-slidev-sample]]
+- `coderdojo-lessons:docs/course-design/course-plan.md`：現在のコース計画（移動後は新パスへ読み替える）
+- [[prj-0001:dct-scratch-lessons|Scratch教材 成果物カタログ]]
+---
+specdojo:
+  id: prj-0001:xer-pjr-vd0x-20261025t090947z-e5574701
+  type: exec-result
+  task_id: PJR-VD0X
+  mode: edit
+  status: complete
+  project_id: prj-0001
+  origin: register
+  plan_ref: exec/plans/pjr-vd0x-20261025T090947Z-e5574701-plan.md
+  started_at: "2026-10-25T09:09:47.705Z"
+  completed_at: "2026-10-25T09:22:04.632Z"
+  agent: sol-executor
+---
+
+# Edit Result
+
+## 1. 実施内容
+
+- 教材成果物（指導案・投影スライド）のSpecDojoメタ情報を扱う7件のkata（レシピ、ルールブック、サンプル、テンプレート）を更新し、教材固有のメタ情報を記入する規約を整備した。
+- 導入済み成果物schemaで拒否される `frontmatter_template` を避け、教材用記入欄をYAMLコメントとして表現した。
+- Prettier、markdownlint、Slidev専用の命名・lint・build検査、およびカタログ検証を実行し、すべて正常に通過することを確認した。
+
+## 2. 変更ファイル
+
+- `docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md`: 指導案レシピを更新し、教材成果物のSpecDojoメタ情報を教材固有の設定とする方針および手順を反映した。
+- `docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md`: 指導案ルールブックを更新し、教材成果物に付与するSpecDojoメタ情報の規約を整備した。
+- `docs/ja/specdojo/rulebooks/edu-scratch/lsd-slidev-rulebook.md`: 投影スライド（Slidev）ルールブックを更新し、教材成果物に付与するSpecDojoメタ情報の規約を整備した。
+- `docs/ja/specdojo/samples/edu-scratch/lpl-sample.md`: 指導案サンプルを更新し、教材固有のSpecDojoメタ情報設定例を反映した。
+- `docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md`: 投影スライド（Slidev）サンプルを更新し、教材固有のSpecDojoメタ情報設定例を反映した。
+- `docs/ja/specdojo/templates/edu-scratch/lpl-template.md`: 指導案テンプレートを更新し、教材固有のSpecDojoメタ情報をYAMLコメントで記入する枠組みに変更した。
+- `docs/ja/specdojo/templates/edu-scratch/lsd-slidev-template.md`: 投影スライド（Slidev）テンプレートを更新し、教材固有のSpecDojoメタ情報をYAMLコメントで記入する枠組みに変更した。
+
+## 3. 申し送り
+
+- 個票の対応結果に採用根拠、全10件のID対応、変更内容、検証結果を記録済み。reporter/runnerはresultへ反映してください。
+- コース計画は専用rulebook未整備のため、`type: project`・`status: draft`・`rulebook: none`を採用可能と確認。実際の`local_id`と`id`はPJR-Y36Gのカタログ登録時に確定し、依存関係を整えてから教材へ反映します。
+- 標準の`frontmatter_template`は導入済み成果物schemaでは拒否されるため、教材用記入欄をYAMLコメントで表現しました。将来自動展開へ移す場合はschema対応を確認してください。
+- 適用外の検証: `npm run validate:schema:file`（script未定義で、YAML/YMLファイルの変更もない。）
+- 適用外の検証: `npm run typecheck`（script未定義で、変更はMarkdownのみ。）
+- 適用外の検証: `npm run test:unit`（対象リポジトリにscriptがない。）
+- 適用外の検証: `npm test`（package.jsonのtestは初期の「Error: no test specified」を出して終了する仮script。）
+
+## 4. 進め方
+
+コース計画・指導案・投影スライドをカタログおよびScheduleで管理するため、成果物自身のSpecDojoメタ情報規約を先に整備した。kata自身のメタ情報を教材へコピーするのではなく、教材固有のメタ情報を記入する方針に変更し、edu-scratch関連の7件のkata（レシピ・ルールブック・サンプル・テンプレート）を更新した。導入済み成果物schemaとの整合性を保つため、メタ情報記入欄は `frontmatter_template` ではなくYAMLコメントで表現し、Prettier、markdownlint、Slidev専用検査・build、カタログ検証などの静的検証を実施して整合性を確認した。
+
+## 5. トレーサビリティ
+
+runner がプロダクトリポジトリを統合した後に記録した、統合先の commit snapshot です。
+プロジェクトリポジトリの統合は、この result を含む merge commit で確認します。
+その merge commit には `Refs: prj-0001:PJR-VD0X` を付けます。
+PR が `not applicable` の行は、runner がローカルで統合し PR を経由していません。
+
+<!-- markdownlint-disable MD013 -->
+
+| trace key           | repository          | integration branch | PR             | commit snapshot             | recorded at              |
+| ------------------- | ------------------- | ------------------ | -------------- | --------------------------- | ------------------------ |
+| `prj-0001:PJR-VD0X` | `coderdojo-lessons` | `develop`          | not applicable | not applicable (no changes) | 2026-10-25T09:22:07.910Z |
+
+<!-- markdownlint-enable MD013 -->
+{
+  "name": "coderdojo-lessons-specdojo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push:develop": "git push origin project/prj-0001/develop",
+    "push:lessons": "git -C ../coderdojo-lessons push origin develop",
+    "orch:opus": "specdojo orchestrator launch --provider claude -- --agent specdojo-orchestrator --model opus",
+    "orch:sonnet": "specdojo orchestrator launch --provider claude -- --agent specdojo-orchestrator --model sonnet",
+    "orch:codex": "specdojo orchestrator launch --provider codex -- \"$(cat .specdojo/codex/orchestrator.md)\"",
+    "orch:opencode": "specdojo orchestrator launch --provider opencode -- --agent specdojo-orchestrator",
+    "orch:agy": "specdojo orchestrator launch --provider antigravity -- --add-dir \"$(pwd)\" -i \"$(cat .specdojo/antigravity/orchestrator.md)\"",
+    "orch:copilot": "specdojo orchestrator launch --provider copilot -- --agent specdojo-orchestrator",
+    "prepare": "lefthook install",
+    "orch:flash": "specdojo orchestrator launch --provider antigravity -- --add-dir \"$(pwd)\" --model gemini-3.8-flash-high -i \"$(cat .specdojo/antigravity/orchestrator.md)\"",
+    "orch:sol": "specdojo orchestrator launch --provider codex -- -m gpt-6.1-sol \"$(cat .specdojo/codex/orchestrator.md)\"",
+    "orch:luna": "specdojo orchestrator launch --provider codex -- -m gpt-6-luna \"$(cat .specdojo/codex/orchestrator.md)\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@slidev/cli": "^53.0.0",
+    "js-yaml": "^5.5.0",
+    "lefthook": "^2.2.2",
+    "markdownlint-cli": "^0.49.1",
+    "playwright-chromium": "^1.64.1",
+    "prettier": "^3.9.10",
+    "prettier-plugin-slidev": "^1.0.5",
+    "scratchblocks": "^3.7.1",
+    "slidev-theme-neversink": "^0.4.1",
+    "specdojo": "^0.4.6"
+  },
+  "dependencies": {
+    "@specdojo/docs-lint": "^0.2.1",
+    "@specdojo/docs-site": "^0.2.1"
+  }
+}
+{
+  "version": 1,
+  "current_project": "prj-0001",
+  "agent_members_path": ".specdojo/agent-members.yaml",
+  "kata_authority": "edu-scratch",
+  "projects": {
+    "prj-0001": {
+      "repos": [
+        {
+          "name": "coderdojo-lessons",
+          "path": "../coderdojo-lessons",
+          "integration_branch": "develop"
+        }
+      ],
+      "base_path": "docs/ja/projects/prj-0001",
+      "members_path": "030-project-management/pm-members.yaml",
+      "project_register_path": "controls/project-register",
+      "project_context": ["prj-overview"],
+      "run": {
+        "exec_defaults": ".specdojo/exec-defaults.yaml",
+        "worktree_base": "../coderdojo-lessons-specdojo-worktrees"
+      },
+      "catalog_path": "010-deliverables-catalog"
+    }
+  }
+}
+pre-commit:
+  parallel: true
+  jobs:
+    - name: format documentation and configuration
+      glob: "*.{md,json,yml,yaml}"
+      run: npx prettier --check {staged_files}
+    - name: lint Markdown documentation
+      glob: "*.md"
+      run: npx markdownlint -- {staged_files}
+    # Slidev のスライドの名前と、専用の設定の glob・順番を確かめる。設定ファイルを変えたときも走らせる。
+    - name: check Slidev decks and their lint settings
+      glob:
+        - "*.md"
+        - ".markdownlint-cli2.yaml"
+        - ".markdownlintignore"
+        - ".prettierrc"
+        - "tools/check-slidev-files.mjs"
+      run: node tools/check-slidev-files.mjs {staged_files}
+{
+  "name": "scratch-lessons",
+  "private": true,
+  "scripts": {
+    "vtracer:batch": "tsx scripts/convert_pngs_with_vtracer.ts",
+    "slides:serve": "marp --theme-set ./themes --server .",
+    "slides:watch": "marp --theme-set ./themes --watch lessons/01-sample/slides.md",
+    "slides:html": "marp --theme-set ./themes lessons/01-sample/slides.md -o dist/01-sample.html",
+    "slides:pdf": "marp --theme-set ./themes lessons/01-sample/slides.md -o dist/01-sample.pdf",
+    "slides:pptx": "marp --theme-set ./themes lessons/01-sample/slides.md -o dist/01-sample.pptx",
+    "prepare": "lefthook install"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.5.1",
+    "@slidev/cli": "^53.0.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@types/node": "^26.6.2",
+    "lefthook": "^2.2.2",
+    "playwright-chromium": "^1.64.1",
+    "prettier": "^3.9.10",
+    "prettier-plugin-slidev": "^1.0.5",
+    "scratchblocks": "^3.7.1",
+    "slidev-theme-neversink": "^0.4.1",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  }
+}
+cat: ../coderdojo-lessons/.specdojo/specdojo.config.json: No such file or directory
+pre-commit:
+  parallel: true
+  jobs:
+    - name: typecheck TypeScript scripts
+      glob:
+        - "scripts/*.ts"
+        - "scripts/**/*.ts"
+      run: npx tsc --noEmit
+    - name: format source and documentation
+      glob: "*.{md,ts,json,yml,yaml}"
+      run: npx prettier --check {staged_files}
+
+exec
+/bin/bash -lc "cat docs/ja/projects/prj-0001/010-deliverables-catalog/dct-scratch-lessons.yaml .specdojo/exec-defaults.yaml .prettierrc .markdownlintignore .markdownlintrc; cat ../coderdojo-lessons/README.md ../coderdojo-lessons/docs/course-design/course-plan.md ../coderdojo-lessons/courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md ../coderdojo-lessons/courses/scratch-basic/lessons/020-balloon-game/slides.md ../coderdojo-lessons/.prettierrc ../coderdojo-lessons/.markdownlint.yaml; rg -n 'course-plan|course-design|メタ情報|rulebook: none' docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md docs/ja/specdojo/rulebooks/edu-scratch/lsd-slidev-rulebook.md ../coderdojo-lessons --glob '"'!package-lock.json'"' --glob '"'!node_modules/**'"'; rg 
