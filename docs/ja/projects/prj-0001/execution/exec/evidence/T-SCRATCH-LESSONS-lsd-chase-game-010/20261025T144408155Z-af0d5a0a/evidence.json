@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task_id": "T-SCRATCH-LESSONS-lsd-chase-game-010",
+  "run_id": "20261025T144408155Z-af0d5a0a",
+  "stage": {
+    "role": "executor",
+    "actor": "flash-high-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T14:45:36.883Z",
+    "completed_at": "2026-10-25T15:00:11.349Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/010-chase-game/components/ScratchBlocks.vue",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/010-chase-game/slides.md",
+      "status": "??"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/010-chase-game/style.css",
+      "status": "??"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 3,
+    "summary": ""
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npx prettier --check courses/scratch-basic/lessons/010-chase-game/slides.md courses/scratch-basic/lessons/010-chase-game/style.css",
+      "status": "passed",
+      "summary": "Prettier によるコード書式検査に合格しました。"
+    },
+    {
+      "source": "executor",
+      "command": "npx slidev export courses/scratch-basic/lessons/010-chase-game/slides.md --format png --output tmp/png-010",
+      "status": "passed",
+      "summary": "Slidev による全18ページの PNG 画像出力に成功し、目視確認によりテキストやブロック図・実機確認注記の切れや重なりがないことを確認しました。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint courses/scratch-basic/lessons/010-chase-game/slides.md",
+      "status": "not_applicable",
+      "summary": "coderdojo-lessons package.json に markdownlint が導入されていないためスキップ",
+      "reason": "coderdojo-lessons の package.json に markdownlint が依存関係として含まれておらず、lefthook.yml にも Markdown lint ジョブが定義されていないため"
+    },
+    {
+      "source": "executor",
+      "command": "specdojo catalog validate",
+      "status": "not_applicable",
+      "summary": "docs/ja/projects/ 配下の変更がないためスキップ",
+      "reason": "変更対象がプロダクトリポジトリ coderdojo-lessons の教材ファイル（courses/配下）のみであり、docs/ja/projects/ 配下のファイル変更が含まれないため"
+    }
+  ],
+  "final_message": "第1回 投影スライド (coderdojo-lessons:courses/scratch-basic/lessons/010-chase-game/slides.md) の作成、style.css および ScratchBlocks.vue の整備、Slidev 全ページ PNG エクスポートによる目視確認、Prettier 書式検証を完了しました。",
+  "completion_status": "complete",
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/T-SCRATCH-LESSONS-lsd-chase-game-010/20261025T144408155Z-af0d5a0a/executor.log",
+      "bytes": 4282,
+      "truncated": false
+    }
+  ]
+}

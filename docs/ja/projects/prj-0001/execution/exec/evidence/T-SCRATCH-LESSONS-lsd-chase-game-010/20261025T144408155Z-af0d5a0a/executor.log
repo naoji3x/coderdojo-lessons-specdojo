@@ -1,0 +1,24 @@
+Slidev によるスライドのエクスポート（PNG書き出し）を実行中です。完了通知を待機しています。
+スライドの再エクスポートを実行中です。完了を待機しています。
+第1回 投影スライド（`lsd-chase-game`）の作成と検証を完了しました。
+
+### 実施内容
+
+1. **投影スライド正本の作成**:
+   - `coderdojo-lessons/courses/scratch-basic/lessons/010-chase-game/slides.md` を作成しました。
+   - 先行成果物である第1回指導案（`lpl-chase-game`）の45分構成（導入5分、基本制作25分［猫の動き10分、ネズミの操作7分、当たり判定と初期化8分］、発展10分、まとめ・保存5分）に対応する全18ページで構成しました。
+   - `edu-scratch:lsd-slidev-rulebook` に従い、Frontmatterに `specdojo.id: lsd-chase-game`、`rulebook: edu-scratch:lsd-slidev-rulebook`、`based_on: [lpl-chase-game]` を設定し、直後に `<!-- markdownlint-disable MD003 MD022 -->` を配置しました。
+   - Neversinkテーマのコンポーネント（`Cat`、`SpeechBubble`、`StickyNote`、`Admonition`、`Planet`、`BackPack`、`SpeechBubbleGuy`）および `ScratchBlocks` を活用し、各スライドの学習意図に対応するビジュアルを整備しました。
+
+2. **活動用コンポーネントとスタイルの整備**:
+   - `coderdojo-lessons/courses/scratch-basic/lessons/010-chase-game/components/ScratchBlocks.vue` を配置しました。
+   - `coderdojo-lessons/courses/scratch-basic/lessons/010-chase-game/style.css` を定義し、案内役（`.teacher-cat`）、節の扉（`.section-slide` 各アクセントカラー）、実機確認注記（`p.device-check`）、めあて・完成グリッド・発展ミッションの文字サイズと余白を最適化しました。
+
+3. **描画・レイアウト検証**:
+   - Slidev による全18ページの PNG 画像出力（`npx slidev export --format png`）を実行し、全スライドのレンダリングを目視確認しました。
+   - 実機確認注記や改造の問い、ブロック図、案内役（ねこ先生）との重なりや文字切れがない状態に調整しました（表紙H1の1行収容、節扉見出しの改行調整、制作2-1の問いの下切れ解消、制作3-2の注記とねこ先生の左右分離配置、標準完成カードの1行収容、発展ミッション右列3件化による重なり解消）。
+   - Prettier による書式検査をパスしました。
+
+<specdojo_executor_evidence>
+{"completion_status":"complete","final_message":"第1回 投影スライド (coderdojo-lessons:courses/scratch-basic/lessons/010-chase-game/slides.md) の作成、style.css および ScratchBlocks.vue の整備、Slidev 全ページ PNG エクスポートによる目視確認、Prettier 書式検証を完了しました。","handoff":[],"validations":[{"command":"npx prettier --check courses/scratch-basic/lessons/010-chase-game/slides.md courses/scratch-basic/lessons/010-chase-game/style.css","status":"passed","summary":"Prettier によるコード書式検査に合格しました。"},{"command":"npx slidev export courses/scratch-basic/lessons/010-chase-game/slides.md --format png --output tmp/png-010","status":"passed","summary":"Slidev による全18ページの PNG 画像出力に成功し、目視確認によりテキストやブロック図・実機確認注記の切れや重なりがないことを確認しました。"},{"command":"npx markdownlint courses/scratch-basic/lessons/010-chase-game/slides.md","status":"not_applicable","summary":"coderdojo-lessons package.json に markdownlint が導入されていないためスキップ","reason":"coderdojo-lessons の package.json に markdownlint が依存関係として含まれておらず、lefthook.yml にも Markdown lint ジョブが定義されていないため"},{"command":"specdojo catalog validate","status":"not_applicable","summary":"docs/ja/projects/ 配下の変更がないためスキップ","reason":"変更対象がプロダクトリポジトリ coderdojo-lessons の教材ファイル（courses/配下）のみであり、docs/ja/projects/ 配下のファイル変更が含まれないため"}]}
+</specdojo_executor_evidence>
