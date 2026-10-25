@@ -4,10 +4,11 @@ specdojo:
   type: exec-result
   task_id: T-SCRATCH-LESSONS-lsd-original-project-010
   mode: edit
-  status: in_progress
+  status: complete
   project_id: prj-0001
   plan_ref: exec/plans/T-SCRATCH-LESSONS-lsd-original-project-010-plan.md
   started_at: "2026-10-25T23:37:20.483Z"
+  completed_at: "2026-10-25T23:52:47.819Z"
   agent: flash-high-executor
   execution: agent
   approach: fully-guided
@@ -19,16 +20,21 @@ specdojo:
 
 ## 1. 実施内容
 
-_TODO_: 実施した内容の要約を記入する。
+- 第5回投影スライド（`slides.md`）および付随する `style.css`、`ScratchBlocks.vue` コンポーネントを新規作成しました。
+- Prettier による整形検査、Slidev のビルド、全16ページの PNG 画像出力と目視確認を実施し、文字やブロック図の欠けや重なりがないことを確認しました。
 
 ## 2. 変更ファイル
 
-_TODO_: 変更したファイルのパスを記入する。
+- `coderdojo-lessons:courses/scratch-basic/lessons/050-original-project/components/ScratchBlocks.vue`: スライド内での Scratch ブロック描画を担う Vue コンポーネントを作成。
+- `coderdojo-lessons:courses/scratch-basic/lessons/050-original-project/slides.md`: 「オリジナル作品を作ろう！」の指導案に対応し、説明・制作・試行・到達確認・振り返りの構成を持つ第5回投影スライドを作成。
+- `coderdojo-lessons:courses/scratch-basic/lessons/050-original-project/style.css`: スライドの表示レイアウトおよびスタイル定義ファイルを作成。
 
 ## 3. 申し送り
 
-_TODO_: 後続タスクへの申し送り事項を記入する（なければ削除）。
+- 適用外の検証: `npx markdownlint courses/scratch-basic/lessons/050-original-project/slides.md`（markdownlint is not installed in coderdojo-lessons package.json）
+- 適用外の検証: `npm test`（No test script in package.json (placeholder only in project repo)）
+- 適用外の検証: `specdojo catalog validate`（No changes in docs/ja/projects/ (deliverable target is in product repository coderdojo-lessons)）
 
 ## 4. 進め方と実践の型の適用
 
-_TODO_: `approach` に従ってどう進めたか、その進め方の中で実践の型（rulebook / recipe / sample / template）をどう適用したかを記入する（`fully-guided` で rulebook / recipe / sample / template をどう使い分けたか、`recipe-guided` で recipe のみを基準にした内容、`freeform` で実践の型より優先した実例やプロジェクト文脈、`retrofit` で実際に参照した実装パス・抽出した現在動作・反映/新設判断・未反映の乖離・未確認範囲、`rulebook-authoring` などの authoring 系で手本から一般化した内容・変更しなかった手本・参照の付け替えまたは見送り、`rulebook-maintenance` などの maintenance 系で見直した実践の型とその根拠、など）。実践の型を基準にしなかった場合は、その判断と代わりに根拠にした内容も記入する。複数文書間に矛盾があり rulebook を正として判断した箇所、参照範囲から外れていた文書とその代わりに根拠にした内容があれば、あわせて記録する。
+rulebook `docs/ja/specdojo/rulebooks/edu-scratch/lsd-slidev-rulebook.md` および sample `docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md` に従い、`depends_on` である指導案の内容と順序に合わせた全16ページのスライドを作成しました。完了の狙い（`done_criteria`）に沿って Slidev ビルドおよび全ページの PNG 画像出力を実行し、表示崩れや重なりがないことを確認しています。
