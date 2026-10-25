@@ -1,0 +1,15 @@
+id: prj-0001:dct-index
+type: project
+status: draft
+title: 成果物カタログ
+rulebook: specdojo:dct-index-rulebook
+project_id: prj-0001
+size: small
+groups:
+  - name: プロダクト成果物
+    groups:
+      - name: Scratch教材
+        domains:
+          - domain: scratch-lessons
+            name: 全5回の授業教材
+            overview: コース計画に沿う全5回の指導案と投影スライドを管理する。

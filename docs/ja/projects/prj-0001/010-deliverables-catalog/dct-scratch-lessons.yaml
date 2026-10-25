@@ -1,0 +1,201 @@
+id: prj-0001:dct-scratch-lessons
+type: project
+status: draft
+title: Scratch教材 成果物カタログ（全5回）
+rulebook: specdojo:dct-rulebook
+part_of:
+  - prj-0001:dct-index
+project_id: prj-0001
+domain: scratch-lessons
+base_path: /../coderdojo-lessons/courses/scratch-basic/lessons
+groups:
+  - name: 第1回 猫から逃げろ！追いかけっこゲーム
+    base_path: 010-chase-game
+    deliverables:
+      - local_id: lpl-chase-game
+        name: 第1回 指導案
+        kind: work
+        depends_on: []
+        overview: 「猫から逃げろ！追いかけっこゲーム」の授業の進め方と到達条件を定める。
+        path: lesson-plan.md
+        rulebook: edu-scratch:lpl-rulebook
+        done_criteria:
+          - text: コース計画の第1回「猫から逃げろ！追いかけっこゲーム」の対象・ねらい・機能・45分の授業構成に対応し、未確認事項を識別できること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+          - text: ねらい・最低／標準／発展の完成形・活動・時間配分・見取り・進度差対応が整合し、開始・終了・再開と保存の扱いを確認できること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+      - local_id: lsd-chase-game
+        name: 第1回 投影スライド
+        kind: work
+        depends_on:
+          - lpl-chase-game
+        overview: 「猫から逃げろ！追いかけっこゲーム」の指導案に沿って学習者の制作と試行を支える。
+        path: slides.md
+        rulebook: edu-scratch:lsd-slidev-rulebook
+        done_criteria:
+          - text: 同じ回のレビュー済み指導案に、説明・制作・試行・到達確認・振り返りの内容と順序が対応していること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+          - text: Slidev buildと全ページの画像出力が成功し、文字やブロック図・実機確認注記の切れや重なりがないこと。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+  - name: 第2回 風船割りゲームを作ろう！
+    base_path: 020-balloon-game
+    deliverables:
+      - local_id: lpl-balloon-game
+        name: 第2回 指導案
+        kind: work
+        depends_on: []
+        overview: 「風船割りゲームを作ろう！」の授業の進め方と到達条件を定める。
+        path: lesson-plan.md
+        rulebook: edu-scratch:lpl-rulebook
+        done_criteria:
+          - text: コース計画の第2回「風船割りゲームを作ろう！」の対象・ねらい・機能・45分の授業構成に対応し、未確認事項を識別できること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+          - text: ねらい・最低／標準／発展の完成形・活動・時間配分・見取り・進度差対応が整合し、開始・終了・再開と保存の扱いを確認できること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+      - local_id: lsd-balloon-game
+        name: 第2回 投影スライド
+        kind: work
+        depends_on:
+          - lpl-balloon-game
+        overview: 「風船割りゲームを作ろう！」の指導案に沿って学習者の制作と試行を支える。
+        path: slides.md
+        rulebook: edu-scratch:lsd-slidev-rulebook
+        done_criteria:
+          - text: 同じ回のレビュー済み指導案に、説明・制作・試行・到達確認・振り返りの内容と順序が対応していること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+          - text: Slidev buildと全ページの画像出力が成功し、文字やブロック図・実機確認注記の切れや重なりがないこと。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+  - name: 第3回 音楽と図形のプログラミングアート
+    base_path: 030-music-art
+    deliverables:
+      - local_id: lpl-music-art
+        name: 第3回 指導案
+        kind: work
+        depends_on: []
+        overview: 「音楽と図形のプログラミングアート」の授業の進め方と到達条件を定める。
+        path: lesson-plan.md
+        rulebook: edu-scratch:lpl-rulebook
+        done_criteria:
+          - text: コース計画の第3回「音楽と図形のプログラミングアート」の対象・ねらい・機能・45分の授業構成に対応し、未確認事項を識別できること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+          - text: ねらい・最低／標準／発展の完成形・活動・時間配分・見取り・進度差対応が整合し、開始・終了・再開と保存の扱いを確認できること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+      - local_id: lsd-music-art
+        name: 第3回 投影スライド
+        kind: work
+        depends_on:
+          - lpl-music-art
+        overview: 「音楽と図形のプログラミングアート」の指導案に沿って学習者の制作と試行を支える。
+        path: slides.md
+        rulebook: edu-scratch:lsd-slidev-rulebook
+        done_criteria:
+          - text: 同じ回のレビュー済み指導案に、説明・制作・試行・到達確認・振り返りの内容と順序が対応していること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+          - text: Slidev buildと全ページの画像出力が成功し、文字やブロック図・実機確認注記の切れや重なりがないこと。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+  - name: 第4回 AIにじゃんけんを覚えさせよう！
+    base_path: 040-ai-rps
+    deliverables:
+      - local_id: lpl-ai-rps
+        name: 第4回 指導案
+        kind: work
+        depends_on: []
+        overview: 「AIにじゃんけんを覚えさせよう！」の授業の進め方と到達条件を定める。
+        path: lesson-plan.md
+        rulebook: edu-scratch:lpl-rulebook
+        done_criteria:
+          - text: コース計画の第4回「AIにじゃんけんを覚えさせよう！」の対象・ねらい・機能・45分の授業構成に対応し、未確認事項を識別できること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+          - text: ねらい・最低／標準／発展の完成形・活動・時間配分・見取り・進度差対応が整合し、開始・終了・再開と保存の扱いを確認できること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+      - local_id: lsd-ai-rps
+        name: 第4回 投影スライド
+        kind: work
+        depends_on:
+          - lpl-ai-rps
+        overview: 「AIにじゃんけんを覚えさせよう！」の指導案に沿って学習者の制作と試行を支える。
+        path: slides.md
+        rulebook: edu-scratch:lsd-slidev-rulebook
+        done_criteria:
+          - text: 同じ回のレビュー済み指導案に、説明・制作・試行・到達確認・振り返りの内容と順序が対応していること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+          - text: Slidev buildと全ページの画像出力が成功し、文字やブロック図・実機確認注記の切れや重なりがないこと。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+  - name: 第5回 オリジナル作品を作ろう！
+    base_path: 050-original-project
+    deliverables:
+      - local_id: lpl-original-project
+        name: 第5回 指導案
+        kind: work
+        depends_on: []
+        overview: 「オリジナル作品を作ろう！」の授業の進め方と到達条件を定める。
+        path: lesson-plan.md
+        rulebook: edu-scratch:lpl-rulebook
+        done_criteria:
+          - text: コース計画の第5回「オリジナル作品を作ろう！」の対象・ねらい・機能・45分の授業構成に対応し、未確認事項を識別できること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+          - text: ねらい・最低／標準／発展の完成形・活動・時間配分・見取り・進度差対応が整合し、開始・終了・再開と保存の扱いを確認できること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。
+      - local_id: lsd-original-project
+        name: 第5回 投影スライド
+        kind: work
+        depends_on:
+          - lpl-original-project
+        overview: 「オリジナル作品を作ろう！」の指導案に沿って学習者の制作と試行を支える。
+        path: slides.md
+        rulebook: edu-scratch:lsd-slidev-rulebook
+        done_criteria:
+          - text: 同じ回のレビュー済み指導案に、説明・制作・試行・到達確認・振り返りの内容と順序が対応していること。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+          - text: Slidev buildと全ページの画像出力が成功し、文字やブロック図・実機確認注記の切れや重なりがないこと。
+            roles:
+              - QE
+            viewpoint: vp-qe-verifiability
+        note: 配置先は宣言済み教材リポジトリ coderdojo-lessons。根拠は docs/course-design/course-plan.md。旧設計を無条件に転記しない。kataはdraftを参照し、授業実施済みとは扱わない。

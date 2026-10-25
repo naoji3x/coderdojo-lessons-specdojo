@@ -19,7 +19,8 @@
       "run": {
         "exec_defaults": ".specdojo/exec-defaults.yaml",
         "worktree_base": "../coderdojo-lessons-specdojo-worktrees"
-      }
+      },
+      "catalog_path": "010-deliverables-catalog"
     }
   }
 }
