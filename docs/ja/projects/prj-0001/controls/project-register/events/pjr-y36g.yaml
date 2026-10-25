@@ -93,3 +93,48 @@
       from: in-progress
       to: review
   previous_event_id: reg_f67ddc204abe4cdf975cfcd5e1f1916f
+- v: 1
+  id: reg_c4b7c776d9f543359ad7904c3966a17e
+  ts: "2026-10-25T10:20:17Z"
+  action: start
+  actor: sol-executor
+  from_status: review
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: review
+      to: in-progress
+  previous_event_id: reg_7217d52acf9245168a85e83a9299cbeb
+- v: 1
+  id: reg_b5a7f68e192b4564af0a18d540ba3af9
+  ts: "2026-10-25T10:25:45Z"
+  action: review
+  actor: sol-executor
+  from_status: in-progress
+  to_status: review
+  reason: ready for review
+  changes:
+    - field: status
+      from: in-progress
+      to: review
+  previous_event_id: reg_c4b7c776d9f543359ad7904c3966a17e
+- v: 1
+  id: reg_59c63c15274640868a481719cf764ad4
+  ts: "2026-10-25T10:35:41Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: orchestratorが訂正後の完了条件と統合成果をレビューした。schema・リンク・Slidev等の成功記録、PNG確認、現行カタログ検証を確認し問題なし。未作成教材8件の警告は対象外の既知状態。
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-25"
+    - field: conclusion
+      from: "-"
+      to: コース計画の移動、カタログと既存教材の修飾なしID・依存参照の整合をレビューし、検証と全19ページの表示確認を満たしたため完了とする。
+  previous_event_id: reg_b5a7f68e192b4564af0a18d540ba3af9

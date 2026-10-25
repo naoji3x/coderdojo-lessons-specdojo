@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-Y36G",
+  "run_id": "20261025T102017250Z-d1c795fe",
+  "stage": {
+    "role": "executor",
+    "actor": "sol-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T10:21:18.592Z",
+    "completed_at": "2026-10-25T10:25:08.350Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/010-deliverables-catalog/dct-scratch-lessons.yaml",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-m1c2-scratch-lessons-schedule-expansion.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-y36g-course-plan-catalog-and-metadata.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/course-plan.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "M"
+    }
+  ],
+  "attempt_changes": [
+    {
+      "path": "docs/ja/projects/prj-0001/010-deliverables-catalog/dct-scratch-lessons.yaml",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-m1c2-scratch-lessons-schedule-expansion.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/projects/prj-0001/controls/project-register/pjr-y36g-course-plan-catalog-and-metadata.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/course-plan.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md",
+      "status": "M"
+    },
+    {
+      "path": "coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "M"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 6,
+    "summary": ".../dct-scratch-lessons.yaml                       |  2 ++\n .../pjr-m1c2-scratch-lessons-schedule-expansion.md |  4 ++-\n .../pjr-y36g-course-plan-catalog-and-metadata.md   | 36 +++++++++++++++++++++-\n 3 files changed, 40 insertions(+), 2 deletions(-)\n[coderdojo-lessons]\ncourses/scratch-basic/course-plan.md                          | 2 +-\n courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md | 4 ++--\n courses/scratch-basic/lessons/020-balloon-game/slides.md      | 4 ++--\n 3 files changed, 5 insertions(+), 5 deletions(-)"
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npx prettier --check docs/ja/projects/prj-0001/controls/project-register/pjr-y36g-course-plan-catalog-and-metadata.md docs/ja/projects/prj-0001/controls/project-register/pjr-m1c2-scratch-lessons-schedule-expansion.md docs/ja/projects/prj-0001/010-deliverables-catalog/dct-scratch-lessons.yaml",
+      "status": "passed",
+      "summary": "project側の変更3件を整形後に確認。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --check courses/scratch-basic/course-plan.md courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md courses/scratch-basic/lessons/020-balloon-game/slides.md",
+      "status": "passed",
+      "summary": "coderdojo-lessonsで変更教材3件を整形後に確認。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint -- docs/ja/projects/prj-0001/controls/project-register/pjr-y36g-course-plan-catalog-and-metadata.md docs/ja/projects/prj-0001/controls/project-register/pjr-m1c2-scratch-lessons-schedule-expansion.md",
+      "status": "passed",
+      "summary": "変更2個票のlint成功。教材側のmarkdownlintは依存・hookがなく非適用。"
+    },
+    {
+      "source": "executor",
+      "command": "node tools/check-slidev-files.mjs docs/ja/projects/prj-0001/controls/project-register/pjr-y36g-course-plan-catalog-and-metadata.md docs/ja/projects/prj-0001/controls/project-register/pjr-m1c2-scratch-lessons-schedule-expansion.md",
+      "status": "passed",
+      "summary": "hookに定義されたSlidev設定検査に成功。"
+    },
+    {
+      "source": "executor",
+      "command": "node tmp/pjr-y36g/verify.mjs",
+      "status": "passed",
+      "summary": "schema 6件、11件のID・配置、22通りのCLI解決、`based_on` の閉包、相対リンク7件を確認。3教材の本文と19ページの本文・メモ・設定が変更前と一致。実在3件・未作成8件。一時ファイルは削除済み。"
+    },
+    {
+      "source": "executor",
+      "command": "npx specdojo catalog validate --project prj-0001",
+      "status": "passed",
+      "summary": "成功。未作成8教材に対する既存の文書未検出警告のみ。"
+    },
+    {
+      "source": "executor",
+      "command": "npx specdojo catalog build --project prj-0001",
+      "status": "passed",
+      "summary": "カタログ生成成功。生成物は既存のGit除外対象。"
+    },
+    {
+      "source": "executor",
+      "command": "npx slidev build courses/scratch-basic/lessons/020-balloon-game/slides.md --out dist",
+      "status": "passed",
+      "summary": "coderdojo-lessonsでSlidev 53.0.0のbuild成功。テーマ由来の将来設定警告あり。"
+    },
+    {
+      "source": "executor",
+      "command": "npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --output tmp/pjr-y36g/png --wait 1500",
+      "status": "requires_human",
+      "summary": "coderdojo-lessonsで実行したがsandboxの `uv_interface_addresses` 制約で停止。orchestratorによる新規PNG出力・17〜19ページの確認が必要。"
+    },
+    {
+      "source": "executor",
+      "command": "git diff --check",
+      "status": "passed",
+      "summary": "project側の差分検査成功。"
+    },
+    {
+      "source": "executor",
+      "command": "git -C ../coderdojo-lessons diff --check",
+      "status": "passed",
+      "summary": "教材側の差分検査成功。変更はメタ情報5値のみ。"
+    },
+    {
+      "source": "executor",
+      "command": "npm run validate:schema:file",
+      "status": "not_applicable",
+      "summary": "schemaは導入済みAjvによる直接検証で確認。",
+      "reason": "両リポジトリでscript未定義。"
+    },
+    {
+      "source": "executor",
+      "command": "npm run typecheck",
+      "status": "not_applicable",
+      "summary": "型検査の追加実行は非適用。",
+      "reason": "両リポジトリでscript未定義。ソース変更もない。"
+    },
+    {
+      "source": "executor",
+      "command": "npm run test:unit",
+      "status": "not_applicable",
+      "summary": "単体テストは非適用。",
+      "reason": "両リポジトリでscript未定義。対象ソース・kataの変更もない。"
+    },
+    {
+      "source": "executor",
+      "command": "npm test",
+      "status": "not_applicable",
+      "summary": "通常のtest scriptは存在しない。",
+      "reason": "project側はnpm初期仮script、教材側はscript未定義。"
+    }
+  ],
+  "final_message": "教材3件の修飾なしID・`based_on`、カタログの説明、2個票の有効参照を更新。schema・ID解決・リンク・本文比較・19ページ解析・build・整形・lint・差分検査に成功。resultは未編集。",
+  "completion_status": "complete",
+  "handoff": [
+    "orchestratorはsandbox外のcoderdojo-lessonsで `npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png --output tmp/pjr-y36g/png --wait 1500` を新規起動し、全19ページを出力して特に17〜19ページを目視確認する。今回の試行は `uv_interface_addresses` 制約で停止した。既存サーバーの古い解析状態や前回のPNG確認を今回の証拠に流用しない。",
+    "PJR-M1C2の入力は `cpl-scratch-basic`・`lpl-balloon-game`・`lsd-balloon-game`。既存3件を新規作業から除外し、未作成8教材も修飾なしの `local_id` を正規IDとして使う。CLIの `prj-0001:<local_id>` は対象指定形式であり、教材自身のIDへ転記しない。全11件の両指定形式による同一配置への解決を確認済み。",
+    "reporter/runnerは個票4.5節の実施内容・検証結果・PNG申し送りをresultへ反映する。変更6ファイル：coderdojo-lessons:courses/scratch-basic/course-plan.md、coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/lesson-plan.md、coderdojo-lessons:courses/scratch-basic/lessons/020-balloon-game/slides.md、docs/ja/projects/prj-0001/010-deliverables-catalog/dct-scratch-lessons.yaml、docs/ja/projects/prj-0001/controls/project-register/pjr-y36g-course-plan-catalog-and-metadata.md、docs/ja/projects/prj-0001/controls/project-register/pjr-m1c2-scratch-lessons-schedule-expansion.md。状態項目・過去の実行証跡は維持。保護設定の変更提案はない。"
+  ],
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-Y36G/20261025T102017250Z-d1c795fe/executor.log",
+      "bytes": 6279,
+      "truncated": false
+    }
+  ]
+}

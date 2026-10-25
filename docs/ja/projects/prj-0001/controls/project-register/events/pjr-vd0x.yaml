@@ -58,3 +58,48 @@
       from: in-progress
       to: review
   previous_event_id: reg_4f5d122e308640f1b4d7532103f171cb
+- v: 1
+  id: reg_c3a86f09bdba42a1945d55a879e84591
+  ts: "2026-10-25T10:12:27Z"
+  action: start
+  actor: sol-executor
+  from_status: review
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: review
+      to: in-progress
+  previous_event_id: reg_6b447ab9f7cc4ddab1297d421decfb24
+- v: 1
+  id: reg_0d32690fb40d4254a6e178b8aeb42a92
+  ts: "2026-10-25T10:19:24Z"
+  action: review
+  actor: sol-executor
+  from_status: in-progress
+  to_status: review
+  reason: ready for review
+  changes:
+    - field: status
+      from: in-progress
+      to: review
+  previous_event_id: reg_c3a86f09bdba42a1945d55a879e84591
+- v: 1
+  id: reg_598e402413794bcb933ef5e54346593b
+  ts: "2026-10-25T10:35:31Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: orchestratorが訂正後の完了条件と統合成果をレビューした。教材とkataのID区分、schema・Slidev等の検証記録、現行カタログ検証に問題なし。
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-25"
+    - field: conclusion
+      from: "-"
+      to: 教材IDをauthorityなしとする訂正後の7 kataをレビューし、規約・例・参照の整合と検証成功を確認したため完了とする。
+  previous_event_id: reg_0d32690fb40d4254a6e178b8aeb42a92

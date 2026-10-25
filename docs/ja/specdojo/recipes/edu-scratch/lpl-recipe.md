@@ -38,9 +38,9 @@ Lesson Plan Authoring Recipe
 
 ## 3. 全体の作成手順
 
-本文に着手する前に、ファイル先頭の YAML frontmatter に教材自身の `specdojo:` を用意する。`id` はカタログの `project_id` と対象行の `local_id` をコロンで結び（例：`prj-0001:lpl-balloon-game`）、`type: project`、`status: draft`、`rulebook: edu-scratch:lpl-rulebook` とする。これらは共通・成果物 frontmatter schema の項目と値であり、独自の型やフィールドを増やさない。`status` は文書成熟度であり、授業実施やタスク完了の状態ではない。
+本文に着手する前に、ファイル先頭の YAML frontmatter に教材自身の `specdojo:` を用意する。指導案はプロダクト文書なので、`id` はカタログの対象行の `local_id` と同じ修飾なし ID（例：`lpl-balloon-game`）とし、同じ SpecDojo Unit 内で一意にする。CLI の成果物指定に使う `<project-id>:<local-id>` を教材の正規 ID へ転記しない。`type: project`、`status: draft`、`rulebook: edu-scratch:lpl-rulebook` とする。これらは共通・成果物 frontmatter schema の項目と値であり、`type` と ID の namespace は別の概念である。`product` など独自の型やフィールドを増やさない。`status` は文書成熟度であり、授業実施やタスク完了の状態ではない。
 
-template / sample を写す場合は、先頭の kata 自身の `specdojo:` 全体を教材用の値へ置き換え、記入欄の YAML コメントと作成者向け案内を除く。教材の frontmatter は残す。kata の ID や `type: template` / `sample`、仮想例の ID を転記しない。`based_on` を使う場合は、確認済みでカタログの `depends_on` の推移閉包に含まれる先行成果物だけを入れる。コース計画が未登録なら本文に根拠を記すにとどめ、登録後に追加する。メタ情報の都合で題材・順序・時間は変えない。
+template / sample を写す場合は、先頭の kata 自身の `specdojo:` 全体を教材用の値へ置き換え、記入欄の YAML コメントと作成者向け案内を除く。教材の frontmatter は残す。kata の ID や `type: template` / `sample`、仮想例の ID を転記しない。`based_on` を使う場合は、確認済みでカタログの `depends_on` の推移閉包に含まれる先行成果物だけを入れる。教材間の参照には修飾なしの正規 ID（例：`cpl-scratch-basic`）を使う。コース計画が未登録なら本文に根拠を記すにとどめ、登録後に追加する。メタ情報の都合で題材・順序・時間は変えない。
 
 1. 位置づけと制約を一文ずつ書き出す。前後のつながりは確認済みの範囲にとどめ、未確定の接続はラベル付けする。
 2. 到達目標を、観察できる完成形へ分ける。時間不足でも残す最低到達、通常目指す到達、選べる発展を定め、それぞれに見取る証拠を付ける。
@@ -97,7 +97,7 @@ template / sample を写す場合は、先頭の kata 自身の `specdojo:` 全�
 
 ## 8. 仕上げチェック
 
-- [ ] 教材の `id` がカタログの `<project_id>:<local_id>` と一意に対応し、kata や仮想例の ID が残っていない。
+- [ ] 教材の `id` がカタログの `local_id` と一致する修飾なし ID で、同じ SpecDojo Unit 内で一意であり、kata や仮想例の ID が残っていない。
 - [ ] 教材の `type: project`、`status: draft`、`rulebook: edu-scratch:lpl-rulebook` と任意項目を成果物 schema で確認した。`based_on` は登録済みの先行成果物に限り、検証成功だけで `ready` にしていない。
 - [ ] 入力情報のうち未確認・未決定・仮定の項目に、`_TODO_:`、`_UNDECIDED_:`、`_ASSUMPTION_:` のいずれかと次の確認行動を記した。
 - [ ] ねらいごとに、観察可能な完成形、必要な操作、授業中の見取りを対応付けた。

@@ -37,7 +37,7 @@ Scratch 授業で投影する Slidev スライドの置き方、ページ構成�
 
 - スライドの正本は `courses/<course-id>/lessons/<nnn>-<activity-id>/slides.md` に置く。
 - `<nnn>` は活動の順序を表す 3 桁の連番、`<activity-id>` は活動を区別する小文字ハイフン区切りの名前にする。
-- カタログと Schedule で管理する教材の `specdojo.id` は `<project_id>:<local_id>` とする。カタログの `project_id` と対象行の `local_id` を使い、同じ project の全カタログで一意にする。例：`local_id: lsd-balloon-game` に対応する教材は `prj-0001:lsd-balloon-game`。kata の `edu-scratch:lsd-slidev-template` / `sample` や、指導案の `lpl-` ID をコピーしない。
+- 教材スライドはプロダクト文書であり、[[specdojo:id-and-file-naming-standard|ドキュメントIDおよびファイル命名標準]] に従って、`specdojo.id` はカタログの対象行の `local_id` と一致する修飾なし ID とする。同じ SpecDojo Unit 内で一意にする。例：`local_id: lsd-balloon-game` に対応する教材は `lsd-balloon-game`。CLI の成果物指定やカタログ内部の識別に使う `<project-id>:<local-id>` は教材自身の正規 ID ではない。プロジェクト文書の `prj-0001:`、型の文書の `edu-scratch:` はそれぞれ維持し、kata の ID や指導案の `lpl-` ID を教材へコピーしない。
 - 活動固有の画像などは `assets/`、フロントマターやコンポーネントから参照する公開素材は `public/`、活動固有の表示部品は `components/` に置く。
 - `dist/` と `node_modules/.slidev/` は生成物なので Git 管理しない。投影内容を変えるときは生成物ではなく `slides.md` と必要な入力素材を変更する。
 - 投影スライドの kata は、形式を名前に入れる。rulebook は `<対象>-slidev-rulebook`、sample は `<対象>-slidev-sample`、template は `<対象>-slidev-template` とする（本家の `--slidev` の scaffold と同じ）。`docs/ja/specdojo/rulebooks/`、`docs/ja/specdojo/samples/`、`docs/ja/specdojo/templates/` の対応する下に置く。整形（prettier の `slidev` parser）と markdownlint の Slidev 用の規則は、sample と template の名前で Slidev のスライドを見分けて当てる。Marp など別形式のスライドは、`<対象>-marp-<種類>` のように形式を変える。
@@ -50,12 +50,12 @@ Scratch 授業で投影する Slidev スライドの置き方、ページ構成�
 
 | 項目       | 採用値・根拠                                                                                                                                        |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`       | 第3章の `<project_id>:<local_id>`。共通 schema の小文字・数字・ハイフン・コロンの制約に従う。                                                       |
-| `type`     | `project`。授業で使うプロジェクト文書として成果物 schema の列挙値を使い、独自の `slides` 型を作らない。                                             |
+| `id`       | 第3章の修飾なし `local_id`。共通 schema が許容する小文字・数字・ハイフンを使う。                                                                    |
+| `type`     | `project`。既存の成果物 schema の列挙値を使う。これは ID の namespace とは別の概念であり、独自の `product`・`slides` 型を作らない。                 |
 | `status`   | 作成・移行時は `draft`。文書成熟度であり、Schedule の実行状態や授業実施済みを表さない。build・検証成功だけで `ready` にせず、人間が昇格を判断する。 |
 | `rulebook` | `edu-scratch:lsd-slidev-rulebook`。実在するこの rulebook の ID を使い、カタログの宣言とも一致させる。                                               |
 
-`based_on`、`part_of`、`supersedes` は schema にある任意の ID 配列であり、必要な場合だけ指定する。`based_on` は確認済みでカタログの `depends_on` の推移閉包に含まれる先行成果物だけとする。例えば第2回の指導案を根拠にする場合は `prj-0001:lpl-balloon-game` であり、kata の sample ではない。`depends_on` はカタログ側で管理し、`specdojo:` 配下へコピーしない。時間・回数などの独自項目も増やさない。
+`based_on`、`part_of`、`supersedes` は schema にある任意の ID 配列であり、必要な場合だけ指定する。`based_on` は確認済みでカタログの `depends_on` の推移閉包に含まれる先行成果物だけとする。例えば第2回の指導案を根拠にする場合は、プロダクト文書の正規 ID `lpl-balloon-game` を指定する。kata の sample は指定しない。`depends_on` はカタログ側で管理し、`specdojo:` 配下へコピーしない。時間・回数などの独自項目も増やさない。
 
 [[edu-scratch:lsd-slidev-template|スライド template]] と [[edu-scratch:lsd-slidev-sample|スライド sample]] の先頭の `specdojo:` は kata 自身のもの。教材化時は YAML コメントの教材用記入欄・例を基に、そのブロックを教材固有の値へ置き換える。コメントの案内を除き、教材の `specdojo:` は残す。標準の `frontmatter_template` は導入済み成果物 schema の許可項目には含まれないため追加せず、自動展開には依存しない。
 
@@ -66,7 +66,7 @@ Scratch 授業で投影する Slidev スライドの置き方、ページ構成�
 ```yaml
 ---
 specdojo:
-  id: prj-0001:lsd-balloon-game
+  id: lsd-balloon-game
   type: project
   status: draft
   rulebook: edu-scratch:lsd-slidev-rulebook

@@ -215,3 +215,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_aef24079c9fc4cb1aad612ea7e5c21ce
+- v: 1
+  id: reg_a388c462884d4bfea693f78cb36fda14
+  ts: "2026-10-25T10:08:59Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: 利用者の確認とclose依頼に基づき、orchestratorが完了条件・成果物・実行記録を再レビューした。教材2ファイルのPrettier・Markdownlint・19ページ解析と、全ページPNGおよび追加後17〜19ページの確認記録を確認。プロダクトID規約の指摘は後続PJR-VD0X/PJR-Y36Gの別件として扱う。
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-25"
+    - field: conclusion
+      from: "-"
+      to: 制作順序・補足説明・実装先と指導案の整合、追加ミッション、全19ページの表示検証を確認し完了。
+  previous_event_id: reg_0481495adb884b40b5bb341081fed9e2
