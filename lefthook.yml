@@ -7,3 +7,6 @@ pre-commit:
     - name: lint Markdown documentation
       glob: "*.md"
       run: npx markdownlint -- {staged_files}
+    - name: check Slidev deck names
+      glob: "*.md"
+      run: node tools/check-slidev-names.mjs {staged_files}

@@ -39,6 +39,7 @@ Scratch 授業で投影する Slidev スライドの置き方、ページ構成�
 - `<nnn>` は活動の順序を表す 3 桁の連番、`<activity-id>` は活動を区別する小文字ハイフン区切りの名前にする。
 - 活動固有の画像などは `assets/`、フロントマターやコンポーネントから参照する公開素材は `public/`、活動固有の表示部品は `components/` に置く。
 - `dist/` と `node_modules/.slidev/` は生成物なので Git 管理しない。投影内容を変えるときは生成物ではなく `slides.md` と必要な入力素材を変更する。
+- 投影スライドの kata（sample・template）の ID は `lsd-` で始め（例: `lsd-sample`、`lsd-workshop-sample`）、`docs/ja/specdojo/samples/` または `docs/ja/specdojo/templates/` の下に置く。整形（prettier の `slidev` parser）と markdownlint の Slidev 用の規則は、この名前で Slidev のスライドを見分けて当てる。
 
 ## 4. 推奨 Frontmatter 項目
 
@@ -130,6 +131,7 @@ Scratch 授業で投影する Slidev スライドの置き方、ページ構成�
 ### 6.6. Markdownlint の注釈
 
 - `slides.md` の markdownlint は、教材リポジトリの `.markdownlint.yaml` の設定に従う。文書内で規則を無効化する注釈は、先頭の `markdownlint-disable MD003 MD022` だけにする。
+- 投影スライドの kata は、kata のリポジトリの `.markdownlint-slidev.yaml` の規則で検査する。VS Code では `.markdownlint-cli2.yaml` の `overrides` が、名前（3 章）で見分けた kata にこの規則を当てる。commit hook の markdownlint-cli はファイルごとに規則を変えられないため、`.markdownlintignore` で検査から外す。
 - 見出し、リスト、コードブロック、表などは教材リポジトリの Markdown 規則に従い、注釈を書式の不備の回避に使わない。
 - Slidev 固有のページ設定を変更したら、注釈が先頭にあり、MD003 と MD022 だけを対象にしていることを確認する。
 
