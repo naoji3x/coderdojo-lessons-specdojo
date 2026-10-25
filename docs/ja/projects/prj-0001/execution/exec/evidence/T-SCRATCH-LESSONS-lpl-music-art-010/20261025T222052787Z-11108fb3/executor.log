@@ -1,0 +1,16 @@
+第3回 指導案（`lpl-music-art`）の成果物として `coderdojo-lessons/courses/scratch-basic/lessons/030-music-art/lesson-plan.md` を新規作成しました。
+
+先行成果物 `cpl-scratch-basic` の決定事項を正本とし、BAロールの観点（業務価値・受入条件・利用場面）および `lpl-rulebook.md` の必須章立てに準拠して、以下の内容を具体化しました：
+- **授業の概要・ねらい・使用機能**: ペン拡張と音楽拡張を組み合わせ、多角形・幾何学模様の描画と音の同期を実現するねらいと作品内の役割の定義。
+- **授業の位置づけ**: 全5回における第3回（プログラミングによる表現・デジタルアート）の位置づけと、第1・2回の基礎から第4回のAIじゃんけん、第5回のデジタルアートコースへの接続。
+- **完成する作品**: 最低完成形（画面消去と正多角形の描画）、標準完成形（音の同期、回転による幾何学模様、初期化・再開）、発展形（角数・角度・色・太さ・音階の変更）。
+- **事前準備・実機確認**: 教師用完成見本の準備と、Chromebook実機での拡張機能動作・音響環境・描画負荷・`.sb3` 保存復元に関する未確認事項（`_TODO_:`）の識別。
+- **授業の流れ・時間配分**: コース計画に整合した45分構成（導入5分、基本制作20分、発展15分、まとめ5分）。
+- **進め方と進度差対応・見取り・つまずき対応**: 操作提示・確認の進め方、進度差対応、評価の視点と場面ごとの具体的な声かけの整理。
+- **まとめ・保存・次回予告**: `.sb3` 形式でのローカル保存と見せ合い、第4回AIじゃんけんへのつなぎ。
+
+PrettierおよびMarkdownlintによる静的検査を実施し、すべて合格しています。
+
+<specdojo_executor_evidence>
+{"completion_status":"complete","final_message":"第3回 指導案（lpl-music-art）を新規作成し、PrettierおよびMarkdownlintの静的検査に合格しました。","handoff":["教室環境で児童が一斉に音楽拡張の音を鳴らした際の音響環境（内蔵スピーカーの音量上限の統一、または個別イヤホン利用の要否）を学校・実施会場と授業実施2週間前までに事前確認する（担当: 授業責任者）","Chromebook実機で複雑な幾何学模様（繰り返し数十回以上）を描画した際の負荷と描画速度を授業実施1週間前までに確認する（担当: 教材担当者）","Stretch3でペン・音楽拡張を含むプロジェクトを.sb3形式で保存し、再度開いた際に拡張ブロックが正常に保持されるかを実機で授業実施1週間前までに確認する（担当: 教材担当者）"],"validations":[{"command":"cd coderdojo-lessons && npx prettier --check courses/scratch-basic/lessons/030-music-art/lesson-plan.md","status":"passed","summary":"Prettier check passed with no formatting errors"},{"command":"npx --prefix project markdownlint --config project/.markdownlintrc coderdojo-lessons/courses/scratch-basic/lessons/030-music-art/lesson-plan.md","status":"passed","summary":"Markdownlint check passed with 0 errors"},{"command":"npm test","status":"not_applicable","summary":"","reason":"test script is absent or placeholder in package.json"},{"command":"npm run validate:schema:file","status":"not_applicable","summary":"","reason":"no changed *.yaml or *.yml files"},{"command":"specdojo catalog validate","status":"not_applicable","summary":"","reason":"changes outside docs/ja/projects/"}]}
+</specdojo_executor_evidence>
