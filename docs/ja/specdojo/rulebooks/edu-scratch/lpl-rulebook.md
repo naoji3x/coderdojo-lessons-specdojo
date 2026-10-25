@@ -4,6 +4,7 @@ specdojo:
   type: rulebook
   status: draft
   target_format: markdown
+  sample: edu-scratch:lpl-sample
 ---
 
 # 活動別指導案 Rulebook
