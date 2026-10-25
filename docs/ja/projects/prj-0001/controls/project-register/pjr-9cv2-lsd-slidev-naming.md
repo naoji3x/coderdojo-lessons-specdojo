@@ -22,13 +22,52 @@ specdojo:
 
 ## 2. 完了条件
 
-- _TODO_: 完了と判断できる具体的な条件を記載する。
+名前と参照:
+
+- 次のとおりファイルの名前と ID を改めている。旧い名前のファイルは残っていない。
+
+| 旧                                                                                                         | 新                                                                                       |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `docs/ja/specdojo/rulebooks/edu-scratch/lsd-rulebook.md`（`edu-scratch:lsd-rulebook`）                     | `lsd-slidev-rulebook.md`（`edu-scratch:lsd-slidev-rulebook`）                            |
+| `docs/ja/specdojo/samples/edu-scratch/lsd-sample.md`・`lsd-sample.css`（`edu-scratch:lsd-sample`）         | `lsd-slidev-sample.md`・`lsd-slidev-sample.css`（`edu-scratch:lsd-slidev-sample`）       |
+| `docs/ja/specdojo/templates/edu-scratch/lsd-template.md`・`lsd-template.css`（`edu-scratch:lsd-template`） | `lsd-slidev-template.md`・`lsd-slidev-template.css`（`edu-scratch:lsd-slidev-template`） |
+
+- rulebook の frontmatter の `sample`・`template`、sample の `rulebook`、本文と `.css` の注釈の中の ID とファイル名が、新しい名前になっている。
+- ファイルの中身は、名前と ID と、下の glob・名前の決まりの記述のほかは変えていない。
+
+設定と検査:
+
+- `.markdownlint-cli2.yaml`・`.prettierrc`・`.markdownlintignore`・`tools/check-slidev-files.mjs` の Slidev の glob が、`docs/ja/specdojo/samples/**/*-slidev-sample.md` と `docs/ja/specdojo/templates/**/*-slidev-template.md` になっている。`tools/check-slidev-files.mjs` の名前の正規表現（`SLIDEV_NAME`）も同じ範囲になっている。
+- rulebook は普通の Markdown なので、上の glob に当たらない（`*-slidev-rulebook.md` は Slidev 用の設定の対象外）。
+- `.markdownlint-cli2.yaml` の Slidev 用の override は先頭、`.prettierrc` の Slidev 用の override は末尾のままである。
+- `tools/preview-lsd.sh` は名前を変えず、注釈の例のパスを新しい名前にしている。kata と同じ名前の `.css` を `style.css` として写す動きは変えない。
+- `node tools/check-slidev-files.mjs` が成功する。sample と template が prettier（`slidev` parser）を通り、rulebook が markdownlint を通る。
+
+rulebook の本文:
+
+- 3 章の名前の決まりを「投影スライドの kata は、形式を名前に入れ、sample は `<対象>-slidev-sample`、template は `<対象>-slidev-template` とする（本家の `--slidev` の scaffold と同じ）」に改めている。Marp など別の形式のスライドは `<対象>-marp-<種類>` のように形式を変えることを書いている。
+- 6.6 の検査の仕組みの記述が、新しい glob と一致している。
+
+変えないもの:
+
+- close 済みの個票、exec の plan・result・evidence は、旧い ID を含んでいても変更しない（記録のため）。
+- 教材のリポジトリ（coderdojo-lessons）は変更しない。
+- `lefthook.yml` と `package.json` は変更しない（保護された設定）。
+
+記録:
+
+- 変更したファイルの一覧と、旧い ID が残っている箇所（変えないもの以外にないこと）を確かめた方法を、個票の対応結果に書いている。
+- exec の sandbox では Slidev を起動できないため、表示の確認は統合の後に orchestrator が `tools/preview-lsd.sh png` で行う。
 
 ## 3. 作業内容
 
-| No  | 作業   | 担当   | 状態 | メモ |
-| --- | ------ | ------ | ---- | ---- |
-| 1   | _TODO_ | _TODO_ | open | -    |
+| No  | 作業                                             | 担当 | 状態 | メモ                                  |
+| --- | ------------------------------------------------ | ---- | ---- | ------------------------------------- |
+| 1   | kata のファイルの名前と ID を改め、参照を直す    | exec | open | `git mv` を使う                       |
+| 2   | 4 つの設定・検査の glob と名前の正規表現を改める | exec | open | override の順番は変えない             |
+| 3   | rulebook の 3 章と 6.6 を改める                  | exec | open | 形式を名前に入れる決まり              |
+| 4   | 旧い ID の残りを確かめ、個票の対応結果に書く     | exec | open | `git grep` など                       |
+| 5   | 書き出して表示を確かめる                         | orch | open | 統合の後に `tools/preview-lsd.sh png` |
 
 ## 4. 対応結果
 
@@ -36,4 +75,5 @@ _TODO_: 完了時に、実施内容・成果物・残課題を記載する。未
 
 ## 5. 関連ドキュメント
 
-- _TODO_: 根拠・影響先・追跡先を `[[doc-id]]` 形式で記載する。
+- [[prj-0001:pjr-ekfp-lsd-template]]：template を作った項目
+- 本家の SpecDojo の PJR-84F7（`--slidev` の scaffold）と PJR-50YH（markdownlint-cli2 の overrides）
