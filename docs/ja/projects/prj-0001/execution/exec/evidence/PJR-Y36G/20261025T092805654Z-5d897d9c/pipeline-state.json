@@ -2,7 +2,7 @@
   "schema_version": 1,
   "task_id": "PJR-Y36G",
   "run_id": "20261025T092805654Z-5d897d9c",
-  "updated_at": "2026-10-25T09:34:41.267Z",
+  "updated_at": "2026-10-25T09:34:46.954Z",
   "stages": {
     "executor": {
       "status": "succeeded",
@@ -21,12 +21,24 @@
       "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/results/pjr-y36g-20261025T092315Z-a99c548c-result.md"
     },
     "integrate": {
-      "status": "running",
+      "status": "succeeded",
       "actor": "sol-executor",
       "attempts": 1,
       "started_at": "2026-10-25T09:34:41.267Z",
-      "completed_at": null,
-      "artifact_ref": null
+      "completed_at": "2026-10-25T09:34:46.954Z",
+      "artifact_ref": null,
+      "repos": {
+        "coderdojo-lessons": {
+          "status": "merged",
+          "commit": "684351a35e3297dc21a075c27e4335b181ee9665",
+          "merged_at": "2026-10-25T09:34:44.767Z"
+        },
+        "project": {
+          "status": "merged",
+          "commit": null,
+          "merged_at": "2026-10-25T09:34:44.769Z"
+        }
+      }
     }
   },
   "artifacts": {
