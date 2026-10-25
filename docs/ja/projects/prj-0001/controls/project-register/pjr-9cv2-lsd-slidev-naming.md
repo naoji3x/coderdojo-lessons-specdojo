@@ -63,11 +63,11 @@ rulebook の本文:
 
 | No  | 作業                                             | 担当 | 状態 | メモ                                  |
 | --- | ------------------------------------------------ | ---- | ---- | ------------------------------------- |
-| 1   | kata のファイルの名前と ID を改め、参照を直す    | exec | open | `git mv` を使う                       |
-| 2   | 4 つの設定・検査の glob と名前の正規表現を改める | exec | open | override の順番は変えない             |
-| 3   | rulebook の 3 章と 6.6 を改める                  | exec | open | 形式を名前に入れる決まり              |
-| 4   | 旧い ID の残りを確かめ、個票の対応結果に書く     | exec | open | `git grep` など                       |
-| 5   | 書き出して表示を確かめる                         | orch | open | 統合の後に `tools/preview-lsd.sh png` |
+| 1   | kata のファイルの名前と ID を改め、参照を直す    | exec | done | `git mv` を使う                       |
+| 2   | 4 つの設定・検査の glob と名前の正規表現を改める | exec | done | override の順番は変えない             |
+| 3   | rulebook の 3 章と 6.6 を改める                  | exec | done | 形式を名前に入れる決まり              |
+| 4   | 旧い ID の残りを確かめ、個票の対応結果に書く     | exec | done | `git grep` など                       |
+| 5   | 書き出して表示を確かめる                         | orch | done | 統合の後に `tools/preview-lsd.sh png` |
 
 ## 4. 対応結果
 
@@ -76,6 +76,14 @@ rulebook の本文:
 - rulebook の 3 章と 6.6 を、形式を名前に含める命名規則と上記 glob に合わせた。Marp など別形式には `<対象>-marp-<種類>` を使うことも明記した。
 - `rg` で maintained kata・設定・ツールを検索し、旧 ID と旧ファイル名が残っていないことを確認した。close 済み個票、exec の plan・result・evidence は履歴として対象外にした。
 - `node tools/check-slidev-files.mjs`、Slidev parser による sample・template の Prettier、rulebook の markdownlint は成功した。表示の確認は統合後に orchestrator が `tools/preview-lsd.sh png` で行う。
+
+orchestrator が完了条件と照らして確かめたこと（統合 `c83823b`）:
+
+- 3つの kata の Markdown と付属の `.css` が新しい名前になり、旧い ID と旧いファイル名は、close 済みの個票と exec の記録のほかに残っていない（`git grep`）。
+- sample と template の中身の差分は、ID・`rulebook` の参照・`.css` の注釈の名前だけである。
+- 4つの設定・検査の glob が `*-slidev-sample.md`・`*-slidev-template.md` にそろい、`SLIDEV_NAME` も同じ範囲になった。`.markdownlint-cli2.yaml` の Slidev 用の override は先頭、`.prettierrc` は末尾のままである。
+- `node tools/check-slidev-files.mjs` が成功し、markdownlint-cli2 で `docs/ja/specdojo/` の警告は 0 件、prettier と rulebook の markdownlint も通る。
+- `tools/preview-lsd.sh png` で sample（8ページ）と template（10ページ）を書き出し、付属の `.css` が `style.css` として写り、節の色の帯・案内役・ブロック図が表示されることを確かめた。
 
 ## 5. 関連ドキュメント
 
