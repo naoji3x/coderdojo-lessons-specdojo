@@ -44,12 +44,21 @@ PJR-NH2Zで得た段階ごとの改造問い、実機確認注記の柔軟な配
 
 | No  | 作業                                                    | 担当 | 状態 | メモ                           |
 | --- | ------------------------------------------------------- | ---- | ---- | ------------------------------ |
-| 1   | rulebook の制作・配置・表示確認の規定を更新する         | exec | open | NH2Zの知見を一般化             |
-| 2   | sample と template の問い・保存共有案内・配置をそろえる | exec | open | 既存の活動と規約を維持         |
-| 3   | 整形・lint・設定検査を行い結果を記録する                | exec | open | resultはreporterが記述         |
-| 4   | 統合後に sample と template をPNGで確認する             | orch | open | 全ページ出力し変更ページを確認 |
+| 1   | rulebook の制作・配置・表示確認の規定を更新する         | exec | done | NH2Zの知見を一般化             |
+| 2   | sample と template の問い・保存共有案内・配置をそろえる | exec | done | 既存の活動と規約を維持         |
+| 3   | 整形・lint・設定検査を行い結果を記録する                | exec | done | resultはreporterが記述         |
+| 4   | 統合後に sample と template をPNGで確認する             | orch | done | 全ページ出力し変更ページを確認 |
 
 ## 4. 対応結果
+
+### 統合後の確認結果
+
+- 2026-10-25、統合commit `f45fcfd` の sample を `bash tools/preview-lsd.sh png docs/ja/specdojo/samples/edu-scratch/lsd-slidev-sample.md`、template を同手順の template パス指定で出力し、sample は全9ページ、template は全11ページのPNG出力に成功した（終了コード0）。sample の4・5ページ（制作・改造・注記・図）と7ページ（保存共有）を目視し、必要な全文が画面内で読め、案内役と文字が重ならないことを確認した。
+- template の素の6ページでは長い英語プレースホルダーと作成者向け `_TODO_` 案内が重なったため、正本を変えず `tmp/lsd-preview/lsd-slidev-template-filled/slides.md` で全欄を代表的な日本語へ置換し、教材化時に除去する作成者向け `_TODO_` の段落を除いて再出力した（全11ページ、終了コード0）。6ページ（制作）と8ページ（保存共有）を目視し、下切れ・文字と案内役の重なりがないことを確認した。代表値は「えらべるお話を作ろう」、3手順「旗で答えを空にする／質問をして答えを受け取る／旗から動かして確かめる」、問い「質問を変えると、答えはどう変わる？」、4ブロックの質問・答え記録、注記「ブロック名を確かめてから、旗で試そう。」、端末保存と隣の友だちによる森・海の選択とした。全補完値は同ディレクトリの `preview-values.json` に保存した。任意の長さの入力で収まることまでは保証せず、利用時も描画確認する。
+- sample の出力先は `tmp/lsd-preview/lsd-slidev-sample/png/`、template の代表値補完後は `tmp/lsd-preview/lsd-slidev-template-filled/png/`。生成物はコミット対象外。出力時に FloatingVue の Popper に関するコンソールエラーが出たが、PNG出力は成功し、確認ページの描画に支障はなかった。
+- 統合後の `npx specdojo exec validate --project prj-0001` は通過した。exec から引き継いだ sample・template の描画確認は上記の範囲で対応済み。
+
+### exec の対応結果
 
 - [[edu-scratch:lsd-slidev-rulebook|投影スライド Rulebook]] の 6.1 に、実機確認注記をブロック図側へ置ける柔軟な配置と、問い・注記の全文、案内役との重なりを確認する条件を追加した。6.6 には、指導案で「変えて試す」を求める制作段階だけに、先生と基本操作をした後の短い改造問いを置く規定を追加した。保存・共有とゲーム固有処理を全活動の必須にしないことも明記した。
 - [[edu-scratch:lsd-slidev-sample|えらべるお話を作ろう]] は、質問を変える段階と行き先を変える段階に短い「改造してみよう」の問いを置き、実機確認注記を各 `ScratchBlocks` の直後へ分散した。端末への保存と隣の友だちに選んでもらう共有も、この活動の具体例として追加した。
