@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../../../../../node_modules/specdojo/docs/specdojo/schemas/v1/pm-review-viewpoints.schema.yaml
+id: prj-0001:pm-review-viewpoints
+type: project
+status: draft
+title: レビュー観点一覧
+rulebook: none
+version: 1
+project_id: prj-0001
+extends: specdojo:pm-review-viewpoints
+viewpoints: []
+role_viewpoint_sets: []
+disabled:
+  viewpoints: []
+  role_viewpoint_sets: []

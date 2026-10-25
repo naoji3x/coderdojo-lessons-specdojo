@@ -14,6 +14,7 @@
       ],
       "base_path": "docs/ja/projects/prj-0001",
       "members_path": "030-project-management/pm-members.yaml",
+      "viewpoints_path": "030-project-management/pm-review-viewpoints.yaml",
       "project_register_path": "controls/project-register",
       "project_context": ["prj-overview"],
       "run": {
