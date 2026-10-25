@@ -2,7 +2,7 @@
   "schema_version": 1,
   "task_id": "T-SCRATCH-LESSONS-lsd-original-project-010",
   "run_id": "20261025T233720057Z-c11c8cc2",
-  "updated_at": "2026-10-25T23:52:47.853Z",
+  "updated_at": "2026-10-25T23:52:49.850Z",
   "stages": {
     "executor": {
       "status": "succeeded",
@@ -21,12 +21,24 @@
       "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/results/T-SCRATCH-LESSONS-lsd-original-project-010-result.md"
     },
     "integrate": {
-      "status": "running",
+      "status": "succeeded",
       "actor": "flash-high-executor",
       "attempts": 1,
       "started_at": "2026-10-25T23:52:47.853Z",
-      "completed_at": null,
-      "artifact_ref": null
+      "completed_at": "2026-10-25T23:52:49.850Z",
+      "artifact_ref": null,
+      "repos": {
+        "coderdojo-lessons": {
+          "status": "merged",
+          "commit": "3dc7e76b9b964d1b3c41b1a3f54f9f1f6d33f619",
+          "merged_at": "2026-10-25T23:52:49.845Z"
+        },
+        "project": {
+          "status": "merged",
+          "commit": null,
+          "merged_at": "2026-10-25T23:52:49.848Z"
+        }
+      }
     }
   }
 }
