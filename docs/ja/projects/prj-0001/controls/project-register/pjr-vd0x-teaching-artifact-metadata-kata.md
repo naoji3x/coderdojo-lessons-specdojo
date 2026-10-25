@@ -47,6 +47,10 @@ specdojo:
 
 ## 4. 対応結果
 
+### ID訂正後の統合レビュー（orchestrator）
+
+- `408f022` の修正を命名標準と照合し、教材はカタログのlocal_idと一致する修飾なしID、kataはauthority付きID、プロジェクト文書はproject namespace付きIDと区別されていることを確認した。7 kataの規約・記入欄・例・教材間参照が整合し、schema・ID解決・整形・lint・Slidev解析とbuildの成功を確認した。従来の「教材IDにもprj-0001を付ける」というレビュー判断は訂正する。後続PJR-Y36Gで既存教材のIDとbased_onを修正する。
+
 ### 統合後レビュー（orchestrator）
 
 - `d5200e9` の統合成果と個票・resultを完了条件に照らして確認した。7 kataのID・メタ情報の扱い・templateとsampleの区別・recipeの自己完結性・draft維持が整合し、整形・lint・schema・Slidev解析とbuildの成功記録を確認した。教材本体は未変更。後続PJR-Y36Gへ進める上で妨げとなる不整合は見つからなかった。コース計画のID確定は後続項目で行い、専用rulebook未整備とschema上の `rulebook: none` の扱いも申し送りを確認した。
