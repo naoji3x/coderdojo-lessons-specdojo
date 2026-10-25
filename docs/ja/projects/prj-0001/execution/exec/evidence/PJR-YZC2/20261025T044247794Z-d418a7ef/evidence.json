@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-YZC2",
+  "run_id": "20261025T044247794Z-d418a7ef",
+  "stage": {
+    "role": "executor",
+    "actor": "codex-expert-executor",
+    "status": "succeeded",
+    "started_at": "2026-10-25T04:43:42.201Z",
+    "completed_at": "2026-10-25T04:46:35.211Z",
+    "exit_code": 0,
+    "attempts": 1
+  },
+  "changes": [
+    {
+      "path": "docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md",
+      "status": "??"
+    }
+  ],
+  "attempt_changes": [
+    {
+      "path": "docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md",
+      "status": "M"
+    },
+    {
+      "path": "docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md",
+      "status": "??"
+    }
+  ],
+  "diff_summary": {
+    "files_changed": 2,
+    "summary": "docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md | 1 +\n 1 file changed, 1 insertion(+)"
+  },
+  "validations": [
+    {
+      "source": "executor",
+      "command": "npx prettier --write docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md",
+      "status": "passed",
+      "summary": "変更したMarkdownを整形しました。"
+    },
+    {
+      "source": "executor",
+      "command": "npx prettier --check docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md",
+      "status": "passed",
+      "summary": "Prettier整形を確認しました。"
+    },
+    {
+      "source": "executor",
+      "command": "npx markdownlint -- docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md",
+      "status": "passed",
+      "summary": "Markdown lintに成功しました。"
+    },
+    {
+      "source": "executor",
+      "command": "node tools/check-slidev-files.mjs docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md docs/ja/specdojo/rulebooks/edu-scratch/lpl-rulebook.md",
+      "status": "passed",
+      "summary": "コミット時フック相当の文書検査に成功しました。"
+    },
+    {
+      "source": "executor",
+      "command": "node -e \"recipe frontmatter, sections, standalone-body references, and rulebook recipe link assertions\"",
+      "status": "passed",
+      "summary": "ID、種別、draft状態、参照、必須8章、本文の自己完結性、rulebook参照を確認しました。"
+    },
+    {
+      "source": "executor",
+      "command": "git diff --check && git diff --no-index --check /dev/null docs/ja/specdojo/recipes/edu-scratch/lpl-recipe.md && git -C ../coderdojo-lessons diff --check && test -z \"$(git -C ../coderdojo-lessons status --porcelain)\"",
+      "status": "passed",
+      "summary": "差分の空白エラーはなく、教材リポジトリに変更はありません。"
+    },
+    {
+      "source": "executor",
+      "command": "npm test",
+      "status": "not_applicable",
+      "summary": "テストは非適用です。",
+      "reason": "package.jsonのtestはnpm initのプレースホルダスクリプトであり、変更対象もテスト実行条件に該当しません。"
+    },
+    {
+      "source": "executor",
+      "command": "npm run typecheck",
+      "status": "not_applicable",
+      "summary": "型検査は非適用です。",
+      "reason": "package.jsonにtypecheckスクリプトがなく、変更対象も型検査の適用範囲外です。"
+    },
+    {
+      "source": "executor",
+      "command": "npx specdojo catalog validate",
+      "status": "not_applicable",
+      "summary": "カタログ検証は非適用です。",
+      "reason": "prj-0001の設定にcatalog_pathがなく、変更はdocs/ja/projects配下ではありません。"
+    }
+  ],
+  "final_message": "活動別指導案を自己完結して組み立てるdraft recipeを追加し、rulebookのrecipe参照を更新しました。教材リポジトリは未変更です。",
+  "log_refs": [
+    {
+      "kind": "agent-output-excerpt",
+      "path": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-YZC2/20261025T044247794Z-d418a7ef/executor.log",
+      "bytes": 2751,
+      "truncated": false
+    }
+  ]
+}

@@ -6,6 +6,7 @@ specdojo:
   target_format: markdown
   template: edu-scratch:lpl-template
   sample: edu-scratch:lpl-sample
+  recipe: edu-scratch:lpl-recipe
 ---
 
 # 活動別指導案 Rulebook
