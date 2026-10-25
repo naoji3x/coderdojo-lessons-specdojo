@@ -19,6 +19,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@slidev/cli": "^53.0.0",
+    "js-yaml": "^5.5.0",
     "lefthook": "^2.2.2",
     "markdownlint-cli": "^0.49.1",
     "playwright-chromium": "^1.64.1",
