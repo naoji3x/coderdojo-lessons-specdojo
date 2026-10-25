@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../../../../../../node_modules/specdojo/docs/specdojo/schemas/v1/grade-done-criteria.schema.yaml
+id: lsd-chase-game-grade-criteria
+document: lsd-chase-game
+path: ../coderdojo-lessons/courses/scratch-basic/lessons/010-chase-game/slides.md
+graded_at: "2026-10-25T15:07:37.648Z"
+graded_by: flash-high-executor
+content_hash: 391cf422b79c399e43715c0667a03ccbb7b072c1e9e2a2ced6582f68bb8a9bc6
+summary:
+  satisfied: 2
+  unsatisfied: 0
+  total: 2
+criteria:
+  - id: DC-001
+    text: 同じ回のレビュー済み指導案に、説明・制作・試行・到達確認・振り返りの内容と順序が対応していること。
+    roles:
+      - QE
+    viewpoint: vp-qe-verifiability
+    status: satisfied
+  - id: DC-002
+    text: Slidev buildと全ページの画像出力が成功し、文字やブロック図・実機確認注記の切れや重なりがないこと。
+    roles:
+      - QE
+    viewpoint: vp-qe-verifiability
+    status: satisfied
