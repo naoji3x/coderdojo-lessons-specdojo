@@ -1,0 +1,22 @@
+プロジェクト登録簿項目 PJR-17X8「第1回のスライドにScratch画面構成のレイアウト図を入れる」の作業および追加要件（背景選択エリアの追加・`lesson-plan.md` 記述整合）を完了しました。
+
+### 実施内容
+
+1. **第1回スライド 6ページ目のレイアウト改修** ([`slides.md`](file:///workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-17X8/coderdojo-lessons/courses/scratch-basic/lessons/010-chase-game/slides.md)):
+   - 右下段の見出しを「④ スプライト一覧と背景（ステージ）」へ改修。
+   - スプライト一覧（初期配置の猫 `Cat`）の右横に「ステージ（背景を選ぶ場所）」カードを横並びで配置し、実画面と同様にキャラと背景を選択するエリアが分かる構成としました。
+   - 説明文も「登場キャラや背景を選ぶ場所。最初は**猫**が選ばれているよ。」に改め、各場所の役割を明確化しました。
+
+2. **画面構成用スタイルの調整** ([`style.css`](file:///workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-17X8/coderdojo-lessons/courses/scratch-basic/lessons/010-chase-game/style.css)):
+   - 横並び配置用スタイル（`.scratch-bottom-row`、`.scratch-sprite-card`、`.scratch-stage-select-card`）およびアイコン・テキストスタイルを定義。
+   - 列幅比率を `250px 1fr 330px` に最適化し、右下案内役（`teacher-cat`）との重なりや画面下端での文字切れ・枠外溢れを防止しました。
+
+3. **指導案との整合** ([`lesson-plan.md`](file:///workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-17X8/coderdojo-lessons/courses/scratch-basic/lessons/010-chase-game/lesson-plan.md)):
+   - 5章（導入）の画面構成の記述を「右下：スプライト一覧と背景（ステージ）」に整合させました（それ以外の節・時間配分は変更なし）。
+
+4. **個票の更新** ([`pjr-17x8-chase-slides-screen-layout-diagram.md`](file:///workspaces/coderdojo-lessons-workspace/coderdojo-lessons-specdojo-worktrees/prj-0001-PJR-17X8/project/docs/ja/projects/prj-0001/controls/project-register/pjr-17x8-chase-slides-screen-layout-diagram.md)):
+   - 作業内容 No.3 の状態を `done` に更新し、対応結果および検証内容を記録しました。
+
+<specdojo_executor_evidence>
+{"completion_status":"complete","final_message":"第1回スライド6ページ目の右下段へステージ（背景を選ぶ場所）選択エリアを横並びで追加し、style.cssおよびlesson-plan.mdとの整合を完了しました。","handoff":["個票の完了条件に従い、統合後に orchestrator が npx slidev export courses/scratch-basic/lessons/010-chase-game/slides.md --format png で 6 ページ目および前後のページの表示（切れ・重なり・可読性）を目視確認すること。"],"validations":[{"command":"cd coderdojo-lessons && npx prettier --check courses/scratch-basic/lessons/010-chase-game/slides.md courses/scratch-basic/lessons/010-chase-game/style.css courses/scratch-basic/lessons/010-chase-game/lesson-plan.md","status":"passed","summary":"Prettier check passed for slides.md, style.css, and lesson-plan.md"},{"command":"cd coderdojo-lessons && npx slidev build courses/scratch-basic/lessons/010-chase-game/slides.md","status":"passed","summary":"Slidev build passed successfully"},{"command":"cd project && npx prettier --check docs/ja/projects/prj-0001/controls/project-register/pjr-17x8-chase-slides-screen-layout-diagram.md","status":"passed","summary":"Prettier check passed for register ticket"},{"command":"cd project && npx markdownlint docs/ja/projects/prj-0001/controls/project-register/pjr-17x8-chase-slides-screen-layout-diagram.md","status":"passed","summary":"Markdownlint check passed for register ticket"},{"command":"cd project && npx specdojo catalog validate","status":"passed","summary":"Specdojo catalog validate passed"}]}
+</specdojo_executor_evidence>
