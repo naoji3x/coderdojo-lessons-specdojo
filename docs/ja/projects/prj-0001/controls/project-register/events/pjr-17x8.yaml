@@ -84,3 +84,22 @@
       from: in-progress
       to: review
   previous_event_id: reg_43f24393c5374f53a62dd30e50e42365
+- v: 1
+  id: reg_e89471b3d5ee4b1aa823237281b71b79
+  ts: "2026-10-26T22:13:55Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: review
+  to_status: done
+  reason: exec run（agy-expert-executor / agy-reporter）の統合結果を完了条件と照合し、統合後のPNG書き出しで表示を確認したため
+  changes:
+    - field: status
+      from: review
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-10-26"
+    - field: conclusion
+      from: "-"
+      to: 第1回スライド6ページ目をScratch画面配置（左：ブロックパレット、中央：コードエリア、右上：ステージと旗、右下：スプライト一覧と背景選択エリア）のレイアウト図へ改め、指導案5章との整合と統合後のPNG表示確認を完了。
+  previous_event_id: reg_cadb8d2ad7ee4a46a614f06187830ccf

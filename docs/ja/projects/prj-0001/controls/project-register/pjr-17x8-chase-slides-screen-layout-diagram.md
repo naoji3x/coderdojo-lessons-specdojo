@@ -2,16 +2,18 @@
 specdojo:
   id: prj-0001:pjr-17x8-chase-slides-screen-layout-diagram
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   owner: BA
   registered_at: "2026-10-26T14:51:26Z"
   due_on: "2026-10-31"
+  completed_at: "2026-10-26T22:13:55Z"
+  conclusion: 第1回スライド6ページ目をScratch画面配置（左：ブロックパレット、中央：コードエリア、右上：ステージと旗、右下：スプライト一覧と背景選択エリア）のレイアウト図へ改め、指導案5章との整合と統合後のPNG表示確認を完了。
 ---
 
 # PJR-17X8 第1回のスライドにScratch画面構成のレイアウト図を入れる
