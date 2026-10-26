@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "task_id": "PJR-17X8",
+  "run_id": "20261026T150142437Z-ccff2b71",
+  "updated_at": "2026-10-26T15:20:56.454Z",
+  "stages": {
+    "executor": {
+      "status": "succeeded",
+      "actor": "flash-high-executor",
+      "attempts": 1,
+      "started_at": "2026-10-26T15:04:02.534Z",
+      "completed_at": "2026-10-26T15:20:30.325Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/evidence/PJR-17X8/20261026T150142437Z-ccff2b71/evidence.json"
+    },
+    "reporter": {
+      "status": "succeeded",
+      "actor": "flash-reporter",
+      "attempts": 1,
+      "started_at": "2026-10-26T15:20:30.329Z",
+      "completed_at": "2026-10-26T15:20:53.019Z",
+      "artifact_ref": "docs/ja/projects/prj-0001/execution/exec/results/pjr-17x8-20261026T150142Z-954dd4ec-result.md"
+    },
+    "integrate": {
+      "status": "succeeded",
+      "actor": "flash-high-executor",
+      "attempts": 1,
+      "started_at": "2026-10-26T15:20:53.043Z",
+      "completed_at": "2026-10-26T15:20:56.454Z",
+      "artifact_ref": null,
+      "repos": {
+        "coderdojo-lessons": {
+          "status": "merged",
+          "commit": "8b49da0ae57db6d267e8ad99a4cc98214cf8b47e",
+          "merged_at": "2026-10-26T15:20:55.175Z"
+        },
+        "project": {
+          "status": "merged",
+          "commit": null,
+          "merged_at": "2026-10-26T15:20:55.178Z"
+        }
+      }
+    }
+  },
+  "artifacts": {
+    "plan_ref": "docs/ja/projects/prj-0001/execution/exec/plans/pjr-17x8-20261026T150142Z-954dd4ec-plan.md",
+    "result_ref": "docs/ja/projects/prj-0001/execution/exec/results/pjr-17x8-20261026T150142Z-954dd4ec-result.md"
+  }
+}
