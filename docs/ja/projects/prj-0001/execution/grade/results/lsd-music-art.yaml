@@ -1,0 +1,144 @@
+# yaml-language-server: $schema=../../../../../../../node_modules/specdojo/docs/specdojo/schemas/v1/grade-result.schema.yaml
+version: 1
+document: lsd-music-art
+path: ../coderdojo-lessons/courses/scratch-basic/lessons/030-music-art/slides.md
+target: deliverable
+rubric: grade-rubric-v2
+verdict: pass
+score: 99
+graded_at: "2026-10-26T00:05:00.424Z"
+graded_by: flash-high-executor
+content_hash: a01029a67d0434237fdd8d174e97d7a5fd41428e6561c45fb2d13f605e03c916
+source_hashes:
+  catalog-entry: 08e03658f852bb9c21724829efd84c2de6216575a72169a40d8f96c97fa2dbf2
+  deliverable:pm-organization: e8beee0cf87b0198b0fa2a6463816c08db27f8f4aa43cb182abb63881a076a25
+  deliverable:pm-raci: e8beee0cf87b0198b0fa2a6463816c08db27f8f4aa43cb182abb63881a076a25
+  dependency:lpl-music-art: 49d62e0f720a13351246c78e534b92bd5b60f62ddf3801aaab648bfd09fde254
+  members: bc36b3ee482cc7c308c29912828f7a6fcbe8552a4184de7ce58546abd4c0726e
+  roles: e8beee0cf87b0198b0fa2a6463816c08db27f8f4aa43cb182abb63881a076a25
+  schedule: 09964c26d2b37b601d31e9657094c022f60b9c6a689d7953336869a1c96c8f00
+categories:
+  purpose:
+    score: 100
+  operations:
+    score: 100
+  planning:
+    score: 100
+  business:
+    score: 100
+  consistency:
+    score: 100
+  architecture:
+    score: 100
+  usability:
+    score: 94
+  implementation:
+    score: 100
+  quality:
+    score: 100
+viewpoints:
+  vp-po-purpose-alignment:
+    level: 4
+    score: 100
+  vp-po-decision-readiness:
+    level: 4
+    score: 100
+  vp-po-publication-accountability:
+    level: 4
+    score: 100
+  vp-pm-plan-feasibility:
+    level: 4
+    score: 100
+  vp-pm-dependency-risk:
+    level: 4
+    score: 100
+  vp-pm-control-reporting:
+    level: 4
+    score: 100
+  vp-ba-business-value:
+    level: 4
+    score: 100
+  vp-ba-requirements-completeness:
+    level: 4
+    score: 100
+  vp-ba-stakeholder-clarity:
+    level: 4
+    score: 100
+  vp-arc-cross-document-consistency:
+    level: 4
+    score: 100
+  vp-arc-technical-constraints:
+    level: 4
+    score: 100
+  vp-arc-conciseness:
+    level: 4
+    score: 100
+  vp-arc-single-responsibility:
+    level: 4
+    score: 100
+  vp-dev-implementation-readiness:
+    level: 4
+    score: 100
+  vp-dev-change-impact:
+    level: 4
+    score: 100
+  vp-dev-testability:
+    level: 4
+    score: 100
+  vp-qe-done-criteria:
+    level: 4
+    score: 100
+  vp-qe-verifiability:
+    level: 4
+    score: 100
+  vp-qe-omissions-consistency:
+    level: 4
+    score: 100
+  vp-ux-readability:
+    level: 4
+    score: 100
+  vp-ux-user-flow:
+    level: 4
+    score: 100
+  vp-ux-language-consistency:
+    level: 3
+    score: 75
+  vp-ops-release-readiness:
+    level: 4
+    score: 100
+  vp-ops-operability:
+    level: 4
+    score: 100
+  vp-ops-agent-boundary:
+    level: 4
+    score: 100
+  vp-arc-document-structure:
+    level: 4
+    score: 100
+  vp-qe-config-validity:
+    level: 4
+    score: 100
+finding_counts:
+  blocker: 0
+  major: 0
+  minor: 1
+  note: 0
+findings:
+  - id: F001
+    severity: minor
+    rule: vp-ux-language-consistency
+    line: 537
+    anchor: ""
+    message: >-
+      Terminology 'Stretch3' is introduced abruptly in the save instruction, conflicting with 'Scratch 3' used across
+      all previous slides and metadata.
+    message_ja: >-
+      Terminology 'Stretch3' is introduced abruptly in the save instruction, conflicting with 'Scratch 3' used across
+      all previous slides and metadata.
+done_criteria:
+  satisfied: 1
+  total: 2
+  unsatisfied:
+    DC-002:
+      - QE
+  detail_ref: lsd-music-art-grade-criteria
