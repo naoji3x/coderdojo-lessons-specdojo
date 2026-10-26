@@ -48,10 +48,11 @@ specdojo:
 | 1   | 6ページ目をScratch画面配置を表すレイアウト図に改め、必要なスタイルまたはSVGを定義する         | exec | done | `scratch-screen-layout` により左（パレット）・中央（コードエリア）・右上（ステージと旗）・右下（スプライト一覧）を定義 |
 | 2   | Prettier・markdownlint・Slidev build で静的検査を行う                                         | exec | done | Prettier、Slidev build（`npx slidev build`）および PNG export 表示確認を実施                                           |
 | 3   | 右下段のスプライト一覧の横に背景（ステージ）選択エリアを追加し、`lesson-plan.md` と整合させる | exec | done | スプライト一覧と背景選択エリアを横並びで表示し、`lesson-plan.md` 5章の記述を整合。Prettier・lint・build 再確認済み     |
-| 4   | 統合後に PNG 書き出しで表示（切れ・重なり・可読性）を確認する                                 | orch | open | `npx slidev export --format png` で目視確認（申し送り事項）                                                            |
+| 4   | 統合後に PNG 書き出しで表示（切れ・重なり・可読性）を確認する                                 | orch | done | `npx slidev export --format png --range 5-7` で目視確認済み                                                            |
 
 ## 4. 対応結果
 
+- 統合後確認（orchestrator）：2026-10-26、教材側 `develop` の `923af2d` に対して `npx slidev export courses/scratch-basic/lessons/010-chase-game/slides.md --format png --range 5-7 --output /tmp/pjr-17x8-png-v2` を実行（終了コード 0）し、6ページ目および前後の5・7ページ目を目視確認した。6ページ目で左（① ブロックパレット）、中央（② コードエリア）、右上（③ ステージと旗）、右下（④ スプライト一覧と背景（ステージ）：`Cat（猫）` カードと `ステージ（背景を選ぶ場所）` カードの横並び）が明確に描画され、案内役（`teacher-cat`）との重なりや画面下端の切れがなく、教室後方から読める可読性が確保されていることを確認した。`lesson-plan.md` 5章の導入記述との整合、他ページ・他節の不変更、および静的検査の通過を確認した。
 - `coderdojo-lessons` の `courses/scratch-basic/lessons/010-chase-game/slides.md` 6ページ目「Scratchの画面の4つの場所を覚えよう」を、従来の 2×2 カード並び（`idea-grid`）から、Scratch 3.0 の実際の画面構成に合わせたレイアウト図（`scratch-screen-layout`）へ改修した。
   - 左列（全高）：① ブロックパレット（色分けされたカテゴリチップと役割説明）
   - 中央列（全高）：② コードエリア（組み立て済みブロックのミニプレビューと役割説明）
