@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_4c8a627b979c458fb0706a00e00ec891
+  ts: "2026-10-26T14:51:26Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: 第1回スライドの画面構成ページにA案（HTML/CSSまたはSVGによる画面配置図）を入れるため
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 第1回のスライドにScratch画面構成のレイアウト図を入れる
+    - field: description
+      from: ""
+      to: 第1回（追いかけっこゲーム）の slides.md の画面構成ページを、2×2のカード並びからScratchの画面配置（左：ブロックパレット、中央：コードエリア、右上：ステージと旗、右下：スプライト一覧）を表すレイアウト図へ改める。
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-10-26"
+    - field: due
+      from: ""
+      to: "2026-10-31"
