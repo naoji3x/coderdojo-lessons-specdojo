@@ -5,15 +5,15 @@ path: ../coderdojo-lessons/courses/scratch-basic/lessons/010-chase-game/slides.m
 target: deliverable
 rubric: grade-rubric-v2
 verdict: pass
-score: 99
-graded_at: "2026-10-25T15:07:37.648Z"
+score: 100
+graded_at: "2026-10-26T11:16:23.114Z"
 graded_by: flash-high-executor
-content_hash: 391cf422b79c399e43715c0667a03ccbb7b072c1e9e2a2ced6582f68bb8a9bc6
+content_hash: 3c7f2d07f22b6f8f9c1f8b98e225ad5880c54b22d099d4dbe5840ecc80a4e016
 source_hashes:
   catalog-entry: 11272d18d8a051213afc67fe1f3bbf9edf0aa53e57099bc7f60d0c4ca308b5c5
   deliverable:pm-organization: e8beee0cf87b0198b0fa2a6463816c08db27f8f4aa43cb182abb63881a076a25
   deliverable:pm-raci: e8beee0cf87b0198b0fa2a6463816c08db27f8f4aa43cb182abb63881a076a25
-  dependency:lpl-chase-game: df5523b1c808175288a2883cf8828fa3e364243c60526af0ff94ebc7de548b6a
+  dependency:lpl-chase-game: 38b51a1dc439b767e056e865a4c5466f405dd9ccebbd99937e5c3c00eb8f3bdf
   members: bc36b3ee482cc7c308c29912828f7a6fcbe8552a4184de7ce58546abd4c0726e
   roles: e8beee0cf87b0198b0fa2a6463816c08db27f8f4aa43cb182abb63881a076a25
   schedule: 09964c26d2b37b601d31e9657094c022f60b9c6a689d7953336869a1c96c8f00
@@ -31,7 +31,7 @@ categories:
   architecture:
     score: 100
   usability:
-    score: 94
+    score: 100
   implementation:
     score: 100
   quality:
@@ -101,8 +101,8 @@ viewpoints:
     level: 4
     score: 100
   vp-ux-language-consistency:
-    level: 3
-    score: 75
+    level: 4
+    score: 100
   vp-ops-release-readiness:
     level: 4
     score: 100
@@ -121,20 +121,9 @@ viewpoints:
 finding_counts:
   blocker: 0
   major: 0
-  minor: 1
+  minor: 0
   note: 0
-findings:
-  - id: F001
-    severity: minor
-    rule: vp-ux-language-consistency
-    line: 500
-    anchor: Stretch3はブラウザを閉じると作品が消えてしまうため、必ず保存しよう。<br/>
-    message: >-
-      The platform name is misspelled as 'Stretch3' instead of 'Scratch 3', creating a terminology inconsistency with
-      the other slides.
-    message_ja: >-
-      The platform name is misspelled as 'Stretch3' instead of 'Scratch 3', creating a terminology inconsistency with
-      the other slides.
+findings: []
 done_criteria:
   satisfied: 2
   total: 2
