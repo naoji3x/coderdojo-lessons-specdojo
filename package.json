@@ -16,7 +16,11 @@
     "prepare": "lefthook install && node tools/grade/enable-multirepo-grade.mjs",
     "orch:flash": "specdojo orchestrator launch --provider antigravity -- --add-dir \"$(pwd)\" --model gemini-3.8-flash-high -i \"$(cat .specdojo/antigravity/orchestrator.md)\"",
     "orch:sol": "specdojo orchestrator launch --provider codex -- -m gpt-6.1-sol \"$(cat .specdojo/codex/orchestrator.md)\"",
-    "orch:luna": "specdojo orchestrator launch --provider codex -- -m gpt-6-luna \"$(cat .specdojo/codex/orchestrator.md)\""
+    "orch:luna": "specdojo orchestrator launch --provider codex -- -m gpt-6-luna \"$(cat .specdojo/codex/orchestrator.md)\"",
+    "docs:generate": "specdojo build",
+    "docs:dev": "npm run docs:generate && specdojo-docs-site dev . --host 0.0.0.0 --port 5173",
+    "docs:build": "npm run docs:generate && specdojo-docs-site build .",
+    "docs:build:mermaid": "specdojo-docs-site mermaid ."
   },
   "keywords": [],
   "author": "",

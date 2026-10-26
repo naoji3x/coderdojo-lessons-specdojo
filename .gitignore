@@ -7,3 +7,8 @@ docs/**/execution/exec/.locks/
 
 # 投影スライドの kata の表示に使う作業用のディレクトリ（tools/preview-lsd.sh）
 /tmp/
+
+# VitePress (@specdojo/docs-site) のビルド出力とキャッシュ
+/.vitepress/dist
+/.vitepress/cache
+/specdojo-kata-staging/
