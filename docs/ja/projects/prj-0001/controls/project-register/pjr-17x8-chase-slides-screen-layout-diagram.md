@@ -47,7 +47,7 @@ specdojo:
 | --- | --------------------------------------------------------------------------------------------- | ---- | ---- | ---------------------------------------------------------------------------------------------------------------------- |
 | 1   | 6ページ目をScratch画面配置を表すレイアウト図に改め、必要なスタイルまたはSVGを定義する         | exec | done | `scratch-screen-layout` により左（パレット）・中央（コードエリア）・右上（ステージと旗）・右下（スプライト一覧）を定義 |
 | 2   | Prettier・markdownlint・Slidev build で静的検査を行う                                         | exec | done | Prettier、Slidev build（`npx slidev build`）および PNG export 表示確認を実施                                           |
-| 3   | 右下段のスプライト一覧の横に背景（ステージ）選択エリアを追加し、`lesson-plan.md` と整合させる | exec | open | スプライト一覧と背景選択エリアを横並びで表示し、Prettier・lint・Slidev build を再確認する                              |
+| 3   | 右下段のスプライト一覧の横に背景（ステージ）選択エリアを追加し、`lesson-plan.md` と整合させる | exec | done | スプライト一覧と背景選択エリアを横並びで表示し、`lesson-plan.md` 5章の記述を整合。Prettier・lint・build 再確認済み     |
 | 4   | 統合後に PNG 書き出しで表示（切れ・重なり・可読性）を確認する                                 | orch | open | `npx slidev export --format png` で目視確認（申し送り事項）                                                            |
 
 ## 4. 対応結果
@@ -56,16 +56,19 @@ specdojo:
   - 左列（全高）：① ブロックパレット（色分けされたカテゴリチップと役割説明）
   - 中央列（全高）：② コードエリア（組み立て済みブロックのミニプレビューと役割説明）
   - 右上段：③ ステージと旗（緑の旗・赤い停止ボタン、Cat のプレビュー、および役割説明）
-  - 右下段：④ スプライト一覧（初期配置の Cat（猫）カードと役割説明）
-- `courses/scratch-basic/lessons/010-chase-game/style.css` に Scratch 画面構成レイアウト用のスタイルを定義した。右下の案内役（`teacher-cat`）と図・文字が重ならないよう `margin-right: 95px` を設け、教室の後方から読める文字サイズ（見出し 1.28rem、本文 1.28rem）を確保しつつ、画面下端で切れない余白を保つ構成とした。
-- 他のページの内容・順序・ページ設定および `lesson-plan.md` は変更していない。
+  - 右下段：④ スプライト一覧と背景（ステージ）（スプライト一覧の Cat（猫）カードの右横に、背景を選択する「ステージ（背景を選ぶ場所）」カードを横並びで配置し、登場キャラと背景を選ぶ場所であることの説明を記載）
+- `courses/scratch-basic/lessons/010-chase-game/style.css` に Scratch 画面構成レイアウト用のスタイルを定義した。
+  - 右下の案内役（`teacher-cat`）と図・文字が重ならないよう `margin-right: 95px` を設け、教室の後方から読める文字サイズ（見出し 1.28rem / 1.12rem、本文 1.28rem）を確保しつつ、画面下端で切れない余白を保つ構成とした。
+  - 右下段の横並び要素（`.scratch-bottom-row`、`.scratch-sprite-card`、`.scratch-stage-select-card`）を定義し、スプライト一覧（青枠）とステージ（背景選択カード）が視覚的に並ぶ構造を整備した。
+  - 列幅を `250px 1fr 330px` に調整し、文字の折り返しと視認性を最適化した。
+- `courses/scratch-basic/lessons/010-chase-game/lesson-plan.md` 5章（導入）の画面構成の記述を「右下：スプライト一覧と背景（ステージ）」へ整合させた。それ以外の章・節・時間配分および `slides.md` の他のページ内容は変更していない。
 - 検証として以下を実施した:
-  - `cd coderdojo-lessons && npx prettier --check courses/scratch-basic/lessons/010-chase-game/slides.md courses/scratch-basic/lessons/010-chase-game/style.css`: pass
+  - `cd coderdojo-lessons && npx prettier --check courses/scratch-basic/lessons/010-chase-game/slides.md courses/scratch-basic/lessons/010-chase-game/style.css courses/scratch-basic/lessons/010-chase-game/lesson-plan.md`: pass
   - `cd coderdojo-lessons && npx slidev build courses/scratch-basic/lessons/010-chase-game/slides.md`: pass
-  - `cd coderdojo-lessons && npx slidev export courses/scratch-basic/lessons/010-chase-game/slides.md --format png --range 5-7`: 6ページ目および前後の5・7ページ目を PNG 画像で確認し、案内役との重なり・文字切れがなく可読性が良好であることを確認。
-  - `npx prettier --write docs/ja/projects/prj-0001/controls/project-register/pjr-17x8-chase-slides-screen-layout-diagram.md`: pass
-  - `npx markdownlint docs/ja/projects/prj-0001/controls/project-register/pjr-17x8-chase-slides-screen-layout-diagram.md`: pass
-  - `npx specdojo catalog validate`: pass
+  - `cd coderdojo-lessons && npx slidev export courses/scratch-basic/lessons/010-chase-game/slides.md --format png --range 5-7`: 6ページ目および前後の5・7ページ目を PNG 画像で確認し、案内役との重なり・文字切れ・下切れがなく可読性が良好であることを確認。
+  - `cd project && npx prettier --check docs/ja/projects/prj-0001/controls/project-register/pjr-17x8-chase-slides-screen-layout-diagram.md`: pass
+  - `cd project && npx markdownlint docs/ja/projects/prj-0001/controls/project-register/pjr-17x8-chase-slides-screen-layout-diagram.md`: pass
+  - `cd project && npx specdojo catalog validate`: pass
 - 申し送り（handoff）:
   - 個票の完了条件に従い、統合後に orchestrator が `npx slidev export courses/scratch-basic/lessons/010-chase-game/slides.md --format png` で 6 ページ目および前後のページの表示（切れ・重なり・可読性）を目視確認すること。
 
