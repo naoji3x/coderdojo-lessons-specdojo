@@ -1,0 +1,12 @@
+{
+  "v": 1,
+  "ts": "2026-10-26T00:16:41Z",
+  "type": "claim",
+  "task_id": "T-SCRATCH-LESSONS-lsd-original-project-020",
+  "by": "flash-high-executor",
+  "msg": "auto-run",
+  "meta": {
+    "claim_owner": "",
+    "planned_owner": "BA"
+  }
+}
