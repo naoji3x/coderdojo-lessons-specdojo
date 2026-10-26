@@ -11,4 +11,5 @@ docs/**/execution/exec/.locks/
 # VitePress (@specdojo/docs-site) のビルド出力とキャッシュ
 /.vitepress/dist
 /.vitepress/cache
+/public/mermaid
 /specdojo-kata-staging/
