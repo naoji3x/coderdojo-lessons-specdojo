@@ -1,0 +1,25 @@
+=== 2026-10-25T14:02:27.125Z git commit checkpoint ===
+exit: 1
+--- stdout ---
+
+--- stderr ---
+[38;2;56;56;56m╭─────────────────────────────────────────╮[m
+[38;2;56;56;56m│[m 🥊 lefthook  v2.2.2   hook:  [1mpre-commit[m [38;2;56;56;56m│[m
+[38;2;56;56;56m╰─────────────────────────────────────────╯[m
+┃  check Slidev decks and their lint settings ❯ 
+
+┃  format documentation and configuration ❯ 
+Checking formatting...
+All matched files use Prettier code style!
+
+┃  lint Markdown documentation ❯ 
+docs/ja/projects/prj-0001/execution/exec/plans/T-SCRATCH-LESSONS-lpl-chase-game-020-plan.md:102:7 error MD060/table-column-style Table column style [Table pipe has extra space to the left for style "compact"]
+
+exit status 1
+[38;2;56;56;56m  ────────────────────────────────────[m
+summary: (done in 0.64 seconds)
+✔️ check Slidev decks and their lint settings (0.07 seconds)
+✔️ format documentation and configuration (0.50 seconds)
+🥊 lint Markdown documentation (0.64 seconds)
+
+

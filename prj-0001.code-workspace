@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../coderdojo-lessons"
+		},
+		{
+			"path": "../specdojo"
 		}
 	],
 	"settings": {

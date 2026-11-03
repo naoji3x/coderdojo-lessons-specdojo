@@ -4,17 +4,22 @@
   "remoteUser": "node",
   "shutdownAction": "none",
   "init": true,
-  "appPort": [3030, 3031],
+  "appPort": [3030, 5174, 4322],
   "portsAttributes": {
     "3030": {
-      "label": "Slidev",
+      "label": "Slidev (port 3030)",
       "onAutoForward": "notify"
     },
-    "3031": {
-      "label": "Slidev (port 3031)",
+    "5174": {
+      "label": "VitePress docs (port 5174)",
+      "onAutoForward": "notify"
+    },
+    "4322": {
+      "label": "SpecDojo Landing Page (port 4322)",
       "onAutoForward": "notify"
     }
   },
+
   "workspaceMount": "source=${localWorkspaceFolder}/..,target=/workspaces/coderdojo-lessons-workspace,type=bind,consistency=cached",
   "workspaceFolder": "/workspaces/coderdojo-lessons-workspace/${localWorkspaceFolderBasename}",
   "features": {
