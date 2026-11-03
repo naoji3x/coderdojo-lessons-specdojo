@@ -1,5 +1,5 @@
 {
-  "name": "specdojo-agent-env",
+  "name": "coderdojo-lessons-env",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
   "remoteUser": "node",
   "shutdownAction": "none",
