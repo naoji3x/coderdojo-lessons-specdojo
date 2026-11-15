@@ -58,7 +58,7 @@ specdojo:
 | 2   | 発展を段階つきミッションにし、最初に変数「角数」のミッションを置く（指導案・スライド）      | exec | done | ブロック図を付ける                       |
 | 3   | 指導案の関連箇所の整合と文章の見直しを行う                                                  | exec | done | 2章の一文の削除、`_TODO_` の扱いの判断   |
 | 4   | Prettier・markdownlint・Slidev build で静的検査を行う                                       | exec | done | -                                        |
-| 5   | 統合後に PNG 書き出しで全ページの表示を確認する                                             | orch | open | 新しいページ・変えたページを重点的に見る |
+| 5   | 統合後に PNG 書き出しで全ページの表示を確認する                                             | orch | done | 新しいページ・変えたページを重点的に見る |
 
 ## 5. 対応結果
 
@@ -70,6 +70,15 @@ specdojo:
 - 教材3ファイルはPrettierで整形・検査し、スライドには既存設定の `slidev` parserを適用した。教材2ファイルは、product側にMarkdownlintの直接依存がないため、projectに導入済みのCLIをproductルートから `.markdownlint.yaml` 指定で実行して成功した。Slidev本番ビルドも成功した。個票のPrettier・Markdownlint、projectのSlidevファイル／設定整合検査、`npx specdojo catalog validate --project prj-0001` も成功した。
 - PNG書き出しを `npx slidev export courses/scratch-basic/lessons/030-music-art/slides.md --format png --output tmp/pjr-a0v0-slides --timeout 15000` で試したが、sandboxで `uv_interface_addresses` のシステムエラーとなり、画像は生成できなかった。作業5は統合後にorchestratorが `npx slidev export courses/scratch-basic/lessons/030-music-art/slides.md --format png` で全25ページを書き出して目視確認する。特に2・3・5・8〜10・12・13・18〜25ページと、全ページの見出しの表示について、文字切れ・下切れ・ブロック図の可読性・案内役との重なりを確認する。実機の授業前確認は指導案4.1に従う。
 - 個票と登録簿のステータス項目、result、設定ファイルは変更していない。
+
+### 統合後の確認（orchestrator）
+
+- 教材側 `develop` の `ce1e919` とプロジェクト側 `project/prj-0001/develop` の `85b7628` へ統合済み。executor は `sol-executor`、reporter は `gemma-reporter`（`ollama-local/gemma4:26b-mlx-work-64k`）で、どちらも最後まで動いた。
+- 統合後に教材リポジトリで `npx slidev export courses/scratch-basic/lessons/030-music-art/slides.md --format png` を実行し、全25ページを書き出して目視した。文字の切れ、案内役との重なりはなく、9ページの問いの表、10ページの答えの表、19〜22ページのブロック図も読める大きさだった。FloatingVue の Popper に関する既存のコンソールエラーが出たが、書き出しには支障がなかった。
+- 見出しを H2 にした変更について、変更前の `slides.md` を別の場所で書き出して2・5・9ページを比べ、見出しの大きさ・位置が変わっていないことを確かめた。
+- 指導案の 3.1・3.2 は変更前との文字列比較で一致し、時間配分は 5・20・15・5分（基本制作 8・6・6分）のままだった。2章の旧設計資料の一文は削除され、`_TODO_`・`_ASSUMPTION_` は残っていない。統合後に教材3ファイルの Prettier と、教材2ファイルの markdownlint（`.markdownlint.yaml` 指定）を流し直して通った。
+- 教材側の変更は対象3ファイルだけで、設定ファイルの変更はない。
+- 申し送り：MD025 への対応が回によって分かれた（第2回はファイル内の注釈で H1 のまま、第3回は H2 にして CSS で大きさを保つ）。書き方をそろえる作業は別の項目で扱う。
 
 ### 検証記録
 
