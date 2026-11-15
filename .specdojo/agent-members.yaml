@@ -153,7 +153,7 @@ members:
     roles: []
     type: agent
     provider: opencode
-    model: ollama-local/gemma4:26b
+    model: ollama-local/gemma4:31b-mlx-work-64k
     mode: edit
     stage_role: executor
     capabilities:
@@ -168,7 +168,7 @@ members:
     roles: []
     type: agent
     provider: opencode
-    model: ollama-local/gemma4:26b
+    model: ollama-local/gemma4:31b-mlx-work-64k
     mode: review
     stage_role: executor
     capabilities:
@@ -183,7 +183,7 @@ members:
     roles: []
     type: agent
     provider: opencode
-    model: ollama-local/gemma4:26b
+    model: ollama-local/gemma4:26b-mlx-work-64k
     mode: report
     stage_role: reporter
     capabilities: []
