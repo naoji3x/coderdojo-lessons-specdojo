@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_933edc367b5b4c028788269d680fe8d6
+  ts: "2026-11-15T10:17:30Z"
+  action: add
+  actor: SpecDojo
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 投影スライドの見出しを H1 にそろえ、教材の markdownlint をスライドに合わせる
+    - field: description
+      from: ""
+      to: Slidev の標準どおり各ページの見出しを H1 にそろえ、教材リポジトリの markdownlint を slides.md だけ MD025 を止める設定に直す。第1・4・5回の lint エラーと第2回のファイル内注釈、第3回の H2 化を解消する
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: difficulty
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: DEV
+    - field: registered
+      from: ""
+      to: "2026-11-15"
+    - field: due
+      from: ""
+      to: "2026-11-30"
+    - field: derived_from
+      from: ""
+      to: "[\"PJR-A0V0\"]"
