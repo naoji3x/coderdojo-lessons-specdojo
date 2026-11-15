@@ -139,7 +139,11 @@ fi
 
 npm install
 
-# 投影スライドの kata を Slidev で表示・書き出し（tools/preview-lsd.sh）するとき、
-# Chromium の実行に必要なシステムのライブラリを入れる。Chromium 本体は npm install で
-# playwright-chromium が入れる。版をそろえるため、プロジェクトの playwright を使う。
+# 投影スライドの kata を Slidev で表示・書き出し（tools/preview-lsd.sh）するときに使う
+# Chromium を入れる。版をそろえるため、プロジェクトの playwright を使う。
+# Chromium 本体は ~/.cache/ms-playwright（コンテナ内）に置かれる。node_modules は共有の
+# ワークスペースにあるため、npm install が何もしないと playwright-chromium の install
+# スクリプトが走らず、作り直したコンテナに本体が入らない。そのため明示して入れる
+# （入っていれば何もしない）。システムのライブラリは root で、本体は node で入れる。
 sudo ./node_modules/.bin/playwright install-deps chromium
+./node_modules/.bin/playwright install chromium
