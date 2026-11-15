@@ -2,17 +2,19 @@
 specdojo:
   id: prj-0001:pjr-a0v0-music-art-volume
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: review
+  item_status: done
   priority: medium
   difficulty: medium
   owner: BA
   registered_at: "2026-11-15T06:59:13Z"
   due_on: "2026-11-30"
+  completed_at: "2026-11-15T08:15:02Z"
+  conclusion: 基本制作1に三角形・六角形で360÷角数を見つける活動、発展に角数→星形→虹色→メロディの段階つきミッションを入れた。完了条件と全25ページの表示を確認した。
 ---
 
 # PJR-A0V0 第3回の指導案とスライドに規則性の体験と発展ミッションを加える
