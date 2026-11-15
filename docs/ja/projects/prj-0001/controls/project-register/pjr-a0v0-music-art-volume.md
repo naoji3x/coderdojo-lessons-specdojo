@@ -7,7 +7,7 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: open
+  item_status: review
   priority: medium
   difficulty: medium
   owner: BA
@@ -54,15 +54,30 @@ specdojo:
 
 | No  | 作業                                                                                        | 担当 | 状態 | メモ                                     |
 | --- | ------------------------------------------------------------------------------------------- | ---- | ---- | ---------------------------------------- |
-| 1   | 基本制作1に三角形・六角形で 360 ÷ 角数 を見つける「変えて試す」を入れる（指導案・スライド） | exec | open | 表は答えを先に見せない問いの形にする     |
-| 2   | 発展を段階つきミッションにし、最初に変数「角数」のミッションを置く（指導案・スライド）      | exec | open | ブロック図を付ける                       |
-| 3   | 指導案の関連箇所の整合と文章の見直しを行う                                                  | exec | open | 2章の一文の削除、`_TODO_` の扱いの判断   |
-| 4   | Prettier・markdownlint・Slidev build で静的検査を行う                                       | exec | open | -                                        |
+| 1   | 基本制作1に三角形・六角形で 360 ÷ 角数 を見つける「変えて試す」を入れる（指導案・スライド） | exec | done | 表は答えを先に見せない問いの形にする     |
+| 2   | 発展を段階つきミッションにし、最初に変数「角数」のミッションを置く（指導案・スライド）      | exec | done | ブロック図を付ける                       |
+| 3   | 指導案の関連箇所の整合と文章の見直しを行う                                                  | exec | done | 2章の一文の削除、`_TODO_` の扱いの判断   |
+| 4   | Prettier・markdownlint・Slidev build で静的検査を行う                                       | exec | done | -                                        |
 | 5   | 統合後に PNG 書き出しで全ページの表示を確認する                                             | orch | open | 新しいページ・変えたページを重点的に見る |
 
 ## 5. 対応結果
 
--
+- [[prj-0001:lpl-music-art|第3回 指導案]] と [[prj-0001:lsd-music-art|第3回 スライド]] を更新した。基本制作1に全員が三角形と六角形を描く「変えて試す」を追加し、角数・回す角度・繰り返す回数を空欄の表で問い、試行後に360 ÷ 角数を確かめる流れにした。スライドは問いと答えを別ページ（9・10ページ）に分け、事前の説明から一般式を外した。
+- 発展15分に、1「角数」で一般化、2星形（5回・144度）、3虹色、4少しずつ音が上がるメロディのミッションを追加した。1を最初に試し、残りはできるところまで進める。19〜22ページに各ブロック図を置き、星形を試したら変数の式に戻す手順と、図形ごとに音の高さを60に戻す手順を明記した。指導案のねらい・使用機能・3.3・5章・進度差対応・評価・つまずき対応・まとめにも反映した。
+- 時間配分5・20・15・5分、基本制作の順序と8・6・6分の内訳を維持した。指導案3.1・3.2の最低完成形と標準完成形は変更前との文字列比較で一致した。全員が新規プロジェクトから作り、Scratch標準素材とペン・音楽拡張の標準ブロックを使う。事前配布の代替運用の記述は外した。
+- 2章末尾の旧設計資料に関する一文を削除し、授業者向けの平易な文に整えた。既存の `_TODO_` は未実施の音響・負荷・保存の実機確認を指していたため、担当と期限を保った「授業前の確認事項」に書き換えた。実施済みとはしていない。`_ASSUMPTION_` はコース計画に明記されたカメラ・マイク等を使わない方針なので、仮定の印を外して通常の本文にした。未決のプレースホルダはない。
+- 変更ファイルは `coderdojo-lessons:courses/scratch-basic/lessons/030-music-art/lesson-plan.md`、同ディレクトリの `slides.md` と `style.css`、本個票。CSSには比較表の文字サイズ・余白を加えた。既存の複数H1によるMD025エラーは、表紙をH1、各ページをH2に整えて解消し、題名の表示サイズはCSSで保った。共有lint設定や規則を止める注釈は増やしていない。
+- 教材3ファイルはPrettierで整形・検査し、スライドには既存設定の `slidev` parserを適用した。教材2ファイルは、product側にMarkdownlintの直接依存がないため、projectに導入済みのCLIをproductルートから `.markdownlint.yaml` 指定で実行して成功した。Slidev本番ビルドも成功した。個票のPrettier・Markdownlint、projectのSlidevファイル／設定整合検査、`npx specdojo catalog validate --project prj-0001` も成功した。
+- PNG書き出しを `npx slidev export courses/scratch-basic/lessons/030-music-art/slides.md --format png --output tmp/pjr-a0v0-slides --timeout 15000` で試したが、sandboxで `uv_interface_addresses` のシステムエラーとなり、画像は生成できなかった。作業5は統合後にorchestratorが `npx slidev export courses/scratch-basic/lessons/030-music-art/slides.md --format png` で全25ページを書き出して目視確認する。特に2・3・5・8〜10・12・13・18〜25ページと、全ページの見出しの表示について、文字切れ・下切れ・ブロック図の可読性・案内役との重なりを確認する。実機の授業前確認は指導案4.1に従う。
+- 個票と登録簿のステータス項目、result、設定ファイルは変更していない。
+
+### 検証記録
+
+- productルート：`npx prettier --write courses/scratch-basic/lessons/030-music-art/lesson-plan.md courses/scratch-basic/lessons/030-music-art/slides.md courses/scratch-basic/lessons/030-music-art/style.css` と、同じ対象への `--check` が成功した。
+- productルート：`../project/node_modules/.bin/markdownlint --config .markdownlint.yaml -- courses/scratch-basic/lessons/030-music-art/lesson-plan.md courses/scratch-basic/lessons/030-music-art/slides.md` が成功した。
+- productルート：`npx slidev build courses/scratch-basic/lessons/030-music-art/slides.md --out ../../../../tmp/pjr-a0v0-slidev-build` が成功し、最終CSSがビルドに含まれることも確認した。生成物は確認後に削除した。
+- projectルート：本個票への `npx prettier --write`、`npx prettier --check`、`npx markdownlint --`、`node tools/check-slidev-files.mjs` が成功した。`npx specdojo catalog validate --project prj-0001` は2カタログとも成功した。両リポジトリの `git diff --check` も成功した。
+- YAML・ソース・テストの変更はなく、対応するschema・型検査・単体テストは非適用。projectの `test` はnpm初期生成の仮スクリプトなので実行していない。ドキュメントindexの再生成はrunnerに委ねる。
 
 ## 6. 関連ドキュメント
 
