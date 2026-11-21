@@ -5,6 +5,7 @@
       "Edit(**)",
       "Bash(npx prettier *)",
       "Bash(npx markdownlint-cli2 *)",
+      "Bash(npx markdownlint *)",
       "Bash(npx slidev *)"
     ],
     "deny": [
