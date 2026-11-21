@@ -9,9 +9,9 @@ specdojo:
   origin: register
   plan_ref: runs/register/PJR-AF5N/pjr-af5n-20261121T063938Z-ba6a6d6e/plan.md
   started_at: "2026-11-21T06:39:38.405Z"
-  completed_at: "2026-11-21T06:41:06.849Z"
+  completed_at: "2026-11-21T06:43:50.188Z"
   agent: sol-executor
-  block_reason: "executor rate limit reached"
+  block_reason: "executor reported incomplete: Edited slides.md and lesson-plan.md in coderdojo-lessons (backdrop prep moved to the message stage, text-only backdrop instructions, stop block notation changed to [すべてを止…"
 ---
 
 # Edit Result
