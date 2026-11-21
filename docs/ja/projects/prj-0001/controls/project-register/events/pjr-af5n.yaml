@@ -38,3 +38,32 @@
     - field: due
       from: ""
       to: "2026-11-30"
+- v: 1
+  id: reg_4cd713ba3e284d3287023d96775215fd
+  ts: "2026-11-21T06:39:38Z"
+  action: start
+  actor: sol-executor
+  from_status: open
+  to_status: in-progress
+  reason: work started
+  changes:
+    - field: status
+      from: open
+      to: in-progress
+  previous_event_id: reg_ec10a89d9fba40a1a23bc61109cdcf3b
+- v: 1
+  id: reg_5721e9802d6947adace3db1572f67135
+  ts: "2026-11-21T06:41:08Z"
+  action: wait
+  actor: sol-executor
+  from_status: in-progress
+  to_status: waiting
+  reason: executor rate limit reached
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: executor rate limit reached
+  previous_event_id: reg_4cd713ba3e284d3287023d96775215fd

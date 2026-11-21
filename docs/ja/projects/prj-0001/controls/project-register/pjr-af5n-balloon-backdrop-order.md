@@ -7,12 +7,13 @@ specdojo:
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: open
+  item_status: waiting
   priority: medium
   difficulty: medium
   owner: BA
   registered_at: "2026-11-21T06:31:17Z"
   due_on: "2026-11-30"
+  block_reason: executor rate limit reached
 ---
 
 # PJR-AF5N 第2回の背景の用意をメッセージの段階へ移し、背景の追加方法と「すべてを止める」の色を直す
