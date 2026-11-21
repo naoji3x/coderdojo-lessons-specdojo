@@ -37,7 +37,7 @@
     "prettier-plugin-slidev": "^1.0.5",
     "scratchblocks": "^3.7.1",
     "slidev-theme-neversink": "^0.4.1",
-    "specdojo": "^0.7.0"
+    "specdojo": "^0.9.2"
   },
   "dependencies": {
     "@specdojo/docs-lint": "^0.2.1",
