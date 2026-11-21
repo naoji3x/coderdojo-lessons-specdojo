@@ -13,7 +13,7 @@ specdojo:
   owner: BA
   registered_at: "2026-11-21T06:31:17Z"
   due_on: "2026-11-30"
-  block_reason: "executor reported incomplete: Edited slides.md and lesson-plan.md in coderdojo-lessons (backdrop prep moved to the message stage, text-only backdrop instructions, stop block notation changed to [すべてを止…"
+  block_reason: "executor reported incomplete: Kept the previous slides.md and lesson-plan.md edits after checking them against the completion conditions. Fixed the lesson-plan table wording and alignment, including a…"
 ---
 
 # PJR-AF5N 第2回の背景の用意をメッセージの段階へ移し、背景の追加方法と「すべてを止める」の色を直す

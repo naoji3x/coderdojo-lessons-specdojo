@@ -70,4 +70,10 @@ plan に展開された finding は、message と同じ viewpoint ID の判定�
 - 標準エラー出力に理由を出力する（例: `blocked: <reason>; need=<next action>; ref=<path>`）。
 - agent 自身は登録簿の状態を変更せず、終了コードと標準エラー出力で runner に結果を返す。
 
+## 再開の指示（2026-11-21T07:14:24.505Z）
+
+利用者が再開の前に足した指示である。これまでの申し送りとあわせて、この指示に従って作業を続ける。
+
+- 前の executor（sonnet-executor）が coderdojo-lessons の slides.md と lesson-plan.md を編集済みで、worktree に未 commit の変更として残っている。この編集を土台にし、作り直さない。内容を完了条件に照らして確かめ、足りない点だけを直す。そのうえで、Prettier（slides.md は slidev parser）・markdownlint・npx slidev build を通し、個票の作業内容の状態と対応結果を記録する。
+
 `共通規約 sha256:7df19548152f67a1d702788c5ecb9f16962afb81e96be39b8c7eca27055e1ede` `docs/ja/projects/prj-0001/execution/conventions/7df19548152f67a1d702788c5ecb9f16962afb81e96be39b8c7eca27055e1ede.txt`
