@@ -131,3 +131,35 @@
       from: "-"
       to: "executor reported incomplete: Kept the previous slides.md and lesson-plan.md edits after checking them against the completion conditions. Fixed the lesson-plan table wording and alignment, including a…"
   previous_event_id: reg_d166ccb350c54cb6af01236c45a8b837
+- v: 1
+  id: reg_8e3c82f9bf034d21a0303e20e384dec3
+  ts: "2026-11-21T07:24:50Z"
+  action: start
+  actor: opus-executor
+  from_status: waiting
+  to_status: in-progress
+  reason: executor resumed
+  changes:
+    - field: status
+      from: waiting
+      to: in-progress
+    - field: block_reason
+      from: "executor reported incomplete: Kept the previous slides.md and lesson-plan.md edits after checking them against the completion conditions. Fixed the lesson-plan table wording and alignment, including a…"
+      to: "-"
+  previous_event_id: reg_7b68ced448a543b99f33771e78acac0e
+- v: 1
+  id: reg_b499c9f3b4e84af3b9adba3bd49c4d28
+  ts: "2026-11-21T07:25:30Z"
+  action: wait
+  actor: opus-executor
+  from_status: in-progress
+  to_status: waiting
+  reason: "resumed executor did not account for every plan target: coderdojo-lessons:courses/scratch-basic/lessons/coderdojo-lessons/tmp/slidev-dist-020/assets/404-B7Pui5No.css, coderdojo-lessons:courses/scratch…"
+  changes:
+    - field: status
+      from: in-progress
+      to: waiting
+    - field: block_reason
+      from: "-"
+      to: "resumed executor did not account for every plan target: coderdojo-lessons:courses/scratch-basic/lessons/coderdojo-lessons/tmp/slidev-dist-020/assets/404-B7Pui5No.css, coderdojo-lessons:courses/scratch…"
+  previous_event_id: reg_8e3c82f9bf034d21a0303e20e384dec3

@@ -76,4 +76,10 @@ plan に展開された finding は、message と同じ viewpoint ID の判定�
 
 - 前の executor（sonnet-executor）が coderdojo-lessons の slides.md と lesson-plan.md を編集済みで、worktree に未 commit の変更として残っている。この編集を土台にし、作り直さない。内容を完了条件に照らして確かめ、足りない点だけを直す。そのうえで、Prettier（slides.md は slidev parser）・markdownlint・npx slidev build を通し、個票の作業内容の状態と対応結果を記録する。
 
+## 再開の指示（2026-11-21T07:24:51.385Z）
+
+利用者が再開の前に足した指示である。これまでの申し送りとあわせて、この指示に従って作業を続ける。
+
+- 前回の executor が Slidev build で作った余分なフォルダ courses/scratch-basic/lessons/coderdojo-lessons/ は、orchestrator が削除した。markdownlint は orchestrator が coderdojo-lessons の .markdownlint.yaml で slides.md と lesson-plan.md に流し、違反は0件だった。Prettier（slides.md は slidev parser）も両ファイルで通っている。教材のファイルは変更しない。Slidev build も再実行しない（出力先を誤るとまた余分なフォルダができるため）。個票の作業内容 No.6 を done にし、対応結果の検査の記述を上の事実に合わせて直したうえで、complete として報告する。
+
 `共通規約 sha256:7df19548152f67a1d702788c5ecb9f16962afb81e96be39b8c7eca27055e1ede` `docs/ja/projects/prj-0001/execution/conventions/7df19548152f67a1d702788c5ecb9f16962afb81e96be39b8c7eca27055e1ede.txt`

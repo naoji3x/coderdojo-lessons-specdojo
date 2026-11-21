@@ -9,9 +9,9 @@ specdojo:
   origin: register
   plan_ref: runs/register/PJR-AF5N/pjr-af5n-20261121T063938Z-ba6a6d6e/plan.md
   started_at: "2026-11-21T06:39:38.405Z"
-  completed_at: "2026-11-21T07:24:03.671Z"
+  completed_at: "2026-11-21T07:25:29.519Z"
   agent: sol-executor
-  block_reason: "executor reported incomplete: Kept the previous slides.md and lesson-plan.md edits after checking them against the completion conditions. Fixed the lesson-plan table wording and alignment, including a…"
+  block_reason: "resumed executor did not account for every plan target: coderdojo-lessons:courses/scratch-basic/lessons/coderdojo-lessons/tmp/slidev-dist-020/assets/404-B7Pui5No.css, coderdojo-lessons:courses/scratch…"
 ---
 
 # Edit Result

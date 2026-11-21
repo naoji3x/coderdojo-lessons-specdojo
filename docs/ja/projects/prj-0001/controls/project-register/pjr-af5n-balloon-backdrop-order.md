@@ -13,7 +13,7 @@ specdojo:
   owner: BA
   registered_at: "2026-11-21T06:31:17Z"
   due_on: "2026-11-30"
-  block_reason: "executor reported incomplete: Kept the previous slides.md and lesson-plan.md edits after checking them against the completion conditions. Fixed the lesson-plan table wording and alignment, including a…"
+  block_reason: "resumed executor did not account for every plan target: coderdojo-lessons:courses/scratch-basic/lessons/coderdojo-lessons/tmp/slidev-dist-020/assets/404-B7Pui5No.css, coderdojo-lessons:courses/scratch…"
 ---
 
 # PJR-AF5N 第2回の背景の用意をメッセージの段階へ移し、背景の追加方法と「すべてを止める」の色を直す
@@ -46,19 +46,28 @@ specdojo:
 
 ## 4. 作業内容
 
-| No  | 作業                                                                           | 担当 | 状態 | メモ |
-| --- | ------------------------------------------------------------------------------ | ---- | ---- | ---- |
-| 1   | 背景の用意と `背景を [開始] にする` をメッセージの段階の最初へ移す（スライド） | exec | open | -    |
-| 2   | 背景の追加方法の解説を文章で加える                                             | exec | open | -    |
-| 3   | 「すべてを止める」の記法を直す                                                 | exec | open | -    |
-| 4   | 標準完成の後に「クリア」の文字を描く手順を加える                               | exec | open | -    |
-| 5   | 指導案を整合させる                                                             | exec | open | -    |
-| 6   | Prettier・markdownlint・Slidev build で検査する                                | exec | open | -    |
-| 7   | 統合後に PNG 書き出しで表示を確かめる                                          | orch | open | -    |
+| No  | 作業                                                                           | 担当 | 状態 | メモ                                                                              |
+| --- | ------------------------------------------------------------------------------ | ---- | ---- | --------------------------------------------------------------------------------- |
+| 1   | 背景の用意と `背景を [開始] にする` をメッセージの段階の最初へ移す（スライド） | exec | done | 得点の準備は変数だけにし、4章の最初に準備ページを追加                             |
+| 2   | 背景の追加方法の解説を文章で加える                                             | exec | done | 準備ページの左列に手順を文章で記載                                                |
+| 3   | 「すべてを止める」の記法を直す                                                 | exec | done | `[すべてを止める v]` に変更。辞書と構文解析の実装で制御のブロックになることを確認 |
+| 4   | 標準完成の後に「クリア」の文字を描く手順を加える                               | exec | done | 「時間があれば」のページを標準完成と発展ミッションの間に追加                      |
+| 5   | 指導案を整合させる                                                             | exec | done | 4.1・4.2・5章の表と5.1・5.2・6章の表・7章を修正                                   |
+| 6   | Prettier・markdownlint・Slidev build で検査する                                | exec | open | Prettier と Slidev build は通過。markdownlint は sandbox で実行が許可されず未実行 |
+| 7   | 統合後に PNG 書き出しで表示を確かめる                                          | orch | open | 統合後に orchestrator が実施                                                      |
 
 ## 5. 対応結果
 
--
+- スライド（`slides.md`）
+  - 得点の準備ページを変数「得点」の作成だけにし、得点のステージのコードから `背景を [開始 v] にする` を除いた。
+  - 「4. 10点でクリアにしよう」の扉の直後に「準備：背景「開始」「クリア」を追加しよう」を置き、ステージを選ぶ → 「背景を選ぶ」から背景ライブラリで選ぶ → 「背景」タブで名前を変える、の手順を文章で示した。右列に旗のスクリプトへ `背景を [開始 v] にする` を足すブロック図を置いた。
+  - メッセージのページの停止ブロックを `[すべてを止める v]` に変えた。scratchblocks の日本語辞書では `CONTROL_STOP` が `" %1"` で、ハッシュ `_` に当たる日本語のブロックはこれだけのため、制御（cap）として描画される見込み（構文解析の実装から確認。描画は未確認）。
+  - 「ここまでできたら標準完成！」と発展ミッションの間に「時間があれば：「クリア」の文字を描こう」を追加し、標準完成形には含めないと明記した。
+- 指導案（`lesson-plan.md`）：4.1 の完成見本、4.2 の開始用プロジェクトと素材（文字入れは余裕があれば行う任意の内容とした）、5章の時間配分の表（合計45分のまま）、5.1 の基本制作3・4、5.2 の評価、6章の表（「背景」の行を追加）、7章を新しい流れに合わせた。5章の表の新しい行は、列幅に収まるよう文言を詰めた。
+- 010-chase-game の同じ記法は範囲外のため変えていない。
+- 検査：Prettier（`lesson-plan.md` は既定、`slides.md` は `slidev` parser）は `--write` 後に `--check` が通過した。`npx slidev build` は成功した。markdownlint は exec の sandbox で実行が許可されず未実行で、統合時に実行が必要（`coderdojo-lessons` の devDependencies には含まれない）。
+- 後始末が必要：`npx slidev build` の `--out` がスライドのディレクトリ基準で解決され、`coderdojo-lessons:courses/scratch-basic/lessons/coderdojo-lessons/` にビルド出力ができた。sandbox で削除できないため、commit の前に削除する必要がある。
+- 統合後の確認：`npx slidev export courses/scratch-basic/lessons/020-balloon-game/slides.md --format png` で、追加した準備ページと「時間があれば」のページの文字の切れ・案内役との重なり、「すべてを止める」が制御の色かを目視で確かめる。
 
 ## 6. 関連ドキュメント
 
