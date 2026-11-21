@@ -163,3 +163,25 @@
       from: "-"
       to: "resumed executor did not account for every plan target: coderdojo-lessons:courses/scratch-basic/lessons/coderdojo-lessons/tmp/slidev-dist-020/assets/404-B7Pui5No.css, coderdojo-lessons:courses/scratch…"
   previous_event_id: reg_8e3c82f9bf034d21a0303e20e384dec3
+- v: 1
+  id: reg_3c805c737b71445e86765ce7665dbac9
+  ts: "2026-11-21T08:46:07Z"
+  action: close
+  actor: specdojo-orchestrator
+  from_status: waiting
+  to_status: done
+  reason: exec run が完了しなかったため、利用者の指定で orchestrator が executor の編集を feature ブランチに当て、表示を直して統合した。統合後に完了条件を確かめた。
+  changes:
+    - field: status
+      from: waiting
+      to: done
+    - field: completed
+      from: "-"
+      to: "2026-11-21"
+    - field: conclusion
+      from: "-"
+      to: 第2回の背景の用意をメッセージの段階の最初へ移し、背景の追加方法を文章で示した。「すべてを止める」を制御の色で表示されるよう直し、「クリア」の文字を描く手順を標準完成の後に加えた。指導案も合わせた。
+    - field: block_reason
+      from: "resumed executor did not account for every plan target: coderdojo-lessons:courses/scratch-basic/lessons/coderdojo-lessons/tmp/slidev-dist-020/assets/404-B7Pui5No.css, coderdojo-lessons:courses/scratch…"
+      to: "-"
+  previous_event_id: reg_b499c9f3b4e84af3b9adba3bd49c4d28

@@ -2,18 +2,19 @@
 specdojo:
   id: prj-0001:pjr-af5n-balloon-backdrop-order
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: todo
-  item_status: waiting
+  item_status: done
   priority: medium
   difficulty: medium
   owner: BA
   registered_at: "2026-11-21T06:31:17Z"
   due_on: "2026-11-30"
-  block_reason: "resumed executor did not account for every plan target: coderdojo-lessons:courses/scratch-basic/lessons/coderdojo-lessons/tmp/slidev-dist-020/assets/404-B7Pui5No.css, coderdojo-lessons:courses/scratch…"
+  completed_at: "2026-11-21T08:46:07Z"
+  conclusion: 第2回の背景の用意をメッセージの段階の最初へ移し、背景の追加方法を文章で示した。「すべてを止める」を制御の色で表示されるよう直し、「クリア」の文字を描く手順を標準完成の後に加えた。指導案も合わせた。
 ---
 
 # PJR-AF5N 第2回の背景の用意をメッセージの段階へ移し、背景の追加方法と「すべてを止める」の色を直す
