@@ -13,3 +13,5 @@ docs/**/execution/exec/.locks/
 /.vitepress/cache
 /public/mermaid
 /specdojo-kata-staging/
+
+.specdojo/specdojo.local.config.json
