@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_ec10a89d9fba40a1a23bc61109cdcf3b
+  ts: "2026-11-21T06:31:17Z"
+  action: add
+  actor: specdojo-orchestrator
+  from_status: null
+  to_status: open
+  reason: 利用者の依頼を受けて起票
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 第2回の背景の用意をメッセージの段階へ移し、背景の追加方法と「すべてを止める」の色を直す
+    - field: description
+      from: ""
+      to: 020-balloon-game のスライドと指導案で、背景「開始」「クリア」の追加と「背景を [開始] にする」を得点の段階（14・15P）からメッセージの段階の最初へ移し、背景の追加方法を文章で解説する。18P の「すべてを止める」を制御の色で表示されるように直し、背景に「クリア」の文字を描く手順を標準完成の後・発展ミッションの前に余裕があれば行う内容として加える
+    - field: input
+      from: ""
+      to: "[\"対象は coderdojo-lessons の courses/scratch-basic/lessons/020-balloon-game の slides.md と lesson-plan.md\",\"15P のステージのコードにある「背景を [開始 v] にする」と、14P の背景「開始」の作成は、得点の段階で背景を扱うと時間がかかるため、メッセージの段階（4. 10点でクリアにしよう）の最初へ移す。背景「開始」「クリア」の追加をそこでまとめて行い、「背景を [開始 v] にする」もそのときに旗のスクリプトへ足す\",\"背景の追加方法の解説を加える。解説は文章だけとし、スクリーンショットは使わない\",\"18P の「すべてを止める」のブロックが制御の色で表示されていない。scratchblocks の日本語辞書では `CONTROL_STOP` が \\\" %1\\\" で、ブロック全体がドロップダウンのため、角かっこなしの記法では認識されていない見込み\",\"背景に「クリア」の文字を描く手順は、途中で行うとつまずく児童が多いため、時間に余裕があれば行う内容として「ここまでできたら標準完成！」の後・発展ミッションの前に置く（A案）\",\"指導案もスライドに合わせて直す（基本制作3・4、時間配分、支援、背景を描くことは求めないとする記述など）\",\"第1回（010-chase-game）のスライドにも同じ記法の「すべてを止める」が2か所あるが、この項目の範囲外とする\"]"
+    - field: type
+      from: ""
+      to: todo
+    - field: priority
+      from: ""
+      to: medium
+    - field: difficulty
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: BA
+    - field: registered
+      from: ""
+      to: "2026-11-21"
+    - field: due
+      from: ""
+      to: "2026-11-30"
