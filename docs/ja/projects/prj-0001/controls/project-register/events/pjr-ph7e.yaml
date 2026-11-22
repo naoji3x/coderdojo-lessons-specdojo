@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../../../../../../specdojo/schemas/v1/register-events.schema.yaml
+- v: 1
+  id: reg_84ba3484d3564b898df92054aa997aba
+  ts: "2026-11-22T10:59:13Z"
+  action: add
+  actor: SpecDojo
+  from_status: null
+  to_status: open
+  reason: item added
+  changes:
+    - field: status
+      from: ""
+      to: open
+    - field: title
+      from: ""
+      to: 教材と登録簿のリポジトリを public で作り直し、元のリポジトリを private で保管する
+    - field: description
+      from: ""
+      to: 講演の資料に個人情報を含むため、履歴から消して coderdojo-lessons と coderdojo-lessons-specdojo を public で作り直した。元は -private として保管する
+    - field: type
+      from: ""
+      to: decision
+    - field: priority
+      from: ""
+      to: medium
+    - field: owner
+      from: ""
+      to: _TODO_
+    - field: registered
+      from: ""
+      to: "2026-11-22"
