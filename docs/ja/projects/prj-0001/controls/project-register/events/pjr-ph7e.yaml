@@ -29,3 +29,22 @@
     - field: registered
       from: ""
       to: "2026-11-22"
+- v: 1
+  id: reg_50b4b0b9733b4f60bb4042db1a4f3a84
+  ts: "2026-11-22T11:00:32Z"
+  action: close
+  actor: indie
+  from_status: open
+  to_status: decided
+  reason: 利用者が案 B と書き換えの範囲を決め、公開後の履歴を確かめた
+  changes:
+    - field: status
+      from: open
+      to: decided
+    - field: completed
+      from: "-"
+      to: "2026-11-22"
+    - field: conclusion
+      from: "-"
+      to: 案 B を採り、講演の資料を消した履歴で両方のリポジトリを public で作り直した。元は -private として保管する
+  previous_event_id: reg_84ba3484d3564b898df92054aa997aba

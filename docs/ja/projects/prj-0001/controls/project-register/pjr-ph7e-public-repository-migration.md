@@ -2,15 +2,17 @@
 specdojo:
   id: prj-0001:pjr-ph7e-public-repository-migration
   type: project
-  status: draft
+  status: ready
   rulebook: specdojo:pjr-rulebook
   part_of:
     - prj-0001:pjr-index
   item_type: decision
-  item_status: open
+  item_status: decided
   priority: medium
   registered_at: "2026-11-22T10:59:12Z"
   due_on: null
+  completed_at: "2026-11-22T11:00:32Z"
+  conclusion: 案 B を採り、講演の資料を消した履歴で両方のリポジトリを public で作り直した。元は -private として保管する
 ---
 
 # PJR-PH7E 教材と登録簿のリポジトリを public で作り直し、元のリポジトリを private で保管する
