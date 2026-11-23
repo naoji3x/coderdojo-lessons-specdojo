@@ -62,11 +62,11 @@ specdojo:
 
 ## 6. 影響範囲とフォローアップ
 
-| 項目       | 内容                                                                                                                                                                                              |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 影響範囲   | 両方のリポジトリの全 commit の hash。2026-11-22 より前の hash は、private の側の履歴を指す                                                                                                        |
-| 必要な対応 | `coderdojo-lessons` の `.gitignore` に `docs/presentations/` を足す。新旧の hash の対応表を `coderdojo-lessons-specdojo-private` の `docs/ja/projects/prj-0001/controls/public-migration/` に置く |
-| 追跡先     | `coderdojo-lessons` の `feature/prj-0001/ignore-presentations`、`coderdojo-lessons-specdojo-private` の `feature/prj-0001/public-migration-commit-map`                                            |
+| 項目       | 内容                                                                                                                                                                                     |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 影響範囲   | 両方のリポジトリの全 commit の hash。2026-11-22 より前の hash は、private の側の履歴を指す                                                                                               |
+| 必要な対応 | 新旧の hash の対応表を `coderdojo-lessons-specdojo-private` の `docs/ja/projects/prj-0001/controls/public-migration/` に置く。講演の資料は公開用のリポジトリに置かず、private の側で扱う |
+| 追跡先     | `coderdojo-lessons-specdojo-private` の `feature/prj-0001/public-migration-commit-map`                                                                                                   |
 
 ## 7. 関連ドキュメント
 
